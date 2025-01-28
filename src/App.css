@@ -14,16 +14,43 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0d3bc7;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(199, 13, 13);
+}
+.bubble {
+  background-color: rgb(87, 59, 247);
+  color: rgb(208, 12, 12);
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 2;
+  border-radius: 2px;
+  text-align: center;
+  margin: auto;
+   width: 700px;
+   align-content: center;
+   
+  
 }
 
+.bubble2 {
+  background-color: rgb(242, 242, 245);
+  color: rgb(244, 235, 235);
+  font-weight: bold;
+  font: size 24px;
+  line-height: 2;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 75px;
+  padding-bottom: 75px;
+   
+  
+}
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +62,5 @@
   to {
     transform: rotate(360deg);
   }
+  
 }

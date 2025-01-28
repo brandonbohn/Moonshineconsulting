@@ -19,7 +19,7 @@ export const Homepage = () => {
 
 
 
-  <div class="row bg-dark mainpicture">
+  <div class=" mainpicture">
     <div class="col-12 col-lg-6">
 
    
@@ -33,7 +33,7 @@ export const Homepage = () => {
       
       /> 
 
-      <p className='bubble backgroundbox'>  At moonshine consulting  it is our mission to help you achieve financial independence  and change your life.  We have been where you are at and understand your struggles. It is our goal to connect you with opportunites  and to help you achieve financial success by providing you a hand up in a world that seeks to beat you down. Through our educational products and partnerships you will learn the skills to setup a successful passive income with very little work. </p>
+      <p>  At moonshine consulting  it is our mission to help you achieve financial independence  and change your life.  We have been where you are at and understand your struggles. It is our goal to connect you with opportunites  and to help you achieve financial success by providing you a hand up in a world that seeks to beat you down. Through our educational products and partnerships you will learn the skills to setup a successful passive income with very little work. </p>
  </div>
          
 
@@ -66,7 +66,7 @@ height={200} />
   
 </div>
 
-<div class="row backgroundbox">
+<div>
   <div class="col-12 col-lg-8">
 
 

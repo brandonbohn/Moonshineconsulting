@@ -5,8 +5,8 @@ const aboutme = () => {
 
 
 <div>
-<div><img src="./images/Momarthill.jpg" className="arthill" alt="momart"
-            width="1535px"
+<div className='picture'><img src="./images/Momarthill.jpg" className="arthill" alt="momart"
+            width={"100%"}
             height="500px"
           
         />
@@ -21,46 +21,62 @@ const aboutme = () => {
 
 </p>
 
-<div className='bestlife'>
+<div>
+<div className='picture'>
+<img src="./images/Momandboys.JPG" className="picture" alt="zoo"
+            width="275px"
+            height="300px"
+            align="center" />
+<img src="./images/Momandchuck.JPG"  alt="chuck"
+            width="275px"
+            height="300px"
+            align="center" />
 
-<img src="./images/Momandboys.JPG" className="boys" alt="zoo"
-            width="450px"
-            height="450px"
+ <img src="./images/Momandmural.JPG" className="picture" alt="zoo"
+            width="275px"
+            height="300px"
             align="center" />
-<img src="./images/Momandchuck.JPG" className="rock" alt="chuck"
-            width="450px"
-            height="450px"
+</div>
+<div className='picture'>
+
+
+            <img src="./images/Momandpeguins.JPG" className="picture" alt="zoo"
+            width="275px"
+            height="300px"
             align="center" />
-            <img src="./images/Momandmural.JPG" className="boys" alt="zoo"
-            width="450px"
-            height="450px"
+<img src="./images/underarch.JPG" className="" alt="zoo"
+            width="275px"
+            height="300px"
             align="center" />
-            <img src="./images/Momandpeguins.JPG" className="boys" alt="zoo"
-            width="450px"
-            height="450px"
+
+ <img src="./images/aquariam.JPG" className="picture" alt="zoo"
+            width="275px"
+            height="300px"
             align="center" />
-            <img src="./images/underarch.JPG" className="boys" alt="zoo"
-            width="450px"
-            height="450px"
-            align="center" />
-            <img src="./images/aquariam.JPG" className="boys" alt="zoo"
-            width="450px"
-            height="450px"
-            align="center" />
-            <img src="./images/Momandarch.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
+
+</div>
+
+            <div className='picture'>
+
+ <img src="./images/Momandarch.jpg" className="picture" alt="dog"
+            width="275px"
+            height="300px"
             align="center" />
 
 <img src="./images/momarch.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
+            width="275px"
+            height="300px"
             align="center" />
 
-<img src="./images/m.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
-            align="center" />
+
+    <img src="./images/m.jpg" className="picture" alt="dog"
+            width="275px"
+            height="300px"
+            align="center" />       
+             </div>
+           
+
+
 
 </div>
 
@@ -79,36 +95,45 @@ const aboutme = () => {
 
 
 <div className='family'>
-
+<div className='picture'>
 <img src="./images/Ashleyandhubby.JPG" className="boys" alt="zoo"
-            width="450px"
-            height="450px"
+            width="350px"
+            height="350px"
             align="center" />
 
 <img src="./images/momandstan.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
+            width="350px"
+            height="350px"
             align="center" />
 
             <img src="./images/stanandkids.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
+            width="350px"
+            height="350px"
             align="center" />
 
+
+
+</div>
+
+<div className='picture'>
 <img src="./images/grandma.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
+            width="350px"
+            height="350px"
             align="center" />
 
 <img src="./images/kimandmo.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
+            width="350px"
+            height="350px"
             align="center" />
 
  <img src="./images/Momandboys.jpg" className="maverick" alt="dog"
-            width="450px"
-            height="450px"
+            width="350px"
+            height="350px"
             align="center" />
+
+
+</div>
+
 
 
 

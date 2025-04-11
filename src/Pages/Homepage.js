@@ -5,38 +5,39 @@ export const Homepage = () => {
 
   return (
     <div>
- <div class="homepagedefaults container-fluid backgroundbox2 "> 
- <meta name="viewport" content="width=device-width, initial-scale=1.0"/
-  <div class=" mainpicture">
+ <div class="homepagedefaults container-fluid  "> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  < div className="mainpicture">
     <div class="col-12 col-lg-6">
-      <div><img src="./images/Trailoftears.jpg" class=" img-fluid" alt="mom3" 
-      /> 
-      <p>  At moonshine consulting  it is our mission to help you achieve financial independence  and change your life.  We have been where you are at and understand your struggles. It is our goal to connect you with opportunites  and to help you achieve financial success by providing you a hand up in a world that seeks to beat you down. Through our educational products and partnerships you will learn the skills to setup a successful passive income with very little work. </p>
+      <div><img src="./images/Trailoftears.jpg " class=" img-fluid positions" alt="mom3" /> 
+      <p className='backgroundbox text-white bg-dark'>  At moonshine consulting  it is our mission to help you achieve financial independence  and change your life.  We have been where you are at and understand your struggles. It is our goal to connect you with opportunites  and to help you achieve financial success by providing you a hand up in a world that seeks to beat you down. Through our educational products and partnerships you will learn the skills to setup a successful passive income with very little work. </p>
  </div>
-<img src="./images/business.jpg" class="float-begin  nursepicture img-fluid " alt="mom10"
+<img src="./images/business.jpg" class="float-begin  nursepicture img-fluid positions " alt="mom10"
 width={400}
 height={200}
 ></img>
-<img src="./images/business.jpg" class="float-end  nursepicture img-fluid " alt="mom10"
-width={400}
-height={200} />
+
   </div>  
 </div>
 
 <div>
   <div class="col-12 col-lg-8">
 </div>
-<h3 className='bubble2'>Hi My name is Moonshine.  I am the mascot for Moonshine Consulting and I am here to tell you a secret</h3>
+<h3 className='bubble positions'>Hi My name is Moonshine.  I am the mascot for Moonshine Consulting and I am here to tell you a secret</h3>
 
-<div className='backgroundbox'>
+<div className='backgroundbox positions'>
 <div class="row bg-dark">
     <div clas="col-2 col-lg-6">
-      <div className=' col-6 pictureborder'><img src="./images/moonshine.jpg" class="img-fluid  titlepictures float-start" alt="mom3"
-width={600}
-height={600}
+      <div className=' col-6 positions'><img src="./images/moonshine.jpg" class="img-fluid  titlepictures float-start" alt="mom3"
+width={700}
+height={700}
+align="center"
+padding="10px"
+
+
 /> 
  </div>
-<p className='bubble' >  Like you my mother has worked hard all her life and has gave her all to everybody including her family.  My mom is a very loving, caring lifelong nurse that will do anything for people 
+<p className='positions textcontent' >  Like you my mother has worked hard all her life and has gave her all to everybody including her family.  My mom is a very loving, caring lifelong nurse that will do anything for people 
               and of course spend money on me.   However, last month my mom finally found a way to retire comfortably and enjoy her golden years.
                 She also found selfworth and a new passion and lease on life.  How did she do it you ask?  She learned at the button that says learn.
                  This button made  her life better and  helped her develop her selfworth and confidence. 
@@ -97,4 +98,4 @@ height={600}
 
 }
 
-}
+export default Homepage

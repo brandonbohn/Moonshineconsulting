@@ -12,7 +12,7 @@ const Registration = () => {
 
 <div class="card"/>
 
-<h1>Change your Life</h1>
+<h1 className='Titles'>Change your Life</h1>
 
 </div>
 <div class="card w-150 h-250 bg-primary text-blue" >

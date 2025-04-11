@@ -2,11 +2,13 @@ import Homepage from './Pages/Homepage';
 import Registration from './Pages/Registration';
 import Aboutme from './Pages/Aboutme';
 import Header from './Utilities/header';
+import Footer from './Utilities/Footer';
+
 
 import { Routes, Route,  } from 'react-router-dom';  
 function App() {
   return (
-    <div> < div className='box'>
+    <div className='background'>
 
 
     <Header/>
@@ -16,8 +18,8 @@ function App() {
          <Route path="/aboutme" element={<Aboutme/>}/>
        </Routes>
 
-   
-       </ div></div>
+   <Footer/>
+       </ div>
   );
 }
 

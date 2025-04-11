@@ -1,13 +1,90 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.background
+{
+    background-color: #08023a;
+    background-position: calc(50% - 1px) calc(50% - 1px);
+ 
+   
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.text
+{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+
 }
+.box
+{
+padding-top: 150px;
+   
+}
+    .Header {
+      display: inline;
+      justify-content:space-around;
+      background-color:rgb(7, 7, 7);
+      font-size: 16px;
+      height: 20%;
+      width: 10px;
+      -webkit-text-fill-color: #ece0e1;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+      .textcontent {
+        display: inline;
+        justify-content:center;
+        background-color:rgb(7, 7, 7);
+        font-size: 16px;
+        height: auto;
+        width: 100%;
+        
+        -webkit-text-fill-color: #ece0e1;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+     .moonshine{
+-ms-flex-item-align: center;
+
+     }
+
+     .bubble {
+      background-color: rgb(240, 238, 245);
+      color: rgb(15, 1, 1);
+      font-weight: bold;
+      font-size: 1.2em;
+      line-height: 2;
+      border-radius: 2px;
+  
+      margin: auto;
+      width: 100%;
+  
+     }
+
+      .bubble2 {
+       background-color: rgb(240, 238, 245);
+       color: rgb(15, 1, 1);
+       font-weight: bold;
+       font-size: 1.2em;
+       line-height: 2;
+       border-radius: 2px;
+       margin: auto;
+       width: 100%;
+       max-width: 100%;
+         }
+
+     .mainbox {
+      margin: 100px;
+      padding-left: 150px;
+     
+     }
+     .secondarybox {
+  
+      padding-left: 150px;
+      padding-right: 150px;
+     }
+
+     .positions {
+      margin-left: 150px;
+      justify-content: center;
+      align-items: center;
+    
+     }

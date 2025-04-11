@@ -21,13 +21,15 @@
 }
 .box
 {
-padding: 20px;
-margin: 20px;
-width: 100%;
-background-color: #060606;
+
+width: 650px;
+height: 170px;
+background-color: #0d0d0d;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(231, 5, 5, 0.5);  
 color: white;
+padding: 20px;
+margin: 20px auto;
    
 }
     .Header {
@@ -87,15 +89,27 @@ color: white;
          }
 
      .mainbox {
-      margin: 100px;
-      padding-left: 150px;
+      width: 850px;
+      height: 300px;
+      background-color: #0d0d0d;
+    margin:auto 200px;
+    padding: auto;
+      color: white;
+       max-width: auto;
+       position: relative;
      
      }
-     .secondarybox {
-  
-      padding-left: 150px;
-      padding-right: 150px;
-     }
+
+
+     .boxposition2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      margin: 25px;
+      margin-right: 250px;
+      margin-left: 250px;
+   }
 
      .positions {
       display: flex;
@@ -104,6 +118,9 @@ color: white;
       align-items: center;
       padding: 25px;
       margin: 25px;
+      margin-right: 400px;
+      margin-left: 400px;
+  
       
     
      }
@@ -126,5 +143,11 @@ color: white;
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 0;
+     }
+     .homepagedefaults {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: auto;
+      margin-top: auto;
      }
      

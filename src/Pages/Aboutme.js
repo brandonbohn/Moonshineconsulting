@@ -23,10 +23,7 @@ const aboutme = () => {
 
 <div>
 <div className='picture'>
-<img src="./images/Momandboys.JPG" className="picture" alt="zoo"
-            width="275px"
-            height="300px"
-            align="center" />
+
 <img src="./images/Momandchuck.JPG"  alt="chuck"
             width="275px"
             height="300px"
@@ -49,10 +46,7 @@ const aboutme = () => {
             height="300px"
             align="center" />
 
- <img src="./images/aquariam.JPG" className="picture" alt="zoo"
-            width="275px"
-            height="300px"
-            align="center" />
+
 
 </div>
 

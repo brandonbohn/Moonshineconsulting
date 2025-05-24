@@ -1,0 +1,37 @@
+
+
+.box {
+  background-color: #00000a;
+  width: 900px;
+  height: 900px;
+  position: relative;
+}
+
+.logo {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.card {
+z-index: 10;
+}
+
+
+.cardposition {
+position:relative;
+  margin-left: 100px;
+  align-items: flex-start;
+
+;
+}
+.textposition{
+
+  margin-bottom: 1000px;
+}
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Adjust spacing between cards as needed */
+  align-items: flex-start; /* Align cards to the top */
+}

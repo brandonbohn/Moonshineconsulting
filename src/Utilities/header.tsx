@@ -15,7 +15,7 @@ function Header(){
     {/* Logo fully left and top with 20px bottom margin */}
     <div style={{ marginRight: "24px", alignSelf: "flex-start" }}>
       <img
-        src="./images/logo.png"
+        src="/images/logo.png"
         className="img-fluid logo"
         alt="mom3"
         width="150px"

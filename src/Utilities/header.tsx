@@ -16,11 +16,11 @@ function Header(){
     <div style={{ marginRight: "24px", alignSelf: "flex-start" }}>
       <img
         src="/images/logo.PNG"
-        className="img-fluid logo"
+        className=" logo"
         alt="mom3"
         width="150px"
         height="150px"
-        style={{ marginBottom: "20px" }}
+     
       />
     </div>
     {/* Navbar items aligned right */}

@@ -1,31 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-function footer() {
-  return (
+const BusinessHeader = () => (
+  <div className="bg-dark text-white py-3 px-2 text-center" style={{ fontSize: "1rem" }}>
+    <div>
+      <strong>Location:</strong> Fredricktown, Missouri
+    </div>
+    <div>
+      <strong>All Rights Reserved.|Content Reviewed by licensed healthcare professional with 30+ years home health experience</strong> &copy; {new Date().getFullYear()} BareBohnz Dev & Consulting
+    </div>
+    <div>
+      <a href="https://moonshineconsulting.org" className="text-warning" style={{ textDecoration: "none" }}>
+  Moonshine Consulting LLC 
+      </a>
 
-    <section>
-
-    
-<div/>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div className='footer'>
-    <ul class="navbar-nav">
-      <li class="nav-item"/>
- <h4 className='email'>moonshineconsulting6@gmail.com</h4>
-
- <h4 className='phonenumber'>Moonshine Consulting</h4>
-
- <h4 className='address'>Fredricktown Missouri </h4>
-      
-    </ul>
+<a href="https://moonshineconsulting.org/termsandconditions" className="text-warning" style={{ textDecoration: "none", marginLeft: "10px" }}>
+  Terms and Conditions
+</a>
+     
+    </div>
   </div>
-</nav>
-<div/>
-    
+);
 
-
- </section>
-  )
-}
-
-export default footer
+export default BusinessHeader;

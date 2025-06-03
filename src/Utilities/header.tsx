@@ -20,7 +20,7 @@ function Header(){
         alt="mom3"
         width="150px"
         height="150px"
-        style={{ marginBottom: "20px", marginLeft: 0, display: "block", marginTop: 0 }}
+        style={{ marginBottom: "20px" }}
       />
     </div>
     {/* Navbar items aligned right */}

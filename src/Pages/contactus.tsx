@@ -4,45 +4,25 @@ import React from 'react'
 const Registration = () => {
   return (
 
- <section class='container'>
+ <section className='container'>
 
-  <div class="row">
+  <div className="row">
+    <div className="col-12 d-flex flex-column align-items-center justify-content-center text-center my-5">
+      <h1 className='Titles'>Questions? We're Here to Help</h1>
+    </div>
 
-<div class="col-1">
+    <div className="col-12 text-white d-flex flex-column align-items-center justify-content-center bg-dark p-5">
+      <h1>Name</h1>
+      <input className="form-input" name='name' type='text'  />
+      <h1>Email</h1>
+      <input className="form-input" name='email' type='email'  />
+      <h1>Message/Question</h1>
+      <input className="form-input" name='message' type='message' />
 
-<div class="card"/>
 
-<h1 className='Titles'>Change your Life</h1>
-
-</div>
-<div class="card w-150 h-250 bg-primary text-blue" >
-
-
-  <div class="card-body ">  
-<h1>Name</h1>
-<input className="form-input"   name='name' type='name' ></input>
-    <h1>Email</h1> 
-<input className="form-input"   name='email' type='email' ></input>
-
-<button>Signup Now</button>
+      <button className="mt-3 padding-10px" >Contact US</button>
+    </div>
   </div>
-</div>
-
-
-
-
-
-        
-  
-
-
-
-
-
-          
-         
-  </div>    
-
 </section>
 
 

@@ -4,8 +4,8 @@ import '../homepage.css';
 export const Homepage = () => {
   return (
     <div>
-      {/* Full-width hero section */}
-      <div className="card w-100 rounded-0 border-0" style={{ background: "#212529" }}>
+      
+      <div className="container rounded-0 border-0 my-5 bg-dark" style={{ background: "#212529" }}>
         <div className="row align-items-center card-body mx-0 px-0">
           <div className="col-12 col-md-6 text-center">
             <img src="./images/moonshine.jpg" className="bg-dark img-fluid" alt="mom3"
@@ -18,7 +18,78 @@ export const Homepage = () => {
           </div>
         </div>
       </div>
-      {/* Main content container */}
+     
+      <div className='container  box text-white col-12 col-md-6 text-center'>
+
+        <div>
+ 
+
+
+
+
+        </div>
+       
+                <div className='container my-5'>
+<h1>Who We Are</h1>
+<p>
+  <h5>
+Our Mission
+  </h5>
+<p>
+  At Moonshine Consulting, we empower seniors and their families to navigate the complex world of long-term healthcare with confidence and clarity. We believe every senior deserves compassionate care and informed choices about their health and wellbeing.
+</p>
+
+ <h5>
+Our Expertise
+  </h5>
+<p>
+Founded by healthcare professionals with over 50 years of combined experience, our team brings deep knowledge from:
+
+ <li>Home Health services</li>
+ <li>Hospice care</li>
+ <li>Workers Compensation Insurance</li>
+ <li>Occupational therapy</li>
+</p>
+
+<h5>What We Offer For Seniors and Caregivers:</h5>
+<li>Guidance on Medicare, Home Health, Hospice, and rehabilitation options</li>
+<li>Educational resources about Missouri’s healthcare policies and how they impact you</li>
+<li>Practical solutions for daily healthcare challenges</li>	
+<li>Support during life transitions and care decisions</li>
+
+
+
+
+<p>
+  <h5>
+Our Approach:
+
+  </h5>
+
+We provide warm, compassionate guidance combined with expert knowledge. Our goal is to help you understand your options, advocate for your needs, and make informed decisions about your care journey.
+Making a Difference
+Beyond our consulting services, we’re committed to showing how meaningful connections, whether through our educational content, community outreach, or even our featured therapy animals—can enhance the lives of seniors and their families.
+Ready to Get Started?
+Contact us today to learn how we can help you navigate your healthcare journey with confidence and peace of mind.
+Moonshine Consulting - Illuminating your path to better healthcare
+</p>
+
+
+
+ 
+</p>
+
+
+
+                </div>
+
+
+
+
+      </div>
+    <img src="./images/Nurse.jpg" className="nursepicture img-fluid" alt="mom10"
+                width={400}
+                height={200} style={{ objectFit: "cover" }} />    
       <div className="container">
         <style>
           {`
@@ -112,33 +183,11 @@ export const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* About This section and Nurse image side by side */}
-          <div className="row mt-4 align-items-center justify-content-center">
-            <div className="col-12 col-md-6 d-flex justify-content-center align-items-start" style={{ minHeight: "800px" }}>
-              <div
-                className="card d-flex flex-column justify-content-center h-100"
-                style={{
-                  background: "#212529",
-                  color: "#fff",
-                  width: "400px",
-                  height: "800px"
-                }}
-              >
-                <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#fff" }}>About Us</h2>
-                <p className="mb-0" style={{ fontSize: "0.95rem" }}>
-                  Moonshine Consulting is dedicated to providing expert advice, compassionate care, and heartwarming stories for seniors and their families. Our blog posts, tools, and resources are curated by experienced professionals to help you navigate life's transitions with confidence and support. ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss compassionate care, and heartwarming stories for seniors and their families. Our blog posts, tools, and resources are curated by experienced professionals to help you navigate life's transitions with confidence and support. ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-                </p>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center align-items-start" style={{ minHeight: "800px" }}>
-              <img src="./images/Nurse.jpg" className="nursepicture img-fluid" alt="mom10"
-                width={400}
-                height={200} style={{ objectFit: "cover" }} />
+        
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    
   )
 }
 export default Homepage

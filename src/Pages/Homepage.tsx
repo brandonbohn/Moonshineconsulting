@@ -5,12 +5,12 @@ export const Homepage = () => {
   return (
     <div>
       
-      <div className="container rounded-0 border-0 my-5 bg-dark" style={{ background: "#212529" }}>
-        <div className="row align-items-center card-body mx-0 px-0">
+      <div className="container bg-dark positions  my-5" >
+        <div className="row align card-body">
           <div className="col-12 col-md-6 text-center">
-            <img src="./images/moonshine.jpg" className="bg-dark img-fluid" alt="mom3"
+            <img src="../images/Moonshineoutdoors.jpg" className=" " alt="moonshine"
               width={400}
-              height={400} />
+              height={550} />
           </div>
           <div className="col-12 col-md-6 text-white d-flex flex-column justify-content-center align-items-center">
             <h1 className='title text-center'>Welcome to Moonshine Consulting</h1>
@@ -19,7 +19,7 @@ export const Homepage = () => {
         </div>
       </div>
      
-      <div className='container  box text-white col-12 col-md-6 text-center'>
+      <div className='container  bg-dark text-white col-12 col-md-6 text-center'>
 
         <div>
  

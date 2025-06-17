@@ -15,13 +15,13 @@ const blogs = [
    
     return (
         <div style={{ fontFamily: "sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
-            <header style={{ background: "#ffe4b5", padding: "2rem 0", textAlign: "center" }}>
-                <h1 style={{ margin: 0, fontSize: "2.5rem", color: "#6b3e26" }}>Moonshine's Corner</h1>
+            <header style={{ background: "#ffe4b5", padding: "30px", textAlign: "center" }}>
+                <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#6b3e26" }}>Moonshine's Corner</h1>
                 <p style={{ fontSize: "1.25rem", color: "#6b3e26" }}>
                     A blog where Moonshine the dog interviews therapy dogs about their amazing work!
                 </p>
             </header>
-            <main style={{ maxWidth: 900, margin: "2rem auto", padding: "0 17rem"  }}>
+            <main style={{ maxWidth:"auto", margin: "20px", padding: "20px"  }}>
                 <section>
                     <h2 style={{ color: "#6b3e26" }}>Latest Interviews</h2>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>

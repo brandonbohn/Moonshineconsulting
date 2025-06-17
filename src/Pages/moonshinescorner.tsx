@@ -2,28 +2,17 @@ import React from "react";
 function MoonshinesCorner() {
 const blogs = [
     {
-        title: "Meet Bella: The Golden Retriever Therapist",
+        title: "How I Herded Hearts Instead of Sheep",
         article:
-            "Bella shares her journey from playful pup to certified therapy dog, helping children overcome anxiety.",
+            "Moonshine introduces Himself as a carring loving nursing companion that tried to be a therapy dog but while to scared to do so still inspired elderly patients",
         date: "June 10, 2024",
-        image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=400&q=80",
+        image: "./images/moonshine.jpg",
+        link:"./privacypolicy"
     },
-    {
-        title: "Interview with Max: Comforting Seniors",
-        excerpt:
-            "Max talks about his favorite moments visiting nursing homes and the friendships he's made.",
-        date: "June 3, 2024",
-        image: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-        title: "Luna's Story: From Rescue to Therapy Star",
-        excerpt:
-            "Luna opens up about her rescue story and how she now brings joy to hospital patients.",
-        date: "May 27, 2024",
-        image: "https://images.unsplash.com/photo-1518715308788-3005759c61e9?auto=format&fit=crop&w=400&q=80",
-    },
-];
 
+   
+];
+   
     return (
         <div style={{ fontFamily: "sans-serif", background: "#f9fafb", minHeight: "100vh" }}>
             <header style={{ background: "#ffe4b5", padding: "2rem 0", textAlign: "center" }}>
@@ -32,7 +21,7 @@ const blogs = [
                     A blog where Moonshine the dog interviews therapy dogs about their amazing work!
                 </p>
             </header>
-            <main style={{ maxWidth: 900, margin: "2rem auto", padding: "0 1rem" }}>
+            <main style={{ maxWidth: 900, margin: "2rem auto", padding: "0 17rem"  }}>
                 <section>
                     <h2 style={{ color: "#6b3e26" }}>Latest Interviews</h2>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
@@ -61,9 +50,16 @@ const blogs = [
                                 <p style={{ fontSize: "0.95rem", color: "#444" }}>{blog.excerpt}</p>
                                 <span style={{ fontSize: "0.85rem", color: "#b08968", marginTop: "auto" }}>
                                     {blog.date}
+                              <a
+                    href="./blogentries/moonshinescornerblogentry"
+                    className="btn btn-warning btn-sm"
+                    >
+                    Read More
+                    </a>        
                                 </span>
                             </article>
                         ))}
+                   
                     </div>
                 </section>
             </main>

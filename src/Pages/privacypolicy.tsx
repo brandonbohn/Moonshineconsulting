@@ -1,6 +1,7 @@
 import React from "react";
 function PrivacyPolicy() {
   return (
+<div className="text-white">
 
     <div style={{ maxWidth: 800, margin: "0 auto", padding: "2rem" }}>
         <h1>Privacy Policy</h1>
@@ -68,6 +69,10 @@ function PrivacyPolicy() {
             If you have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@moonshineconsulting.com">privacy@moonshineconsulting.com</a>.
         </p>
     </div>
+
+
+</div>
+
   );
 }
 

@@ -8,9 +8,10 @@ const BusinessHeader = () => (
     <div>
       <strong>All Rights Reserved.|Content Reviewed by licensed healthcare professional with 30+ years home health experience</strong> &copy; {new Date().getFullYear()} BareBohnz Dev & Consulting
     </div>
+    <p>Moonshine Consulting LLC</p>
     <div>
       <a href="./privacypolicy" className="text-warning" style={{ textDecoration: "none" }}>
-  Moonshine Consulting LLC 
+  Privacy Policy
       </a>
 
 <a href="./termsandconditions" className="text-warning" style={{ textDecoration: "none", marginLeft: "10px" }}>

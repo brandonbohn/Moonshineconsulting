@@ -47,7 +47,7 @@ const blogs = [
                                     style={{ width: "100%", borderRadius: 8, marginBottom: "1rem" }}
                                 />
                                 <h3 style={{ margin: "0 0 0.5rem 0", color: "#6b3e26" }}>{blog.title}</h3>
-                                <p style={{ fontSize: "0.95rem", color: "#444" }}>{blog.excerpt}</p>
+                                <p style={{ fontSize: "0.95rem", color: "#444" }}>{blog.article}</p>
                                 <span style={{ fontSize: "0.85rem", color: "#b08968", marginTop: "auto" }}>
                                     {blog.date}
                               <a
@@ -62,7 +62,7 @@ const blogs = [
                    
                     </div>
                 </section>
-            </main>
+            </main> 
             <footer style={{ textAlign: "center", padding: "1rem 0", color: "#b08968" }}>
                 © {new Date().getFullYear()} Moonshine's Corner
             </footer>

@@ -36,54 +36,64 @@ export const Homepage = () => {
           <div>
           <div className="d-flex justify-content-center align-items-start" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
             <div className="d-flex flex-wrap justify-content-center align-items-start founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
-              {[
-                {
-                  id: 1,
-                  name: "Karen Underwood, BSN",
-                  image: "./images/Nurse.jpg",
-                  experience: "30 Years Home Health and Hospice experience, both in the field and management.",
-                  title: "Registered Nurse"
-                },
-                {
-                  id: 2,
-                  name: "Christie Stephen,",
-                  image: "./images/Nurse.jpg",
-                  experience: "20 Years Occupational Therapy experience, specializing in home health and rehabilitation.",
-                  title: "Occupational Therapist"
-                },
-                {
-                  id: 3,
-                  name: "Moonshine",
-                  image: "./images/moonshine.jpg",
-                  experience: "Certified therapy dog with a passion for bringing joy to seniors.",
-                  title: "Therapy Dog"
-                },
-                {
-                  id: 4,
-                  name: "BareBohnz Dev & Consulting",
-                  image: "./images/moonshine.jpg",
-                  experience: "Over 10 years of experience in software development and consulting.",
-                  title: "Software Development and Consulting"
-                }
-              ].map((member) => (
-                <div key={member.id} className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "auto" }}>
-                  <img
-                    src={member.image}
-                    className="nursepicture img-fluid rounded"
-                    alt={member.name}
-                    style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-                  />
-                  <div className="card-body text-white text-center bg-dark rounded-bottom">
-                    <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
-                    <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                      {member.experience}
-                    </p>
-                    <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                      {member.title}
-                    </p>
-                  </div>
+              <div className="container">
+                <div className="row">
+                  {[
+                    {
+                      id: 1,
+                      name: "Karen Underwood, BSN",
+                      image: "./images/Nurse.jpg",
+                      experience: "30 Years Home Health and Hospice experience, both in the field and management.",
+                      title: "Registered Nurse"
+                    },
+                    {
+                      id: 2,
+                      name: "Christie Stephen,",
+                      image: "./images/Nurse.jpg",
+                      experience: "20 Years Occupational Therapy experience, specializing in home health and rehabilitation.",
+                      title: "Occupational Therapist"
+                    },
+                    {
+                      id: 3,
+                      name: "Moonshine",
+                      image: "./images/moonshine.jpg",
+                      experience: "Our beloved mascot, Moonshine. While not an offical therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
+                      title: "Therapy Dog"
+                    },
+                    {
+                      id: 4,
+                      name: "BareBohnz Dev & Consulting",
+                      image: "./images/moonshine.jpg",
+                      experience: "Over 10 years of experience in software development and consulting.",
+                      title: "Software Development and Consulting"
+                    }
+                  ].map((member, idx) => (
+                    <div
+                      key={member.id}
+                      className="col-12 col-md-6 d-flex justify-content-center mb-4"
+                      style={{ alignItems: "stretch" }}
+                    >
+                      <div className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "100%" }}>
+                        <img
+                          src={member.image}
+                          className="nursepicture img-fluid rounded"
+                          alt={member.name}
+                          style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+                        />
+                        <div className="card-body text-white text-center bg-dark rounded-bottom">
+                          <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
+                          <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                            {member.experience}
+                          </p>
+                          <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                            {member.title}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
               <style>
                 {`
                   @media (max-width: 767px) {

@@ -17,7 +17,7 @@ const blogs = [
         <div style={{ fontFamily: "sans-serif", background: "#C9A17D", minHeight: "100vh" }}>
             <header style={{ background: "#ffe4b5", padding: "30px", textAlign: "center" }}>
                 <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#6b3e26" }}>Moonshine's Corner</h1>
-                <p style={{ fontSize: "1.25rem", color: "#6b3e26" }}>
+                <p style={{ fontSize: "1.25rem", color: "#ffffff" }}>
                     A blog where Moonshine the dog interviews therapy dogs about their amazing work!
                 </p>
             </header>

@@ -9,6 +9,7 @@ import MoonshinesCorner from './Pages/moonshinescorner.tsx';
 import PrivacyPolicy from './Pages/privacypolicy.tsx';
 import TermsAndConditions from './Pages/termsandconditions.tsx';
 import MoonshinesCornerBlogEntry from './Pages/blogentries/moonshinescornerblogentry.tsx';
+import BioPage from './Pages/biopage.tsx';
 
 
 
@@ -27,6 +28,7 @@ function App() {
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
          <Route path='/blogentries/moonshinescornerblogentry'element={<MoonshinesCornerBlogEntry/>}/>
+          <Route path="/biopage" element={<BioPage/>}/>
        </Routes>
        <Footer />
 

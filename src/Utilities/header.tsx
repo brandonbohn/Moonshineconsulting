@@ -34,6 +34,9 @@ function Header(){
       <li className="nav-item">
         <a className="nav-link" href="/registration">contact</a>
       </li>
+        <li className="nav-item">
+        <a className="nav-link" href="/biopage">Meet The Team</a>
+      </li>
     </ul>
   </div>
 </nav>

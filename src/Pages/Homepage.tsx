@@ -67,6 +67,8 @@ export const Homepage = () => {
                       experience: "Over 10 years of experience in software development and consulting.",
                       title: "Software Development and Consulting"
                     }
+
+                    
                   ].map((member, idx) => (
                     <div
                       key={member.id}
@@ -89,6 +91,7 @@ export const Homepage = () => {
                             {member.title}
                           </p>
                         </div>
+                        
                       </div>
                     </div>
                   ))}
@@ -128,7 +131,8 @@ export const Homepage = () => {
               borderRadius: "16px",
               boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
               minHeight: "fit-content",
-              width: "100%"
+              width: "100%",
+              fontSize: "1rem",
             }}
           >
             <h1>Who We Are</h1>
@@ -211,7 +215,7 @@ export const Homepage = () => {
               <p className="mb-2" style={{ fontSize: "0.9rem" }}>
                 Heartwarming stories about the impact of man's best friend, told by our very own mascot Moonshine, showing how dogs can really change lives.
               </p>
-              <a href="./moonshinescorner" className="btn btn-warning btn-sm">Read More</a>
+                <a href="./moonshinescorner" className="btn btn-warning btn-sm">Read More</a>
             </div>
           </div>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
@@ -235,7 +239,15 @@ export const Homepage = () => {
               >
                 Read More
               </a>
+
+              <div>
+
+
+                
+              </div>
+              
             </div>
+            
           </div>
         </div>
       </div>

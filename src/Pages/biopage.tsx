@@ -11,11 +11,12 @@ function BioPage() {
                         {
                             name: "Karen Underwood RN BSN",
                             title: "CEO & Founder",
-                            picture: "./images/nurse.jpg",
+                            picture: "./images/CEO.jpg",
                             bioPoints: [
-                                "experienced Homeheealth Surveyor with a passion for healthcare",
-                                "30+ years in nursing and healthcare management",
+                               "30+ years in nursing and healthcare management", 
+                               "A experienced Homehealth Surveyor with a passion for healthcare",
                                 "10 years as a Home Health Nurse",
+                                "3 Years in Long Term Care Working as a Floor Nurse doing Hands on Patient Care and Senior Advocacy",
                                 "Enjoys mentoring and training new nurses",
                                 "Advocate for patient-centered care and quality improvement",
                                 "Skilled in regulatory compliance and quality assurance",

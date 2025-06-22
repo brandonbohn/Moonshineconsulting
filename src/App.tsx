@@ -1,4 +1,4 @@
-import Homepage from './Pages/Homepage.tsx';
+import { Homepage } from './Pages/Homepage.tsx';
 import ContactUs from './Pages/contactus.tsx';
 import Blog from './Pages/mainblog.tsx';
 import Footer from './Utilities/Footer.tsx';

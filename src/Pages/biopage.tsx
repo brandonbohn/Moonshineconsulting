@@ -2,14 +2,14 @@ import React from "react";
 
 function BioPage() {
     return (
-        <div style={{ maxWidth: 800, margin: "40px auto", padding: 24, border: "1px solid #ddd", borderRadius: 8, color: "#fff", background: "#222" }}>
+        <div style={{ maxWidth: 800, margin: "40px auto", padding: 24, border: "1px solid #ddd",  color: "#fff", background: "#222" }}>
             <div style={{ display: "flex", alignItems: "center", marginBottom: 32 }}>
-                <div style={{ width: 120, height: 120, background: "#eee", borderRadius: "50%", marginRight: 32 }} />
+                <div />
                 <div>
                     <h1 style={{ margin: 0, color: "#fff" }}>Our Team</h1>
                     {[
                         {
-                            name: "Karen Underwood Rn BSN",
+                            name: "Karen Underwood RN BSN",
                             title: "CEO & Founder",
                             picture: "./images/nurse.jpg",
                             bioPoints: [
@@ -23,51 +23,28 @@ function BioPage() {
                             ]
                         },
                         {
-                            name: "Ashley ",
-                            title: "OT asistant",
-                            picture: "https://randomuser.me/api/portraits/men/32.jpg",
+                            name: "Christie Stephen RN ODG Certified, Behavioral Health Certified",
+                            title: "Insurance Specialist and Contributor",
+                            picture: "../../images/christie.jpg",
                             bioPoints: [
-                                "Experienced in both frontend and backend development",
-                                "Specializes in Node.js, GraphQL, and microservices",
-                                "Advocate for clean code and best practices",
-                                "Contributor to several open source projects",
-                                "Loves solving complex technical challenges"
+                                "Chris began her career in 1994 in the hospital",
+                                "Staff Nurse: GU, ENT, GYN, Prison ward and intensive care unit for 2 years.",
+                                "Labor and Delivery Nursery RN for 2 years.",
+                                "Field Nurse performing insurance assessments for long term care insurance products, Home Healthcare, and Hospice RN for total 31 years.",
+                                "24 years’ experience in workers compensation, Team leader, and came on board with Gallagher in 2020."
                             ]
                         },
                         {
-                            name: "Christie Stephen",
-                            title: "UI/UX Designer & Developer",
-                            picture: "https://randomuser.me/api/portraits/women/65.jpg",
+                            name: "Moonshine",
+                            title: "Lovable Mascot and Contributor",
+                            picture: "../../images/moonshine.jpg",
                             bioPoints: [
-                                "Blends design and development for seamless user experiences",
-                                "Skilled in Figma, CSS-in-JS, and accessibility standards",
-                                "Focuses on mobile-first and responsive design",
-                                "Enjoys collaborating with cross-functional teams",
-                                "Active in the design systems community"
-                            ]
-                        },
-                        {
-                            name: "David Kim",
-                            title: "DevOps Engineer",
-                            picture: "https://randomuser.me/api/portraits/men/76.jpg",
-                            bioPoints: [
-                                "Expert in CI/CD pipelines and cloud infrastructure",
-                                "Automates deployments and monitors system health",
-                                "Works with AWS, Docker, and Kubernetes",
-                                "Promotes DevOps culture and agile methodologies",
-                                "Enjoys optimizing performance and reliability"
-                            ]
-                        },
-                        {
-                            name: "Emily Chen",
-                            title: "Frontend Developer",
-                            picture: "https://randomuser.me/api/portraits/women/22.jpg",
-                            bioPoints: [
-                                "Specializes in React and TypeScript",
-                                "Focuses on building accessible and performant UIs",
-                                "Enjoys working with design systems and component libraries",
-                                "Active in local tech meetups and workshops",
-                                "Passionate about teaching and documentation"
+                                "Failed therapy dog training, but never lost his cheerful spirit",
+                                "Brings smiles and comfort to seniors every day",
+                                "Expert in tail wags and gentle cuddles",
+                                "Loves visiting care homes and making new friends",
+                                "Always ready for a treat or a belly rub",
+                                "Believes everyone deserves a little joy and companionship"
                             ]
                         }
                     ].map((person, idx) => (

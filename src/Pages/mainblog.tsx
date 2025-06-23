@@ -41,7 +41,7 @@ function MainBlog() {
                
                     <div className="text-center mb-4 text-white">
 
-                      <h1>Health and Welness</h1>
+                      <h1>Health and Wellness</h1>
                       <p>Explore our latest articles on health and wellness for seniors, covering topics from nutrition to mental health.</p>
                     </div>
                      <BlogComponent id={3} />

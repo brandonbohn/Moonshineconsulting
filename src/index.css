@@ -97,13 +97,15 @@ margin: 20px auto;
 
      .mainbox {
       width: 950px;
-      height: 3000px;
+      height: 2560px;
       background-color: #1b4332;
     margin:auto 200px;
     padding: auto;
       color: white;
        max-width: auto;
        position: relative;
+       margin-top: 200px;
+       margin-bottom: 200px;
      
      }
 
@@ -123,10 +125,10 @@ margin: 20px auto;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding: 25px;
-      margin: 25px;
-      margin-right: 400px;
-      margin-left: 400px;
+
+   
+      margin-top: 200px;
+      margin-bottom: 200px;
   
       
     

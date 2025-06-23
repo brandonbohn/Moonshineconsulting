@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BusinessHeader = () => (
-  <div className="bg-dark text-white py-3 px-2 text-center" style={{ fontSize: "1rem" }}>
+  <div className="cards text-white py-3 px-2 text-center" style={{ fontSize: "1rem" }}>
     <div>
       <strong>Location:</strong> Fredricktown, Missouri
     </div>

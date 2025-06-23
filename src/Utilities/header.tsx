@@ -8,9 +8,9 @@ function Header(){
 <section>
 
      
-<div className="Header bg-dark text-white py-3">
+<div className="Header cards text-white py-3">
 
-<nav className="navbar navbar-expand-lg text-white">
+<nav className="navbar navbar-expand-lg text-white cards">
   <div className="container-fluid d-flex justify-content-between align-items-start px-0">
     {/* Logo fully left and top with 20px bottom margin */}
     <div style={{ marginRight: "24px", alignSelf: "flex-start" }}>

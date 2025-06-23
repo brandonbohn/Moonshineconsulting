@@ -3,7 +3,7 @@ import ContactUs from './Pages/contactus.tsx';
 import Blog from './Pages/mainblog.tsx';
 import Footer from './Utilities/Footer.tsx';
 import Header from './Utilities/header.tsx';
-import HealthandWellness from './Pages/healthandwelness.tsx';
+import HealthandWellness from './Pages/healthandwellness.tsx';
 import MoonshinesCorner from './Pages/moonshinescorner.tsx';
 import PrivacyPolicy from './Pages/privacypolicy.tsx';
 import TermsAndConditions from './Pages/termsandconditions.tsx';
@@ -23,7 +23,7 @@ function App() {
          <Route path="/" element={<Homepage/>}/> 
          <Route path="/registration" element={<ContactUs/>}/>
          <Route path="/mainblog" element={<Blog/>}/>
-         <Route path="/healthandwelness" element={<HealthandWellness/>}/>
+         <Route path="/healthandwellness" element={<HealthandWellness/>}/>
          <Route path="/moonshinescorner" element={<MoonshinesCorner/>}/>
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>

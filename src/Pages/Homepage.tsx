@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../homepage.css';
-import  ProductComponent from '../components/blogcomponentengine.tsx';
+import  ProductComponent from '../components/productgenerator.tsx';
 
 export const Homepage = () => {
   return (
@@ -225,7 +225,7 @@ export const Homepage = () => {
               <p className="mb-2" style={{ fontSize: "0.9rem" }}>
                 Expert tips from a Nurse that has used her compassion to get families and seniors through tough times as they transition throughout their later life.
               </p>
-              <a href="./healthandwelness" className="btn btn-warning btn-sm">Read More</a>
+              <a href="./healthandwellness" className="btn btn-warning btn-sm">Read More</a>
             </div>
           </div>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
@@ -235,12 +235,13 @@ export const Homepage = () => {
                 Personalized recommendations on how to get rehabilitated and back to living life to your fullest, or living your best life with your needs in mind.
               </p>
               <a
-                href="./healthandwelness"
+                href="./healthandwellness"
                 className="btn btn-warning btn-sm"
               >
                 Read More
               </a>
             </div>
+            {/*   */}
           </div>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
             <div className="card h-100 w-100 d-flex flex-column justify-content-center align-items-center">

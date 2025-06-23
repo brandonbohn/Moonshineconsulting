@@ -2,8 +2,8 @@ import React from 'react';
 import BlogComponent from '../components/blogcomponentengine.tsx';
 function RehabSolutions() {
   return (
-        <div style={{ fontFamily: "sans-serif", background: "#b8860b", minHeight: "100vh" }}>
-            <header style={{ background: "#2d5a2d", padding: "30px", textAlign: "center" }}>
+        <div style={{ fontFamily: "sans-serif", background: "#f0f8f5", minHeight: "100vh" }}>
+            <header style={{ background: "#006a70", padding: "30px", textAlign: "center" }}>
                 <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#ffffff" }}>Health and Wellness</h1>
                 <p style={{ fontSize: "1.25rem", color: "#ffffff" }}>
                     Your central location for the information you need to stay healthy.
@@ -14,7 +14,7 @@ function RehabSolutions() {
                 <section>
                   
                      <div>
-                    <BlogComponent id={4} />
+                    <BlogComponent id={2} />
                 </div>
                 </section>
             </main> 

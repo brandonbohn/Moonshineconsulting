@@ -3,7 +3,7 @@ import BlogComponent from "../components/blogcomponentengine.tsx";
 function MainBlog() {
   return (
     <div>
-<div >
+<div className="mainbox" >
 
 <div className="bg-dark text-white p-4">
 

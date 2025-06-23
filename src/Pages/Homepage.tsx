@@ -1,6 +1,8 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../homepage.css';
+import  ProductComponent from '../components/blogcomponentengine.tsx';
+
 export const Homepage = () => {
   return (
     <div>
@@ -203,16 +205,18 @@ export const Homepage = () => {
   {/* Blog posts section moved here, between About Us and Footer */}
   <div style={{ paddingTop: "48px" }}>
     <div className="row card-row">
-      <div className="col-12 d-flex justify-content-center" style={{ paddingTop: "50px" }}>
-        {/* Three cards side by side, each 400x300px, with 32px gap, responsive */}
-        <div className="d-flex blog-cards-responsive" style={{ gap: "32px" }}>
+      <div>
+
+<div className="col-12 d-flex justify-content-center" style={{ paddingTop: "50px" }}>
+        {/* 2x2 grid for blog cards */}
+        <div className="d-flex flex-wrap justify-content-center blog-cards-responsive" style={{ gap: "32px", width: "100%" }}>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
             <div className="card h-100 w-100 d-flex flex-column justify-content-center align-items-center">
               <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Moonshine's Corner</h2>
               <p className="mb-2" style={{ fontSize: "0.9rem" }}>
                 Heartwarming stories about the impact of man's best friend, told by our very own mascot Moonshine, showing how dogs can really change lives.
               </p>
-                <a href="./moonshinescorner" className="btn btn-warning btn-sm">Read More</a>
+              <a href="./moonshinescorner" className="btn btn-warning btn-sm">Read More</a>
             </div>
           </div>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
@@ -221,7 +225,7 @@ export const Homepage = () => {
               <p className="mb-2" style={{ fontSize: "0.9rem" }}>
                 Expert tips from a Nurse that has used her compassion to get families and seniors through tough times as they transition throughout their later life.
               </p>
-              <a href="./seniortips" className="btn btn-warning btn-sm">Read More</a>
+              <a href="./healthandwelness" className="btn btn-warning btn-sm">Read More</a>
             </div>
           </div>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
@@ -231,39 +235,43 @@ export const Homepage = () => {
                 Personalized recommendations on how to get rehabilitated and back to living life to your fullest, or living your best life with your needs in mind.
               </p>
               <a
-                href="./rehabsolutions"
+                href="./healthandwelness"
                 className="btn btn-warning btn-sm"
               >
                 Read More
               </a>
-
-              <div>
-
-
-                
-              </div>
-              
             </div>
-            
           </div>
+          <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
+            <div className="card h-100 w-100 d-flex flex-column justify-content-center align-items-center">
+              <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>The Senior Policy Beat</h2>
+              <p className="mb-2" style={{ fontSize: "0.9rem" }}>
+                Up to date information on the latest healthcare policies, changes, and how they affect you and your loved ones.
+              </p>
+              <a
+                href="./seniorpolicybeat"
+                className="btn btn-warning btn-sm"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      
+      
+          
+          
         </div>
       </div>
     </div>
   </div>
-
-  {/* Caregiver Tools section: heading above product boxes and centered */}
-
-
-
-<div>
-
-  <h1>test</h1>
-</div>
-
-
-
-
-
+<div
+  className='padding-top-48'
+  style={{
+    marginTop: "180px", // Increased marginTop for more space between blogs and product cards
+    paddingTop: "48px",
+  }}
+>
   <div className="d-flex flex-column align-items-center mt-5" style={{ paddingBottom: "64px", paddingTop: "64px" }}>
     <h2 className="card-title text-center mb-4" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#fff" }}>
       Caregiver Tools We Love
@@ -278,6 +286,10 @@ export const Homepage = () => {
           padding: "32px"
         }}
       >
+        <div>
+
+
+        </div>
         <button type="button" className="btn btn-warning btn-block btn-lg w-100 mt-4">product</button>
       </div>
       <div
@@ -293,6 +305,7 @@ export const Homepage = () => {
       </div>
     </div>
   </div>
+</div>
 
    
           </div>

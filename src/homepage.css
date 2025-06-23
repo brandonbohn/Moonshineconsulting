@@ -1,7 +1,13 @@
 
 
 
-
+.Title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  color: #08023a;
+}
 
 .logo {
   position: relative;
@@ -41,6 +47,13 @@ position:relative;
   padding: 0 17rem; /* default for larger screens */
 }
 
+.body {
+  
+  font-family: Arial, sans-serif;
+  color: #0a0a0a;
+  padding: 20px;
+  font-size:large
+}
 @media (max-width: 768px){
   .content-container {
     padding: 0 1rem;

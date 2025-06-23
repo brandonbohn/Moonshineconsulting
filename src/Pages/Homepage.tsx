@@ -7,7 +7,7 @@ export const Homepage = () => {
   return (
     <div>
       
-      <div className="container bg-dark positions  my-5" >
+      <div className="container cards positions  my-5" >
         <div className="row align card-body">
           <div className="col-12 col-md-6 text-center">
             <img src="../images/Moonshineoutdoors.jpg"  alt="moonshine"
@@ -82,7 +82,7 @@ export const Homepage = () => {
                         alt={member.name}
                         style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
                       />
-                      <div className="card-body text-white text-center bg-dark rounded-bottom">
+                      <div className="card-body text-white text-center cards rounded-bottom">
                         <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
                         <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
                         {member.experience}
@@ -115,7 +115,7 @@ export const Homepage = () => {
           </div> 
  
    <div
-        className='container bg-dark text-white col-12 col-md-6 col-sm-12 text-center'
+        className='container text-white col-12 col-md-6 col-sm-12 text-center'
         style={{ maxHeight: "250vh", padding: "0px 0", width: "70vw" }}
       >
         <div>
@@ -126,7 +126,7 @@ export const Homepage = () => {
               padding: "30px",
               maxWidth: "900px",
               margin: "0 auto",
-              background: "rgba(33,37,41,0.95)",
+              background: "#1b4332",
               borderRadius: "16px",
               boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
               minHeight: "fit-content",
@@ -281,7 +281,7 @@ export const Homepage = () => {
       <div
         className="card d-flex flex-column align-items-center product-card-responsive"
         style={{
-          background: "#212529",
+          background: "#1b4332",
           color: "#fff",
           width: "400px",
           padding: "32px"
@@ -296,7 +296,7 @@ export const Homepage = () => {
       <div
         className="card d-flex flex-column align-items-center product-card-responsive"
         style={{
-          background: "#212529",
+          background: "#1b4332",
           color: "#fff",
           width: "400px",
           padding: "32px"

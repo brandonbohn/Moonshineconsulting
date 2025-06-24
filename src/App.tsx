@@ -12,6 +12,7 @@ import BioPage from './Pages/biopage.tsx';
 import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
 import BlogComponent from './components/blogcomponentengine.tsx';
 import ProductComponent from './components/productgenerator.tsx';
+import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
 
 
 import { Routes, Route,  } from 'react-router-dom';  
@@ -29,9 +30,12 @@ function App() {
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
          <Route path='/blogentries/moonshinescornerblogentry'element={<MoonshinesCornerBlogEntry/>}/>
           <Route path="/biopage" element={<BioPage/>}/>
-          <Route path="/seniorpolicybeat" element={<SeniorPolicyBeat/>}/>
+          <Route path="blogentries/seniorpolicybeatblogentry" element={<SeniorPolicyBeatBlogEntry/>}/>
           <Route path="/blogcomponent" element={<BlogComponent/>}/>
           <Route path="/productcomponent" element={<ProductComponent/>}/>
+          <Route path="/seniorpolicybeat" element={<SeniorPolicyBeat/>}/>
+       
+
           
           
 

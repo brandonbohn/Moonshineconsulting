@@ -13,13 +13,13 @@ export const blogData = [
   },
   {
     image: "./images/beach.jpg",
-    title: "Medicare and You: A Guide for Seniors",
-    article: "Understanding Medicare is crucial for seniors to navigate their healthcare options effectively. This article provides a comprehensive overview of Medicare, including its different parts, coverage options, and how to enroll.",
+    title: "Medicare Home Health: What Seniors Need to Know",
+    article: "Medicare home health services can provide essential support for seniors, including skilled nursing care, physical therapy, and home health aide services. This article exlplains the orgins of Home Health and how it has evolved to meet the needs of seniors today and changed to limit the ablility of nurses to provide personal care to seniors.",
     date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }),
     category: "SeniorPolicyBeat",
-    author: "Senior Policy Team",
+    author: "Karen Undrwood RN BSN",
     id: 2,
-    link: "./blogentries/medicareandyou",
+    link: "./blogentries/seniorpolicybeatblogentry",
   },
   {
     image: "./images/grandma.jpg",
@@ -43,26 +43,3 @@ export const blogData = [
   },
 ];
 
-export const ProductData = [
-  {
-        name: "Moonshine Tumbler",
-        description: "A stylish tumbler for your favorite drinks.",
-        photo: "/images/tumbler.jpg",
-        price: 19.99,
-        link: "https://example.com/tumbler",
-    },
-    {
-        name: "Consulting Session",
-        description: "One-hour professional consulting session.",
-        photo: "/images/consulting.jpg",
-        price: 99.99,
-        link: "https://example.com/consulting",
-    },
-    {
-        name: "Branded Hoodie",
-        description: "Comfortable hoodie with our logo.",
-        photo: "/images/hoodie.jpg",
-        price: 49.99,
-        link: "https://example.com/hoodie",
-    },
-];

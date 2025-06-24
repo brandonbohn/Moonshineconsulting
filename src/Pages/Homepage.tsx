@@ -5,14 +5,14 @@ import  ProductComponent from '../components/productgenerator.tsx';
 
 export const Homepage = () => {
   return (
-    <div>
+    <div style={{ fontFamily: "sans-serif", minHeight: "100vh", paddingTop: "100px" }}>
       
       <div className="container bg-dark positions  my-5" >
-        <div className="row align card-body ">
-          <div className="col-12 col-md-6 text-center">
+        <div className="row align card-body">
+          <div className="col-12 col-md-6 "> 
             <img src="../images/Moonshineoutdoors.jpg"  alt="moonshine"
               width={400}
-              height={550} />
+              height={525} />
           </div>
           <div className="col-12 col-md-6 text-white d-flex flex-column justify-content-center align-items-center">
             <h1 className='title text-center'>Welcome to Moonshine Consulting</h1>
@@ -82,7 +82,7 @@ export const Homepage = () => {
                         alt={member.name}
                         style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
                       />
-                      <div className="card-body text-white text-center bg-dark rounded-bottom">
+                      <div className="card-body text-white text-center cards rounded-bottom">
                         <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
                         <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
                         {member.experience}

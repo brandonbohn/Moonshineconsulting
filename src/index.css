@@ -96,14 +96,14 @@ margin: 20px auto;
          }
 
      .mainbox {
-      width: 950px;
-      height: 2560px;
+    display: flex;
+    flex-direction: column;
       background-color: #1b4332;
-    margin:auto 200px;
+    margin:auto; 
     padding: auto;
       color: white;
        max-width: auto;
-       position: relative;
+       
        margin-top: 200px;
        margin-bottom: 200px;
      

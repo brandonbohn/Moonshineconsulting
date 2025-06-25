@@ -13,6 +13,7 @@ import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
 import BlogComponent from './components/blogcomponentengine.tsx';
 import ProductComponent from './components/productgenerator.tsx';
 import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
+import seniorlivingdesk from './Pages/seniorlivingdesk.tsx';
 
 
 import { Routes, Route,  } from 'react-router-dom';  
@@ -34,6 +35,7 @@ function App() {
           <Route path="/blogcomponent" element={<BlogComponent/>}/>
           <Route path="/productcomponent" element={<ProductComponent/>}/>
           <Route path="/seniorpolicybeat" element={<SeniorPolicyBeat/>}/>
+          <Route path="/seniorlivingdesk" element={<SenioLivingDesk/>}/>
        
 
           

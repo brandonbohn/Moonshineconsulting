@@ -221,9 +221,9 @@ export const Homepage = () => {
           </div>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
             <div className="card h-100 w-100 d-flex flex-column justify-content-center align-items-center">
-              <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Senior living desk </h2>
+              <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Senior Living Desk </h2>
               <p className="mb-2" style={{ fontSize: "0.9rem" }}>
-                Expert tips from a Nurse that has used her compassion to get families and seniors through tough times as they transition throughout their later life.
+                Expert advice about how you seniors can live a better life and take care of your themselves better while transitioning throughout their later life.
               </p>
               <a href="./seniorlivingdesk" className="btn btn-warning btn-sm">Read More</a>
             </div>

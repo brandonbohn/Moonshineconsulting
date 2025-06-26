@@ -20,7 +20,7 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 		const entry = ProductData.find(product => product.productid === productid);
 		if (entry) entries = [{ ...entry, imageUrl: entry.photo }];
 	}
-    const Productentry= ProductData?.find(product => product.productid === productid);
+    const ProductEntry= ProductData?.find(product => product.productid === productid);
 	if (entries.length === 0) {
 		return <div>No product entries found.</div>;
 	}

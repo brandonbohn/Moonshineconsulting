@@ -6,7 +6,7 @@ function SeniorPolicyBeatBlog()
         <div>
         </div>
         <h1 className="Titles" style={{ textAlign: "center", padding: "20px", background: "#000000", margin: "50px", borderRadius: "8px" }}>
-         <strong>Welcome to the Senior Policy Beat,</strong>  where we break down the most important issues affecting older adults and their care. Whether you’re navigating Medicare, helping a loved one age at home, or just trying to understand how today’s health policies impact real people — you’re in the right place.
+          <strong>Welcome to the Senior Policy Beat,</strong> where we break down the most important issues affecting older adults and their care. Whether you’re navigating Medicare, helping a loved one age at home, or just trying to understand how today’s health policies impact real people — you’re in the right place.
         </h1>
       </div>
       <h1 className="Titles" style={{ textAlign: "center", padding: "20px", background: "#000000", marginTop: "50px", borderRadius: "8px" }}>Medicare Home Health: What Seniors Need to Know</h1>

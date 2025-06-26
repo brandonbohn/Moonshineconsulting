@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogComponent from '../components/blogcomponentengine.tsx';
-function RehabSolutions() {
+function TheSerenityDesk() {
   return (
         <div style={{ fontFamily: "sans-serif", background: "#f0f8f5", minHeight: "100vh" }}>
             <header style={{ background: "#006a70", padding: "30px", textAlign: "center" }}>
@@ -25,4 +25,4 @@ function RehabSolutions() {
     );
 };
 
-export default RehabSolutions;
+export default TheSerenityDesk;

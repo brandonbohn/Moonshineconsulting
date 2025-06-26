@@ -3,7 +3,6 @@ import ContactUs from './Pages/contactus.tsx';
 import Blog from './Pages/mainblog.tsx';
 import Footer from './Utilities/Footer.tsx';
 import Header from './Utilities/header.tsx';
-import HealthandWellness from './Pages/healthandwellness.tsx';
 import MoonshinesCorner from './Pages/moonshinescorner.tsx';
 import PrivacyPolicy from './Pages/privacypolicy.tsx';
 import TermsAndConditions from './Pages/termsandconditions.tsx';
@@ -14,6 +13,7 @@ import BlogComponent from './components/blogcomponentengine.tsx';
 import ProductComponent from './components/productgenerator.tsx';
 import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
 import SeniorLivingDesk from './Pages/seniorlivingdesk.tsx';
+import TheSerenityDesk from './Pages/TheSerenityDesk.tsx';
 
 
 import { Routes, Route,  } from 'react-router-dom';  
@@ -25,7 +25,7 @@ function App() {
          <Route path="/" element={<Homepage/>}/> 
          <Route path="/registration" element={<ContactUs/>}/>
          <Route path="/mainblog" element={<Blog/>}/>
-         <Route path="/healthandwellness" element={<HealthandWellness/>}/>
+         <Route path="/theserenitydesk" element={<TheSerenityDesk/>}/>
          <Route path="/moonshinescorner" element={<MoonshinesCorner/>}/>
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>

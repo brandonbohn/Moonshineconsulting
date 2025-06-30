@@ -16,7 +16,7 @@ export const Homepage = () => {
           </div>
           <div className="col-12 col-md-6 text-white d-flex flex-column justify-content-center align-items-center">
             <h1 className='title text-center'>Welcome to Moonshine Consulting</h1>
-            <p className='title text-center'>Moonshine consulting was created by a experienced nurse to inform seniors and caregivers of the best ways to navigate the system and grow in seniors elder years and for families to know what to do to help seniors. It is a advocacy platform for seniors and a resource to help them thorugh thier golden years </p>
+            <p className='title text-center'>Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters</p>
             <a href="./mainblog" className="btn btn-warning btn-block btn-lg mt-3">Explore the Blog</a>
           </div>
         </div>

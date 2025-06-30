@@ -10,12 +10,13 @@ export const Homepage = () => {
       <div className="container bg-dark positions  my-5" >
         <div className="row align card-body">
           <div className="col-12 col-md-6 "> 
-            <img src="../images/Moonshineoutdoors.jpg"  alt="moonshine"
+            <img src="../images/Moonshineandresident.jpg"  alt="Senior-resident bonding with dog belonging to her nurse caregiver"
               width={400}
               height={525} />
           </div>
           <div className="col-12 col-md-6 text-white d-flex flex-column justify-content-center align-items-center">
             <h1 className='title text-center'>Welcome to Moonshine Consulting</h1>
+            <p className='title text-center'>Moonshine consulting was created by a experienced nurse to inform seniors and caregivers of the best ways to navigate the system and grow in seniors elder years and for families to know what to do to help seniors. It is a advocacy platform for seniors and a resource to help them thorugh thier golden years </p>
             <a href="./mainblog" className="btn btn-warning btn-block btn-lg mt-3">Explore the Blog</a>
           </div>
         </div>

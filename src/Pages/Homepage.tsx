@@ -223,19 +223,19 @@ export const Homepage = () => {
             <div className="card h-100 w-100 d-flex flex-column justify-content-center align-items-center">
               <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Senior Living Desk </h2>
               <p className="mb-2" style={{ fontSize: "0.9rem" }}>
-                Expert advice about how you seniors can live a better life and take care of your themselves better while transitioning throughout their later life.
+                Expert advice about how you seniors can live a better life and take care of  themselves better while transitioning throughout their later life.
               </p>
               <a href="./seniorlivingdesk" className="btn btn-warning btn-sm">Read More</a>
             </div>
           </div>
           <div className="blog-card-responsive" style={{ width: "400px", height: "300px" }}>
             <div className="card h-100 w-100 d-flex flex-column justify-content-center align-items-center">
-              <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Rehab Solutions</h2>
+              <h2 className="card-title text-center" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Voices in Care</h2>
               <p className="mb-2" style={{ fontSize: "0.9rem" }}>
-                Personalized recommendations on how to get rehabilitated and back to living life to your fullest, or living your best life with your needs in mind.
+                A place where caregivers and professionals can share their insights, stories, and struggles from the field.
               </p>
               <a
-                href="./healthandwellness"
+                href="./Voicesincare"
                 className="btn btn-warning btn-sm"
               >
                 Read More

@@ -1,12 +1,12 @@
 import React from 'react';
 import BlogComponent from '../components/blogcomponentengine.tsx';
-function TheSerenityDesk() {
+function Voicesincare() {
   return (
         <div style={{ fontFamily: "sans-serif", background: "#f0f8f5", minHeight: "100vh" }}>
             <header style={{ background: "#006a70", padding: "30px", textAlign: "center" }}>
-                <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#ffffff" }}>Health and Wellness</h1>
+                <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#ffffff" }}>Voices In Care</h1>
                 <p style={{ fontSize: "1.25rem", color: "#ffffff" }}>
-                    Your central location for the information you need to stay healthy.
+                   A place where caregivers and professionals can share their insights, stories, and struggles from the field.
                 </p>
             
             </header>
@@ -25,4 +25,4 @@ function TheSerenityDesk() {
     );
 };
 
-export default TheSerenityDesk;
+export default Voicesincare;

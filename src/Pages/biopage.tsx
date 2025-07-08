@@ -24,7 +24,7 @@ function BioPage() {
                             ]
                         },
                         {
-                            name: "Christie Stephen RN ODG Certified, Behavioral Health Certified",
+                            name: "Christie Stephan RN ODG Certified, Behavioral Health Certified",
                             title: "Insurance Specialist and Contributor",
                             picture: "../../images/christie.jpg",
                             bioPoints: [

@@ -51,7 +51,7 @@ export const Homepage = () => {
                     },
                     {
                       id: 2,
-                      name: "Christie Stephen, RN ODG Certified, Behavioral Health Certified",
+                      name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
                       image: "./images/Christie.jpg",
                       experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
                       title: "Insurance Specialist"
@@ -63,13 +63,7 @@ export const Homepage = () => {
                       experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
                       title: "Therapy Dog"
                     },
-                    {
-                      id: 4,
-                      name: "Brandon W. Bohn",
-                      image: "./images/moonshine.jpg",
-                      experience: "A versatile professional with 15 years of experience in DC policy teaching and full stack development, dedicated to bringing startup visions to life.",
-                      title: "Technical Founder"
-                    }
+                  
                     ].map((member, idx) => (
                     <div
                       key={member.id}
@@ -147,12 +141,12 @@ export const Homepage = () => {
                 <li>Home Health services</li>
                 <li>Hospice care</li>
                 <li>Workers Compensation Insurance</li>
-                <li>Occupational therapy</li>
+                <li>Long Term Care</li>
               </ul>
             </p>
             <h5>What We Offer For Seniors and Caregivers:</h5>
             <ul>
-              <li>Guidance on Medicare, Home Health, Hospice, and rehabilitation options</li>
+              <li>Guidance on Medicare, Home Health, Hospice and Long Term Care</li>
               <li>Educational resources about Missouri’s healthcare policies and how they impact you</li>
               <li>Practical solutions for daily healthcare challenges</li>
               <li>Support during life transitions and care decisions</li>

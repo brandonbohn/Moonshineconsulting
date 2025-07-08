@@ -40,7 +40,6 @@ function BioPage() {
                             title: "Lovable Mascot and Contributor",
                             picture: "../../images/moonshine.jpg",
                             bioPoints: [
-                                "Failed therapy dog training, but never lost his cheerful spirit",
                                 "Brings smiles and comfort to seniors every day",
                                 "Expert in tail wags and gentle cuddles",
                                 "Loves visiting care homes and making new friends",
@@ -77,8 +76,8 @@ function BioPage() {
             <section>
                 <h2 style={{ color: "#fff" }}>Contact</h2>
                 <ul style={{ color: "#fff" }}>
-                    <li>Email: your.email@example.com</li>
-                    <li>LinkedIn: linkedin.com/in/yourprofile</li>
+                    <li>Email: moonshineconsulting6@gmail.com</li>
+                
                 </ul>
             </section>
         </div>

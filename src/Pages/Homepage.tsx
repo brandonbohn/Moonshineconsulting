@@ -61,7 +61,7 @@ export const Homepage = () => {
                       name: "Moonshine",
                       image: "./images/moonshine.jpg",
                       experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
-                      title: "Therapy Dog"
+                      title: "Beloved Senior Companion"
                     },
                   
                     ].map((member, idx) => (

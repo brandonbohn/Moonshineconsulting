@@ -46,7 +46,7 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 					 <p className="text-center">{entry.date}</p> 
                     <a
 						href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
-                        className="text-center mb-4 text-white btn btn-warning btn-block btn-lg mt-3"
+                        className=" mb-4 text-white btn btn-warning btn-block btn mt-3"
                     >
                         Read More
                     </a>

@@ -1,117 +1,36 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../homepage.css';
+import '../css/homepage.css';
+import '../css/index.css';
 import  ProductComponent from '../components/productgenerator.tsx';
 
 export const Homepage = () => {
   return (
-    <div style={{ fontFamily: "sans-serif", minHeight: "100vh", paddingTop: "100px" }}>
+    <div style={{ fontFamily: "sans-serif", }}>
       
-      <div className="container bg-dark positions  my-5" >
-        <div className="row align card-body">
+      <div className="container Text box positions  my-5" >
+        <div className="row align card-body Text">
           <div className="col-12 col-md-6 "> 
             <img src="../images/Moonshineandresident.jpg"  alt="Senior-resident bonding with dog belonging to her nurse caregiver"
               width={400}
               height={525} />
           </div>
-          <div className="col-12 col-md-6 text-white d-flex flex-column justify-content-center align-items-center">
-            <h1 className='title text-center'>Welcome to Moonshine Consulting</h1>
-            <p className='title text-center'>Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters</p>
+          <div className="col-12 col-md-6  d-flex flex-column justify-content-center align-items-center">
+            <h1 className='Titles'style={{ fontSize: "44px", fontFamily: 'arialblack' }}>Welcome to Moonshine Consulting</h1>
+            <p className='Text col-12 col-md-6'style={{ fontSize: "24px", fontFamily: 'arial' }}>Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters</p>
             <a href="./mainblog" className="btn btn-warning btn-block btn-lg mt-3">Explore the Blog</a>
           </div>
         </div>
       </div>
       <div>
-<div className="row container d-flex justify-content-center align-items-center text-center">
-      
-
-
-
-
-        
-        </div>
-
-
 
 
         <div>
 
           <div>
-          <div className="d-flex justify-content-center align-items-start" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
-            <div className="d-flex flex-wrap justify-content-center align-items-start founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
-              <div className="container">
-                <div className="row">
-                    {[
-                    {
-                      id: 1,
-                      name: "Karen Underwood, RN BSN",
-                      image: "./images/Nurse.jpg",
-                      experience: "30 Years Home Health and Hospice experience, both in the field and management.",
-                      title: "Registered Nurse"
-                    },
-                    {
-                      id: 2,
-                      name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
-                      image: "./images/Christie.jpg",
-                      experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
-                      title: "Insurance Specialist"
-                    },
-                    {
-                      id: 3,
-                      name: "Moonshine",
-                      image: "./images/moonshine.jpg",
-                      experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
-                      title: "Beloved Senior Companion"
-                    },
-                  
-                    ].map((member, idx) => (
-                    <div
-                      key={member.id}
-                      className="col-12 col-md-6 d-flex justify-content-center mb-4"
-                      style={{ alignItems: "stretch" }}
-                    >
-                      <div className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "100%" }}>
-                      <img
-                        src={member.image}
-                        className="nursepicture img-fluid rounded"
-                        alt={member.name}
-                        style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-                      />
-                      <div className="card-body text-white text-center cards rounded-bottom">
-                        <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
-                        <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                        {member.experience}
-                        </p>
-                        <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                        {member.title}
-                        </p>
-                      </div>
-                      </div>
-                    </div>
-                    ))}
-                </div>
-              </div>
-              <style>
-                {`
-                  @media (max-width: 767px) {
-                    .founder-cards-responsive {
-                      flex-direction: column !important;
-                      gap: 32px !important;
-                      align-items: center !important;
-                    }
-                    .founder-card-responsive {
-                      width: 100% !important;
-                      max-width: 350px;
-                    }
-                  }
-                `}
-              </style>
-            </div>
-          </div> 
- 
-   <div
-        className='container text-white col-12 col-md-6 col-sm-12 text-center'
-        style={{ maxHeight: "250vh", padding: "0px 0", width: "70vw" }}
+ <div
+        className='container  col-12 col-md-6 col-sm-12 '
+        style={{ maxHeight: "250vh", padding: "0px 0", width: "100vw" }}
       >
         <div>
           <div className="container"></div>
@@ -121,12 +40,12 @@ export const Homepage = () => {
               padding: "30px",
               maxWidth: "900px",
               margin: "0 auto",
-              background: "#1b4332",
+              background: "#ffffff",
               borderRadius: "16px",
               boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
               minHeight: "fit-content",
               width: "100%",
-              fontSize: "1rem",
+              fontSize: "16px",
             }}
           >
             <h1>Who We Are</h1>
@@ -189,6 +108,80 @@ export const Homepage = () => {
           `}
         </style>
             </div>
+
+          <div className="d-flex justify-content-center align-items-start" style={{ gap: "20px", padding: "30px 0", margin: "30px auto" }}>
+            <div className="d-flex flex-wrap justify-content-center align-items-start founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
+              <div className="container">
+                <div className="row">
+                    {[
+                    {
+                      id: 1,
+                      name: "Karen Underwood, RN BSN",
+                      image: "./images/Nurse.jpg",
+                      experience: "30 Years Home Health and Hospice experience, both in the field and management.",
+                      title: "Registered Nurse"
+                    },
+                    {
+                      id: 2,
+                      name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
+                      image: "./images/Christie.jpg",
+                      experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
+                      title: "Insurance Specialist"
+                    },
+                    {
+                      id: 3,
+                      name: "Moonshine",
+                      image: "./images/moonshine.jpg",
+                      experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
+                      title: "Beloved Senior Companion"
+                    },
+                  
+                    ].map((member, idx) => (
+                    <div
+                      key={member.id}
+                      className="col-12 col-md-6 d-flex justify-content-center mb-4"
+                      style={{ alignItems: "stretch" }}
+                    >
+                      <div className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "100%" }}>
+                      <img
+                        src={member.image}
+                        className="nursepicture img-fluid rounded"
+                        alt={member.name}
+                        style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+                      />
+                      <div className="card-body Text text-center  rounded-bottom">
+                        <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
+                        <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                        {member.experience}
+                        </p>
+                        <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                        {member.title}
+                        </p>
+                      </div>
+                      </div>
+                    </div>
+                    ))}
+                </div>
+              </div>
+              <style>
+                {`
+                  @media (max-width: 767px) {
+                    .founder-cards-responsive {
+                      flex-direction: column !important;
+                      gap: 32px !important;
+                  
+                    }
+                    .founder-card-responsive {
+                      width: 100% !important;
+                      max-width: 350px;
+                    }
+                  }
+                `}
+              </style>
+            </div>
+          </div> 
+ 
+  
           
         </div>  
 

@@ -16,7 +16,7 @@ function MoonshinesCorner() {
             <main style={{ maxWidth:"auto", margin: "20px", padding: "20px"  }}>
                 <section>
                     <h2 style={{ color: "#ffffff" }}>Latest Interviews</h2>
-                     <div>
+                     <div className="col 100">
                     <BlogComponent id={1} />
                 </div>
                 </section>

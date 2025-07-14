@@ -5,7 +5,7 @@ return(
 <div>
 
 
-    <h1>senior living</h1>
+    <h1 className="text-white">Senior Living Desk</h1>
 
 
 </div>

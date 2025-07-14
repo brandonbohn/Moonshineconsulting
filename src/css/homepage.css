@@ -81,4 +81,17 @@ background-color: #1b4332;
     height: auto;
     width: 100vw;
   }
+  .mainbox {
+    display: flex;
+    flex-direction: column;
+      background-color: #fdf5ef;
+    margin:auto; 
+    padding: auto;
+      color: rgb(237, 15, 15);
+       max-width: auto;
+       
+       margin-top: 2000px;
+       margin-bottom: 200px;
+     
+     }
 }

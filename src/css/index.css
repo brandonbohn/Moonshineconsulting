@@ -1,6 +1,6 @@
 .background
 {
-    background-color: #08023a;
+    background-color: #faf0e6;
     background-position: calc(50% - 1px) calc(50% - 1px);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -13,14 +13,14 @@
 
 .Titles
 {
-    color: white;
+    color: #0f0756;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 50px;
     text-align: center;
 }
-.text
+.Text
 {
-    color: white;
+    color: #2c2c2c;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     text-align: center;
@@ -28,17 +28,29 @@
 }
 .box
 {
-
-width: 650px;
-height: 170px;
-background-color: #0d0d0d;
+max-width: fit-content;
+height: fit-content;
+background-color: white;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(231, 5, 5, 0.5);  
-color: white;
+color: #08023a;
 padding: 20px;
 margin: 20px auto;
    
 }
+ .Dabox {
+    display: flex;
+    flex-direction: column;
+      background-color: #0b034e;
+    margin:auto; 
+    padding: auto;
+      color: #ffffff;
+       max-width: auto;
+       
+       margin-top: 200px;
+       margin-bottom: 200px;
+     
+     }
     .Header {
       display: inline;
       justify-content:space-around;
@@ -95,19 +107,7 @@ margin: 20px auto;
        max-width: 100%;
          }
 
-     .mainbox {
-    display: flex;
-    flex-direction: column;
-      background-color: #1b4332;
-    margin:auto; 
-    padding: auto;
-      color: white;
-       max-width: auto;
-       
-       margin-top: 200px;
-       margin-bottom: 200px;
      
-     }
 
 
      .boxposition2{

@@ -1,29 +1,31 @@
 import React from 'react';
 
-const blogEntry = {
-    title: "Rehab Solutions: Your Path to Recovery",
-    date: "June 10, 2024",
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    paragraphs: [
-        "At Rehab Solutions, we believe in a holistic approach to recovery. Our team of dedicated professionals is here to guide you every step of the way.",
-        "Whether you're recovering from surgery, injury, or managing a chronic condition, our personalized programs are designed to help you regain strength and confidence.",
-        "Join our community and take the first step towards a healthier, happier you. Contact us today to learn more about our services and how we can support your journey."
-    ]
-};
+function Voicesincareblogentry()
+{
+  return (
+    <div className="Text box" style={{ fontFamily: "sans-serif", minHeight: "100vh" }}>
+      <div>
+        <div>
+        </div>
+      </div>
+      <h1 className="Titles" style={{ textAlign: "center", padding: "20px", background: "#ffffff", marginTop: "50px", borderRadius: "8px" }}>The Heart of Hospice Nursing: Compassion, Comfort, and Connection</h1>
+      
 
-const RehabSolutionsBlogEntry = () => (
-    <article style={{ maxWidth: 700, margin: '2rem auto', padding: '1rem', fontFamily: 'sans-serif' }}>
-        <h1>{blogEntry.title}</h1>
-        <p style={{ color: '#888', marginBottom: '1rem' }}>{blogEntry.date}</p>
-        <img
-            src={blogEntry.imageUrl}
-            alt="Rehab Solutions"
-            style={{ width: '100%', borderRadius: 8, marginBottom: '1.5rem' }}
-        />
-        {blogEntry.paragraphs.map((text, idx) => (
-            <p key={idx} style={{ lineHeight: 1.7, marginBottom: '1rem' }}>{text}</p>
-        ))}
-    </article>
-);
+<p >
+      There are so many things I could say about nursing, but one of the most rewarding—and humbling—experiences has been working in hospice home care.
 
-export default RehabSolutionsBlogEntry;
+Too often, patients come to hospice care much later than they should in their disease journey. It’s heartbreaking to see a patient struggle, yet it is an honor to walk alongside them during this precious, final chapter. When I first assess a patient for hospice, I take time to explain the hospice philosophy — a focus on comfort, dignity, and quality of life — and become their advocate, supporting their decisions and those of their families.
+
+There is an instant intimacy that forms between patient and nurse. I remember one patient who, while I was helping ease her severe nausea, looked over and said, “You are here with me, and I feel like we’re close friends, yet we just met.” Moments like that reveal the profound connection and trust built in a short time.
+
+As a hospice nurse, I am often the one family members see on weekends when their loved one isn’t feeling well. I pray with families, help them cope with the impending loss of their precious mother, daughter, or grandparent. I give hugs, hold hands, and listen as they share their happiest memories. I make sure to remind them about Jesus and the comfort of faith. And yes, I cry when no one is around and miss my patients when they pass.
+
+I’ve witnessed the good, the bad, and the ugly sides of life and death. But I am grateful for an incredible team and a Medical Director who is available 24/7. Above all, I know I have done right by my patients when they are comfortable, pain-free, and surrounded by love.
+
+Hospice nursing is a calling that teaches me about compassion, courage, and the true meaning of care.
+ 
+      </p>
+    </div>
+  );
+}
+export default Voicesincareblogentry;

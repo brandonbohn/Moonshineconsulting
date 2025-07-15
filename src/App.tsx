@@ -14,6 +14,7 @@ import ProductComponent from './components/productgenerator.tsx';
 import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
 import SeniorLivingDesk from './Pages/seniorlivingdesk.tsx';
 import Voicesincare from  './Pages/Voicesincare.tsx';
+import Voicesincareblogentry from './Pages/blogentries/voicesincareblogentries.tsx'
 
 
 import { Routes, Route,  } from 'react-router-dom';  
@@ -29,12 +30,13 @@ function App() {
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
          <Route path='/blogentries/moonshinescornerblogentry'element={<MoonshinesCornerBlogEntry/>}/>
-          <Route path="/biopage" element={<BioPage/>}/>
-          <Route path="blogentries/seniorpolicybeatblogentry" element={<SeniorPolicyBeatBlogEntry/>}/>
-          <Route path="/blogcomponent" element={<BlogComponent/>}/>
-          <Route path="/productcomponent" element={<ProductComponent/>}/>
-          <Route path="/seniorpolicybeat" element={<SeniorPolicyBeat/>}/>
-          <Route path="/seniorlivingdesk" element={<SeniorLivingDesk/>}/>
+         <Route path="/biopage" element={<BioPage/>}/>
+         <Route path="/blogentries/seniorpolicybeatblogentry" element={<SeniorPolicyBeatBlogEntry/>}/>
+         <Route path="/blogentries/voicesincareblogentries" element={<Voicesincareblogentry/>}/>
+         <Route path="/blogcomponent" element={<BlogComponent/>}/>
+         <Route path="/productcomponent" element={<ProductComponent/>}/>
+         <Route path="/seniorpolicybeat" element={<SeniorPolicyBeat/>}/>
+         <Route path="/seniorlivingdesk" element={<SeniorLivingDesk/>}/>
           <Route path="/voicesincare" element={<Voicesincare/>}/>
        
 

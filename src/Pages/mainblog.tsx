@@ -5,31 +5,34 @@ function MainBlog() {
 
 
   return (
-    <section className="container columns px-0 align-items-start d-flex Dabox ">
-      <div className=" ">
-      <div className=" p-4 d-flex cards ">
-        <div>
- <h1 className="text-center " style={{ fontSize: "84px", marginBottom: "20px", }}>The Care Professional Chronicle </h1>
-       
-        <div className="text-right text-white" style={{ fontSize: "20px", marginBottom: "20px" }}>
+    <section className="container columns px-0 Dabox ">
+
+ <div className="cards ">
+ <h1 className="text-center" style={{ fontSize: "84px", }}>The Care Professional Chronicle </h1>
+           <p className=" text-white">
+        Your Trusted Source for Senior Care and Advocacy
+        </p>
+        <div className=" text-white" style={{ fontSize: "20px", marginBottom: "20px" }}>
         {new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
           
         </div>
+
+      <div>
+      <div>
        
-         <p className=" text-white">
-        Your Trusted Source for Senior Care and Advocacy
-        </p>
+       
+     
       </div>
 
       <div />
 
-      <div className="container-fluid my-4  d-flex justify-content-between-space">
-        <div className="row">
+      <div className="">
+        <div className="row d-flex align-items-start">
         <div className="col-3 col-md-10 col-lg-8">
           <div className=" mb-4">
-          <h1 className="text-center">Top Stories</h1>
-          <p>Stay informed with the latest updates on senior care policies that effect you and your loved ones</p>
+          <h1 className="">Top Stories</h1>
+          <p className="justify-items-center">Stay informed with the latest updates on senior care policies that effect you and your loved ones</p>
           </div>
           <div className="col-10">
           <BlogComponent id={2} />
@@ -43,7 +46,7 @@ function MainBlog() {
 <div className="col-12 col-md-10 col-lg-8">
           <div className="text-center mb-4 ">
           <h1>Moonshines Corner</h1>
-          <p>Join Moonshine, our lovable mascot, as he shares heartwarming inverviews with therapy animals.</p>
+          <p>Join Moonshine, our lovable mascot, as he shares heartwarming interviews with therapy animals.</p>
           </div>
           <BlogComponent id={1} />
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import BlogComponent from '../components/blogcomponentengine.tsx';
 function Voicesincare() {
   return (
-        <div style={{ fontFamily: "sans-serif", background: "#f0f8f5", minHeight: "100vh" }}>
+        <div style={{ fontFamily: "sans-serif", background: "#ffffff", minHeight: "100vh" }}>
             <header style={{ background: "#006a70", padding: "30px", textAlign: "center" }}>
                 <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#ffffff" }}>Voices In Care</h1>
                 <p style={{ fontSize: "1.25rem", color: "#ffffff" }}>
@@ -14,7 +14,7 @@ function Voicesincare() {
                 <section>
                   
                      <div>
-                    <BlogComponent id={2} />
+                    <BlogComponent id={3} />
                 </div>
                 </section>
             </main> 

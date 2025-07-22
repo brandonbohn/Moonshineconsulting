@@ -1,19 +1,19 @@
 function SeniorPolicyBeatBlog()
 {
   return (
-    <div className="text-white" style={{ fontFamily: "sans-serif", minHeight: "100vh" }}>
+    <div className="Text" style={{ fontFamily: "sans-serif", minHeight: "100vh" }}>
       <div>
         <div>
         </div>
-        <h1 className="Titles" style={{ textAlign: "center", padding: "20px", background: "#000000", margin: "50px", borderRadius: "8px" }}>
+        <h1 className="Titles text-white" style={{ background:"#08023a",textAlign: "center", padding: "20px", margin: "50px", borderRadius: "8px" }}>
           <strong>Welcome to the Senior Policy Beat,</strong> where we break down the most important issues affecting older adults and their care. Whether you’re navigating Medicare, helping a loved one age at home, or just trying to understand how today’s health policies impact real people — you’re in the right place.
         </h1>
       </div>
-      <h1 className="Titles" style={{ textAlign: "center", padding: "20px", background: "#000000", marginTop: "50px", borderRadius: "8px" }}>Medicare Home Health: What Seniors Need to Know</h1>
+      <h1 className="Titles cards" style={{ textAlign: "center", background:"#08023a", padding: "20px", marginTop: "50px", borderRadius: "8px" }}>Medicare Home Health: What Seniors Need to Know</h1>
       
 
       
-      <p className="text-white" style={{ background: "#b8860b",  borderRadius: "8px" }}>
+      <p className="Text" style={{ background: "#ffffffff",  borderRadius: "8px" }}>
 
 <p >
        <strong>To Kick of the Senior Policy Beat,</strong>  a blog dedicated to helping seniors and their families navigate the complex world of healthcare policy

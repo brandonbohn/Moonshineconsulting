@@ -24,7 +24,6 @@ export const Homepage = () => {
       </div>
       <div>
 
-
         <div>
 
           <div>
@@ -259,47 +258,34 @@ export const Homepage = () => {
     paddingTop: "48px",
   }}
 >
-  <div className="d-flex flex-column align-items-center mt-5" style={{ paddingBottom: "64px", paddingTop: "64px" }}>
-    <h2 className=" text-center mb-4 boxtwo"  style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#08023a" }}>
+
+  <div
+    className="d-flex flex-column align-items-center mt-5"
+    style={{ paddingBottom: "64px", paddingTop: "64px" }}
+  >
+    <h2
+      className=" text-center mb-4 boxtwo"
+      style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#08023a" }}
+    >
       Caregiver Tools We Love
     </h2>
-    <div className="d-flex justify-content-center product-cards-responsive" style={{ gap: "32px" }}>
+    <div className='d-flex flex-wrap justify-content-center product-cards-responsive' style={{ gap: "32px", width: "100%" }}>
+
+  {[1, 2, 3,].map((id: number) => (
       <div
-        className="card d-flex flex-column align-items-center product-card-responsive"
-        style={{
-          background: "#000000",
-          color: "#fff",
-          width: "400px",
-          padding: "32px"
-        }}
+        key={id}
+        className="mb-4"
+        style={{ width: "400px", height: "auto" }}
       >
-        <h3 style={{ fontWeight: "bold", marginBottom: "16px" }}>Walker</h3>
-        <img 
-          src="../images/moonshine.jpg" 
-          alt="Walker" 
-          style={{ width: "100%", marginBottom: "16px", borderRadius: "8px" }} 
-        />
-        
-        <button type="button" className="btn btn-warning btn-block btn-lg w-100 mt-4">product</button>
+        <ProductComponent productid={id} />
+
+     
       </div>
-      <div
-        className="card d-flex flex-column align-items-center product-card-responsive"
-        style={{
-          background: "#000000",
-          color: "#fff",
-          width: "400px",
-          padding: "32px"
-        }}>
-       <h3 style={{ fontWeight: "bold", marginBottom: "16px" }}>Walker</h3>
-        <img 
-          src="../images/moonshine.jpg" 
-          alt="Walker" 
-          style={{ width: "100%", marginBottom: "16px", borderRadius: "8px" }}
-           
-        />
-        <button type="button" className="btn btn-warning btn-block btn-lg w-100 mt-4">product</button>
-      </div>
+    ))}
+
+      
     </div>
+  
   </div>
 </div>
 

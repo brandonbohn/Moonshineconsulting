@@ -2,7 +2,7 @@ import React from "react";
 
 function BioPage() {
     return (
-        <div style={{ maxWidth: 800, margin: "40px auto", padding: 24, border: "1px solid #ddd",  color: "#fff", background: "#1b4332" }}>
+        <div style={{ maxWidth: 800, margin: "40px auto", padding: 24, border: "1px solid #ddd",  color: "#fff", background: "#08023a" }}>
             <div style={{ display: "flex", alignItems: "center", marginBottom: 32 }}>
                 <div />
                 <div>
@@ -26,7 +26,7 @@ function BioPage() {
                         {
                             name: "Christie Stephan RN ODG Certified, Behavioral Health Certified",
                             title: "Insurance Specialist and Contributor",
-                            picture: "../../images/christie.jpg",
+                            picture: "./images/christie.jpg",
                             bioPoints: [
                                 "Chris began her career in 1994 in the hospital",
                                 "Staff Nurse: GU, ENT, GYN, Prison ward and intensive care unit for 2 years.",
@@ -38,7 +38,7 @@ function BioPage() {
                         {
                             name: "Moonshine",
                             title: "Lovable Mascot and Contributor",
-                            picture: "../../images/moonshine.jpg",
+                            picture: "./images/moonshine.jpg",
                             bioPoints: [
                                 "Brings smiles and comfort to seniors every day",
                                 "Expert in tail wags and gentle cuddles",

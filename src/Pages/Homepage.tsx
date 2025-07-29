@@ -262,14 +262,14 @@ export const Homepage = () => {
   }}
 >
   <div className="d-flex flex-column align-items-center mt-5" style={{ paddingBottom: "64px", paddingTop: "64px" }}>
-    <h2 className="card-title text-center mb-4" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#fff" }}>
+    <h2 className=" text-center mb-4" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#08023a" }}>
       Caregiver Tools We Love
     </h2>
     <div className="d-flex justify-content-center product-cards-responsive" style={{ gap: "32px" }}>
       <div
         className="card d-flex flex-column align-items-center product-card-responsive"
         style={{
-          background: "#1b4332",
+          background: "#08023a",
           color: "#fff",
           width: "400px",
           padding: "32px"
@@ -284,7 +284,7 @@ export const Homepage = () => {
       <div
         className="card d-flex flex-column align-items-center product-card-responsive"
         style={{
-          background: "#1b4332",
+          background: "#08023a",
           color: "#fff",
           width: "400px",
           padding: "32px"

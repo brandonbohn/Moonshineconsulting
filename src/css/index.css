@@ -40,14 +40,14 @@ margin: 20px auto;
 }
  
   
-    .Header {
+    .HeaderandFooter {
       display: inline;
       justify-content:space-around;
-      background-color:#08023a;
+      background-color: #08023a;
       font-size: 16px;
       height: 100%;
       width: 10px;
-      -webkit-text-fill-color: #ece0e1;
+      -webkit-text-fill-color: #ffffff;
       text-decoration: none;
       font-family: sans-serif;
     }

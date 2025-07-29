@@ -58,7 +58,7 @@ position:relative;
   }
 
   .cards{
-background-color: #1b4332;
+background-color: #ffffffff;
 color: #ffff;
   }
 @media (max-width: 768px) {

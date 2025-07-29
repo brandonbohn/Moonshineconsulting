@@ -2,7 +2,7 @@ import React from "react";
 
 function BioPage() {
     return (
-        <div style={{ maxWidth: 800, margin: "40px auto", padding: 24, border: "1px solid #ddd",  color: "#fff", background: "#08023a" }}>
+        <div style={{ maxWidth: 800, margin: "40px auto", padding: 24, border: "1px solid #ddd",  color: "#fff", background: "#000000" }}>
             <div style={{ display: "flex", alignItems: "center", marginBottom: 32 }}>
                 <div />
                 <div>

@@ -8,6 +8,11 @@ import { blogData } from "./blogdata.ts";
 interface BlogComponentProps {
     category?: 'MoonshinesCorner' | 'Rehabsolutions' | 'SeniorTips' | 'all';
     id?: number;
+    newSection?: string;
+    imageUrl?: string;
+    title?: string;
+    article?: string;
+    date?: string;
 }
 
 
@@ -41,7 +46,8 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 							width={200}
 							height={200}
 						/>
-					</div>
+                    </div>
+                    <p className="text-center ">{entry.newsSection}</p>
                     <p className="body">{entry.article}</p>
 					 <p className="text-center">{entry.date}</p> 
                     <a

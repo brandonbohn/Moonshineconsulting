@@ -7,4 +7,5 @@ imageUrl: string;
 category: string;
 id: number;
 link?: string;
+newsSection?: string;
 }

@@ -66,9 +66,7 @@ position:relative;
     padding: 10px;
   }
 
-  .cards{
-background-color: #1b4332;
-  }
+
 @media (max-width: 768px) {
   .card-row {
     flex-direction: column;

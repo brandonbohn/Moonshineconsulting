@@ -26,6 +26,18 @@
     text-align: center;
 
 }
+.boxtwo
+{
+    width: 100vw;
+    height: 170px;
+    background-color: #08023a;
+    border-radius: 10px; 
+    color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    -webkit-text-fill-color: #ffffff;
+}
+
 .box
 {
 
@@ -33,7 +45,7 @@ width: 650px;
 height: 170px;
 background-color: white;
 border-radius: 10px; 
-color: #08023a;
+color: #ffffff;
 padding: 20px;
 margin: 20px auto;
    

@@ -2,6 +2,7 @@
 
 export const blogData = [
   {
+    NewsSection: "Moonshines Corner",
     image: "./images/moonshine.jpg",
     title: "How I Herded Hearts Instead of Sheep",
     article: "Moonshine Introduces Himself as a caring loving nursing companion that tried to be a therapy dog but while too scared to do so still inspired elderly patients.",
@@ -12,6 +13,7 @@ export const blogData = [
     link: "./blogentries/moonshinescornerblogentry",
   },
   {
+    NewsSection: "Senior Policy Beat",
     image: "./images/beach.jpg",
     title: "Medicare Home Health: What Seniors Need to Know",
     article: "Medicare home health services can provide essential support for seniors, including skilled nursing care, physical therapy, and home health aide services. This article exlplains the orgins of Home Health and how it has evolved to meet the needs of seniors today and changed to limit the ablility of nurses to provide personal care to seniors.",
@@ -22,6 +24,7 @@ export const blogData = [
     link: "./blogentries/seniorpolicybeatblogentry",
   },
   {
+    NewsSection: "Voices In Care",
     image: "./images/grandma.jpg",
     title: "The Heart of Hospice Nursing: Compassion, Comfort, and Connection",
     article: "A reflection upon the importance of Hospice nurses from our very own Hospice nurse",
@@ -32,14 +35,15 @@ export const blogData = [
     link: "./blogentries/voicesincareblogentries",
   },
   {
+    NewsSection: "What to do before you die",
     image: "./images/grandma.jpg",
-    title: "what to do after a fall",
-    article: "Falls can be a significant concern for seniors, leading to injuries and loss of independence. This article discusses what to do immediately after a fall, how to assess injuries, and when to seek medical help. It also provides tips on preventing future falls.",
+    title: "What to do before you die",
+    article: "Many people do not think about death until it is too late and their family is left to make decisions for them. This article discusses the importance of end-of-life planning and how to prepare for the end of life.",
     date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }),
-    category: "SeniorTips",
-    author: "Senior Care Team",
+    category: "Senior Living Desk",
+    author: "Karen Underwood RN BSN",
     id:4,
-    link: "./blogentries/whattodoafterafall",
+    link: "./blogentries/estatepreparation",
   },
 ];
 

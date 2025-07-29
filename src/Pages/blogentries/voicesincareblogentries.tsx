@@ -40,7 +40,7 @@ function Voicesincareblogentry() {
           <div></div>
         </div>
       </div>
-      <div className="Titles">
+      <div className="Titles text-white" style={{ backgroundColor: "#08023a", padding: "20px", borderRadius: "10px" }}>
 
        <h1>
         The Heart of Hospice Nursing: Compassion, Comfort, and Connection
@@ -48,7 +48,7 @@ function Voicesincareblogentry() {
       <h2>Author:Christie Stephan RN ODG</h2> 
       </div>
       
-      <div className="content mb-4 box" style={{ padding: "20px", fontSize: "20px", height: "100%", width: "100%" }}>
+      <div className="content mb-4 box text-dark" style={{ padding: "20px", fontSize: "20px", height: "100%", width: "100%" }}>
         <p>
           There are so many things I could say about nursing, but one of the
           most rewarding—and humbling—experiences has been working in hospice

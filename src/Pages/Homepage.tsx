@@ -109,11 +109,11 @@ export const Homepage = () => {
         </style>
             </div>
 
-          <div className="d-flex justify-content-center align-items-start" style={{ gap: "20px", padding: "30px 0", margin: "30px auto" }}>
+          <div className="flex justify-content-center " style={{ gap: "20px", padding: "30px 0", margin: "30px auto" }}>
             <div className="d-flex flex-wrap justify-content-center align-items-start founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
               <div className="container">
-                <div className="row">
-                    {[
+                <div className="row justify-content-center">
+                  {[
                     {
                       id: 1,
                       name: "Karen Underwood, RN BSN",
@@ -122,45 +122,43 @@ export const Homepage = () => {
                       title: "Registered Nurse"
                     },
                     {
-                      id: 2,
-                      name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
-                      image: "./images/Christie.jpg",
-                      experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
-                      title: "Insurance Specialist"
-                    },
-                    {
                       id: 3,
                       name: "Moonshine",
                       image: "./images/moonshine.jpg",
                       experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
                       title: "Beloved Senior Companion"
                     },
-                  
-                    ].map((member, idx) => (
+                    {
+                      id: 2,
+                      name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
+                      image: "./images/Christie.jpg",
+                      experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
+                      title: "Insurance Specialist"
+                    },
+                  ].map(member => (
                     <div
                       key={member.id}
-                      className="col-12 col-md-6 d-flex justify-content-center mb-4"
-                      style={{ alignItems: "stretch" }}
+                      className="col-12 col-md-4 d-flex justify-content-center mb-4"
                     >
                       <div className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "100%" }}>
-                      <img
-                        src={member.image}
-                        className="nursepicture img-fluid rounded"
-                        alt={member.name}
-                        style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-                      />
-                      <div className="card-body Text text-center  rounded-bottom">
-                        <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
-                        <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                        {member.experience}
-                        </p>
-                        <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                        {member.title}
-                        </p>
-                      </div>
+                        <img
+                          src={member.image}
+                          className="nursepicture img-fluid rounded"
+                          alt={member.name}
+                          style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
+                        />
+                        <div className="card-body Text text-center rounded-bottom">
+                          <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
+                          <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                            {member.experience}
+                          </p>
+                          <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                            {member.title}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    ))}
+                  ))}
                 </div>
               </div>
               <style>
@@ -262,34 +260,43 @@ export const Homepage = () => {
   }}
 >
   <div className="d-flex flex-column align-items-center mt-5" style={{ paddingBottom: "64px", paddingTop: "64px" }}>
-    <h2 className=" text-center mb-4" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#08023a" }}>
+    <h2 className=" text-center mb-4 boxtwo"  style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#08023a" }}>
       Caregiver Tools We Love
     </h2>
     <div className="d-flex justify-content-center product-cards-responsive" style={{ gap: "32px" }}>
       <div
         className="card d-flex flex-column align-items-center product-card-responsive"
         style={{
-          background: "#08023a",
+          background: "#000000",
           color: "#fff",
           width: "400px",
           padding: "32px"
         }}
       >
-        <div>
-
-
-        </div>
+        <h3 style={{ fontWeight: "bold", marginBottom: "16px" }}>Walker</h3>
+        <img 
+          src="../images/moonshine.jpg" 
+          alt="Walker" 
+          style={{ width: "100%", marginBottom: "16px", borderRadius: "8px" }} 
+        />
+        
         <button type="button" className="btn btn-warning btn-block btn-lg w-100 mt-4">product</button>
       </div>
       <div
         className="card d-flex flex-column align-items-center product-card-responsive"
         style={{
-          background: "#08023a",
+          background: "#000000",
           color: "#fff",
           width: "400px",
           padding: "32px"
-        }}
-      >
+        }}>
+       <h3 style={{ fontWeight: "bold", marginBottom: "16px" }}>Walker</h3>
+        <img 
+          src="../images/moonshine.jpg" 
+          alt="Walker" 
+          style={{ width: "100%", marginBottom: "16px", borderRadius: "8px" }}
+           
+        />
         <button type="button" className="btn btn-warning btn-block btn-lg w-100 mt-4">product</button>
       </div>
     </div>

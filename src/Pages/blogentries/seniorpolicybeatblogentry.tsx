@@ -5,7 +5,7 @@ function SeniorPolicyBeatBlog()
       <div>
         <div>
         </div>
-        <h1 className="Titles text-white" style={{ background:"#08023a",textAlign: "center", padding: "20px", margin: "50px", borderRadius: "8px" }}>
+        <h1 className="Titles text-white" style={{ background:"#000000",textAlign: "center", padding: "20px", margin: "50px", borderRadius: "8px" }}>
           <strong>Welcome to the Senior Policy Beat,</strong> where we break down the most important issues affecting older adults and their care. Whether you’re navigating Medicare, helping a loved one age at home, or just trying to understand how today’s health policies impact real people — you’re in the right place.
         </h1>
       </div>

@@ -11,7 +11,7 @@ function BioPage() {
                         {
                             name: "Karen Underwood RN BSN",
                             title: "CEO & Founder",
-                            picture: "/images/CEO.jpg",
+                            picture: "./images/CEO.jpg",
                             bioPoints: [
                                "30+ years in nursing and healthcare management", 
                                "A experienced Homehealth Surveyor with a passion for healthcare",
@@ -26,7 +26,7 @@ function BioPage() {
                         {
                             name: "Christie Stephan RN ODG Certified, Behavioral Health Certified",
                             title: "Insurance Specialist and Contributor",
-                            picture: "/images/Christie.jpg",
+                            picture: "./images/Christie.jpg",
                             bioPoints: [
                                 "Chris began her career in 1994 in the hospital",
                                 "Staff Nurse: GU, ENT, GYN, Prison ward and intensive care unit for 2 years.",
@@ -38,7 +38,7 @@ function BioPage() {
                         {
                             name: "Moonshine",
                             title: "Lovable Mascot and Contributor",
-                            picture: "/images/moonshine.jpg",
+                            picture: "./images/moonshine.jpg",
                             bioPoints: [
                                 "Brings smiles and comfort to seniors every day",
                                 "Expert in tail wags and gentle cuddles",

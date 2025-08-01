@@ -26,7 +26,7 @@ function BioPage() {
                         {
                             name: "Christie Stephan RN ODG Certified, Behavioral Health Certified",
                             title: "Insurance Specialist and Contributor",
-                            picture: "/images/christie.jpg",
+                            picture: "/images/Christie.jpg",
                             bioPoints: [
                                 "Chris began her career in 1994 in the hospital",
                                 "Staff Nurse: GU, ENT, GYN, Prison ward and intensive care unit for 2 years.",

@@ -19,7 +19,7 @@ function Voicesincare() {
                 </section>
             </main> 
             <footer style={{ textAlign: "center", padding: "1rem 0", color: "#b08968" }}>
-                © {new Date().getFullYear()} Moonshine's Corner
+                © {new Date().getFullYear()} Voices In Care. All rights reserved.
             </footer>
         </div>
     );

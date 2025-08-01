@@ -8,7 +8,7 @@ export const Homepage = () => {
   return (
     <div style={{ fontFamily: "sans-serif", }}>
       
-      <div className="container Text box positions  my-5" >
+      <div className="container Text box positions  my -3" >
         <div className="row align card-body Text">
           <div className="col-12 col-md-6 "> 
             <img src="../images/Moonshineandresident.jpg"  alt="Senior-resident bonding with dog belonging to her nurse caregiver"

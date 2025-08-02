@@ -10,26 +10,26 @@ export const Homepage = () => {
       {/* Main 3-Column Grid Layout */}
       <div className="row main-layout-row" style={{ paddingTop: "31px", minHeight: "100vh" }}>
         
-        
+        {/* Left Column - Blog Cards */}
         <div className="col-lg-3 col-md-12 blog-cards-column" style={{ padding: "20px" }}>
-          <div className="d-flex flex-column" style={{ gap: "30px" }}>
-            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px" }}>
-              <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./seniorlivingdesk" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  Senior Living Desk
-                </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
+          <div className="d-flex flex-column" style={{ gap: "20px" }}>
+            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "200px", backgroundColor: "#08023a", padding: "20px", borderRadius: "10px", color: "#ffffff" }}>
+              <a href="./seniorlivingdesk" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "10px", height: "30px" }}>
+                Senior Living Desk
+              </a>
+              <div className="card h-100 w-100 d-flex flex-column justify-content-center align-items-center">
+                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "10px", borderRadius: "5px" }}>
                   Expert advice about how you seniors can live a better life and take care of themselves better while transitioning throughout their later life.
                 </p>
               </div>
             </div>
             
-            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px", marginTop: "250px" }}>
-              <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./Voicesincare" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  Voices in Care
-                </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
+            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "200px" }}>
+              <a href="./Voicesincare" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "10px" }}>
+                Voices in Care
+              </a>
+              <div className="w-100 d-flex" style={{ backgroundColor: "#000000", padding: "20px", borderRadius: "10px", minHeight: "150px" }}>
+                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000000", backgroundColor: "#ffffff", padding: "10px", borderRadius: "5px", width: "100%" }}>
                   A place where caregivers and professionals can share their insights, stories, and struggles from the field.
                 </p>
               </div>
@@ -56,30 +56,52 @@ export const Homepage = () => {
           </div>
         </div>
 
-        
-        <div className="col-lg-3 col-md-12 blog-cards-column" style={{ padding: "20px" }}>
-          <div className="d-flex flex-column justify-content-between" style={{ height: "100%", gap: "30px" }}>
-            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px" }}>
-              <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./seniorpolicybeat" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  Senior Policy Beat
-                </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
-                  Comprehensive guides and resources for navigating Medicare, insurance, and healthcare decisions for seniors and their families.
-                </p>
+        {/* Right Column - Founder Cards (Compact) */}
+        <div className="col-lg-3 col-md-12 founder-cards-column" style={{ padding: "20px" }}>
+          <div className="d-flex flex-column founder-cards-responsive" style={{ gap: "15px" }}>
+            {[
+              {
+                id: 1,
+                name: "Karen Underwood, RN BSN",
+                image: "./images/Nurse.jpg",
+                experience: "30 Years Home Health and Hospice experience, both in the field and management.",
+                title: "Registered Nurse"
+              },
+              {
+                id: 3,
+                name: "Moonshine",
+                image: "./images/moonshine.jpg",
+                experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
+                title: "Beloved Senior Companion"
+              },
+              {
+                id: 2,
+                name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
+                image: "./images/Christie.jpg",
+                experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
+                title: "Insurance Specialist"
+              },
+            ].map(member => (
+              <div key={member.id} className="founder-card-compact">
+                <div className="card bg-light-transparent border-0" style={{ width: "100%", height: "auto" }}>
+                  <img
+                    src={member.image}
+                    className="img-fluid rounded"
+                    alt={member.name}
+                    style={{ width: "100%", height: "120px", objectFit: "cover", borderRadius: "10px 10px 0 0" }}
+                  />
+                  <div className="card-body text-center" style={{ padding: "10px" }}>
+                    <p className="fw-bold mb-1" style={{ fontSize: "0.8rem" }}>{member.name}</p>
+                    <p style={{ fontSize: "0.7rem", marginBottom: "5px", lineHeight: "1.2" }}>
+                      {member.experience.length > 80 ? member.experience.substring(0, 80) + "..." : member.experience}
+                    </p>
+                    <p style={{ fontSize: "0.7rem", marginBottom: 0, fontWeight: "bold", color: "#08023a" }}>
+                      {member.title}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px" }}>
-              <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./moonshinescorner" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  Moonshine's Corner
-                </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
-                  Tools, tips, and emotional support for family caregivers managing the challenges of caring for aging loved ones.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -128,57 +150,6 @@ export const Homepage = () => {
         </div>
       </div>
 
-      {/* Founder Cards Section - 3 Column Grid */}
-      <div className="d-flex flex-wrap justify-content-center founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
-        <div className="container">
-          <div className="row justify-content-center">
-            {[
-              {
-                id: 1,
-                name: "Karen Underwood, RN BSN",
-                image: "./images/Nurse.jpg",
-                experience: "30 Years Home Health and Hospice experience, both in the field and management.",
-                title: "Registered Nurse"
-              },
-              {
-                id: 3,
-                name: "Moonshine",
-                image: "./images/moonshine.jpg",
-                experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
-                title: "Beloved Senior Companion"
-              },
-              {
-                id: 2,
-                name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
-                image: "./images/Christie.jpg",
-                experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
-                title: "Insurance Specialist"
-              },
-            ].map(member => (
-              <div key={member.id} className="col-12 col-md-4 d-flex justify-content-center mb-4">
-                <div className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "100%" }}>
-                  <img
-                    src={member.image}
-                    className="nursepicture img-fluid rounded"
-                    alt={member.name}
-                    style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
-                  />
-                  <div className="card-body Text text-center rounded-bottom">
-                    <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
-                    <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                      {member.experience}
-                    </p>
-                    <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
-                      {member.title}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Product Cards Section */}
       <div className="d-flex flex-column align-items-center mt-5" style={{ marginTop: "180px", paddingBottom: "64px", paddingTop: "64px" }}>
         <h2 className="text-center mb-4 boxtwo" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#08023a" }}>
@@ -200,8 +171,18 @@ export const Homepage = () => {
             .main-layout-row {
               flex-direction: column !important;
             }
-            .blog-cards-column, .welcome-column {
+            .blog-cards-column, .welcome-column, .founder-cards-column {
               margin-bottom: 30px;
+            }
+            .founder-cards-responsive {
+              flex-direction: row !important;
+              flex-wrap: wrap !important;
+              justify-content: center !important;
+              gap: 20px !important;
+            }
+            .founder-card-compact {
+              flex: 0 0 calc(33.333% - 15px);
+              min-width: 200px;
             }
           }
           
@@ -217,11 +198,12 @@ export const Homepage = () => {
             }
             .founder-cards-responsive {
               flex-direction: column !important;
-              gap: 32px !important;
+              gap: 20px !important;
+              align-items: center !important;
             }
-            .founder-card-responsive {
+            .founder-card-compact {
               width: 100% !important;
-              max-width: 350px;
+              max-width: 300px;
             }
             .product-cards-responsive {
               flex-direction: column !important;
@@ -241,7 +223,7 @@ export const Homepage = () => {
             .main-layout-row {
               align-items: stretch;
             }
-            .blog-cards-column, .welcome-column {
+            .blog-cards-column, .welcome-column, .founder-cards-column {
               display: flex;
               flex-direction: column;
             }

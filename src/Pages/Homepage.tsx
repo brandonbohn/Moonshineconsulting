@@ -84,49 +84,7 @@ export const Homepage = () => {
         </div>
       </div>
 
-      {/* Who We Are Section */}
-      <div className='container' style={{ maxWidth: "900px", margin: "0 auto", marginTop: "50px" }}>
-        <div className='my-5' style={{
-          padding: "30px",
-          background: "#ffffff",
-          borderRadius: "16px",
-          boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
-          fontSize: "16px",
-        }}>
-          <h1>Who We Are</h1>
-          <h5>Our Mission</h5>
-          <p>
-            At Moonshine Consulting, we empower seniors and their families to navigate the complex world of long-term healthcare with confidence and clarity. We believe every senior deserves compassionate care and informed choices about their health and wellbeing.
-          </p>
-          <h5>Our Expertise</h5>
-          <p>
-            Founded by healthcare professionals with over 50 years of combined experience, our team brings deep knowledge from:
-            <ul>
-              <li>Home Health services</li>
-              <li>Hospice care</li>
-              <li>Workers Compensation Insurance</li>
-              <li>Long Term Care</li>
-            </ul>
-          </p>
-          <h5>What We Offer For Seniors and Caregivers:</h5>
-          <ul>
-            <li>Guidance on Medicare, Home Health, Hospice and Long Term Care</li>
-            <li>Educational resources about Missouri's healthcare policies and how they impact you</li>
-            <li>Practical solutions for daily healthcare challenges</li>
-            <li>Support during life transitions and care decisions</li>
-          </ul>
-          <h5>Our Approach:</h5>
-          <p>
-            We provide warm, compassionate guidance combined with expert knowledge. Our goal is to help you understand your options, advocate for your needs, and make informed decisions about your care journey.
-            <br />
-            <strong>Making a Difference:</strong> Beyond our consulting services, we're committed to showing how meaningful connections, whether through our educational content, community outreach, or even our featured therapy animals—can enhance the lives of seniors and their families.
-            <br />
-            <strong>Ready to Get Started?</strong> Contact us today to learn how we can help you navigate your healthcare journey with confidence and peace of mind.
-            <br />
-            Moonshine Consulting - Illuminating your path to better healthcare
-          </p>
-        </div>
-      </div>
+
 
       {/* Founder Cards Section - 3 Column Grid */}
       <div className="d-flex flex-wrap justify-content-center founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>

@@ -13,6 +13,7 @@ type ProductEntry = {
 	link: string;
 	affilatelinkstatement: string;
 	imageUrl?: string;
+	productAdvisory:string;
 };
 
 export const ProductComponent = ({ productid }: ProductComponentProps) => {

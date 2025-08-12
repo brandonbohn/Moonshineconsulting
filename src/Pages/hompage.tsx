@@ -4,40 +4,62 @@ import '../css/homepage.css';
 import '../css/index.css';
 import ProductComponent from '../components/productgenerator.tsx';
 
-export const Homepage = () => {
+function homepage() {
   return (
-    <div className='container-fluid' style={{ fontFamily: "sans-serif" }}>
-      {/* Main 3-Column Grid Layout */}
-      <div className="row main-layout-row" style={{ paddingTop: "31px", minHeight: "100vh" }}>
+    <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+      {/* Skip Navigation Link for Screen Readers */}
+      <a 
+        href="#main-content" 
+        className="sr-only sr-only-focusable"
+        style={{
+          position: 'absolute',
+          top: '-40px',
+          left: '6px',
+          zIndex: 1000,
+          color: 'white',
+          backgroundColor: '#08023a',
+          padding: '8px 16px',
+          textDecoration: 'none',
+          borderRadius: '4px'
+        }}
+        onFocus={(e) => e.target.style.top = '6px'}
+        onBlur={(e) => e.target.style.top = '-40px'}
+      >
+        Skip to main content
+      </a>
+      
+      {/* Main Layout Container */}
+      <main id="main-content" role="main" aria-label="Homepage content">
+      <div className="row" style={{ margin: "0", minHeight: "100vh" }}>
         
-        
+        {/* Left Side - Senior Living Desk & Senior Policy Beat */}
         <div className="col-lg-3 col-md-12 blog-cards-column" style={{ padding: "20px" }}>
           <div className="d-flex flex-column" style={{ gap: "30px" }}>
             <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px" }}>
               <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./seniorlivingdesk" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <a href="./seniorlivingdesk" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
                   Senior Living Desk
                 </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
-                  Expert advice about how you seniors can live a better life and take care of themselves better while transitioning throughout their later life.
+                <p className="mb-2" style={{ fontSize: "18px", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
+                  A resource hub for seniors and their families, providing information on senior living options, care services, and community resources.
                 </p>
               </div>
             </div>
             
-            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px", marginTop: "250px" }}>
+            <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px" }}>
               <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./Voicesincare" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  Voices in Care
+                <a href="./seniorpolicybeat" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
+                  Senior Policy Beat
                 </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
-                  A place where caregivers and professionals can share their insights, stories, and struggles from the field.
+                <p className="mb-2" style={{ fontSize: "18px", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
+                  Comprehensive guides and resources for navigating Medicare, insurance, and healthcare decisions for seniors and their families.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Middle Column - Welcome Section */}
+        {/* Middle - Hero Box */}
         <div className="col-lg-6 col-md-12 welcome-column" style={{ padding: "20px" }}>
           <div className="welcome-box" style={{ backgroundColor: "#ffffff", padding: "30px", borderRadius: "15px", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", height: "100%" }}>
             <div className="text-center mb-4"> 
@@ -48,7 +70,7 @@ export const Homepage = () => {
                 style={{ borderRadius: "10px" }} />
             </div>
             <div className="mt-4">
-              <p style={{ fontSize: "16px", fontFamily: 'arial', color: "#2c2c2c", lineHeight: "1.6" }}>
+              <p style={{ fontSize: "18px", fontFamily: 'arial', color: "#2c2c2c", lineHeight: "1.6" }}>
                 Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
               </p>
               <a href="./mainblog" className="btn btn-warning btn-block btn-lg mt-3" style={{ width: "100%" }}>Explore the Blog</a>
@@ -56,37 +78,39 @@ export const Homepage = () => {
           </div>
         </div>
 
-        
+        {/* Right Side - Moonshine's Corner & Voices in Care */}
         <div className="col-lg-3 col-md-12 blog-cards-column" style={{ padding: "20px" }}>
-          <div className="d-flex flex-column justify-content-between" style={{ height: "100%", gap: "30px" }}>
+          <div className="d-flex flex-column" style={{ gap: "30px" }}>
             <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px" }}>
               <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./seniorpolicybeat" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  Senior Policy Beat
+                <a href="./moonshinescorner" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
+                  Moonshine's Corner
                 </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
-                  Comprehensive guides and resources for navigating Medicare, insurance, and healthcare decisions for seniors and their families.
+                <p className="mb-2" style={{ fontSize: "18px", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
+                  Tools, tips, and emotional support for family caregivers managing the challenges of caring for aging loved ones.
                 </p>
               </div>
             </div>
             
             <div className="blog-card-responsive" style={{ width: "100%", minHeight: "250px" }}>
               <div className="w-100 d-flex flex-column" style={{ backgroundColor: "#08023a", padding: "25px", borderRadius: "10px", minHeight: "250px" }}>
-                <a href="./moonshinescorner" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  Moonshine's Corner
+                <a href="./voicesincare" className="btn btn-warning btn-sm" style={{ width: "100%", marginBottom: "20px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>
+                  Voices in Care
                 </a>
-                <p className="mb-2" style={{ fontSize: "0.9rem", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
-                  Tools, tips, and emotional support for family caregivers managing the challenges of caring for aging loved ones.
+                <p className="mb-2" style={{ fontSize: "18px", color: "#000", backgroundColor: "#ffffff", padding: "15px", borderRadius: "5px", width: "100%", margin: "0", flexGrow: "1" }}>
+                  A place where caregivers and professionals can share their insights, stories, and struggles from the field.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      </main>
 
 
 
       {/* Founder Cards Section - 3 Column Grid */}
+      <section aria-label="Our team">
       <div className="d-flex flex-wrap justify-content-center founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
         <div className="container">
           <div className="row justify-content-center">
@@ -122,11 +146,11 @@ export const Homepage = () => {
                     style={{ width: "100%", height: "auto", display: "block", margin: "0 auto" }}
                   />
                   <div className="card-body Text text-center rounded-bottom">
-                    <p className="fw-bold mb-1" style={{ fontSize: "1rem" }}>{member.name}</p>
-                    <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                    <p className="fw-bold mb-1" style={{ fontSize: "18px" }}>{member.name}</p>
+                    <p style={{ fontSize: "16px", marginBottom: 0 }}>
                       {member.experience}
                     </p>
-                    <p style={{ fontSize: "0.85rem", marginBottom: 0 }}>
+                    <p style={{ fontSize: "16px", marginBottom: 0 }}>
                       {member.title}
                     </p>
                   </div>
@@ -136,8 +160,10 @@ export const Homepage = () => {
           </div>
         </div>
       </div>
+      </section>
 
       {/* Product Cards Section */}
+      <section aria-label="Recommended products">
       <div className="d-flex flex-column align-items-center mt-5" style={{ marginTop: "180px", paddingBottom: "64px", paddingTop: "64px" }}>
         <h2 className="text-center mb-4 boxtwo" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#08023a" }}>
           Caregiver Tools We Love
@@ -150,23 +176,33 @@ export const Homepage = () => {
           ))}
         </div>
       </div>
+      </section>
 
       {/* Responsive Styles */}
       <style>
         {`
           @media (max-width: 991px) {
-            .main-layout-row {
+            .row {
               flex-direction: column !important;
             }
             .blog-cards-column, .welcome-column {
               margin-bottom: 30px;
+            }
+            .welcome-column {
+              order: 1;
+            }
+            .blog-cards-column:first-of-type {
+              order: 2;
+            }
+            .blog-cards-column:last-of-type {
+              order: 3;
             }
           }
           
           @media (max-width: 767px) {
             .blog-cards-column .d-flex {
               flex-direction: column !important;
-              gap: 20px !important;
+              gap: 30px !important;
             }
             .blog-card-responsive {
               width: 100% !important;
@@ -193,10 +229,16 @@ export const Homepage = () => {
             .welcome-box {
               padding: 20px !important;
             }
+            .blog-cards-column {
+              padding: 15px !important;
+            }
+            .welcome-column {
+              padding: 15px !important;
+            }
           }
           
           @media (min-width: 992px) {
-            .main-layout-row {
+            .row {
               align-items: stretch;
             }
             .blog-cards-column, .welcome-column {
@@ -209,6 +251,10 @@ export const Homepage = () => {
               flex-direction: column;
               justify-content: center;
             }
+            .blog-cards-column .d-flex {
+              height: 100%;
+              justify-content: space-between;
+            }
           }
         `}
       </style>
@@ -216,4 +262,4 @@ export const Homepage = () => {
   )
 }
 
-export default Homepage
+export default homepage

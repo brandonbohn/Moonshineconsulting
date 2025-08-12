@@ -1,4 +1,4 @@
-import { Homepage } from './Pages/Homepage.tsx';
+import HomePage from './Pages/hompage.tsx';
 import ContactUs from './Pages/contactus.tsx';
 import Blog from './Pages/mainblog.tsx';
 import Footer from './Utilities/Footer.tsx';
@@ -24,7 +24,7 @@ function App() {
     <div className='background'>
       <Header />
          <Routes>
-         <Route path="/" element={<Homepage/>}/> 
+        <Route path="/" element={<HomePage/>}/> 
          <Route path="/registration" element={<ContactUs/>}/>
          <Route path="/mainblog" element={<Blog/>}/>
          <Route path="/moonshinescorner" element={<MoonshinesCorner/>}/>

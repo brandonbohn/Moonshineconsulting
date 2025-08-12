@@ -1,30 +1,30 @@
 export const ProductData = [
   {
         name: "Walker",
-        description: "A stylish walker for enhanced mobility.",
-        photo: "/images/moonshine.jpg",
+        description: "A sturdy walker for enhanced mobility.",
+        photo: "/images/walker.jpg",
         price: 88.99,
         link: "https://amzn.to/46xHyI6",
-        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases.",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:1
     },
     {
-        name: "Consulting Session",
-        description: "One-hour professional consulting session.",
-        photo: "/images/moonshine.jpg",
+        name: "Slip On Shoes",
+        description: "Comfortable slip-on shoes for everyday wear.",
+        photo: "/images/shoes.jpg",
         price: 99.99,
-        link: "https://example.com/consulting",
+        link: "https://amzn.to/45M7b6V",
         productid:2,
-        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases."
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate."
     },
     {
-        name: "Branded Hoodie",
-        description: "Comfortable hoodie with our logo.",
-        photo: "/images/moonshine.jpg",
+        name: "Footbath",
+        description: "A relaxing footbath.",
+        photo: "./images/footbath.jpg",
         price: 49.99,
-        link: "https://example.com/hoodie",
+        link: "https://example.com/footbath",
 
-        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases.",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:3
 
     },

@@ -8,7 +8,7 @@ function SeniorPolicyBeatBlog()
       {/* Blog Navigation */}
       <BlogNavigation 
         categoryName="Senior Policy Beat" 
-        categoryLink="/seniorlivingdesk" 
+        categoryLink="/seniorpolicybeat" 
       />
 
       <div className="Text" style={{ fontFamily: "sans-serif", minHeight: "100vh" }}>
@@ -71,7 +71,7 @@ function SeniorPolicyBeatBlog()
       <p>
         Stay tuned for updates on key topics such as healthcare, retirement security, elder rights, and more.
       </p>
-      </div>
+    </div>
     </div>
   );
 }

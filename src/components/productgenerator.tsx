@@ -190,6 +190,9 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						.product-card-container {
 							width: 100% !important;
 							max-width: 350px !important;
+							margin: 0 auto !important;
+							display: flex !important;
+							justify-content: center !important;
 						}
 						
 						.product-card-responsive {
@@ -197,6 +200,7 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 							max-width: 350px !important;
 							height: auto !important;
 							min-height: 450px !important;
+							margin: 0 auto !important;
 						}
 						
 						.product-card-responsive .card-title {
@@ -212,11 +216,15 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 					@media (max-width: 576px) {
 						.product-card-container {
 							max-width: 300px !important;
+							margin: 0 auto !important;
+							display: flex !important;
+							justify-content: center !important;
 						}
 						
 						.product-card-responsive {
 							max-width: 300px !important;
 							min-height: 420px !important;
+							margin: 0 auto !important;
 						}
 						
 						.product-card-responsive .card-body {

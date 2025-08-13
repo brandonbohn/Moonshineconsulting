@@ -6,7 +6,7 @@ import Header from './Utilities/header.tsx';
 import MoonshinesCorner from './Pages/moonshinescorner.tsx';
 import PrivacyPolicy from './Pages/privacypolicy.tsx';
 import TermsAndConditions from './Pages/termsandconditions.tsx';
-import MoonshinesCornerBlogEntry from './Pages/blogentries/moonshinescornerblogentry.tsx';
+// Removed unused import Moonshinesblog
 import MoonshinesBlogEntry from './Pages/blogentries/moonshinesblogentry.tsx';
 import BioPage from './Pages/biopage.tsx';
 import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
@@ -31,7 +31,7 @@ function App() {
          <Route path="/moonshinescorner" element={<MoonshinesCorner/>}/>
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
-         <Route path='/blogentries/moonshinescornerblogentry'element={<MoonshinesCornerBlogEntry/>}/>
+         <Route path='/blogentries/moonshinescornerblogentry' element={<MoonshinesBlogEntry/>}/>
          <Route path='/blogentries/moonshinesblogentry'element={<MoonshinesBlogEntry/>}/>
          <Route path="/biopage" element={<BioPage/>}/>
          <Route path="/blogentries/seniorpolicybeatblogentry" element={<SeniorPolicyBeatBlogEntry/>}/>

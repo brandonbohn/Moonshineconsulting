@@ -18,22 +18,15 @@
   -webkit-text-fill-color: #000000;
 }
 .logo {
-  position: relative;
-  width: 150px;
-  height: 150px;
+ 
+  width: 75px;
+  height: 75px;
 }
 
 /* Enhanced logo styling for header */
-.logo-stretched {
-  max-height: 200px;
-  width: auto;
-  object-fit: contain;
-}
 
-.logo-container {
-  background-color: transparent;
-  overflow: hidden;
-}
+
+
 .positions{
 height:90vh;
 width: 100vw;

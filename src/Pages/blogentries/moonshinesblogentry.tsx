@@ -1,8 +1,7 @@
 import React from 'react';
 import BlogNavigation from '../../components/BlogNavigation.tsx';
 
-function MoonshinesBlog()
-
+function MoonshinesBlog(){
   return (
     <div>
       {/* Blog Navigation */}

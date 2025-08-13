@@ -27,14 +27,14 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 	}
 
 	return (
-		<div className="product-card-container" style={{ width: "400px", height: "auto" }}>
+		<div className="product-card-container" style={{ width: "280px", height: "auto" }}>
 			{entries.map((entry) => (
 				<div 
 					key={entry.productid} 
 					className="card h-100 product-card-responsive" 
 					style={{ 
-						width: "400px",
-						height: "500px",
+						width: "280px",
+						height: "480px",
 						margin: "auto", 
 						borderRadius: "15px", 
 						boxShadow: "0 6px 25px rgba(0,0,0,0.15)",
@@ -42,7 +42,8 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						overflow: "hidden",
 						backgroundColor: "#08023a",
 						color: "#ffffff",
-						transition: "transform 0.3s ease, box-shadow 0.3s ease"
+						transition: "transform 0.3s ease, box-shadow 0.3s ease",
+						marginBottom: "30px"
 					}}
 					onMouseEnter={(e) => {
 						e.currentTarget.style.transform = "translateY(-5px)";
@@ -54,14 +55,14 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 					}}
 				>
 					{/* Image Section */}
-					<div className="position-relative" style={{ height: "200px", overflow: "hidden" }}>
+					<div className="position-relative" style={{ height: "180px", overflow: "hidden" }}>
 						<img
 							src={entry.imageUrl}
 							alt={entry.name}
 							className="card-img-top"
 							style={{
 								width: "100%",
-								height: "200px",
+								height: "180px",
 								objectFit: "cover",
 								transition: "transform 0.3s ease"
 							}}
@@ -75,16 +76,16 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 					</div>
 
 					{/* Card Body */}
-					<div className="card-body d-flex flex-column" style={{ padding: "25px", height: "300px" }}>
+					<div className="card-body d-flex flex-column" style={{ padding: "15px", height: "300px" }}>
 						{/* Title */}
 						<h3 
 							className="card-title"
 							style={{
-								fontSize: "28px",
+								fontSize: "18px",
 								fontFamily: "Open Sans, sans-serif",
 								fontWeight: "700",
 								color: "#ffffff",
-								marginBottom: "15px",
+								marginBottom: "12px",
 								lineHeight: "1.3"
 							}}
 						>
@@ -95,11 +96,11 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						<p 
 							className="card-text flex-grow-1"
 							style={{
-								fontSize: "18px",
+								fontSize: "16px",
 								fontFamily: "Open Sans, sans-serif",
 								color: "#ffffff",
-								lineHeight: "1.6",
-								marginBottom: "15px",
+								lineHeight: "1.5",
+								marginBottom: "12px",
 								overflow: "hidden",
 								textOverflow: "ellipsis"
 							}}
@@ -111,10 +112,10 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						<p 
 							className="text-center"
 							style={{
-								fontSize: "16px",
+								fontSize: "14px",
 								fontFamily: "Open Sans, sans-serif",
 								color: "#ffc107",
-								marginBottom: "15px",
+								marginBottom: "12px",
 								fontStyle: "italic"
 							}}
 						>
@@ -125,7 +126,7 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						<div className="price-section mb-3 text-center">
 							<span 
 								style={{
-									fontSize: "24px",
+									fontSize: "20px",
 									fontFamily: "Open Sans, sans-serif",
 									fontWeight: "700",
 									color: "#ffc107"
@@ -138,14 +139,14 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						{/* Action Button */}
 						<a
 							href={entry.link}
-							className="btn btn-warning btn-lg mt-auto"
+							className="btn btn-warning btn-sm mt-auto"
 							style={{
 								width: "100%",
 								height: "44px",
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
-								fontSize: "18px",
+								fontSize: "16px",
 								fontFamily: "Open Sans, sans-serif",
 								fontWeight: "600",
 								borderRadius: "8px",
@@ -164,7 +165,7 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 								e.currentTarget.style.transform = "translateY(0)";
 							}}
 						>
-							View Product
+							View on Amazon
 						</a>
 					</div>
 				</div>
@@ -173,23 +174,23 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 			{/* Responsive Styles */}
 			<style>
 				{`
-					/* Tablet responsive */
+					/* Tablet responsive - maintain senior-friendly sizes */
 					@media (max-width: 991px) {
 						.product-card-container {
-							width: 350px !important;
+							width: 280px !important;
 						}
 						
 						.product-card-responsive {
-							width: 350px !important;
-							height: 480px !important;
+							width: 280px !important;
+							height: 420px !important;
 						}
 					}
 					
-					/* Mobile responsive */
+					/* Mobile responsive - stack vertically but keep readable */
 					@media (max-width: 767px) {
 						.product-card-container {
 							width: 100% !important;
-							max-width: 350px !important;
+							max-width: 320px !important;
 							margin: 0 auto !important;
 							display: flex !important;
 							justify-content: center !important;
@@ -197,7 +198,24 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						
 						.product-card-responsive {
 							width: 100% !important;
-							max-width: 350px !important;
+							max-width: 320px !important;
+							height: 450px !important;
+						}
+					}
+					
+					/* Small mobile - ensure cards remain accessible */
+					@media (max-width: 480px) {
+						.product-card-container {
+							width: 100% !important;
+							max-width: 300px !important;
+						}
+						
+						.product-card-responsive {
+							width: 100% !important;
+							max-width: 300px !important;
+							height: 430px !important;
+						}
+					}
 							height: auto !important;
 							min-height: 450px !important;
 							margin: 0 auto !important;

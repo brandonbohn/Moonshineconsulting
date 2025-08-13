@@ -12,14 +12,19 @@ function Header(){
 
 <nav className="navbar navbar-expand-lg text-white" style={{ backgroundColor: "#08023a", padding: "0" }}>
   <div className="container-fluid d-flex justify-content-between align-items-center px-0" style={{ height: "100%" }}>
-    {/* Logo stretched to cover background */}
-    <div className="logo-container" style={{ height: "100%", display: "flex", alignItems: "center" }}>
+    {/* Logo with proportional spacing */}
+    <div className="logo-container" style={{ 
+      height: "100%", 
+      display: "flex", 
+      alignItems: "center",
+      padding: "20px"
+    }}>
       <img
         src="/images/logo.PNG"
         className="logo-stretched"
         alt="Moonshine Consulting Logo"
         style={{
-          height: "200px",
+          height: "120px",
           width: "auto",
           objectFit: "contain",
           display: "block"

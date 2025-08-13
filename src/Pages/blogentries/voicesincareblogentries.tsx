@@ -1,11 +1,19 @@
 import React from 'react';
+import BlogNavigation from '../../components/BlogNavigation.tsx';
 
 function Voicesincareblogentry() {
   return (
-    <div
-      className="container"
-      style={{ fontFamily: "sans-serif", minHeight: "100vh" }}
-    >
+    <div>
+      {/* Blog Navigation */}
+      <BlogNavigation 
+        categoryName="Voices in Care" 
+        categoryLink="/Voicesincare" 
+      />
+
+      <div
+        className="container"
+        style={{ fontFamily: "sans-serif", minHeight: "100vh" }}
+      >
       <style>
         {`
           .container {
@@ -89,6 +97,7 @@ function Voicesincareblogentry() {
           Hospice nursing is a calling that teaches me about compassion, courage, and
           the true meaning of care.
         </p>
+      </div>
       </div>
     </div>
   );

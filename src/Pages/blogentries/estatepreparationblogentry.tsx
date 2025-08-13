@@ -1,9 +1,16 @@
 import React from 'react';
-import BlogComponent from '../../components/blogcomponentengine.tsx';
+import BlogNavigation from '../../components/BlogNavigation.tsx';
+
 function EstateprepBlogentry() {
   return (
+    <div>
+      {/* Blog Navigation */}
+      <BlogNavigation 
+        categoryName="Senior Living Desk" 
+        categoryLink="/seniorlivingdesk" 
+      />
 
-    <div className="container my-5">
+      <div className="container my-5">
 <div className="row bg-light p-4 rounded shadow">
 <h1 className=" text-center ">Before I Go: What I've Learned About Death, Faith, and Protecting My Family</h1>
 <div className="d-flex justify-content-center">
@@ -49,6 +56,7 @@ This is a wake-up call for many families. You must take steps now if you want to
     </div>
             
             </div>
+      </div>
         
     
   

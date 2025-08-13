@@ -1,10 +1,17 @@
 import React from 'react';
+import BlogNavigation from '../../components/BlogNavigation.tsx';
 
    function MoonshinesCornerBlogentry() {
   return (
+    <div>
+      {/* Blog Navigation */}
+      <BlogNavigation 
+        categoryName="Moonshine's Corner" 
+        categoryLink="/moonshinescorner" 
+      />
 
-    <div className="container my-5">
-<div className="row bg-light p-4 rounded shadow">
+      <div className="container my-5">
+        <div className="row bg-light p-4 rounded shadow">
 <h1 className=" text-center ">How I Herded Hearts Instead of Sheep</h1>
 <div className="d-flex justify-content-center">
   
@@ -37,6 +44,7 @@ Gotta run here comes mom. I will give more information about my experiences visi
     </div>
             
             </div>
+      </div>
         
     
   

@@ -7,15 +7,15 @@ function MoonshinesCorner() {
     return (
         <div style={{ fontFamily: "sans-serif", background: "#C9A17D", minHeight: "100vh" }}>
             <header style={{ background: "#7B3F00", padding: "30px", textAlign: "center" }}>
-                <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#ffffff" }}>Moonshine's Corner</h1>
-                <p style={{ fontSize: "1.25rem", color: "#ffffff" }}>
+                <h1 style={{ margin:"30px", padding:"20px", fontSize: "28px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>Moonshine's Corner</h1>
+                <p style={{ fontSize: "18px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>
                     A blog where Moonshine the dog interviews therapy dogs about their amazing work!
                 </p>
             
             </header>
             <main style={{ maxWidth:"auto", margin: "20px", padding: "20px"  }}>
                 <section>
-                    <h2 style={{ color: "#ffffff" }}>Latest Interviews</h2>
+                    <h2 style={{ color: "#ffffff", fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>Latest Interviews</h2>
                      <div className="col 100">
                     <BlogComponent id={1} />
                 </div>

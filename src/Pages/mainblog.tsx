@@ -21,10 +21,10 @@ function MainBlog() {
         <div className="" style={{ padding: "20px", backgroundColor: "#ffffff",  width: "auto", height: "auto",marginTop: "150px" }}>
           <div className="boxtwo text-center" style={{  padding: "20px", backgroundColor: "#08023a", borderRadius: "10px", width: "auto", height: "auto" }}>
 
-            <h1 style={{ fontSize: "34px", }} className="text-white">
+            <h1 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif" }} className="text-white">
               The Care Professional Chronicle
             </h1>
-            <p className="text-white ">
+            <p className="text-white" style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
               Your Trusted Source for Senior Care and Advocacy
             </p>
            {new Date().toLocaleDateString(undefined, {

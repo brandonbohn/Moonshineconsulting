@@ -4,8 +4,8 @@ function Voicesincare() {
   return (
         <div style={{ fontFamily: "sans-serif", background: "#ffffff", minHeight: "100vh" }}>
             <header style={{ background: "#08023a", padding: "30px", textAlign: "center", marginTop: "50px", borderRadius: "10px" }}>
-                <h1 style={{ margin:"30px", padding:"20px", fontSize: "2.5rem", color: "#ffffff" }}>Voices In Care</h1>
-                <p style={{ fontSize: "1.25rem", color: "#ffffff" }}>
+                <h1 style={{ margin:"30px", padding:"20px", fontSize: "28px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>Voices In Care</h1>
+                <p style={{ fontSize: "18px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>
                    A place where caregivers and professionals can share their insights, stories, and struggles from the field.
                 </p>
             

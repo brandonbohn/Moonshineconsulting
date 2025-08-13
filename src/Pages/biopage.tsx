@@ -5,7 +5,7 @@ function BioPage() {
     return (
         <section>
 <div>
-  <h1 className="title">Who We Are......</h1>
+  <h1 className="title" style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>Who We Are......</h1>
   <div style={{ borderTop: "5px solid #000000", margin: "20px 0" }}></div>
         {/* Main Container with Responsive Layout */}
         <div className="bio-container">
@@ -22,13 +22,9 @@ function BioPage() {
                                 picture: "./images/CEO.jpg",
                                 bioPoints: [
                                    "30+ years in nursing and healthcare management", 
-                                   "A experienced Homehealth Surveyor with a passion for healthcare",
-                                    "10 years as a Home Health Nurse",
-                                    "3 Years in Long Term Care Working as a Floor Nurse doing Hands on Patient Care and Senior Advocacy",
-                                    "Enjoys mentoring and training new nurses",
-                                    "Advocate for patient-centered care and quality improvement",
-                                    "Skilled in regulatory compliance and quality assurance",
-                                    "Committed to continuous learning and open source contributions"
+                                   "Experienced Home Health Surveyor",
+                                    "Passionate about patient-centered care and quality improvement",
+                                    "Advocate for senior healthcare and continuous learning"
                                 ]
                             },
                             {
@@ -37,10 +33,9 @@ function BioPage() {
                                 picture: "./images/Christie.jpg",
                                 bioPoints: [
                                     "Chris began her career in 1994 in the hospital",
-                                    "Staff Nurse: GU, ENT, GYN, Prison ward and intensive care unit for 2 years.",
-                                    "Labor and Delivery Nursery RN for 2 years.",
-                                    "Field Nurse performing insurance assessments for long term care insurance products, Home Healthcare, and Hospice RN for total 31 years.",
-                                    "24 years' experience in workers compensation, Team leader, and came on board with Gallagher in 2020."
+                                    "31 years of nursing experience across multiple specialties",
+                                    "24 years' experience in workers compensation and insurance assessments",
+                                    "Team leader at Gallagher since 2020"
                                 ]
                             },
                             {
@@ -81,9 +76,10 @@ function BioPage() {
                 <div>
                     <h2 style={{ color: "#000000" }}>Contact</h2>
                     <ul style={{ color: "#000000" }}>
-                        <li>Email: moonshineconsulting6@gmail.com</li>
+                        <li>Email: contact@moonshine.com</li>
                     </ul>
                 </div>
+
             </div>
 
            
@@ -98,38 +94,55 @@ function BioPage() {
                 }}>
                 
                   <h1 className="" style={{ margin: 0, color: "#000000" }}>Our Mission</h1>
-                  <p>
+                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
                     At Moonshine Consulting, we empower seniors and their families to navigate the complex world of long-term healthcare with confidence and clarity. We believe every senior deserves compassionate care and informed choices about their health and wellbeing.
                   </p>
                   <h5>Our Expertise</h5>
-                  <p>
+                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
                     Founded by healthcare professionals with over 50 years of combined experience, our team brings deep knowledge from:
-                    <ul>
+                    <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
                       <li>Home Health services</li>
                       <li>Hospice care</li>
                       <li>Workers Compensation Insurance</li>
                       <li>Long Term Care</li>
+                      <li>Hospital specialties including GU, ENT, GYN, and ICU</li>
+                      <li>Labor and Delivery Nursery care</li>
+                      <li>Insurance assessments for long term care products</li>
+                    </ul>
+                  </p>
+                  
+                  <h5>Our Professional Background</h5>
+                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
+                    Our team's extensive experience includes:
+                    <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
+                      <li>30+ years in nursing and healthcare management</li>
+                      <li>Experienced Home Health Surveyor with regulatory expertise</li>
+                      <li>10 years as a Home Health Nurse providing direct patient care</li>
+                      <li>3 years in Long Term Care with hands-on patient advocacy</li>
+                      <li>Staff nursing in hospital settings including prison ward and intensive care</li>
+                      <li>Specialized experience in workers compensation and insurance assessments</li>
+                      <li>Leadership roles in healthcare organizations</li>
                     </ul>
                   </p>
                   <h5>What We Offer For Seniors and Caregivers:</h5>
-                  <ul>
+                  <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
                     <li>Guidance on Medicare, Home Health, Hospice and Long Term Care</li>
                     <li>Educational resources about Missouri's healthcare policies and how they impact you</li>
                     <li>Practical solutions for daily healthcare challenges</li>
                     <li>Support during life transitions and care decisions</li>
                   </ul>
                   <h5>Our Approach:</h5>
-                  <p>
+                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
                     We provide warm, compassionate guidance combined with expert knowledge. Our goal is to help you understand your options, advocate for your needs, and make informed decisions about your care journey.
                     <br />
 
                    
-                    <strong>Making a Difference:</strong> Beyond our consulting services, we're committed to showing how meaningful connections, whether through our educational content, community outreach, or even our featured therapy animals—can enhance the lives of seniors and their families.
+                    <strong>Making a Difference:</strong> we're committed to showing how meaningful connections, whether through our educational content, community outreach, or even our featured therapy animals—can enhance the lives of seniors and their families.
                     <br />
 
-                    <strong>Ready to Get Started?</strong> Contact us today to learn how we can help you navigate your healthcare journey with confidence and peace of mind.
+                    <strong> Moonshine Consulting - Illuminating your path to better healthcare</strong> 
                     <br />
-                    Moonshine Consulting - Illuminating your path to better healthcare
+                   
                   </p>
                 </div>  
             </div>

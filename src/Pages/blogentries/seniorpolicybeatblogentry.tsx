@@ -1,7 +1,17 @@
+import React from 'react';
+import BlogNavigation from '../../components/BlogNavigation.tsx';
+
 function SeniorPolicyBeatBlog()
 {
   return (
-    <div className="Text" style={{ fontFamily: "sans-serif", minHeight: "100vh" }}>
+    <div>
+      {/* Blog Navigation */}
+      <BlogNavigation 
+        categoryName="Senior Policy Beat" 
+        categoryLink="/seniorlivingdesk" 
+      />
+
+      <div className="Text" style={{ fontFamily: "sans-serif", minHeight: "100vh" }}>
       <div>
         <div>
         </div>
@@ -61,6 +71,7 @@ function SeniorPolicyBeatBlog()
       <p>
         Stay tuned for updates on key topics such as healthcare, retirement security, elder rights, and more.
       </p>
+      </div>
     </div>
   );
 }

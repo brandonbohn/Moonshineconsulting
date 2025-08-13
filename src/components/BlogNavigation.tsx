@@ -5,8 +5,7 @@ interface BlogNavigationProps {
   categoryName: string;
   categoryLink: string;
 }
-
-const BlogNavigation: React.FC<BlogNavigationProps> = ({ categoryName, categoryLink }) => {
+function BlogNavigation({ categoryName, categoryLink }: BlogNavigationProps) {
   return (
     <div className="blog-navigation" style={{ padding: "30px 0", backgroundColor: "#faf0e6" }}>
       <div className="container">

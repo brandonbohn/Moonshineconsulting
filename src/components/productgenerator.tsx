@@ -17,10 +17,10 @@ type ProductEntry = {
 };
 
 export const ProductComponent = ({ productid }: ProductComponentProps) => {
-	let entries: ProductEntry[] = ProductData || [];
+	let entries: ProductEntry[] = (ProductData || []).map(product => ({ ...product, productAdvisory: product.productAdvisory || "" }));
 	if (productid !== undefined) {
 		const entry = ProductData.find(product => product.productid === productid);
-		if (entry) entries = [{ ...entry, imageUrl: entry.photo }];
+		if (entry) entries = [{ ...entry, imageUrl: entry.photo, productAdvisory: entry.productAdvisory || "" }];
 	}
 	if (entries.length === 0) {
 		return <div>No product entries found.</div>;

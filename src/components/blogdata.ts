@@ -2,15 +2,15 @@
 
 export const blogData = [
   {
-    NewsSection: "Moonshines Corner",
+    NewsSection: "Moonshine's Corner",
     image: "./images/moonshine.jpg",
     title: "How I Herded Hearts Instead of Sheep",
-    article: "Moonshine Introduces Himself as a caring loving nursing companion that tried to be a therapy dog but while too scared to do so still inspired elderly patients.",
+    article: "Moonshine introduces himself as a caring, loving nursing companion who tried to be a therapy dog but, while too scared to do so, still inspired elderly patients.",
     date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }),
     category: "MoonshinesCorner",
     author: "Moonshine",
     id: 1,
-    link: "./blogentries/moonshinescornerblogentry",
+    link: "./blogentries/moonshinesblogentry",
   },
   {
     NewsSection: "Senior Policy Beat",

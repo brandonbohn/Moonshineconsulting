@@ -5,7 +5,7 @@ function BioPage() {
     return (
         <section>
 <div>
-  <h1 className="title" style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>Who We Are......</h1>
+  <h1 className="title" style={{ fontSize: "46px", fontFamily: "Open Sans," }}>Who We Are......</h1>
   <div style={{ borderTop: "5px solid #000000", margin: "20px 0" }}></div>
         {/* Main Container with Responsive Layout */}
         <div className="bio-container">
@@ -60,7 +60,7 @@ function BioPage() {
                                 <div>
                                     <h1 style={{ margin: 0, fontSize: 24, color: "#000000" }}>{person.name}</h1>
                                     <p style={{ color: "#000000", fontSize: 24 }}>{person.title}</p>
-                                    <ul style={{ paddingLeft: 20, margin: "12px 0 0 0", color: "#000000", fontSize: 15 }}>
+                                    <ul style={{ paddingLeft: 20, margin: "12px 0 0 0", color: "#000000", fontSize: 18 }}>
                                         {person.bioPoints.map((point, i) => (
                                             <li key={i}>{point}</li>
                                         ))}
@@ -74,7 +74,7 @@ function BioPage() {
                   
                 </div>
                 <div>
-                    <h2 style={{ color: "#000000" }}>Contact</h2>
+                    <h2 style={{ color: "#000000", fontSize: "24px" }}>Contact</h2>
                     <ul style={{ color: "#000000" }}>
                         <li>Email: contact@moonshine.com</li>
                     </ul>
@@ -89,7 +89,7 @@ function BioPage() {
                   background: "#ffffff",
                   borderRadius: "16px",
                   boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
-                  fontSize: "16px",
+                  fontSize: "18px",
                   
                 }}>
                 

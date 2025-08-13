@@ -5,11 +5,11 @@ function MoonshinesCorner() {
 
    
     return (
-        <div style={{ fontFamily: "sans-serif", background: "#C9A17D", minHeight: "100vh" }}>
+        <div style={{ fontFamily: "Open Sans, sans-serif", background: "#C9A17D", minHeight: "100vh" }}>
             <header style={{ background: "#7B3F00", padding: "30px", textAlign: "center" }}>
                 <h1 style={{ margin:"30px", padding:"20px", fontSize: "28px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>Moonshine's Corner</h1>
-                <p style={{ fontSize: "18px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>
-                    A blog where Moonshine the dog interviews therapy dogs about their amazing work!
+                <p style={{ fontSize: "18px", color: "#ffffff", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
+                    A blog where Moonshine the dog interviews therapy dogs about their amazing work.
                 </p>
             
             </header>

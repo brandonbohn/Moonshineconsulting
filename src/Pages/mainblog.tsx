@@ -21,10 +21,10 @@ function MainBlog() {
         <div className="" style={{ padding: "20px", backgroundColor: "#ffffff",  width: "auto", height: "auto",marginTop: "150px" }}>
           <div className="boxtwo text-center" style={{  padding: "20px", backgroundColor: "#08023a", borderRadius: "10px", width: "auto", height: "auto" }}>
 
-            <h1 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif" }} className="text-white">
+            <h1 style={{ fontSize: "56px", fontFamily: "Open Sans, sans-serif" }} className="text-white">
               The Care Professional Chronicle
             </h1>
-            <p className="text-white" style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
+            <p className="text-white" style={{ fontSize: "24px", fontFamily: "Open Sans," }}>
               Your Trusted Source for Senior Care and Advocacy
             </p>
            {new Date().toLocaleDateString(undefined, {
@@ -37,7 +37,7 @@ function MainBlog() {
             
             <div
               className="text-white"
-              style={{ fontSize: "20px", marginBottom: "20px" }}
+              style={{ fontSize: "24px", marginBottom: "20px" }}
             >
               
             </div>
@@ -53,6 +53,7 @@ function MainBlog() {
       flexDirection: isMobile ? "column" : "row",
       justifyContent: isMobile ? "center" : "space-between",
       marginBottom: "20px",
+      alignItems: "stretch", // This ensures all cards in a row have the same height
     }}
   >
     {row.map((id) => (
@@ -61,9 +62,22 @@ function MainBlog() {
         style={{
           width: isMobile ? "100%" : "48%",
           marginBottom: isMobile ? "20px" : "0",
+          display: "flex", 
+          flexDirection: "column", 
         }}
       >
-        <BlogComponent id={id} />
+        <div style={{
+          flex: "1", // This makes each card expand to fill available height
+          display: "flex",
+          flexDirection: "column",
+          padding: "15px", // Add consistent padding to all cards
+          backgroundColor: "#ffffff",
+          borderRadius: "8px",
+          boxShadow: "0 2px 4px rgba(0,0,0,0.1)", // Add subtle shadow for better definition
+          minHeight: "400px", // Set minimum height for consistency
+        }}>
+          <BlogComponent id={id} />
+        </div>
       </div>
     ))}
   </div>

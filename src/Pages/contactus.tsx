@@ -86,7 +86,7 @@ const registration = () => {
                     fontSize: "18px",
                     fontFamily: "Open Sans, sans-serif",
                     fontWeight: "600",
-                    color: "#ffffff",
+                    color: "#000000",
                     marginBottom: "8px",
                     display: "block"
                   }}>
@@ -98,7 +98,7 @@ const registration = () => {
                     type="email"
                     required
                     style={{ 
-                      border: '2px solid #ffffff',
+                      border: '1px solid #cccccc',
                       borderRadius: '8px',
                       padding: '12px 15px',
                       fontSize: '16px',
@@ -109,7 +109,7 @@ const registration = () => {
                       color: '#000000'
                     }}
                     onFocus={(e) => e.target.style.borderColor = '#ffc107'}
-                    onBlur={(e) => e.target.style.borderColor = '#ffffff'}
+                    onBlur={(e) => e.target.style.borderColor = '#cccccc'}
                   />
                 </div>
 
@@ -119,7 +119,7 @@ const registration = () => {
                     fontSize: "18px",
                     fontFamily: "Open Sans, sans-serif",
                     fontWeight: "600",
-                    color: "#ffffff",
+                    color: "#000000",
                     marginBottom: "8px",
                     display: "block"
                   }}>
@@ -132,7 +132,7 @@ const registration = () => {
                     rows={6}
                     required
                     style={{ 
-                      border: '2px solid #ffffff',
+                      border: '1px solid #cccccc',
                       borderRadius: '8px',
                       padding: '12px 15px',
                       fontSize: '16px',
@@ -143,7 +143,7 @@ const registration = () => {
                       color: '#000000'
                     }}
                     onFocus={(e) => e.target.style.borderColor = '#ffc107'}
-                    onBlur={(e) => e.target.style.borderColor = '#ffffff'}
+                    onBlur={(e) => e.target.style.borderColor = '#cccccc'}
                   ></textarea>
                 </div>
 

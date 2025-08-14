@@ -20,6 +20,7 @@ function MoonshinesBlog(){
           
           <article>
             <h1 className="Titles cards text-white" style={{ textAlign: "center", background:"#08023a", color: "#ffffff", padding: "20px", marginTop: "50px", borderRadius: "8px", fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>How I Learned to Bring Smiles to Senior Faces</h1>
+            <h2 style={{ textAlign: "center", background:"#08023a", color: "#ffffff", padding: "10px", marginTop: "0", borderRadius: "0 0 8px 8px", fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontStyle: "italic" }}>Author: Karen</h2>
             
             <section style={{ background: "#ffffff", padding: "20px", borderRadius: "8px", margin: "20px 0" }}>
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>

@@ -45,5 +45,16 @@ export const blogData = [
     id:4,
     link: "./blogentries/estatepreparation",
   },
+  {
+    NewsSection: "Voices In Care",
+    image: "./images/Nurse.jpg",
+    title: "A Nurse's Journey: From Reluctant Student to Dedicated Caregiver",
+    article: "A personal memoir reflecting on the transformation from an unmotivated high school student to a passionate healthcare professional, sharing memorable experiences and lessons learned throughout a nursing career.",
+    date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }),
+    category: "Voices In Care",
+    author: "Christie Stephan RN ODG",
+    id: 5,
+    link: "./blogentries/nursejourneymemoryblogentry",
+  },
 ];
 

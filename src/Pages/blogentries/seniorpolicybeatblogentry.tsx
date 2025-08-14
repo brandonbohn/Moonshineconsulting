@@ -21,6 +21,7 @@ function SeniorPolicyBeatBlog()
           
           <article>
             <h1 className="Titles cards text-white" style={{ textAlign: "center", background:"#08023a", color: "#ffffff", padding: "20px", marginTop: "50px", borderRadius: "8px", fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>Medicare Home Health: What Seniors Need to Know</h1>
+            <h2 style={{ textAlign: "center", background:"#08023a", color: "#ffffff", padding: "10px", marginTop: "0", borderRadius: "0 0 8px 8px", fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontStyle: "italic" }}>Author: Karen</h2>
             
             <section style={{ background: "#ffffff", padding: "20px", borderRadius: "8px", margin: "20px 0" }}>
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
@@ -37,10 +38,10 @@ function SeniorPolicyBeatBlog()
                 The idea of home health can be traced all the way back to the ancients, who often traveled to see their patients or were stationed at the king's house. However, these practices evolved and became the basis of what home health is today in the early 19th century, when doctors would come to see their patients and make house calls with their black bags.
               </p>
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "15px" }}>
-                This tradition continued to evolve in the early 20th century when nurses took on the role of seeing patients at the urge of local physicians. A pivotal moment came in 1893 when Lillian Wald coined the term "public health nurse" and moved to New York's Lower East Side, eventually founding what became the Visiting Nurse Service of New York.
+                This tradition continued to evolve in the early 20th century when nurses took on the role of seeing patients at the urge of local physicians. A pivotal moment came in 1893 when Lillian Wald coined the term "public health nurse" and moved to New York's Lower East Side, eventually founding what became the Visiting Nurse Service of New York.<sup><a href="#ref1" style={{ color: "#08023a", textDecoration: "none" }}>1</a></sup>
               </p>
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
-                Then came the mid-1960s and the creation of Medicare through Social Security. This was a game-changer for home health care. As time went on, doctors became more specialized, and nurses took over general practice visits. Modern home health was born.
+                Then came the mid-1960s and the creation of Medicare through Social Security.<sup><a href="#ref2" style={{ color: "#08023a", textDecoration: "none" }}>2</a></sup> This was a game-changer for home health care. As time went on, doctors became more specialized, and nurses took over general practice visits. Modern home health was born.
               </p>
               
               <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>What Home Health Is Today</h2>
@@ -65,7 +66,7 @@ function SeniorPolicyBeatBlog()
                 Many years ago, in the 1990s, I was able to make visits to people's homes without worrying about strict rules and regulations. As an RN, I could go to someone's house who had diabetes just to give them an insulin injection, see other patients, then give them another injection. It was straightforward nursing care.
               </p>
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
-                Then came a new regulation by the government called the Prospective Payment System (PPS). It was introduced and adopted in 2000. This completely changed how we could provide care.
+                Then came a new regulation by the government called the Prospective Payment System (PPS). It was introduced and adopted in 2000.<sup><a href="#ref3" style={{ color: "#08023a", textDecoration: "none" }}>3</a></sup> This completely changed how we could provide care.
               </p>
               
               <h3 style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "25px", marginBottom: "15px" }}>What PPS Means for You</h3>
@@ -128,6 +129,22 @@ function SeniorPolicyBeatBlog()
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
                 Stay tuned for updates on key topics such as healthcare, retirement security, elder rights, and more.
               </p>
+              
+              <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "40px", marginBottom: "20px" }}>
+                References
+              </h2>
+              
+              <div style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "30px", backgroundColor: "#f8f9fa", padding: "20px", borderRadius: "5px" }}>
+                <p id="ref1" style={{ marginBottom: "15px" }}>
+                  <strong>1.</strong> Visiting Nurse Service of New York. "Our History: Lillian Wald and the Henry Street Settlement." <em>VNSNY.org</em>. Accessed 2025. Available at: <a href="https://www.vnsny.org/about-us/our-history/" target="_blank" rel="noopener noreferrer" style={{ color: "#08023a" }}>https://www.vnsny.org/about-us/our-history/</a>
+                </p>
+                <p id="ref2" style={{ marginBottom: "15px" }}>
+                  <strong>2.</strong> Centers for Medicare & Medicaid Services. "History of Medicare & Medicaid." <em>CMS.gov</em>. Updated 2024. Available at: <a href="https://www.cms.gov/About-CMS/Agency-Information/History" target="_blank" rel="noopener noreferrer" style={{ color: "#08023a" }}>https://www.cms.gov/About-CMS/Agency-Information/History</a>
+                </p>
+                <p id="ref3" style={{ marginBottom: "0" }}>
+                  <strong>3.</strong> Centers for Medicare & Medicaid Services. "Home Health Prospective Payment System." <em>CMS.gov</em>. Updated 2024. Available at: <a href="https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HomeHealthPPS" target="_blank" rel="noopener noreferrer" style={{ color: "#08023a" }}>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HomeHealthPPS</a>
+                </p>
+              </div>
             </section>
           </article>
         </div>

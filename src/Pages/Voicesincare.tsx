@@ -2,11 +2,11 @@ import React from 'react';
 import BlogComponent from '../components/blogcomponentengine.tsx';
 function Voicesincare() {
   return (
-        <div style={{ fontFamily: "Open Sans, sans-serif", background: "#ffffff", minHeight: "100vh" }}>
+        <div style={{ fontFamily: "sans-serif", background: "#ffffff", minHeight: "100vh" }}>
             <header style={{ background: "#08023a", padding: "30px", textAlign: "center", marginTop: "50px", borderRadius: "10px" }}>
-                <h1 style={{ margin:"30px", padding:"20px", fontSize: "28px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>Voices in Care</h1>
-                <p style={{ fontSize: "18px", color: "#ffffff", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
-                   A place where caregivers and professionals can share their insights, stories and struggles from the field.
+                <h1 style={{ margin:"30px", padding:"20px", fontSize: "28px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>Voices In Care</h1>
+                <p style={{ fontSize: "18px", color: "#ffffff", fontFamily: "Open Sans, sans-serif" }}>
+                   A place where caregivers and professionals can share their insights, stories, and struggles from the field.
                 </p>
             
             </header>
@@ -15,6 +15,9 @@ function Voicesincare() {
                   
                      <div>
                     <BlogComponent id={3} />
+                </div>
+                <div style={{ marginTop: "20px" }}>
+                    <BlogComponent id={5} />
                 </div>
                 </section>
             </main> 

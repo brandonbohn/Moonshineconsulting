@@ -34,28 +34,64 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
     }
 
     return (
-        <div>
+        <div style={{ height: "100%", width: "100%" }}>
             {entries.map((entry) => (
-                <div key={entry.id} className="blog-entry card mb-3" style={{ maxWidth: "400px", margin: "auto",  display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-					<p className="Title">{entry.title}</p>
-					<div style={{ display: "flex", justifyContent: "center" }}>
-						<img
-							src={entry.imageUrl}
-							alt={entry.title}
-							className="px-2"
-							width={200}
-							height={200}
-						/>
-                    </div>
-                    <p className="text-center ">{entry.newsSection}</p>
-                    <p className="body">{entry.article}</p>
-					 <p className="text-center">{entry.date}</p> 
-                    <a
-						href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
-                        className=" mb-4 text-white btn btn-warning btn-block btn mt-3"
-                    >
-                        Read More
-                    </a>
+                <div key={entry.id} className="blog-entry" style={{ 
+                    width: "100%", 
+                    margin: "0",  
+                    display: "flex", 
+                    flexDirection: "column", 
+                    justifyContent: "space-between",
+                    height: "100%",
+                    minHeight: "300px",
+                    padding: "0"
+                }}>
+					<div style={{ flex: "0 0 auto" }}>
+						<p className="Title" style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "15px", lineHeight: "1.3" }}>{entry.title}</p>
+						<div style={{ display: "flex", justifyContent: "center", marginBottom: "15px" }}>
+							<img
+								src={entry.imageUrl}
+								alt={entry.title}
+								className="px-2"
+								width={200}
+								height={200}
+								style={{ objectFit: "cover", borderRadius: "8px" }}
+							/>
+						</div>
+						<p className="text-center" style={{ fontSize: "16px", fontWeight: "600", color: "#08023a", marginBottom: "10px" }}>{entry.newsSection}</p>
+					</div>
+                    <div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+						<p className="body" style={{ 
+							fontSize: "16px", 
+							lineHeight: "1.5", 
+							marginBottom: "15px",
+							overflow: "hidden",
+							display: "-webkit-box",
+							WebkitLineClamp: 3,
+							WebkitBoxOrient: "vertical" as const,
+							textOverflow: "ellipsis",
+							maxHeight: "72px"
+						}}>{entry.article}</p>
+						<div style={{ flex: "0 0 auto" }}>
+							<p className="text-center" style={{ fontSize: "14px", color: "#666", marginBottom: "15px" }}>{entry.date}</p> 
+							<a
+								href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
+								className="mb-4 text-white btn btn-warning btn-block btn mt-3"
+								style={{ 
+									backgroundColor: "#08023a", 
+									borderColor: "#08023a",
+									fontSize: "16px",
+									padding: "10px 20px",
+									borderRadius: "8px",
+									textDecoration: "none",
+									display: "block",
+									textAlign: "center"
+								}}
+							>
+								Read More
+							</a>
+						</div>
+					</div>
         
 				
                 </div>

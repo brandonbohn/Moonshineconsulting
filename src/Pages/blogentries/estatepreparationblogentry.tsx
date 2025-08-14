@@ -14,6 +14,7 @@ function EstateprepBlogentry() {
       <div className="container my-5">
 <div className="row bg-light p-4 rounded shadow">
 <h1 className=" text-center ">Before I Go: What I've Learned About Death, Faith, and Protecting My Family</h1>
+<h2 style={{ textAlign: "center", fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontStyle: "italic", color: "#08023a", marginTop: "10px" }}>Author: Karen</h2>
 <div className="d-flex justify-content-center">
   
 </div>
@@ -39,11 +40,11 @@ function EstateprepBlogentry() {
 </h2>
 
 <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "15px" }}>
-  Did you know that <strong>Missouri recently increased the Medicaid look-back period to seven years</strong> before you can qualify for nursing home assistance? Here's what this means for your family.
+  Did you know that <strong>Missouri recently increased the Medicaid look-back period to seven years</strong> before you can qualify for nursing home assistance?<sup><a href="#ref1" style={{ color: "#08023a", textDecoration: "none" }}>1</a></sup> Here's what this means for your family.
 </p>
 
 <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
-  If your finances aren't protected in a trust at least seven years before you enter a nursing home, <strong>Medicaid can claim your home and property</strong>. They will sell everything to pay for your care.
+  If your finances aren't protected in a trust at least seven years before you enter a nursing home, <strong>Medicaid can claim your home and property</strong>.<sup><a href="#ref2" style={{ color: "#08023a", textDecoration: "none" }}>2</a></sup> They will sell everything to pay for your care.
 </p>
 
 <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>
@@ -282,6 +283,19 @@ function EstateprepBlogentry() {
 <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", fontStyle: "italic", backgroundColor: "#f8f9fa", padding: "15px", borderRadius: "5px" }}>
   <strong>Note:</strong> As an Amazon Associate, I earn from qualifying purchases. These are products I personally recommend based on my nursing experience and have seen help families maintain independence longer.
 </p>
+
+<h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "40px", marginBottom: "20px" }}>
+  References
+</h2>
+
+<div style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "30px", backgroundColor: "#f8f9fa", padding: "20px", borderRadius: "5px" }}>
+  <p id="ref1" style={{ marginBottom: "15px" }}>
+    <strong>1.</strong> Missouri Department of Social Services. "Medicaid Estate Recovery Program." <em>Missouri.gov</em>. Accessed 2025. Available at: <a href="https://dss.mo.gov/mhd/participants/pages/estate-recovery.htm" target="_blank" rel="noopener noreferrer" style={{ color: "#08023a" }}>https://dss.mo.gov/mhd/participants/pages/estate-recovery.htm</a>
+  </p>
+  <p id="ref2" style={{ marginBottom: "0" }}>
+    <strong>2.</strong> Centers for Medicare & Medicaid Services. "Medicaid Estate Recovery." <em>CMS.gov</em>. Updated 2024. Available at: <a href="https://www.medicaid.gov/medicaid/eligibility/estate-recovery/index.html" target="_blank" rel="noopener noreferrer" style={{ color: "#08023a" }}>https://www.medicaid.gov/medicaid/eligibility/estate-recovery/index.html</a>
+  </p>
+</div>
 
 
 What You Need to Do Before You Die: A Senior’s Essential Checklist

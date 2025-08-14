@@ -9,7 +9,7 @@ function NurseJourneyMemoryBlogEntry() {
         categoryName="Voices in Care" 
         categoryLink="/Voicesincare" 
       />
-<div></div>
+
       <div
         className="container"
         style={{ fontFamily: "sans-serif", minHeight: "100vh" }}

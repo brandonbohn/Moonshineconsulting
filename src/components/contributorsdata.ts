@@ -11,7 +11,7 @@ export interface Contributor {
 export const contributorsData: Contributor[] = [
   {
     id: 1,
-    name: "Christie Stephan",
+    name: "Christie Satephan",
     title: "Registered Nurse, Hospice Care Specialist",
     image: "./images/Christie.jpg",
     bio: "Christie brings over 30 years of nursing experience to The Care Professional Chronicle. As a hospice nurse, she has dedicated her career to providing compassionate end-of-life care and supporting families through difficult transitions.",

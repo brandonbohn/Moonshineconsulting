@@ -36,7 +36,7 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
     return (
         <div style={{ height: "100%", width: "100%" }}>
             {entries.map((entry) => (
-                <div key={entry.id} className="blog-entry" style={{ 
+                <div key={entry.id} className="blog-entry blog-content" style={{ 
                     width: "100%", 
                     margin: "0",  
                     display: "flex", 

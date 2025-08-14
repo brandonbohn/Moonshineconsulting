@@ -505,6 +505,119 @@ function homepage() {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
           }
+          
+          /* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
+          @media (min-width: 1400px) {
+            .container-fluid {
+              max-width: 1320px;
+              margin: 0 auto;
+            }
+            
+            /* Larger welcome text */
+            .welcome-header h1 {
+              font-size: 56px !important;
+            }
+            
+            .welcome-header p {
+              font-size: 22px !important;
+            }
+            
+            /* Better product card spacing */
+            .product-grid {
+              gap: 40px !important;
+            }
+            
+            /* Larger founder section */
+            .founder-section h2 {
+              font-size: 40px !important;
+            }
+            
+            .founder-card h3 {
+              font-size: 26px !important;
+            }
+            
+            .founder-card p {
+              font-size: 18px !important;
+            }
+          }
+          
+          /* Ultra Wide Screens (1600px and up) - For Ultrawide Monitors */
+          @media (min-width: 1600px) {
+            .container-fluid {
+              max-width: 1500px;
+            }
+            
+            /* Even larger welcome text */
+            .welcome-header h1 {
+              font-size: 64px !important;
+            }
+            
+            .welcome-header p {
+              font-size: 26px !important;
+            }
+            
+            /* More spacing for products */
+            .product-grid {
+              gap: 60px !important;
+            }
+            
+            /* Larger navigation buttons */
+            .blog-nav-card {
+              padding: 40px !important;
+            }
+            
+            .blog-nav-card h3 {
+              font-size: 28px !important;
+            }
+          }
+          
+          /* Super Ultra Wide (1920px and up) - For 4K and Multiple Monitor Dev Setups */
+          @media (min-width: 1920px) {
+            .container-fluid {
+              max-width: 1800px;
+            }
+            
+            /* Maximum welcome text size */
+            .welcome-header h1 {
+              font-size: 72px !important;
+            }
+            
+            .welcome-header p {
+              font-size: 30px !important;
+            }
+            
+            /* Maximum spacing */
+            .product-grid {
+              gap: 80px !important;
+            }
+            
+            /* Larger content for 4K readability */
+            .founder-section h2 {
+              font-size: 48px !important;
+            }
+            
+            .founder-card h3 {
+              font-size: 30px !important;
+            }
+            
+            .founder-card p {
+              font-size: 20px !important;
+              line-height: 1.8 !important;
+            }
+            
+            /* Larger blog navigation cards */
+            .blog-nav-card {
+              padding: 50px !important;
+            }
+            
+            .blog-nav-card h3 {
+              font-size: 32px !important;
+            }
+            
+            .blog-nav-card p {
+              font-size: 20px !important;
+            }
+          }
         `}
       </style>
     </div>

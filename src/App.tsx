@@ -6,6 +6,7 @@ import Header from './Utilities/header.tsx';
 import MoonshinesCorner from './Pages/moonshinescorner.tsx';
 import PrivacyPolicy from './Pages/privacypolicy.tsx';
 import TermsAndConditions from './Pages/termsandconditions.tsx';
+import SeniorPolicyBeatBlog from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
 
 import MoonshinesBlogEntry from './Pages/blogentries/moonshinesblogentry.tsx';
 import BioPage from './Pages/biopage.tsx';

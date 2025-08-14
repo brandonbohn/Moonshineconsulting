@@ -227,6 +227,117 @@ const registration = () => {
               min-width: auto !important;
             }
           }
+          
+          /* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
+          @media (min-width: 1400px) {
+            .contact-page-container {
+              padding: 60px 40px !important;
+            }
+            
+            .container {
+              max-width: 1000px !important;
+            }
+            
+            .contact-page-container h2 {
+              font-size: 32px !important;
+            }
+            
+            .contact-page-container p {
+              font-size: 20px !important;
+            }
+            
+            .contact-form-container {
+              padding: 50px !important;
+            }
+            
+            .form-group label {
+              font-size: 20px !important;
+            }
+            
+            .form-control {
+              font-size: 18px !important;
+              padding: 15px 18px !important;
+              min-height: 48px !important;
+            }
+            
+            .btn {
+              font-size: 20px !important;
+              padding: 15px 50px !important;
+              min-width: 250px !important;
+            }
+          }
+          
+          /* Ultra Wide Screens (1600px and up) - For Ultrawide Monitors */
+          @media (min-width: 1600px) {
+            .contact-page-container {
+              padding: 80px 60px !important;
+            }
+            
+            .container {
+              max-width: 1200px !important;
+            }
+            
+            .contact-page-container h2 {
+              font-size: 36px !important;
+            }
+            
+            .contact-page-container p {
+              font-size: 22px !important;
+            }
+            
+            .contact-form-container {
+              padding: 60px !important;
+            }
+            
+            .form-group label {
+              font-size: 22px !important;
+            }
+            
+            .form-control {
+              font-size: 20px !important;
+              padding: 18px 20px !important;
+              min-height: 52px !important;
+            }
+          }
+          
+          /* Super Ultra Wide (1920px and up) - For 4K and Multiple Monitor Dev Setups */
+          @media (min-width: 1920px) {
+            .contact-page-container {
+              padding: 100px 80px !important;
+            }
+            
+            .container {
+              max-width: 1400px !important;
+            }
+            
+            .contact-page-container h2 {
+              font-size: 40px !important;
+            }
+            
+            .contact-page-container p {
+              font-size: 24px !important;
+            }
+            
+            .contact-form-container {
+              padding: 70px !important;
+            }
+            
+            .form-group label {
+              font-size: 24px !important;
+            }
+            
+            .form-control {
+              font-size: 22px !important;
+              padding: 20px 25px !important;
+              min-height: 56px !important;
+            }
+            
+            .btn {
+              font-size: 22px !important;
+              padding: 18px 60px !important;
+              min-width: 300px !important;
+            }
+          }
         `}
       </style>
     </div>

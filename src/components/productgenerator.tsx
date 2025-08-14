@@ -253,6 +253,92 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 							font-size: 22px !important;
 						}
 					}
+					
+					/* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
+					@media (min-width: 1400px) {
+						.product-card-container {
+							width: 320px !important;
+						}
+						
+						.product-card-responsive {
+							width: 320px !important;
+							height: 520px !important;
+						}
+						
+						.product-card-responsive .card-title {
+							font-size: 22px !important;
+						}
+						
+						.product-card-responsive .card-text {
+							font-size: 18px !important;
+							line-height: 1.6 !important;
+						}
+						
+						.product-card-responsive .btn {
+							font-size: 18px !important;
+							padding: 12px 25px !important;
+							min-height: 48px !important;
+						}
+					}
+					
+					/* Ultra Wide Screens (1600px and up) - For Ultrawide Monitors */
+					@media (min-width: 1600px) {
+						.product-card-container {
+							width: 360px !important;
+						}
+						
+						.product-card-responsive {
+							width: 360px !important;
+							height: 560px !important;
+						}
+						
+						.product-card-responsive .card-title {
+							font-size: 24px !important;
+						}
+						
+						.product-card-responsive .card-text {
+							font-size: 19px !important;
+							line-height: 1.7 !important;
+						}
+						
+						.product-card-responsive .btn {
+							font-size: 19px !important;
+							padding: 14px 30px !important;
+							min-height: 50px !important;
+						}
+					}
+					
+					/* Super Ultra Wide (1920px and up) - For 4K and Multiple Monitor Dev Setups */
+					@media (min-width: 1920px) {
+						.product-card-container {
+							width: 400px !important;
+						}
+						
+						.product-card-responsive {
+							width: 400px !important;
+							height: 600px !important;
+						}
+						
+						.product-card-responsive .card-title {
+							font-size: 26px !important;
+						}
+						
+						.product-card-responsive .card-text {
+							font-size: 20px !important;
+							line-height: 1.8 !important;
+						}
+						
+						.product-card-responsive .btn {
+							font-size: 20px !important;
+							padding: 16px 35px !important;
+							min-height: 52px !important;
+						}
+						
+						.product-card-responsive img {
+							width: 250px !important;
+							height: 250px !important;
+						}
+					}
 				`}
 			</style>
 		</div>

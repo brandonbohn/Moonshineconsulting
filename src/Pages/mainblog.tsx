@@ -18,7 +18,7 @@ function MainBlog() {
 
 
     return (
-      <section className="">
+      <section className="container">
         <div className="" style={{ padding: "20px", backgroundColor: "#ffffff",  width: "auto", height: "auto",marginTop: "150px" }}>
           {/* Newspaper Header */}
           <div className="boxtwo text-center" style={{  padding: "30px", backgroundColor: "#08023a", borderRadius: "10px", width: "auto", height: "auto", marginBottom: "30px" }}>
@@ -71,7 +71,7 @@ function MainBlog() {
           </div>
 
           {/* Main Sections */}
-          <div style={{ 
+          <div className="main-sections-grid" style={{ 
             display: "grid", 
             gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", 
             gap: "40px",
@@ -80,7 +80,7 @@ function MainBlog() {
             
             {/* Lifestyle Section */}
             <div>
-              <div style={{ 
+              <div className="section-header" style={{ 
                 borderBottom: "3px solid #08023a", 
                 marginBottom: "20px",
                 paddingBottom: "8px"
@@ -165,7 +165,7 @@ function MainBlog() {
 
             {/* Voices in Care Section */}
             <div>
-              <div style={{ 
+              <div className="section-header" style={{ 
                 borderBottom: "3px solid #08023a", 
                 marginBottom: "20px",
                 paddingBottom: "8px"
@@ -263,6 +263,113 @@ function MainBlog() {
             </p>
           </div>
         </div>
+        
+        {/* Extra Large Screen Media Queries */}
+        <style>
+          {`
+            /* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
+            @media (min-width: 1400px) {
+              .container {
+                max-width: 1320px;
+                margin: 0 auto;
+              }
+              
+              /* Larger newspaper header for big screens */
+              .boxtwo h1 {
+                font-size: 60px !important;
+                letter-spacing: 3px !important;
+              }
+              
+              .boxtwo p {
+                font-size: 24px !important;
+              }
+              
+              /* Better spacing for wide screens */
+              .main-sections-grid {
+                gap: 60px !important;
+              }
+              
+              /* Larger section headers */
+              .section-header h3 {
+                font-size: 28px !important;
+              }
+              
+              .section-header p {
+                font-size: 16px !important;
+              }
+            }
+            
+            /* Ultra Wide Screens (1600px and up) - For Ultrawide Monitors */
+            @media (min-width: 1600px) {
+              .container {
+                max-width: 1500px;
+              }
+              
+              /* Even larger newspaper header */
+              .boxtwo h1 {
+                font-size: 72px !important;
+                letter-spacing: 4px !important;
+              }
+              
+              .boxtwo p {
+                font-size: 28px !important;
+              }
+              
+              /* More spacing for ultrawide */
+              .main-sections-grid {
+                gap: 80px !important;
+              }
+              
+              /* Larger content text for better readability */
+              .blog-content {
+                font-size: 18px !important;
+                line-height: 1.8 !important;
+              }
+              
+              /* Larger section headers */
+              .section-header h3 {
+                font-size: 32px !important;
+              }
+            }
+            
+            /* Super Ultra Wide (1920px and up) - For 4K and Multiple Monitor Dev Setups */
+            @media (min-width: 1920px) {
+              .container {
+                max-width: 1800px;
+              }
+              
+              /* Maximum newspaper header size */
+              .boxtwo h1 {
+                font-size: 84px !important;
+                letter-spacing: 5px !important;
+              }
+              
+              .boxtwo p {
+                font-size: 32px !important;
+              }
+              
+              /* Maximum spacing */
+              .main-sections-grid {
+                gap: 100px !important;
+              }
+              
+              /* Larger content for 4K readability */
+              .blog-content {
+                font-size: 20px !important;
+                line-height: 2.0 !important;
+              }
+              
+              /* Maximum section header sizes */
+              .section-header h3 {
+                font-size: 36px !important;
+              }
+              
+              .section-header p {
+                font-size: 18px !important;
+              }
+            }
+          `}
+        </style>
       </section>
     );
   }

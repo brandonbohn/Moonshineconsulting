@@ -299,6 +299,109 @@ function BioPage() {
             height: 50px !important;
         }
     }
+    
+    /* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
+    @media (min-width: 1400px) {
+        .title {
+            font-size: 56px !important;
+        }
+        
+        .bio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .bio-section h1 {
+            font-size: 42px !important;
+        }
+        
+        .bio-section h2 {
+            font-size: 32px !important;
+        }
+        
+        .bio-section h5 {
+            font-size: 24px !important;
+        }
+        
+        .bio-section p, .bio-section li {
+            font-size: 20px !important;
+            line-height: 1.7 !important;
+        }
+        
+        .bio-section img {
+            width: 120px !important;
+            height: 120px !important;
+        }
+    }
+    
+    /* Ultra Wide Screens (1600px and up) - For Ultrawide Monitors */
+    @media (min-width: 1600px) {
+        .title {
+            font-size: 64px !important;
+        }
+        
+        .bio-container {
+            max-width: 1600px;
+            padding: 50px;
+        }
+        
+        .bio-section h1 {
+            font-size: 48px !important;
+        }
+        
+        .bio-section h2 {
+            font-size: 36px !important;
+        }
+        
+        .bio-section h5 {
+            font-size: 26px !important;
+        }
+        
+        .bio-section p, .bio-section li {
+            font-size: 22px !important;
+            line-height: 1.8 !important;
+        }
+        
+        .bio-section img {
+            width: 140px !important;
+            height: 140px !important;
+        }
+    }
+    
+    /* Super Ultra Wide (1920px and up) - For 4K and Multiple Monitor Dev Setups */
+    @media (min-width: 1920px) {
+        .title {
+            font-size: 72px !important;
+        }
+        
+        .bio-container {
+            max-width: 1800px;
+            padding: 60px;
+        }
+        
+        .bio-section h1 {
+            font-size: 56px !important;
+        }
+        
+        .bio-section h2 {
+            font-size: 42px !important;
+        }
+        
+        .bio-section h5 {
+            font-size: 28px !important;
+        }
+        
+        .bio-section p, .bio-section li {
+            font-size: 24px !important;
+            line-height: 1.9 !important;
+        }
+        
+        .bio-section img {
+            width: 160px !important;
+            height: 160px !important;
+        }
+    }
 `}</style>
     </section>    
     );

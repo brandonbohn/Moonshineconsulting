@@ -22,7 +22,7 @@ export const ProductData = [
         description: "A relaxing footbath.",
         photo: "./images/footbath.jpg",
         price: 69.00,
-        link: "https://amzn.to/4mf1PHr",
+        link: "https://amzn.to/4ltO8Dk",
         productAdvisory: "please consult with your healthcare professional before use.",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:3

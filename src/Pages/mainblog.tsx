@@ -127,7 +127,7 @@ function MainBlog() {
                     margin: "0",
                     textTransform: "uppercase",
                     letterSpacing: "0.5px"
-                  }}>Contributors</h4>
+                  }}>Guest Contributors</h4>
                   <p style={{ 
                     fontSize: "12px", 
                     fontFamily: "Georgia, serif", 
@@ -157,7 +157,7 @@ function MainBlog() {
                     borderRadius: "6px",
                     height: "fit-content"
                   }}>
-                    <ContributorsComponent id={2} />
+                    
                   </div>
                 </div>
               </div>

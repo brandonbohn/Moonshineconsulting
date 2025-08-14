@@ -48,7 +48,7 @@ function NurseJourneyMemoryBlogEntry() {
         <h1>
           A Nurse's Journey: From Reluctant Student to Dedicated Caregiver
         </h1>
-        <h2>Author: Cindy</h2> 
+        <h2>Author: Cindy Boushie-Hill LPN</h2> 
       </div>
       
       <div className="content mb-4 box text-dark" style={{ padding: "20px", fontSize: "18px", height: "100%", width: "100%" }}>

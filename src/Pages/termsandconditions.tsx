@@ -1,6 +1,8 @@
 import React from "react";
 const termsandoconditions = () => (
-  <div>
+  <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+    <div className="hero-section" style={{ padding: "2px 10px" }}>
+      <div>
 
     <div className="container my-5 text-center text-white">
 
@@ -52,9 +54,9 @@ const termsandoconditions = () => (
       This website contains affiliate links. We may earn a commission when you purchase products through our links, at no additional cost to you. All recommendations are based on our professional experience and testing.
     </p>
 
-
     </div>
-    
+      </div>
+    </div>
   </div>
 );
 

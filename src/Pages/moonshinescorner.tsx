@@ -3,7 +3,9 @@ import BlogComponent from "../components/blogcomponentengine.tsx";
 
 function MoonshinesCorner() {
     return (
-        <div className="moonshines-corner" style={{ fontFamily: "sans-serif", background: "#C9A17D", minHeight: "100vh" }}>
+        <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+            <div className="hero-section" style={{ padding: "2px 10px" }}>
+                <div className="moonshines-corner" style={{ fontFamily: "sans-serif", background: "#C9A17D", minHeight: "100vh" }}>
             <style>{`
                 .moonshines-header {
                     background: #7B3F00;
@@ -156,6 +158,8 @@ function MoonshinesCorner() {
             <footer className="moonshines-footer">
                 © {new Date().getFullYear()} Moonshine's Corner
             </footer>
+                </div>
+            </div>
         </div>
     );
 };

@@ -6,11 +6,11 @@ import Header from './Utilities/header.tsx';
 import MoonshinesCorner from './Pages/moonshinescorner.tsx';
 import PrivacyPolicy from './Pages/privacypolicy.tsx';
 import TermsAndConditions from './Pages/termsandconditions.tsx';
-import SeniorPolicyBeatBlog from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
+
 
 import MoonshinesBlogEntry from './Pages/blogentries/moonshinesblogentry.tsx';
 import BioPage from './Pages/biopage.tsx';
-import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
+
 import BlogComponent from './components/blogcomponentengine.tsx';
 import ProductComponent from './components/productgenerator.tsx';
 import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
@@ -19,7 +19,7 @@ import Voicesincare from  './Pages/Voicesincare.tsx';
 import Voicesincareblogentry from './Pages/blogentries/voicesincareblogentries.tsx'
 import EstateprepBlogentry from './Pages/blogentries/estatepreparationblogentry.tsx';
 import NurseJourneyMemoryBlogEntry from './Pages/blogentries/nursejourneymemoryblogentry.tsx';
-
+import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
 
 import { Routes, Route,  } from 'react-router-dom';  
 function App() {

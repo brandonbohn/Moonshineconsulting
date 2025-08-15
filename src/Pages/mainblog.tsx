@@ -18,18 +18,30 @@ function MainBlog() {
 
 
     return (
-      <section className="container">
-        <div className="" style={{ padding: "20px", backgroundColor: "#ffffff",  width: "auto", height: "auto",marginTop: "150px" }}>
-          {/* Newspaper Header */}
-          <div className="boxtwo text-center" style={{  padding: "30px", backgroundColor: "#08023a", borderRadius: "10px", width: "auto", height: "auto", marginBottom: "30px" }}>
-            <h1 style={{ fontSize: "48px", fontFamily: "Georgia, serif", letterSpacing: "2px" }} className="text-white">
+      <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+        <div className="hero-section" style={{ padding: "2px 10px" }}>
+          <div className="welcome-box" style={{ 
+            backgroundColor: "#ffffff", 
+            padding: "40px", 
+            borderRadius: "15px", 
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)", 
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "10px",
+            width: "calc(100% - 40px)",
+            margin: "0 20px"
+          }}>
+          {/* Newspaper Header - Ultra Compact - No Top Margin */}
+          <div className="boxtwo text-center" style={{  padding: "8px", backgroundColor: "#08023a", borderRadius: "0", width: "100%", height: "auto", marginBottom: "8px", marginTop: "-40px", marginLeft: "-40px", marginRight: "-40px" }}>
+            <h1 style={{ fontSize: "24px", fontFamily: "Georgia, serif", letterSpacing: "0.5px", margin: "0" }} className="text-white">
               The Care Professional Chronicle
             </h1>
-            <div style={{ borderTop: "3px solid #ffffff", width: "60%", margin: "15px auto" }}></div>
-            <p className="text-white" style={{ fontSize: "20px", fontFamily: "Georgia, serif", fontStyle: "italic" }}>
+            <div style={{ borderTop: "1px solid #ffffff", width: "40%", margin: "5px auto" }}></div>
+            <p className="text-white" style={{ fontSize: "12px", fontFamily: "Georgia, serif", fontStyle: "italic", margin: "2px 0" }}>
               Your Trusted Source for Senior Care and Advocacy
             </p>
-            <p className="text-white" style={{ fontSize: "16px", fontFamily: "Georgia, serif", marginTop: "10px" }}>
+            <p className="text-white" style={{ fontSize: "10px", fontFamily: "Georgia, serif", margin: "2px 0" }}>
               {new Date().toLocaleDateString(undefined, {
                 weekday: "long",
                 year: "numeric",
@@ -40,28 +52,28 @@ function MainBlog() {
           </div>
 
           {/* Featured Story Section - Policy/Medicare News */}
-          <div style={{ marginBottom: "40px" }}>
+          <div id="breaking-news" style={{ marginBottom: "15px", marginTop: "0" }}>
             <div style={{ 
-              borderBottom: "4px solid #08023a", 
-              marginBottom: "20px",
-              paddingBottom: "10px"
+              borderBottom: "2px solid #08023a", 
+              marginBottom: "8px",
+              paddingBottom: "3px"
             }}>
               <h2 style={{ 
-                fontSize: "32px", 
+                fontSize: "24px", 
                 fontFamily: "Georgia, serif", 
                 color: "#08023a",
                 margin: "0",
                 textTransform: "uppercase",
-                letterSpacing: "1px"
+                letterSpacing: "0.5px"
               }}>Breaking: Medicare & Policy News</h2>
             </div>
             <div style={{
               display: "flex",
               flexDirection: isMobile ? "column" : "row",
-              gap: "30px",
-              padding: "15px",
+              gap: "20px",
+              padding: "4px",
               backgroundColor: "#f8f9fa",
-              borderRadius: "8px",
+              borderRadius: "6px",
               border: "2px solid #08023a"
             }}>
               <div style={{ flex: isMobile ? "none" : "1", width: "100%" }}>
@@ -79,7 +91,7 @@ function MainBlog() {
           }}>
             
             {/* Lifestyle Section */}
-            <div>
+            <div id="senior-living">
               <div className="section-header" style={{ 
                 borderBottom: "3px solid #08023a", 
                 marginBottom: "20px",
@@ -114,14 +126,14 @@ function MainBlog() {
               </div>
               
               {/* Contributors Section */}
-              <div>
+              <div id="contributors">
                 <div style={{ 
                   borderBottom: "2px solid #08023a", 
                   marginBottom: "15px",
                   paddingBottom: "5px"
                 }}>
                   <h4 style={{ 
-                    fontSize: "18px", 
+                    fontSize: "24px", 
                     fontFamily: "Georgia, serif", 
                     color: "#08023a",
                     margin: "0",
@@ -164,7 +176,7 @@ function MainBlog() {
             </div>
 
             {/* Voices in Care Section */}
-            <div>
+            <div id="opinions">
               <div className="section-header" style={{ 
                 borderBottom: "3px solid #08023a", 
                 marginBottom: "20px",
@@ -370,7 +382,9 @@ function MainBlog() {
             }
           `}
         </style>
-      </section>
+          </div>
+        </div>
+    
     );
   }
 

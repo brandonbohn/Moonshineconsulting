@@ -3,10 +3,12 @@ import '../css/homepage.css';
 
 function BioPage() {
     return (
-        <section>
-<div>
-  <h1 className="title" style={{ fontSize: "46px", fontFamily: "Open Sans," }}>Who We Are......</h1>
-  <div style={{ borderTop: "5px solid #000000", margin: "20px 0" }}></div>
+        <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+            <div className="hero-section" style={{ padding: "2px 10px" }}>
+                <section>
+                    <div>
+                        <h1 className="title" style={{ fontSize: "46px", fontFamily: "Open Sans," }}>Who We Are......</h1>
+                        <div style={{ borderTop: "5px solid #000000", margin: "20px 0" }}></div>
         {/* Main Container with Responsive Layout */}
         <div className="bio-container">
             {/* Left Side - Team Photos */}
@@ -58,7 +60,7 @@ function BioPage() {
                                     style={{ width: 64, height: 64, borderRadius: "50%", marginRight: 20, objectFit: "cover", background: "#eee" }}
                                 />
                                 <div>
-                                    <h1 style={{ margin: 0, fontSize: 24, color: "#000000" }}>{person.name}</h1>
+                                    <h3 style={{ margin: 0, fontSize: "24px", color: "#000000", fontWeight: "bold" }}>{person.name}</h3>
                                     <p style={{ color: "#000000", fontSize: 24 }}>{person.title}</p>
                                     <ul style={{ paddingLeft: 20, margin: "12px 0 0 0", color: "#000000", fontSize: 18 }}>
                                         {person.bioPoints.map((point, i) => (
@@ -89,8 +91,7 @@ function BioPage() {
                   background: "#ffffff",
                   borderRadius: "16px",
                   boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
-                  fontSize: "18px",
-                  
+                  fontSize: "18px"
                 }}>
                 
                   <h1 className="" style={{ margin: 0, color: "#000000" }}>Our Mission</h1>
@@ -147,7 +148,8 @@ function BioPage() {
                 </div>  
             </div>
         </div>
-    </div>
+                    </div>
+                </section>
 
 
 <style>{`
@@ -164,11 +166,14 @@ function BioPage() {
 
     .bio-section {
         width: 100%;
-        padding: 20px;
-        border: 1px solid #ddd;
+        padding: 30px;
         background: #ffffff;
         border-radius: 16px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.15);
         box-sizing: border-box;
+        margin-bottom: 50px;
+        max-height: 800px;
+        overflow-y: auto;
     }
 
     .team-section {
@@ -178,6 +183,8 @@ function BioPage() {
 
     .info-section {
         order: 2;
+        max-height: 800px;
+        overflow-y: auto;
     }
 
     /* Small mobile phones - max-width: 480px */
@@ -403,7 +410,8 @@ function BioPage() {
         }
     }
 `}</style>
-    </section>    
+            </div>
+        </div>
     );
 };
 

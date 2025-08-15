@@ -47,8 +47,8 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
                     padding: "0"
                 }}>
 					<div style={{ flex: "0 0 auto" }}>
-						<p className="Title" style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "15px", lineHeight: "1.3" }}>{entry.title}</p>
-						<div style={{ display: "flex", justifyContent: "center", marginBottom: "15px" }}>
+						<p className="Title" style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "5px", lineHeight: "1.2", marginTop: "0" }}>{entry.title}</p>
+						<div style={{ display: "flex", justifyContent: "center", marginBottom: "8px" }}>
 							<img
 								src={entry.imageUrl}
 								alt={entry.title}
@@ -58,7 +58,7 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 								style={{ objectFit: "cover", borderRadius: "8px" }}
 							/>
 						</div>
-						<p className="text-center" style={{ fontSize: "16px", fontWeight: "600", color: "#08023a", marginBottom: "10px" }}>{entry.newsSection}</p>
+						<p className="text-center" style={{ fontSize: "16px", fontWeight: "600", color: "#08023a", marginBottom: "5px" }}>{entry.newsSection}</p>
 					</div>
                     <div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
 						<p className="body" style={{ 

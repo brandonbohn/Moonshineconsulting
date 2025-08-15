@@ -3,7 +3,9 @@ import BlogComponent from "../components/blogcomponentengine.tsx";
 
 function SeniorPolicyBeat() {
   return (
-    <section className="senior-policy-beat">
+    <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+      <div className="hero-section" style={{ padding: "2px 10px" }}>
+        <section className="senior-policy-beat">
       <style>{`
         /* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
         @media (min-width: 1400px) {
@@ -80,8 +82,9 @@ function SeniorPolicyBeat() {
         </ul>
       </div>
 
-    
-    </section>
+        </section>
+      </div>
+    </div>
   );
 };
 

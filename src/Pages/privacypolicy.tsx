@@ -1,7 +1,9 @@
 import React from "react";
 function PrivacyPolicy() {
   return (
-<div className="text-white">
+    <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+      <div className="hero-section" style={{ padding: "2px 10px" }}>
+        <div className="text-white">
 
     <div style={{ maxWidth: 800, margin: "0 auto", padding: "2rem" }}>
         <h1>Privacy Policy</h1>
@@ -70,9 +72,9 @@ function PrivacyPolicy() {
         </p>
     </div>
 
-
-</div>
-
+        </div>
+      </div>
+    </div>
   );
 }
 

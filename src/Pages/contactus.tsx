@@ -2,15 +2,12 @@ import React from 'react'
 
 const registration = () => {
   return (
-    <div className="contact-page-container" style={{ 
-      minHeight: "100vh", 
-      display: "flex", 
-      alignItems: "center", 
-      justifyContent: "center",
-      backgroundColor: "#faf0e6",
-      padding: "40px 20px"
-    }}>
-      <div className="container" style={{ maxWidth: "800px" }}>
+    <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+      <div className="hero-section" style={{ padding: "2px 10px" }}>
+        <div style={{
+         
+        }}>
+          <div className="container" style={{ maxWidth: "800px" }}>
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8">
             
@@ -340,6 +337,8 @@ const registration = () => {
           }
         `}
       </style>
+        </div>
+      </div>
     </div>
   );
 }

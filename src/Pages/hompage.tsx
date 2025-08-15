@@ -31,16 +31,16 @@ function homepage() {
       <main id="main-content" role="main" aria-label="Welcome and blog navigation">
         
         {/* Hero Section with All Content in One White Box */}
-        <div className="hero-section" style={{ padding: "5px" }}>
+        <div className="hero-section" style={{ padding: "2px 10px" }}>
           <div className="welcome-box" style={{ 
             backgroundColor: "#ffffff", 
-            padding: "40px", 
+            padding: "10px", 
             borderRadius: "15px", 
             boxShadow: "0 4px 20px rgba(0,0,0,0.1)", 
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "30px",
+            gap: "10px",
             width: "100%",
             margin: "0"
           }}>
@@ -51,7 +51,7 @@ function homepage() {
                     fontFamily: 'Open Sans', 
                     color: "#08023a",
                     textAlign: "center",
-                    margin: "0"
+                    margin: "2px 0 0 0"
                   }}>
                     Welcome to Moonshine Consulting
                   </h1>
@@ -64,8 +64,8 @@ function homepage() {
                       alt="Senior-resident bonding with dog belonging to her nurse caregiver"
                       style={{ 
                         borderRadius: "15px", 
-                        maxWidth: "300px", 
-                        height: "auto",
+                        maxWidth: "400px", 
+                        height: "300px",
                         objectFit: "cover"
                       }} 
                     />
@@ -101,15 +101,38 @@ function homepage() {
                   
                   {/* Four Category Boxes - Inside White Box */}
                   <div className="categories-grid" style={{ width: "100%", marginTop: "20px" }}>
-                    <div className="row g-4">
+                    <style>{`
+                      .category-col {
+                        flex: 0 0 19.2%;
+                        max-width: 19.2%;
+                        padding: 0 10px;
+                      }
+                      
+                      @media (max-width: 1200px) {
+                        .category-col {
+                          flex: 0 0 48%;
+                          max-width: 48%;
+                          margin-bottom: 20px;
+                        }
+                      }
+                      
+                      @media (max-width: 768px) {
+                        .category-col {
+                          flex: 0 0 100%;
+                          max-width: 100%;
+                          margin-bottom: 20px;
+                        }
+                      }
+                    `}</style>
+                    <div className="row g-4" style={{ display: "flex", justifyContent: "space-between" }}>
                       
                       {/* Senior Living Desk */}
-                      <div className="col-lg-3 col-md-6 col-sm-12">
+                      <div className="category-col">
                         <div className="category-card" style={{ 
                           backgroundColor: "#08023a", 
                           padding: "20px", 
                           borderRadius: "12px", 
-                          height: "220px", 
+                          minHeight: "280px", 
                           display: "flex", 
                           flexDirection: "column",
                           transition: "transform 0.3s ease"
@@ -133,8 +156,10 @@ function homepage() {
                             padding: "12px", 
                             borderRadius: "6px", 
                             margin: "0", 
-                            flexGrow: "1", 
-                            lineHeight: "1.4" 
+                            flex: "1 1 auto",
+                            alignSelf: "stretch",
+                            lineHeight: "1.4",
+                            overflow: "hidden"
                           }}>
                             A resource hub for seniors and their families, providing information on senior living options, care services, and community resources.
                           </p>
@@ -142,12 +167,12 @@ function homepage() {
                       </div>
 
                       {/* Senior Policy Beat */}
-                      <div className="col-lg-3 col-md-6 col-sm-12">
+                      <div className="category-col">
                         <div className="category-card" style={{ 
                           backgroundColor: "#08023a", 
                           padding: "20px", 
                           borderRadius: "12px", 
-                          height: "220px", 
+                          minHeight: "280px", 
                           display: "flex", 
                           flexDirection: "column",
                           transition: "transform 0.3s ease"
@@ -171,37 +196,55 @@ function homepage() {
                             padding: "12px", 
                             borderRadius: "6px", 
                             margin: "0", 
-                            flexGrow: "1", 
-                            lineHeight: "1.4" 
+                            flex: "1 1 auto",
+                            alignSelf: "stretch",
+                            lineHeight: "1.4",
+                            overflow: "hidden"
                           }}>
                             Comprehensive guides and resources for navigating Medicare, insurance, and healthcare decisions for seniors and their families.
                           </p>
                         </div>
                       </div>
 
-                      {/* Moonshine's Corner */}
-                      <div className="col-lg-3 col-md-6 col-sm-12">
+                      {/* Tools We Love - Skip Button */}
+                      <div className="category-col">
                         <div className="category-card" style={{ 
                           backgroundColor: "#08023a", 
                           padding: "20px", 
                           borderRadius: "12px", 
-                          height: "220px", 
+                          minHeight: "280px", 
                           display: "flex", 
                           flexDirection: "column",
                           transition: "transform 0.3s ease"
                         }}>
-                          <a href="./moonshinescorner" className="btn btn-warning btn-sm" style={{ 
-                            width: "100%", 
-                            marginBottom: "15px", 
-                            height: "40px", 
-                            display: "flex", 
-                            alignItems: "center", 
-                            justifyContent: "center", 
-                            fontSize: "14px", 
-                            fontWeight: "600" 
-                          }}>
-                            Moonshine's Corner
-                          </a>
+                          <button 
+                            onClick={() => {
+                              const element = document.getElementById('tools-we-love');
+                              if (element) {
+                                const elementPosition = element.offsetTop;
+                                const offsetPosition = elementPosition + 89; // Scroll 89px lower to show title and Amazon buttons
+                                window.scrollTo({
+                                  top: offsetPosition,
+                                  behavior: 'smooth'
+                                });
+                              }
+                            }}
+                            className="btn btn-warning btn-sm" 
+                            style={{ 
+                              width: "100%", 
+                              marginBottom: "15px", 
+                              height: "40px", 
+                              display: "flex", 
+                              alignItems: "center", 
+                              justifyContent: "center", 
+                              fontSize: "14px", 
+                              fontWeight: "600",
+                              border: "none",
+                              cursor: "pointer"
+                            }}
+                          >
+                            Tools We Love
+                          </button>
                           <p style={{ 
                             fontSize: "16px", 
                             color: "#000", 
@@ -209,21 +252,23 @@ function homepage() {
                             padding: "12px", 
                             borderRadius: "6px", 
                             margin: "0", 
-                            flexGrow: "1", 
-                            lineHeight: "1.4" 
+                            flex: "1 1 auto",
+                            alignSelf: "stretch",
+                            lineHeight: "1.4",
+                            overflow: "hidden"
                           }}>
-                            Tools, tips, and emotional support for family caregivers managing the challenges of caring for aging loved ones.
+                            Discover our carefully selected products and tools that make caregiving easier and safer for seniors and their families.
                           </p>
                         </div>
                       </div>
 
                       {/* Voices in Care */}
-                      <div className="col-lg-3 col-md-6 col-sm-12">
+                      <div className="category-col">
                         <div className="category-card" style={{ 
                           backgroundColor: "#08023a", 
                           padding: "20px", 
                           borderRadius: "12px", 
-                          height: "220px", 
+                          minHeight: "280px", 
                           display: "flex", 
                           flexDirection: "column",
                           transition: "transform 0.3s ease"
@@ -251,6 +296,46 @@ function homepage() {
                             lineHeight: "1.4" 
                           }}>
                             A place where caregivers and professionals can share their insights, stories, and struggles from the field.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Moonshine's Corner */}
+                      <div className="category-col">
+                        <div className="category-card" style={{ 
+                          backgroundColor: "#08023a", 
+                          padding: "20px", 
+                          borderRadius: "12px", 
+                          minHeight: "280px", 
+                          display: "flex", 
+                          flexDirection: "column",
+                          transition: "transform 0.3s ease"
+                        }}>
+                          <a href="./moonshinescorner" className="btn btn-warning btn-sm" style={{ 
+                            width: "100%", 
+                            marginBottom: "15px", 
+                            height: "40px", 
+                            display: "flex", 
+                            alignItems: "center", 
+                            justifyContent: "center", 
+                            fontSize: "14px", 
+                            fontWeight: "600" 
+                          }}>
+                            Moonshine's Corner
+                          </a>
+                          <p style={{ 
+                            fontSize: "16px", 
+                            color: "#000", 
+                            backgroundColor: "#ffffff", 
+                            padding: "12px", 
+                            borderRadius: "6px", 
+                            margin: "0", 
+                            flex: "1 1 auto",
+                            alignSelf: "stretch",
+                            lineHeight: "1.4",
+                            overflow: "hidden"
+                          }}>
+                            A blog where Moonshine the dog interviews therapy dogs about their amazing work!
                           </p>
                         </div>
                       </div>
@@ -315,7 +400,7 @@ function homepage() {
       </section>
 
       {/* Product Cards Section - Caregiver Tools Our Nurses Love */}
-      <section aria-label="Recommended products" style={{ padding: "5px" }}>
+      <section id="tools-we-love" aria-label="Recommended products" style={{ padding: "5px" }}>
         <div style={{ 
           backgroundColor: "#ffffff",
           padding: "40px 40px 55px 40px", 

@@ -17,12 +17,12 @@ const registration = () => {
               padding: '30px',
               borderRadius: '15px 15px 0 0'
             }}>
-              <h2 className="text-white" style={{
-                fontSize: "28px",
-                fontFamily: "Open Sans, sans-serif",
-                fontWeight: "700",
-                marginBottom: "10px"
-              }}>
+                          <h2 className="text-white" style={{
+                            fontSize: "40px",
+                            fontFamily: "Open Sans, sans-serif",
+                            fontWeight: "700",
+                            marginBottom: "10px"
+                          }}>
                 Have Questions? Contact Us Today
               </h2>
               <p className="" style={{
@@ -34,152 +34,88 @@ const registration = () => {
               </p>
             </div>
 
-            {/* Form Section */}
-            <form>
-              <div className="contact-form-container" style={{ 
-                backgroundColor: '#ffffff', 
-                padding: '40px',
-                borderRadius: '0 0 15px 15px',
-                boxShadow: '0 6px 25px rgba(0,0,0,0.15)',
-                border: 'none'
-              }}>
-                
-                {/* Name Field */}
-                <div className="form-group mb-4">
-                  <label style={{
-                    fontSize: "18px",
-                    fontFamily: "Open Sans, sans-serif",
-                    fontWeight: "600",
-                    color: "#000000",
-                    marginBottom: "8px",
-                    display: "block"
-                  }}>
-                    Name *
-                  </label>
-                  <input
-                    className="form-control"
-                    name="name"
-                    type="text"
-                    required
-                    style={{ 
-                      border: '1px solid #cccccc',
-                      borderRadius: '8px',
-                      padding: '12px 15px',
-                      fontSize: '16px',
-                      fontFamily: 'Open Sans, sans-serif',
-                      minHeight: '44px',
-                      width: '100%',
-                      backgroundColor: '#ffffff',
-                      color: '#000000'
-                    }}
-                    onFocus={(e) => e.target.style.borderColor = '#ffc107'}
-                    onBlur={(e) => e.target.style.borderColor = '#cccccc'}
-                  />
-                </div>
-
-                {/* Email Field */}
-                <div className="form-group mb-4">
-                  <label style={{
-                    fontSize: "18px",
-                    fontFamily: "Open Sans, sans-serif",
-                    fontWeight: "600",
-                    color: "#000000",
-                    marginBottom: "8px",
-                    display: "block"
-                  }}>
-                    Email *
-                  </label>
-                  <input
-                    className="form-control"
-                    name="email"
-                    type="email"
-                    required
-                    style={{ 
-                      border: '1px solid #cccccc',
-                      borderRadius: '8px',
-                      padding: '12px 15px',
-                      fontSize: '16px',
-                      fontFamily: 'Open Sans, sans-serif',
-                      minHeight: '44px',
-                      width: '100%',
-                      backgroundColor: '#ffffff',
-                      color: '#000000'
-                    }}
-                    onFocus={(e) => e.target.style.borderColor = '#ffc107'}
-                    onBlur={(e) => e.target.style.borderColor = '#cccccc'}
-                  />
-                </div>
-
-                {/* Inquiry Field */}
-                <div className="form-group mb-4">
-                  <label style={{
-                    fontSize: "18px",
-                    fontFamily: "Open Sans, sans-serif",
-                    fontWeight: "600",
-                    color: "#000000",
-                    marginBottom: "8px",
-                    display: "block"
-                  }}>
-                    Your Inquiry *
-                  </label>
-                  <textarea
-                    className="form-control"
-                    name="inquiry"
-                    placeholder="Please describe how we can help you..."
-                    rows={6}
-                    required
-                    style={{ 
-                      border: '1px solid #cccccc',
-                      borderRadius: '8px',
-                      padding: '12px 15px',
-                      fontSize: '16px',
-                      fontFamily: 'Open Sans, sans-serif',
-                      width: '100%',
-                      resize: 'vertical',
-                      backgroundColor: '#ffffff',
-                      color: '#000000'
-                    }}
-                    onFocus={(e) => e.target.style.borderColor = '#ffc107'}
-                    onBlur={(e) => e.target.style.borderColor = '#cccccc'}
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="btn btn-warning btn-lg"
-                    style={{
-                      backgroundColor: '#ffc107',
-                      borderColor: '#ffc107',
-                      color: '#08023a',
-                      fontSize: '18px',
-                      fontFamily: 'Open Sans, sans-serif',
-                      fontWeight: '600',
-                      padding: '12px 40px',
-                      borderRadius: '8px',
-                      border: 'none',
-                      minHeight: '44px',
-                      minWidth: '200px',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#ffb000';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#ffc107';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }}
-                  >
-                    Send Message
-                  </button>
-                </div>
-
+            {/* Formspree Form Section */}
+            <form
+              action="https://formspree.io/f/mkgvpeqk"
+              method="POST"
+              style={{ backgroundColor: '#fff', padding: '40px', borderRadius: '0 0 15px 15px', boxShadow: '0 6px 25px rgba(0,0,0,0.15)', border: 'none' }}
+            >
+              <div className="form-group mb-4">
+                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                  First Name *
+                </label>
+                <input type="text" name="firstName" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
               </div>
-            </form>
-            
-          </div>
+              <div className="form-group mb-4">
+                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                  Last Name *
+                </label>
+                <input type="text" name="lastName" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
+              </div>
+              <div className="form-group mb-4">
+                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                  Your Email *
+                </label>
+                <input type="email" name="email" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
+              </div>
+              <div className="form-group mb-4">
+                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                  Phone Number (Optional)
+                </label>
+                <input type="tel" name="phone" className="form-control" placeholder="We'll only call if you prefer phone contact" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
+              </div>
+              <div className="form-group mb-4">
+                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                  Age Range *
+                </label>
+                <select name="ageRange" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }}>
+                  <option value="">Please select your age range</option>
+                  <option value="50-59">50-59</option>
+                  <option value="60-69">60-69</option>
+                  <option value="70-79">70-79</option>
+                  <option value="80-89">80-89</option>
+                  <option value="90+">90+</option>
+                  <option value="caregiver">I'm a caregiver/family member</option>
+                </select>
+              </div>
+              <div className="form-group mb-4">
+                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                  What healthcare topic interests you most? (Optional)
+                </label>
+                <select name="interest" className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }}>
+                  <option value="">Choose a topic (or skip this question)</option>
+                  <option value="medicare">Medicare & Insurance Help</option>
+                  <option value="homehealth">Getting Home Health Care</option>
+                  <option value="hospice">Hospice & End-of-Life Care</option>
+                  <option value="longtermcare">Nursing Homes & Long Term Care</option>
+                  <option value="seniorliving">Senior Living Communities</option>
+                  <option value="healthproducts">Health Tools & Daily Living Aids</option>
+                  <option value="caregiving">Support for Family Caregivers</option>
+                  <option value="general">General Health & Wellness</option>
+                </select>
+              </div>
+              <div className="form-group mb-4">
+                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                  Your Message *
+                </label>
+                <textarea name="message" required className="form-control" rows={6} placeholder="How can we help you with your healthcare needs? Please share any specific questions or concerns you have." style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', width: '100%', resize: 'vertical', backgroundColor: '#fff', color: '#000' }}></textarea>
+              </div>
+              
+              {/* Privacy Policy Consent */}
+              <div className="form-group mb-4">
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <input type="checkbox" name="privacyPolicy" required id="privacyPolicy" style={{ marginTop: '4px' }} />
+                  <label htmlFor="privacyPolicy" style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", color: "#000", lineHeight: "1.4" }}>
+                    I have read and agree to the Privacy Policy and Terms of Service. *
+                  </label>
+                </div>
+              </div>
+              <div className="text-center">
+                <button type="submit" className="btn btn-warning btn-lg" style={{ backgroundColor: '#ffc107', borderColor: '#ffc107', color: '#08023a', fontSize: '20px', fontFamily: 'Open Sans, sans-serif', fontWeight: '600', padding: '12px 40px', borderRadius: '8px', border: 'none', minHeight: '44px', minWidth: '200px', transition: 'all 0.3s ease' }}>
+                  Send Message
+                </button>
+              </div>
+            </form>          </div>
         </div>
       </div>
 

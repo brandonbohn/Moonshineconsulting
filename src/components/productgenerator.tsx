@@ -27,14 +27,13 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 	}
 
 	return (
-		<div className="product-card-container" style={{ width: "280px", height: "auto" }}>
+	<div className="product-card-container" style={{ width: "280px" }}>
 			{entries.map((entry) => (
 				<div 
 					key={entry.productid} 
 					className="card h-100 product-card-responsive" 
 					style={{ 
 						width: "280px",
-						height: "480px",
 						margin: "auto", 
 						borderRadius: "15px", 
 						boxShadow: "0 6px 25px rgba(0,0,0,0.15)",
@@ -76,7 +75,7 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 					</div>
 
 					{/* Card Body */}
-					<div className="card-body d-flex flex-column" style={{ padding: "15px", height: "300px" }}>
+					<div className="card-body d-flex flex-column" style={{ padding: "15px" }}>
 						{/* Title */}
 						<h3 
 							className="card-title"
@@ -94,19 +93,18 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 
 						{/* Description */}
 						<p 
-							className="card-text flex-grow-1"
+							className="card-text"
 							style={{
 								fontSize: "16px",
 								fontFamily: "Open Sans, sans-serif",
 								color: "#ffffff",
 								lineHeight: "1.5",
-								marginBottom: "12px",
-								overflow: "hidden",
-								textOverflow: "ellipsis"
+								marginBottom: "12px"
 							}}
 						>
 							{entry.description}
 						</p>
+
 
 						{/* Affiliate Statement */}
 						<p 
@@ -121,6 +119,22 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 						>
 							{entry.affilatelinkstatement}
 						</p>
+
+						{/* Product Advisory */}
+						{entry.productAdvisory && (
+							<p 
+								className="text-center"
+								style={{
+									fontSize: "13px",
+									fontFamily: "Open Sans, sans-serif",
+									color: "#ff4d4f",
+									marginBottom: "10px",
+									fontStyle: "italic"
+								}}
+							>
+								{entry.productAdvisory}
+							</p>
+						)}
 
 						{/* Price Section */}
 						<div className="price-section mb-3 text-center">

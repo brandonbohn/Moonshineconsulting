@@ -47,7 +47,7 @@ function homepage() {
                   
                   {/* Title */}
                   <h1 className='Titles' style={{ 
-                    fontSize: "28px", 
+                    fontSize: "48px", 
                     fontFamily: 'Open Sans', 
                     color: "#08023a",
                     textAlign: "center",
@@ -57,7 +57,7 @@ function homepage() {
                   </h1>
                   
                   {/* Centered Dog Image */}
-                  <div style={{ display: "flex", justifyContent: "center" }}>
+                  <div style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
                     <img 
                       src="../images/Moonshineandresident.jpg" 
                       className='img-fluid' 
@@ -66,7 +66,16 @@ function homepage() {
                         borderRadius: "15px", 
                         maxWidth: "400px", 
                         height: "300px",
-                        objectFit: "cover"
+                      }} 
+                    />
+                    <img 
+                      src="../images/moonshineandresidentupdate.png" 
+                      className='img-fluid' 
+                      alt="Moonshine the dog"
+                      style={{ 
+                        borderRadius: "15px", 
+                        maxWidth: "400px", 
+                        height: "300px",
                       }} 
                     />
                   </div>

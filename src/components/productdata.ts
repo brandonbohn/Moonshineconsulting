@@ -19,8 +19,8 @@ export const ProductData = [
     },
     {
         name: "Footbath",
-        description: "A relaxing footbath.",
-        photo: "./images/footbath.jpg",
+        description: "A relaxing footbath treatment using Ionic technology to soothe tired feet.",
+        photo: "./images/footbath2.jpg",
         price: 99.99,
         link: "https://amzn.to/4ltO8Dk",
         productAdvisory: "please consult with your healthcare professional before use.",
@@ -58,6 +58,16 @@ export const ProductData = [
         category: "estate-planning"
     },
     {
+        name: "Red Light Therapy Device",
+        description: "A device that uses red light to promote healing and reduce inflammation.",
+        photo: "/images/redlighttherapy.jpg",
+        price: 12.99,
+        link: "https://amzn.to/your-affiliate-link-here",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid:7,
+        category: "therapy"
+    },
+     {
         name: "Card Protection Sleeves",
         description: "Protective sleeves for Social Security cards, Medicare cards, and other important identification documents.",
         photo: "https://media.istockphoto.com/id/1389567812/photo/document-protectors-clear-sleeves.jpg?s=612x612&w=0&k=20&c=7K4jM1nO9pQ2r5s8t0v2w4x6y8z1a3b5c7d9e1f3g5h7=",
@@ -67,4 +77,15 @@ export const ProductData = [
         productid:7,
         category: "estate-planning"
     },
+     {
+        name: "Knee Red Light Therapy Wrap",
+        description: "A wrap designed to deliver red light therapy to the knee area, promoting healing and reducing inflammation.",
+        photo: "/images/therapywrap.jpg",
+        price: 12.99,
+        link: "https://amzn.to/your-affiliate-link-here",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid:7,
+        category: "estate-planning"
+    },
+    
 ];

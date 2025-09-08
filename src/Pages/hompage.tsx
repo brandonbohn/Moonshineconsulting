@@ -28,8 +28,7 @@ function homepage() {
       </a>
       
       {/* Main Layout Container - Unified Single White Box */}
-      <main id="main-content" role="main" aria-label="Welcome and blog navigation">
-        
+      <main id="main-content" >
         {/* Hero Section with All Content in One White Box */}
         <div className="hero-section" style={{ padding: "2px 10px" }}>
           <div className="welcome-box" style={{ 
@@ -57,7 +56,21 @@ function homepage() {
                   </h1>
                   
                   {/* Centered Dog Image */}
-                  <div style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
+                  <div className="moonshine-image-row" style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
+            {/* Responsive styles for moonshine images */}
+            <style>{`
+              @media (max-width: 768px) {
+                .moonshine-image-row {
+                  flex-direction: column !important;
+                  align-items: center !important;
+                  gap: 20px !important;
+                }
+                .moonshine-image-row img {
+                  max-width: 90vw !important;
+                  height: auto !important;
+                }
+              }
+            `}</style>
                     <img 
                       src="../images/Moonshineandresident.jpg" 
                       className='img-fluid' 

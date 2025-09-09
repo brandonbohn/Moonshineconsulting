@@ -10,32 +10,20 @@ function homepage() {
       {/* Skip Navigation Link for Screen Readers */}
       <a 
         href="#blog-navigation" 
-        className="sr-only sr-only-focusable"
-        style={{
-          position: 'absolute',
-          left: '6px',
-          zIndex: 1000,
-          color: 'white',
-          backgroundColor: '#08023a',
-          padding: '8px 16px',
-          textDecoration: 'none',
-          borderRadius: '4px'
-        }}
-        onFocus={(e) => e.target.style.top = '6px'}
-        onBlur={(e) => e.target.style.top = '-40px'}
+        className="visually-hidden-focusable"
+        aria-label="Skip to main content"
+        tabIndex={0}
       >
         Skip to main content
       </a>
-      
-      {/* Main Layout Container - Unified Single White Box */}
-      <main id="main-content" >
+      <main id="main-content" role="main" aria-label="Welcome and blog navigation">
         {/* Hero Section with All Content in One White Box */}
-        <div className="hero-section" style={{ padding: "2px 10px" }}>
-          <div className="welcome-box" style={{ 
-            backgroundColor: "#ffffff", 
-            padding: "10px", 
-            borderRadius: "15px", 
-            boxShadow: "0 4px 20px rgba(0,0,0,0.1)", 
+        <div className="hero-section" style={{ padding: "10px" }}>
+          <div className="welcome-box" style={{
+            backgroundColor: "#ffffff",
+            padding: "10px",
+            borderRadius: "15px",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -43,93 +31,101 @@ function homepage() {
             width: "100%",
             margin: "0"
           }}>
-                  
-                  {/* Title */}
-                  <h1 className='Titles' style={{ 
-                    fontSize: "48px", 
-                    fontFamily: 'Open Sans', 
-                    color: "#08023a",
-                    textAlign: "center",
-                    margin: "2px 0 0 0"
-                  }}>
-                    Welcome to Moonshine Consulting
-                  </h1>
-                  
-                  {/* Centered Dog Image */}
-                  <div className="moonshine-image-row" style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
-            {/* Responsive styles for moonshine images */}
-            <style>{`
-              @media (max-width: 768px) {
+            {/* Title */}
+            <h1 className='Titles' style={{
+              fontSize: "48px",
+              fontFamily: 'Open Sans',
+              color: "#08023a",
+              textAlign: "center",
+              margin: "2px 0 0 0"
+            }}>
+              Welcome to Moonshine Consulting
+            </h1>
+            {/* Centered Dog Images */}
+            <div className="moonshine-image-row" style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
+              <style>{`
                 .moonshine-image-row {
-                  flex-direction: column !important;
-                  align-items: center !important;
-                  gap: 20px !important;
+                  display: flex;
+                  justify-content: center;
+                  gap: 30px;
                 }
-                .moonshine-image-row img {
-                  max-width: 90vw !important;
-                  height: auto !important;
+                .moonshine-img-hide-mobile {
+                  display: block;
                 }
-              }
-            `}</style>
-                    <img 
-                      src="../images/Moonshineandresident.jpg" 
-                      className='img-fluid' 
-                      alt="Senior-resident bonding with dog belonging to her nurse caregiver"
-                      style={{ 
-                        borderRadius: "15px", 
-                        maxWidth: "400px", 
-                        height: "300px",
-                      }} 
-                    />
-                    <img 
-                      src="../images/moonshineandresidentupdate.png" 
-                      className='img-fluid' 
-                      alt="Moonshine the dog"
-                      style={{ 
-                        borderRadius: "15px", 
-                        maxWidth: "400px", 
-                        height: "300px",
-                      }} 
-                    />
-                  </div>
-                  
-                  {/* Description Text */}
-                  <p style={{ 
-                    fontSize: "18px", 
-                    fontFamily: 'arial', 
-                    color: "#2c2c2c", 
-                    lineHeight: "1.6",
-                    textAlign: "center",
-                    maxWidth: "800px",
-                    margin: "0"
-                  }}>
-                    Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
-                  </p>
-                  
-                  {/* Explore Blog Button */}
-                  <a 
-                    id="blog-navigation"
-                    href="./mainblog" 
-                    className="btn btn-warning btn-lg" 
-                    style={{ 
-                      fontSize: "18px", 
-                      padding: "12px 30px", 
-                      minHeight: "44px",
-                      fontWeight: "600"
-                    }}
-                  >
-                    Explore the Blog
-                  </a>
-                  
-                  {/* Four Category Boxes - Inside White Box */}
-                  <div className="categories-grid" style={{ width: "100%", marginTop: "20px" }}>
+                @media (max-width: 768px) {
+                  .moonshine-image-row {
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    gap: 20px !important;
+                  }
+                  .moonshine-image-row img {
+                    max-width: 90vw !important;
+                    height: auto !important;
+                  }
+                  .moonshine-img-hide-mobile {
+                    display: none !important;
+                  }
+                }
+              `}</style>
+              {/* First image hidden on mobile */}
+              <img 
+                src="../images/Moonshineandresident.jpg" 
+                className='img-fluid moonshine-img-hide-mobile' 
+                alt="Senior-resident bonding with dog belonging to her nurse caregiver"
+                style={{ 
+                  borderRadius: "15px", 
+                  maxWidth: "400px", 
+                  height: "300px",
+                }} 
+              />
+              {/* Second image always visible */}
+              <img 
+                src="../images/moonshineandresidentupdate.png" 
+                className='img-fluid' 
+                alt="Moonshine the dog"
+                style={{ 
+                  borderRadius: "15px", 
+                  maxWidth: "400px", 
+                  height: "300px",
+                }} 
+              />
+            </div>
+            {/* Explore Blog Button */}
+            <a 
+              id="blog-navigation"
+              href="./mainblog" 
+              className="btn btn-warning btn-lg" 
+              style={{ 
+                fontSize: "18px", 
+                padding: "12px 30px", 
+                minHeight: "44px",
+                fontWeight: "600"
+              }}
+            >
+              Explore the Blog
+            </a>
+            {/* Description Text */}
+            <p className="intro-paragraph" style={{ 
+              fontSize: "18px", 
+              fontFamily: 'arial', 
+              color: "#2c2c2c", 
+              lineHeight: "1.6",
+              textAlign: "center",
+              maxWidth: "800px",
+              margin: "0"
+            }}>
+              Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
+            </p>
+          </div>
+        </div>
+        {/* Four Category Boxes - Inside White Box */}
+        <div className="categories-grid" style={{ width: "100%", marginTop: "20px" }}>
                     <style>{`
                       .category-col {
                         flex: 0 0 19.2%;
                         max-width: 19.2%;
                         padding: 0 10px;
                       }
-                      
                       @media (max-width: 1200px) {
                         .category-col {
                           flex: 0 0 48%;
@@ -137,7 +133,6 @@ function homepage() {
                           margin-bottom: 20px;
                         }
                       }
-                      
                       @media (max-width: 768px) {
                         .category-col {
                           flex: 0 0 100%;
@@ -147,7 +142,6 @@ function homepage() {
                       }
                     `}</style>
                     <div className="row g-4" style={{ display: "flex", justifyContent: "space-between" }}>
-                      
                       {/* Senior Living Desk */}
                       <div className="category-col">
                         <div className="category-card" style={{ 
@@ -187,7 +181,6 @@ function homepage() {
                           </p>
                         </div>
                       </div>
-
                       {/* Senior Policy Beat */}
                       <div className="category-col">
                         <div className="category-card" style={{ 
@@ -227,7 +220,6 @@ function homepage() {
                           </p>
                         </div>
                       </div>
-
                       {/* Tools We Love - Skip Button */}
                       <div className="category-col">
                         <div className="category-card" style={{ 
@@ -283,7 +275,6 @@ function homepage() {
                           </p>
                         </div>
                       </div>
-
                       {/* Voices in Care */}
                       <div className="category-col">
                         <div className="category-card" style={{ 
@@ -321,7 +312,6 @@ function homepage() {
                           </p>
                         </div>
                       </div>
-
                       {/* Moonshine's Corner */}
                       <div className="category-col">
                         <div className="category-card" style={{ 
@@ -361,12 +351,9 @@ function homepage() {
                           </p>
                         </div>
                       </div>
-
                     </div>
                   </div>
-                </div>
-        </div>
-      </main>
+  </main>
       
       {/* Founder Cards Section - Original Format */}
       <section aria-label="Our team">
@@ -422,7 +409,7 @@ function homepage() {
       </section>
 
       {/* Product Cards Section - Caregiver Tools Our Nurses Love */}
-      <section id="tools-we-love" aria-label="Recommended products" style={{ padding: "5px" }}>
+      <section>
         <div style={{ 
           backgroundColor: "#ffffff",
           padding: "40px 40px 55px 40px", 

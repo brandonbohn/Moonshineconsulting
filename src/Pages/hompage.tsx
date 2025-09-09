@@ -409,7 +409,7 @@ function homepage() {
       </section>
 
       {/* Product Cards Section - Caregiver Tools Our Nurses Love */}
-      <section id="tools-we-love" aria-label="Recommended products">
+  <section id="tools-we-love">
         <div style={{ 
           backgroundColor: "#ffffff",
           padding: "40px 40px 55px 40px", 

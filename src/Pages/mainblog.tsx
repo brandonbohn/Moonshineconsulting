@@ -126,7 +126,7 @@ function MainBlog() {
               </div>
               
               {/* Contributors Section */}
-              <div id="contributors">
+              <div id="contrbutors">
                 <div style={{ 
                   borderBottom: "2px solid #08023a", 
                   marginBottom: "15px",

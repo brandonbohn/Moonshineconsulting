@@ -66,12 +66,12 @@ function Header(){
            }
          }
        `}</style>
-       <a href="#main-content">Skip to Main Content</a>
-       <a href="#breaking-news">Skip to Breaking News</a>
-       <a href="#senior-living">Skip to Senior Living</a>
-       <a href="#opinions">Skip to Opinions</a>
-       <a href="#contributors">Skip to Contributors</a>
-       <a href="#tools-we-love">Skip to Products</a>
+  <a href="#main-content" className="visually-hidden-focusable" aria-label="Skip to main content" tabIndex={0} style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Skip to Main Content</a>
+  <a href="#breaking-news" className="visually-hidden-focusable" aria-label="Skip to breaking news" tabIndex={0} style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Skip to Breaking News</a>
+  <a href="#senior-living" className="visually-hidden-focusable" aria-label="Skip to senior living" tabIndex={0} style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Skip to Senior Living</a>
+  <a href="#opinions" className="visually-hidden-focusable" aria-label="Skip to opinions" tabIndex={0} style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Skip to Opinions</a>
+  <a href="#contributors" className="visually-hidden-focusable" aria-label="Skip to contributors" tabIndex={0} style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Skip to Contributors</a>
+  <a href="#tools-we-love" className="visually-hidden-focusable" aria-label="Skip to products" tabIndex={0} style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Skip to Products</a>
      </div>
 
      

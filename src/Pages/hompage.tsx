@@ -409,7 +409,7 @@ function homepage() {
       </section>
 
       {/* Product Cards Section - Caregiver Tools Our Nurses Love */}
-      <section>
+      <section id="tools-we-love" aria-label="Recommended products">
         <div style={{ 
           backgroundColor: "#ffffff",
           padding: "40px 40px 55px 40px", 
@@ -493,8 +493,9 @@ function homepage() {
               padding: 20px !important;
               margin: 15px !important;
             }
-            .welcome-box h1 {
-              fontSize: 20px !important;
+              .welcome-box h1 {
+                font-size: 20px !important;
+                font-weight: bold !important;
             }
             .welcome-box p {
               fontSize: 16px !important;

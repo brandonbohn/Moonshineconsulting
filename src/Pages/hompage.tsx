@@ -487,15 +487,19 @@ function homepage() {
           /* Mobile - 1 column stacked */
           @media (max-width: 767px) {
             .hero-section {
-              padding: 20px 15px !important;
+              padding: 0 !important;
             }
             .welcome-box {
               padding: 20px !important;
               margin: 15px !important;
+              box-sizing: border-box !important;
+              width: calc(100% - 30px) !important;
             }
               .welcome-box h1 {
-                font-size: 20px !important;
+                font-size: 5vw !important;
                 font-weight: bold !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
             }
             .welcome-box p {
               fontSize: 16px !important;

@@ -52,6 +52,8 @@ function homepage() {
                 .moonshine-img-hide-mobile {
                   display: block;
                 }
+                .intro-paragraph-desktop { display: block; }
+                .intro-paragraph-mobile { display: none; }
                 @media (max-width: 768px) {
                   .moonshine-image-row {
                     flex-direction: column !important;
@@ -64,6 +66,12 @@ function homepage() {
                   }
                   .moonshine-img-hide-mobile {
                     display: none !important;
+                  }
+                  .intro-paragraph-desktop {
+                    display: none !important;
+                  }
+                  .intro-paragraph-mobile {
+                    display: block !important;
                   }
                 }
               `}</style>
@@ -78,6 +86,21 @@ function homepage() {
                   height: "300px",
                 }} 
               />
+              {/* Intro paragraph between images for desktop */}
+              <div className="intro-paragraph-desktop" style={{ display: "flex", alignItems: "center" }}>
+                <p style={{ 
+                  fontSize: "18px", 
+                  fontFamily: 'arial', 
+                  color: "#2c2c2c", 
+                  lineHeight: "1.6",
+                  textAlign: "center",
+                  maxWidth: "320px",
+                  margin: "0 20px",
+                  alignSelf: "center"
+                }}>
+                  Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
+                </p>
+              </div>
               {/* Second image always visible */}
               <img 
                 src="../images/moonshineandresidentupdate.png" 
@@ -104,18 +127,20 @@ function homepage() {
             >
               Explore the Blog
             </a>
-            {/* Description Text */}
-            <p className="intro-paragraph" style={{ 
-              fontSize: "18px", 
-              fontFamily: 'arial', 
-              color: "#2c2c2c", 
-              lineHeight: "1.6",
-              textAlign: "center",
-              maxWidth: "800px",
-              margin: "0"
-            }}>
-              Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
-            </p>
+            {/* Description Text for mobile */}
+            <div className="intro-paragraph-mobile">
+              <p style={{ 
+                fontSize: "18px", 
+                fontFamily: 'arial', 
+                color: "#2c2c2c", 
+                lineHeight: "1.6",
+                textAlign: "center",
+                maxWidth: "800px",
+                margin: "0"
+              }}>
+                Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
+              </p>
+            </div>
           </div>
         </div>
         {/* Four Category Boxes - Inside White Box */}

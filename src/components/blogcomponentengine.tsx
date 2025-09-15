@@ -33,22 +33,25 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
         return <div>No blog entries found.</div>;
     }
 
-    return (
-        <div style={{ height: "100%", width: "100%" }}>
-            {entries.map((entry) => (
-                <div key={entry.id} className="blog-entry blog-content" style={{ 
-                    width: "100%", 
-                    margin: "0",  
-                    display: "flex", 
-                    flexDirection: "column", 
-                    justifyContent: "space-between",
-                    height: "100%",
-                    minHeight: "300px",
-                    padding: "0"
-                }}>
-					<div style={{ flex: "0 0 auto" }}>
-						<p className="Title" style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "5px", lineHeight: "1.2", marginTop: "0" }}>{entry.title}</p>
-						<div style={{ display: "flex", justifyContent: "center", marginBottom: "8px" }}>
+	return (
+		<div style={{ height: "100%", width: "100%" }}>
+			{entries.map((entry) => (
+				<div key={entry.id} className="blog-entry blog-content" style={{ 
+					width: "100%", 
+					margin: "0",  
+					display: "flex", 
+					flexDirection: window.innerWidth < 768 ? "column" : "column", // Title always on top
+					justifyContent: "flex-start",
+					height: "100%",
+					minHeight: "300px",
+					padding: "0"
+				}}>
+					{/* Title on top */}
+					<p className="Title" style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px", lineHeight: "1.2", marginTop: "0", textAlign: "left" }}>{entry.title}</p>
+					{/* Image left, text right */}
+					<div style={{ display: "flex", flexDirection: window.innerWidth < 768 ? "column" : "row", alignItems: "flex-start", gap: "20px" }}>
+						{/* Image left */}
+						<div style={{ flex: "0 0 200px", display: "flex", justifyContent: "center", alignItems: "center" }}>
 							<img
 								src={entry.imageUrl}
 								alt={entry.title}
@@ -58,45 +61,46 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 								style={{ objectFit: "cover", borderRadius: "8px" }}
 							/>
 						</div>
-						<p className="text-center" style={{ fontSize: "16px", fontWeight: "600", color: "#08023a", marginBottom: "5px" }}>{entry.newsSection}</p>
-					</div>
-                    <div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-						<p className="body" style={{ 
-							fontSize: "16px", 
-							lineHeight: "1.5", 
-							marginBottom: "15px",
-							overflow: "hidden",
-							display: "-webkit-box",
-							WebkitLineClamp: 3,
-							WebkitBoxOrient: "vertical" as const,
-							textOverflow: "ellipsis",
-							maxHeight: "72px"
-						}}>{entry.article}</p>
-						<div style={{ flex: "0 0 auto" }}>
-							<p className="text-center" style={{ fontSize: "14px", color: "#666", marginBottom: "15px" }}>{entry.date}</p> 
+						{/* Text right */}
+						<div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+							<p className="text-left" style={{ fontSize: "16px", fontWeight: "600", color: "#08023a", marginBottom: "5px", textAlign: "left" }}>{entry.newsSection}</p>
+							<p className="body" style={{ 
+								fontSize: "16px", 
+								lineHeight: "1.5", 
+								marginBottom: "15px",
+								overflow: "hidden",
+								display: "-webkit-box",
+								WebkitLineClamp: 3,
+								WebkitBoxOrient: "vertical" as const,
+								textOverflow: "ellipsis",
+								maxHeight: "72px",
+								textAlign: "left"
+							}}>{entry.article}</p>
+							<p className="text-left" style={{ fontSize: "14px", color: "#666", marginBottom: "15px", textAlign: "left" }}>{entry.date}</p> 
 							<a
 								href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
 								className="mb-4 text-white btn btn-warning btn-block btn mt-3"
 								style={{ 
 									backgroundColor: "#08023a", 
 									borderColor: "#08023a",
-									fontSize: "16px",
-									padding: "10px 20px",
+									fontSize: "12px",
+									width: "100px",
+									height: "50px",
 									borderRadius: "8px",
 									textDecoration: "none",
-									display: "block",
-									textAlign: "center"
+									display: "inline-block",
+									textAlign: "center",
+									lineHeight: "15px",
+									padding: "0"
 								}}
 							>
-								Read More
+								<span style={{ display: "inline-block", width: "100%", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>Read More</span>
 							</a>
 						</div>
 					</div>
-        
-				
-                </div>
-            ))}
-        </div>
+				</div>
+			))}
+		</div>
     );
 };
 

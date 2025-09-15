@@ -10,9 +10,22 @@ function EstateprepBlogentry() {
         categoryName="Senior Living Desk" 
         categoryLink="/seniorlivingdesk" 
       />
-
-      <div className="container my-5">
-<div className="row bg-light p-4 rounded shadow">
+      <div style={{ backgroundColor: "#08023a", borderRadius: "10px", padding: "32px 0 24px 0", margin: "50px 0 0 0", width: "100%" }}>
+        <h1 style={{ color: "#fff", textAlign: "center", fontSize: "2.8rem", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px", width: "100%" }}>
+          Before I Go: What I've Learned About Death, Faith, and Protecting My Family
+        </h1>
+        <h2 style={{ color: "#fff", fontSize: "1.3rem", fontStyle: "italic", textAlign: "center", margin: "0 0 8px 0", width: "100%" }}>Author: Karen</h2>
+        <div style={{ color: "#fff", textAlign: "center", fontSize: "1.2rem", marginBottom: "16px", width: "100%" }}>
+          {new Date('2025-09-15').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+        </div>
+        <img
+          src="/images/death.jpg"
+          alt="End of Life Planning"
+          style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
+        />
+      </div>
+      <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "22px", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
+        <div className="row bg-light p-4 rounded shadow">
 <h1 className=" text-center ">Before I Go: What I've Learned About Death, Faith, and Protecting My Family</h1>
 <h2 style={{ textAlign: "center", fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontStyle: "italic", color: "#08023a", marginTop: "10px" }}>Author: Karen</h2>
 <div className="d-flex justify-content-center">
@@ -123,7 +136,7 @@ function EstateprepBlogentry() {
 
 <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
   Please come back — I'll be writing about other important things to consider before you die. <strong>Your family's financial security depends on the decisions you make today.</strong>
-</p>
+</p>z
 
 <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "40px", marginBottom: "20px" }}>
   Recommended Estate Planning Products

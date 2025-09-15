@@ -48,15 +48,22 @@ function Voicesincareblogentry() {
           <div></div>
         </div>
       </div>
-      <div className="Titles text-white" style={{ backgroundColor: "#08023a", padding: "20px", borderRadius: "10px" }}>
-
-       <h1>
-        The Heart of Hospice Nursing: Compassion, Comfort, and Connection
-      </h1>
-      <h2>Author:Christie Stephan RN ODG</h2> 
+      <div style={{ backgroundColor: "#08023a", borderRadius: "10px", padding: "32px 0 24px 0", margin: "50px auto 0 auto", maxWidth: "100%", width: "100%" }}>
+        <h1 style={{ color: "#fff", textAlign: "center", fontSize: "2.2rem", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px" }}>
+          The Heart of Hospice Nursing: Compassion, Comfort, and Connection
+        </h1>
+        <h2 style={{ color: "#fff", fontSize: "1.1rem", fontStyle: "italic", textAlign: "left", margin: "0 0 8px 0" }}>Author: Christie Stephan RN ODG</h2>
+        <div style={{ color: "#fff", textAlign: "left", fontSize: "1rem", marginBottom: "16px" }}>
+          {new Date('2025-09-15').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+        </div>
+        <img
+          src="/images/hospice.jpg"
+          alt="Hospice Nursing"
+          style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "300px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
+        />
       </div>
-      
-      <div className="content mb-4 box text-dark" style={{ padding: "20px", fontSize: "20px", height: "100%", width: "100%" }}>
+
+      <div className="content mb-4 box text-dark" style={{ padding: "20px", fontSize: "20px", height: "100%", maxWidth: "100%", width: "100%", margin: "30px auto 0 auto", background: "#fff", borderRadius: "10px", textAlign: "left" }}>
         <p>
           There are so many things I could say about nursing, but one of the
           most rewarding—and humbling—experiences has been working in hospice
@@ -96,10 +103,12 @@ function Voicesincareblogentry() {
           <br />
           Hospice nursing is a calling that teaches me about compassion, courage, and
           the true meaning of care.
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
+      
+  
   );
 }
 export default Voicesincareblogentry;

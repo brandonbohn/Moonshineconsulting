@@ -23,8 +23,9 @@ function MainBlog() {
           <div className="welcome-box" style={{ 
             backgroundColor: "#ffffff", 
             padding: "40px", 
-            borderRadius: "15px", 
-            boxShadow: "0 4px 20px rgba(0,0,0,0.1)", 
+              borderRadius: "8px", 
+              boxShadow: "0 4px 20px rgba(0,0,0,0.1)", 
+              border: "2px solid #08023a",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -72,9 +73,9 @@ function MainBlog() {
               flexDirection: isMobile ? "column" : "row",
               gap: "20px",
               padding: "4px",
-              backgroundColor: "#f8f9fa",
-              borderRadius: "6px",
-              border: "2px solid #08023a"
+                backgroundColor: "#f8f9fa",
+                borderRadius: "8px",
+                border: "2px solid #08023a"
             }}>
               <div style={{ flex: isMobile ? "none" : "1", width: "100%" }}>
                 <BlogComponent id={2} />
@@ -116,8 +117,8 @@ function MainBlog() {
               <div style={{ 
                 padding: "15px", 
                 backgroundColor: "#ffffff",
-                border: "1px solid #ddd",
-                borderRadius: "8px",
+                  border: "2px solid #08023a",
+                  borderRadius: "8px",
                 height: "fit-content",
                 minHeight: "200px",
                 marginBottom: "20px"
@@ -156,20 +157,11 @@ function MainBlog() {
                   <div style={{ 
                     padding: "12px", 
                     backgroundColor: "#ffffff",
-                    border: "1px solid #ddd",
-                    borderRadius: "6px",
+                      border: "2px solid #08023a",
+                      borderRadius: "8px",
                     height: "fit-content"
                   }}>
                     <ContributorsComponent id={1} />
-                  </div>
-                  <div style={{ 
-                    padding: "12px", 
-                    backgroundColor: "#ffffff",
-                    border: "1px solid #ddd",
-                    borderRadius: "6px",
-                    height: "fit-content"
-                  }}>
-                    
                   </div>
                 </div>
               </div>
@@ -201,8 +193,8 @@ function MainBlog() {
               <div style={{ 
                 padding: "15px", 
                 backgroundColor: "#ffffff",
-                border: "1px solid #ddd",
-                borderRadius: "8px",
+                  border: "2px solid #08023a",
+                  borderRadius: "8px",
                 marginBottom: "20px",
                 height: "auto"
               }}>
@@ -211,8 +203,8 @@ function MainBlog() {
               <div style={{ 
                 padding: "15px", 
                 backgroundColor: "#ffffff",
-                border: "1px solid #ddd",
-                borderRadius: "8px",
+                  border: "2px solid #08023a",
+                  borderRadius: "8px",
                 height: "auto"
               }}>
                 <BlogComponent id={5} />
@@ -239,8 +231,8 @@ function MainBlog() {
             <div style={{
               padding: "15px",
               backgroundColor: "#fff9e6",
-              borderRadius: "8px",
-              border: "2px dashed #08023a"
+                borderRadius: "8px",
+                border: "2px solid #08023a"
             }}>
               <BlogComponent id={1} />
             </div>

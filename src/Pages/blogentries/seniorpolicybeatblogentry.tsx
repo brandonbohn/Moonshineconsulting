@@ -10,8 +10,21 @@ function SeniorPolicyBeatBlog()
         categoryName="Senior Policy Beat" 
         categoryLink="/seniorpolicybeat" 
       />
-
-      <main role="main" aria-label="Senior Policy Beat blog content">
+      <div style={{ backgroundColor: "#08023a", borderRadius: "10px", padding: "32px 0 24px 0", margin: "50px 0 0 0", width: "100%" }}>
+        <h1 style={{ color: "#fff", textAlign: "center", fontSize: "2.8rem", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px", width: "100%" }}>
+          Medicare Home Health: What Seniors Need to Know
+        </h1>
+        <h2 style={{ color: "#fff", fontSize: "1.3rem", fontStyle: "italic", textAlign: "left", margin: "0 0 8px 0", width: "100%" }}>Author: Karen</h2>
+        <div style={{ color: "#fff", textAlign: "left", fontSize: "1.2rem", marginBottom: "16px", width: "100%" }}>
+          {new Date('2025-09-15').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+        </div>
+        <img
+          src="/images/medicare.jpg"
+          alt="Medicare Home Health"
+          style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
+        />
+      </div>
+      <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "22px", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
         <div className="Text" style={{ fontFamily: "Open Sans, sans-serif", minHeight: "100vh", fontSize: "18px", lineHeight: "1.6" }}>
           <header>
             <h1 className="Titles text-white" style={{ background:"#000000", textAlign: "center", padding: "20px", margin: "50px", borderRadius: "8px", fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>
@@ -20,10 +33,9 @@ function SeniorPolicyBeatBlog()
           </header>
           
           <article>
-            <h1 className="Titles cards text-white" style={{ textAlign: "center", background:"#08023a", color: "#ffffff", padding: "20px", marginTop: "50px", borderRadius: "8px", fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>Medicare Home Health: What Seniors Need to Know</h1>
-            <h2 style={{ textAlign: "center", background:"#08023a", color: "#ffffff", padding: "10px", marginTop: "0", borderRadius: "0 0 8px 8px", fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontStyle: "italic" }}>Author: Karen</h2>
             
-            <section style={{ background: "#ffffff", padding: "20px", borderRadius: "8px", margin: "20px 0" }}>
+            <div style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "8px", margin: "20px 0" }}>
+              <div style={{ textAlign: "left" }}>
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
                 <strong>To Kick off the Senior Policy Beat,</strong> a blog dedicated to helping seniors and their families navigate the complex world of healthcare policy.
                 In this opening edition, I want to share what I've learned from over 30 years as a nurse in Medicare Home Health. I've seen how this program helps people heal and stay independent, but I've also lived through the rules changing around us — sometimes making care harder to deliver and receive. Let me clear it up, together.
@@ -87,7 +99,7 @@ function SeniorPolicyBeatBlog()
               <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "15px" }}>
                 The workload was very doable unless you lived outside the city limits. I would put a thousand miles a week on my car. I enjoyed this life, seeing everyone. Sometimes it was stressful, trying to guess how long you would be at each person's house. Sometimes I would be late if I had to send someone to the hospital.
               </p>
-              <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
+              <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "15px" }}>
                 There were frustrating times when I would see someone who said they would be home but were not when I arrived. We were paid per visit. No one home, I did not get paid. I would check on them before I left. Back then, I could look in windows and try to see if someone was lying on the floor. I would knock on the back door, ask a neighbor.
               </p>
               
@@ -145,10 +157,11 @@ function SeniorPolicyBeatBlog()
                   <strong>3.</strong> Centers for Medicare & Medicaid Services. "Home Health Prospective Payment System." <em>CMS.gov</em>. Updated 2024. Available at: <a href="https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HomeHealthPPS" target="_blank" rel="noopener noreferrer" style={{ color: "#08023a" }}>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HomeHealthPPS</a>
                 </p>
               </div>
-            </section>
+              </div>
+            </div>
           </article>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

@@ -247,33 +247,7 @@ function MainBlog() {
           </div>
 
           {/* Footer Information */}
-          <div style={{
-            borderTop: "3px double #08023a",
-            paddingTop: "20px",
-            textAlign: "center",
-            backgroundColor: "#f8f9fa",
-            padding: "25px",
-            borderRadius: "8px"
-          }}>
-            <p style={{ 
-              fontSize: "18px", 
-              fontFamily: "Georgia, serif", 
-              color: "#08023a",
-              fontWeight: "bold",
-              marginBottom: "10px"
-            }}>
-              Subscribe to The Care Professional Chronicle
-            </p>
-            <p style={{ 
-              fontSize: "16px", 
-              fontFamily: "Georgia, serif", 
-              color: "#666",
-              lineHeight: "1.6"
-            }}>
-              Stay informed about the latest in senior care, healthcare policy, and professional insights.<br/>
-              Written by nurses and care professionals with over 30 years of combined experience.
-            </p>
-          </div>
+         
         </div>
         
         {/* Extra Large Screen Media Queries */}

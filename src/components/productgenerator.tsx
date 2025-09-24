@@ -29,9 +29,9 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 	return (
 	<div className="product-card-container" style={{ width: "280px" }}>
 			{entries.map((entry) => (
-				<div 
-					key={entry.productid} 
-					className="card h-100 product-card-responsive" 
+				   <div 
+					   key={entry.productid} 
+					   className="product-card product-card-responsive" 
 					style={{ 
 						width: "280px",
 						margin: "auto", 

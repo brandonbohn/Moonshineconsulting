@@ -18,7 +18,7 @@ function NurseJourneyMemoryBlogEntry() {
           {new Date('2025-08-10').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
         <img
-          src="/images/nurse.jpg"
+          src="/images/oldschoolnurse.jpg"
           alt="Nurse's Journey"
           style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
         />

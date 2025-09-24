@@ -14,7 +14,7 @@ export const contributorsData: Contributor[] = [
     name: "Cindy Boushie-Hill",
     title: "LPN",
     image: "./images/cindy.jpeg",
-    bio: "Cindy brings over 40 years of nursing experience to The Care Professional Chronicle. As a hospice nurse, she has dedicated her career to providing compassionate end-of-life care and supporting families through difficult transitions.",
+    bio: "Cindy brings over 40 years of nursing experience to The Care Professional Chronicle. As a long term care nurse, she has dedicated her career to providing compassionate end-of-life care and supporting families through difficult transitions.",
     credentials: "Licensed Practical Nurse"
   },
   

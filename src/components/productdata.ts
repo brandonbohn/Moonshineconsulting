@@ -21,7 +21,7 @@ export const ProductData = [
         name: "Footbath",
         description: "A relaxing footbath treatment using Ionic technology to soothe tired feet.",
         photo: "./images/footbath2.jpg",
-        price: 99.99,
+        price: 65.00,
         link: "https://amzn.to/4ltO8Dk",
         productAdvisory: "please consult with your healthcare professional before use.",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -30,7 +30,7 @@ export const ProductData = [
     {
         name: "Fireproof Document Safe",
         description: "Protect your important estate planning documents with this fireproof and waterproof safe. Perfect for wills, trusts, and legal papers.",
-        photo: "https://media.istockphoto.com/id/1390429995/photo/home-safe-box-with-digital-lock.jpg?s=612x612&w=0&k=20&c=V9XyWUqNj2iZxBH2O8FbJl6wJ8q4oYf6m8n_6r5_4s0=",
+    photo: "/images/fireproofdocumentsafe.jpg",
         price: 89.99,
         link: "https://amzn.to/your-affiliate-link-here",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -40,7 +40,7 @@ export const ProductData = [
     {
         name: "Legal Document Organizer",
         description: "Professional expanding file organizer with 21 labeled pockets. Keep your estate planning documents organized and accessible for your family.",
-        photo: "https://media.istockphoto.com/id/1350857077/photo/filing-cabinet-with-folders.jpg?s=612x612&w=0&k=20&c=8L5xQ9zY6wZ4m3n2r7s5t1v9x8c4b6f0g9h2j5k8l1n=",
+    photo: "/images/legaldocumentorganizer.jpg",
         price: 24.99,
         link: "https://amzn.to/your-affiliate-link-here",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -50,27 +50,18 @@ export const ProductData = [
     {
         name: "Waterproof Document Case",
         description: "Portable waterproof document bag for emergency preparedness. Keep copies of essential documents safe and accessible.",
-        photo: "https://media.istockphoto.com/id/1348392901/photo/waterproof-document-bag.jpg?s=612x612&w=0&k=20&c=9M6nP2qR8sT4v5w7x1y3z5a7b9c2d4e6f8g0h2i4j6k8=",
+    photo: "/images/waterproofdocumentcase.jpg",
         price: 19.99,
         link: "https://amzn.to/your-affiliate-link-here",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:6,
         category: "estate-planning"
     },
-    {
-        name: "Red Light Therapy Device",
-        description: "A device that uses red light to promote healing and reduce inflammation.",
-        photo: "/images/redlighttherapy.jpg",
-        price: 12.99,
-        link: "https://amzn.to/your-affiliate-link-here",
-        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
-        productid:7,
-        category: "therapy"
-    },
+   
      {
         name: "Card Protection Sleeves",
         description: "Protective sleeves for Social Security cards, Medicare cards, and other important identification documents.",
-        photo: "https://media.istockphoto.com/id/1389567812/photo/document-protectors-clear-sleeves.jpg?s=612x612&w=0&k=20&c=7K4jM1nO9pQ2r5s8t0v2w4x6y8z1a3b5c7d9e1f3g5h7=",
+    photo: "/images/cardprotectionsleeves.jpg",
         price: 12.99,
         link: "https://amzn.to/your-affiliate-link-here",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -78,13 +69,13 @@ export const ProductData = [
         category: "estate-planning"
     },
      {
-        name: "Knee Red Light Therapy Wrap",
-        description: "A wrap designed to deliver red light therapy to the knee area, promoting healing and reducing inflammation.",
-        photo: "/images/therapywrap.jpg",
+        name: "Red Light Therapy Device",
+        description: "A device designed to deliver red light therapy, promoting healing and reducing inflammation.",
+        photo: "/images/redlighttherapy.jpg",
         price: 12.99,
         link: "https://amzn.to/your-affiliate-link-here",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
-        productid:7,
+        productid:8,
         category: "estate-planning"
     },
     

@@ -22,19 +22,19 @@ function MainBlog() {
         <div className="hero-section" style={{ padding: "2px 10px" }}>
           <div className="welcome-box" style={{ 
             backgroundColor: "#ffffff", 
-            padding: "40px", 
+           
               borderRadius: "8px", 
               boxShadow: "0 4px 20px rgba(0,0,0,0.1)", 
-              border: "2px solid #08023a",
+              border: ".5px solid #08023a",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             gap: "10px",
-            width: "calc(100% - 40px)",
-            margin: "0 20px"
+            width: "90vw",
+          
           }}>
           {/* Newspaper Header - Ultra Compact - No Top Margin */}
-          <div className="boxtwo text-center" style={{  padding: "8px", backgroundColor: "#08023a", borderRadius: "0", width: "100%", height: "auto", marginBottom: "8px", marginTop: "-40px", marginLeft: "-40px", marginRight: "-40px" }}>
+          <div className="boxtwo text-center" style={{  padding: "8px", backgroundColor: "#08023a", borderRadius: "0", width: "100%", height: "auto", marginBottom: "8px", marginLeft: "-40px", marginRight: "-40px" }}>
             <h1 style={{ fontSize: "24px", fontFamily: "Georgia, serif", letterSpacing: "0.5px", margin: "0" }} className="text-white">
               The Care Professional Chronicle
             </h1>

@@ -136,7 +136,7 @@ function EstateprepBlogentry() {
 
 <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
   Please come back — I'll be writing about other important things to consider before you die. <strong>Your family's financial security depends on the decisions you make today.</strong>
-</p>z
+</p>
 
 <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "40px", marginBottom: "20px" }}>
   Recommended Estate Planning Products
@@ -147,7 +147,7 @@ function EstateprepBlogentry() {
 </p>
 
 <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center", marginBottom: "30px" }}>
-  {ProductData.filter(product => product.category === "estate-planning").map((product) => (
+  {ProductData.filter(product => product.category === "estate-planning" && product.productid !== 8).map((product) => (
     <div 
       key={product.productid}
       className="card h-100" 

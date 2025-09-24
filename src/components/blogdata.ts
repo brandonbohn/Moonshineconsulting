@@ -47,7 +47,7 @@ export const blogData = [
   },
   {
     NewsSection: "Voices In Care",
-    image: "./images/cindy.jpeg",
+    image: "./images/oldschoolnurse.jpg",
     title: "A Nurse's Journey: From Reluctant Student to Dedicated Caregiver",
     article: "A personal memoir reflecting on the transformation from an unmotivated high school student to a passionate healthcare professional, sharing memorable experiences and lessons learned throughout a nursing career.",
     date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }),

@@ -1,6 +1,7 @@
 import { BlogEntry } from "./types";
 // Adjust the import to match the actual export from blogdata.ts
 import { blogData } from "./blogdata.ts";
+import '../css/mainblog.css';
 
 
 // Define ProductEntry type based on your ProductData structure

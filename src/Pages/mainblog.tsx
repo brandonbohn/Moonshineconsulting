@@ -1,6 +1,7 @@
 import BlogComponent from "../components/blogcomponentengine.tsx";
 import ContributorsComponent from "../components/contributorscomponent.tsx";
 import '../css/mainblog.css';
+import '../css/mainblog.css';
 import { useState, useEffect } from "react";
 
 function MainBlog() {
@@ -28,7 +29,7 @@ function MainBlog() {
             flexDirection: "column",
             alignItems: "center",
             gap: "10px",
-            width: "calc(100% - 40px)",
+            width: "calc(97% - 10px)",
             margin: "0 20px"
           }}>
           {/* Newspaper Header - Ultra Compact - No Top Margin */}
@@ -147,30 +148,7 @@ function MainBlog() {
                     fontStyle: "italic"
                   }}>Meet Our Expert Writers</p>
                 </div>
-                <div style={{ 
-                  display: "flex", 
-                  flexDirection: "column", 
-                  gap: "15px"
-                }}>
-                  <div style={{ 
-                    padding: "12px", 
-                    backgroundColor: "#ffffff",
-                    border: "1px solid #ddd",
-                    borderRadius: "6px",
-                    height: "fit-content"
-                  }}>
-                    <ContributorsComponent id={1} />
-                  </div>
-                  <div style={{ 
-                    padding: "12px", 
-                    backgroundColor: "#ffffff",
-                    border: "1px solid #ddd",
-                    borderRadius: "6px",
-                    height: "fit-content"
-                  }}>
-                    
-                  </div>
-                </div>
+                <ContributorsComponent id={1} />
               </div>
             </div>
 
@@ -261,7 +239,7 @@ function MainBlog() {
               fontWeight: "bold",
               marginBottom: "10px"
             }}>
-              The Care Professional Chronicle
+              Subscribe to The Care Professional Chronicle
             </p>
             <p style={{ 
               fontSize: "16px", 
@@ -269,7 +247,7 @@ function MainBlog() {
               color: "#666",
               lineHeight: "1.6"
             }}>
-              Insights on senior care, healthcare policy, and professional guidance.<br/>
+              Stay informed about the latest in senior care, healthcare policy, and professional insights.<br/>
               Written by nurses and care professionals with over 30 years of combined experience.
             </p>
           </div>

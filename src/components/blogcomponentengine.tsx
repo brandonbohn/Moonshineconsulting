@@ -39,49 +39,52 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 			{entries.map((entry) => (
 				<div key={entry.id} className="blog-entry blog-content" style={{ 
 					width: "100%", 
-					margin: "0 0 32px 0",  
+					margin: "0 0 20px 0",  
 					display: "flex", 
 					flexDirection: "column",
 					justifyContent: "flex-start",
 					height: "100%",
-					minHeight: "200px",
-					padding: "0"
+					minHeight: "160px",
+					padding: "12px",
+					backgroundColor: "#f8f9fa",
+					borderRadius: "6px",
+					border: "2px solid #08023a"
 				}}>
 					{/* Title on top */}
-					<p className="Title" style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px", lineHeight: "1.2", marginTop: "0", textAlign: "left" }}>{entry.title}</p>
+					<p className="Title" style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left" }}>{entry.title}</p>
 					{/* Row: image left, info right */}
-					<div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "24px", width: "100%" }}>
+					<div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "16px", width: "100%" }}>
 						{/* Image left */}
-						<div style={{ flex: "0 0 140px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+						<div style={{ flex: "0 0 100px", display: "flex", justifyContent: "center", alignItems: "center" }}>
 							<img
 								src={entry.imageUrl}
 								alt={entry.title}
-								className="px-2"
-								width={140}
-								height={140}
-								style={{ objectFit: "cover", borderRadius: "8px" }}
+								className="px-1"
+								width={100}
+								height={100}
+								style={{ objectFit: "cover", borderRadius: "6px" }}
 							/>
 						</div>
 						{/* Info right */}
-						<div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "center", gap: "8px" }}>
-							<p className="text-left" style={{ fontSize: "16px", fontWeight: "600", color: "#08023a", marginBottom: "2px", textAlign: "left" }}>{entry.newsSection}</p>
+						<div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "center", gap: "6px" }}>
+							<p className="text-left" style={{ fontSize: "14px", fontWeight: "600", color: "#08023a", marginBottom: "2px", textAlign: "left" }}>{entry.newsSection}</p>
 							<p className="body" style={{ 
-								fontSize: "16px", 
-								lineHeight: "1.5", 
-								marginBottom: "8px",
+								fontSize: "14px", 
+								lineHeight: "1.4", 
+								marginBottom: "6px",
 								overflow: "hidden",
 								display: "-webkit-box",
-								WebkitLineClamp: 2,
+								WebkitLineClamp: 3,
 								WebkitBoxOrient: "vertical" as const,
 								textOverflow: "ellipsis",
-								maxHeight: "48px",
+								maxHeight: "60px",
 								textAlign: "left"
 							}}>{entry.article}</p>
-							<p className="text-left" style={{ fontSize: "14px", color: "#666", marginBottom: "2px", textAlign: "left" }}>{entry.date}</p>
+							<p className="text-left" style={{ fontSize: "12px", color: "#666", marginBottom: "2px", textAlign: "left" }}>{entry.date}</p>
 						</div>
 					</div>
 					{/* Read More button at bottom right */}
-					<div style={{ width: "100%", display: "flex", justifyContent: "flex-end", marginTop: "12px" }}>
+					<div style={{ width: "100%", display: "flex", justifyContent: "flex-end", marginTop: "10px" }}>
 						<a
 							href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
 							className="senior-btn"

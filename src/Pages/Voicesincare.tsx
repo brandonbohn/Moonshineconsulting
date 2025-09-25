@@ -149,9 +149,7 @@ function Voicesincare() {
       
       <main className="voices-main">
         <section>
-          <div>
-            <BlogComponent id={3} />
-          </div>
+          <BlogComponent id={3} />
           <div className="blog-section">
             <BlogComponent id={5} />
           </div>

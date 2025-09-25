@@ -261,7 +261,7 @@ function MainBlog() {
               fontWeight: "bold",
               marginBottom: "10px"
             }}>
-              Subscribe to The Care Professional Chronicle
+              The Care Professional Chronicle
             </p>
             <p style={{ 
               fontSize: "16px", 
@@ -269,7 +269,7 @@ function MainBlog() {
               color: "#666",
               lineHeight: "1.6"
             }}>
-              Stay informed about the latest in senior care, healthcare policy, and professional insights.<br/>
+              Insights on senior care, healthcare policy, and professional guidance.<br/>
               Written by nurses and care professionals with over 30 years of combined experience.
             </p>
           </div>

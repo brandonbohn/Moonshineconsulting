@@ -3,137 +3,118 @@ import BlogComponent from "../components/blogcomponentengine.tsx";
 
 function MoonshinesCorner() {
     return (
-        <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+    <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
             <div className="hero-section" style={{ padding: "2px 10px" }}>
-                <div className="moonshines-corner" style={{ fontFamily: "sans-serif", background: "#C9A17D", minHeight: "100vh" }}>
+                <div className="moonshines-corner" style={{ fontFamily: "Georgia, serif", background: "#C9A17D", minHeight: "100vh", fontSize: "21px" }}>
             <style>{`
                 .moonshines-header {
                     background: #7B3F00;
                     padding: 30px;
                     text-align: center;
                 }
-                
                 .moonshines-title {
                     margin: 30px;
                     padding: 20px;
-                    font-size: 28px;
+                    font-size: 27px;
                     color: #ffffff;
-                    font-family: "Open Sans, sans-serif";
+                    font-family: "Open Sans, Arial, sans-serif";
                 }
-                
                 .moonshines-subtitle {
-                    font-size: 18px;
+                    font-size: 21px;
                     color: #ffffff;
-                    font-family: "Open Sans, sans-serif";
+                    font-family: "Georgia, serif";
                 }
-                
                 .moonshines-main {
                     max-width: auto;
                     margin: 20px;
                     padding: 20px;
+                    font-size: 21px;
+                    font-family: "Georgia, serif";
                 }
-                
                 .interviews-title {
                     color: #ffffff;
-                    font-size: 28px;
-                    font-family: "Open Sans, sans-serif";
+                    font-size: 27px;
+                    font-family: "Open Sans, Arial, sans-serif";
                 }
-                
                 .moonshines-footer {
                     text-align: center;
                     padding: 1rem 0;
                     color: #b08968;
+                    font-size: 21px;
+                    font-family: "Georgia, serif";
                 }
-                
-                /* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
                 @media (min-width: 1400px) {
                     .moonshines-header {
                         padding: 40px;
                     }
-                    
                     .moonshines-title {
-                        font-size: 42px !important;
+                        font-size: 32px !important;
                         margin: 40px;
                         padding: 30px;
                     }
-                    
                     .moonshines-subtitle {
-                        font-size: 22px !important;
+                        font-size: 24px !important;
                     }
-                    
                     .moonshines-main {
                         margin: 30px;
                         padding: 30px;
+                        font-size: 24px;
                     }
-                    
                     .interviews-title {
-                        font-size: 36px !important;
+                        font-size: 32px !important;
                     }
-                    
                     .moonshines-footer {
-                        font-size: 18px !important;
+                        font-size: 24px !important;
                         padding: 2rem 0;
                     }
                 }
-                
-                /* Ultra Wide Screens (1600px and up) - For Ultrawide Monitors */
                 @media (min-width: 1600px) {
                     .moonshines-header {
                         padding: 50px;
                     }
-                    
                     .moonshines-title {
-                        font-size: 48px !important;
+                        font-size: 36px !important;
                         margin: 50px;
                         padding: 40px;
                     }
-                    
                     .moonshines-subtitle {
-                        font-size: 24px !important;
+                        font-size: 27px !important;
                     }
-                    
                     .moonshines-main {
                         margin: 40px;
                         padding: 40px;
+                        font-size: 27px;
                     }
-                    
                     .interviews-title {
-                        font-size: 42px !important;
+                        font-size: 36px !important;
                     }
-                    
                     .moonshines-footer {
-                        font-size: 20px !important;
+                        font-size: 27px !important;
                         padding: 2.5rem 0;
                     }
                 }
-                
-                /* Super Ultra Wide (1920px and up) - For 4K and Multiple Monitor Dev Setups */
                 @media (min-width: 1920px) {
                     .moonshines-header {
                         padding: 60px;
                     }
-                    
                     .moonshines-title {
-                        font-size: 56px !important;
+                        font-size: 42px !important;
                         margin: 60px;
                         padding: 50px;
                     }
-                    
                     .moonshines-subtitle {
-                        font-size: 26px !important;
+                        font-size: 32px !important;
                     }
-                    
                     .moonshines-main {
                         margin: 50px;
                         padding: 50px;
+                        font-size: 32px;
                     }
-                    
                     .interviews-title {
-                        font-size: 48px !important;
+                        font-size: 42px !important;
                     }
-                    
                     .moonshines-footer {
-                        font-size: 22px !important;
+                        font-size: 32px !important;
                         padding: 3rem 0;
                     }
                 }

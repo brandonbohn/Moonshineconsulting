@@ -6,9 +6,8 @@ const BusinessHeader = () => (
       <strong>Location:</strong> Fredricktown, Missouri
     </div>
     <div>
-      <strong>All Rights Reserved.|Content Reviewed by licensed healthcare professional with 30+ years home health experience</strong> &copy; {new Date().getFullYear()} BareBohnz Dev & Consulting
-    </div>
-    <p>Moonshine Consulting LLC</p>
+      <strong>All Rights Reserved.|Content Reviewed by licensed healthcare professional with 30+ years home health experience</strong> &copy; {new Date().getFullYear()}Moonshine Consulting LLC </div>
+    <p>Designed and developed  by BareBohnz Dev & Consulting</p>
     <div>
       <a href="./privacypolicy" className="text-warning" style={{ textDecoration: "none" }}>
   Privacy Policy

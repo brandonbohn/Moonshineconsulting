@@ -19,10 +19,10 @@ export const ProductData = [
     },
     {
         name: "Footbath",
-        description: "A relaxing footbath treatment using Ionic technology to soothe tired feet.",
+        description: "A relaxing footbath treatment using ionic technology to remove toxins.",
         photo: "./images/footbath2.jpg",
-        price: 65.00,
-        link: "https://amzn.to/4ltO8Dk",
+        price: 61.00,
+        link: "https://amzn.to/4mLnPJq",
         productAdvisory: "please consult with your healthcare professional before use.",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:3

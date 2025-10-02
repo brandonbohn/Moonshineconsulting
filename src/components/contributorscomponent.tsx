@@ -20,25 +20,26 @@ const ContributorsComponent = ({ id }: ContributorsComponentProps) => {
   }
 
   return (
-    <div style={{ width: "100%" }}>
+  <div style={{ width: typeof window !== 'undefined' && window.innerWidth < 768 ? "calc(100% - 24px)" : "100%", margin: typeof window !== 'undefined' && window.innerWidth < 768 ? "0 12px" : "0" }}>
       {contributors.map((contributor) => (
         <div key={contributor.id} style={{ 
           width: "100%", 
-          margin: "0",  
+          margin: typeof window !== 'undefined' && window.innerWidth < 768 ? "8px 0" : "0",  
           display: "flex", 
           flexDirection: "column", 
           justifyContent: "space-between",
           height: "100%",
-          minHeight: "280px",
-          padding: "0"
+          minHeight: typeof window !== 'undefined' && window.innerWidth < 768 ? "180px" : "280px",
+          padding: typeof window !== 'undefined' && window.innerWidth < 768 ? "6px" : "0"
         }}>
           <div style={{ flex: "0 0 auto" }}>
             <h4 style={{ 
-              fontSize: "18px", 
+              fontSize: "21px", 
               fontWeight: "bold", 
               marginBottom: "10px", 
               lineHeight: "1.3",
-              color: "#08023a"
+              color: "#08023a",
+              fontFamily: "Open Sans, Arial, sans-serif"
             }}>
               {contributor.name}
             </h4>
@@ -56,21 +57,23 @@ const ContributorsComponent = ({ id }: ContributorsComponentProps) => {
               />
             </div>
             <p style={{ 
-              fontSize: "14px", 
+              fontSize: "21px", 
               fontWeight: "600", 
               color: "#08023a", 
               marginBottom: "8px",
-              textAlign: "center"
+              textAlign: "center",
+              fontFamily: "Open Sans, Arial, sans-serif"
             }}>
               {contributor.title}
             </p>
             {contributor.credentials && (
               <p style={{ 
-                fontSize: "12px", 
+                fontSize: "21px", 
                 color: "#666", 
                 marginBottom: "12px",
                 textAlign: "center",
-                fontStyle: "italic"
+                fontStyle: "italic",
+                fontFamily: "Georgia, serif"
               }}>
                 {contributor.credentials}
               </p>
@@ -78,10 +81,11 @@ const ContributorsComponent = ({ id }: ContributorsComponentProps) => {
           </div>
           <div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <p style={{ 
-              fontSize: "14px", 
+              fontSize: "21px", 
               lineHeight: "1.5", 
               marginBottom: "15px",
-              textAlign: "justify"
+              textAlign: "justify",
+              fontFamily: "Georgia, serif"
             }}>
               {contributor.bio}
             </p>

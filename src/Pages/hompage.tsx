@@ -6,7 +6,7 @@ import ProductComponent from '../components/productgenerator.tsx';
 
 function homepage() {
   return (
-    <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+  <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
       {/* Skip Navigation Link for Screen Readers */}
       <a 
         href="#blog-navigation" 
@@ -33,12 +33,22 @@ function homepage() {
           }}>
             {/* Title */}
             <h1 className='Titles' style={{
-              fontSize: "48px",
-              fontFamily: 'Open Sans',
+              fontSize: "27px",
+              fontFamily: 'Open Sans, Arial, sans-serif',
               color: "#08023a",
               textAlign: "center",
               margin: "2px 0 0 0"
             }}>
+            <style>{`
+              .Titles {
+                font-size: 27px !important;
+                font-family: 'Open Sans, Arial, sans-serif' !important;
+              }
+              .homepage-body, .welcome-box, .moonshine-image-row, .intro-paragraph-desktop, .intro-paragraph-mobile {
+                font-size: 21px !important;
+                font-family: 'Georgia, serif' !important;
+              }
+            `}</style>
               Welcome to Moonshine Consulting
             </h1>
             {/* Centered Dog Images */}

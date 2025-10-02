@@ -34,24 +34,25 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
         return <div>No blog entries found.</div>;
     }
 
-	return (
-		<div style={{ height: "100%", width: "100%" }}>
-			{entries.map((entry) => (
-				<div key={entry.id} className="blog-entry blog-content" style={{ 
-					width: "100%", 
-					margin: "0 0 20px 0",  
-					display: "flex", 
-					flexDirection: "column",
-					justifyContent: "flex-start",
-					height: "100%",
-					minHeight: "160px",
-					padding: "12px",
-					backgroundColor: "#f8f9fa",
-					borderRadius: "6px",
-					border: "2px solid #08023a"
-				}}>
+	 return (
+		 <div style={{ height: "100%", width: "100%" }}>
+			 {entries.map((entry) => (
+								 <div key={entry.id} className="blog-entry blog-content" style={{ 
+									 width: "100%", 
+									 margin: "0 0 12px 0",  
+									 display: "flex", 
+									 flexDirection: "column",
+									 justifyContent: "flex-start",
+									   minHeight: window.innerWidth < 768 ? "320px" : "220px",
+									   height: "auto",
+									 padding: "12px",
+									 backgroundColor: "#f8f9fa",
+									 borderRadius: "6px",
+									 border: "2px solid #08023a",
+									   // overflow: "hidden"
+								 }}>
 					{/* Title on top */}
-					<p className="Title" style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left" }}>{entry.title}</p>
+					<p className="Title" style={{ fontSize: "21px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left", fontFamily: "Open Sans, Arial, sans-serif" }}>{entry.title}</p>
 					{/* Row: image left, info right */}
 					<div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "16px", width: "100%" }}>
 						{/* Image left */}
@@ -67,20 +68,21 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 						</div>
 						{/* Info right */}
 						<div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "center", gap: "6px" }}>
-							<p className="text-left" style={{ fontSize: "14px", fontWeight: "600", color: "#08023a", marginBottom: "2px", textAlign: "left" }}>{entry.newsSection}</p>
+							<p className="text-left" style={{ fontSize: "21px", fontWeight: "600", color: "#08023a", marginBottom: "2px", textAlign: "left", fontFamily: "Georgia, serif" }}>{entry.newsSection}</p>
 							<p className="body" style={{ 
-								fontSize: "14px", 
+								fontSize: "21px", 
 								lineHeight: "1.4", 
 								marginBottom: "6px",
 								overflow: "hidden",
 								display: "-webkit-box",
-								WebkitLineClamp: 3,
+								WebkitLineClamp: 6,
 								WebkitBoxOrient: "vertical" as const,
 								textOverflow: "ellipsis",
-								maxHeight: "60px",
-								textAlign: "left"
+								maxHeight: "140px",
+								textAlign: "left",
+								fontFamily: "Georgia, serif"
 							}}>{entry.article}</p>
-							<p className="text-left" style={{ fontSize: "12px", color: "#666", marginBottom: "2px", textAlign: "left" }}>{entry.date}</p>
+							<p className="text-left" style={{ fontSize: "21px", color: "#666", marginBottom: "2px", textAlign: "left", fontFamily: "Georgia, serif" }}>{entry.date}</p>
 						</div>
 					</div>
 					{/* Read More button at bottom right */}

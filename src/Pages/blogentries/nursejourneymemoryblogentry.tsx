@@ -10,11 +10,11 @@ function NurseJourneyMemoryBlogEntry() {
         categoryLink="/voicesincare" 
       />
       <div style={{ backgroundColor: "#08023a", borderRadius: "10px", padding: "32px 0 24px 0", margin: "50px 0 0 0", width: "100%" }}>
-        <h1 style={{ color: "#fff", textAlign: "center", fontSize: "2.8rem", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px", width: "100%" }}>
+        <h1 style={{ color: "#fff", textAlign: "center", fontSize: "27px", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px", width: "100%", fontFamily: "Open Sans, Arial, sans-serif" }}>
           A Nurse's Journey: Memory Lane
         </h1>
-        <h2 style={{ color: "#fff", fontSize: "1.3rem", fontStyle: "italic", textAlign: "left", margin: "0 0 8px 0", width: "100%" }}>Author: Christie</h2>
-        <div style={{ color: "#fff", textAlign: "left", fontSize: "1.2rem", marginBottom: "16px", width: "100%" }}>
+        <h2 style={{ color: "#fff", fontSize: "20px", fontStyle: "italic", textAlign: "left", margin: "0 0 8px 0", width: "100%", fontFamily: "Open Sans, Arial, sans-serif" }}>Author: Christie</h2>
+        <div style={{ color: "#fff", textAlign: "left", fontSize: "21px", marginBottom: "16px", width: "100%", fontFamily: "Georgia, serif" }}>
           {new Date('2025-08-10').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
         <img
@@ -23,9 +23,9 @@ function NurseJourneyMemoryBlogEntry() {
           style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
         />
       </div>
-      <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "22px", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
+  <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "21px", fontFamily: "Georgia, serif", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
         <div style={{ textAlign: "left" }}>
-          <p>
+          <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
             I wasn't a very good student in high school. I couldn't have cared less if I failed out. I was not a kid who was always raising my hand or earning good grades. I barely was accepted into high school, and I did only slightly above mediocre work. I worked very hard in college to get that uniform on as a "grunt."
             <br />
             <br />

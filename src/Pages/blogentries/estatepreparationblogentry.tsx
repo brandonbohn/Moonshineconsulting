@@ -24,10 +24,10 @@ function EstateprepBlogentry() {
           style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
         />
       </div>
-      <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "22px", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
+  <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "21px", fontFamily: "Georgia, serif", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
         <div className="row bg-light p-4 rounded shadow">
-<h1 className=" text-center ">Before I Go: What I've Learned About Death, Faith, and Protecting My Family</h1>
-<h2 style={{ textAlign: "center", fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontStyle: "italic", color: "#08023a", marginTop: "10px" }}>Author: Karen</h2>
+<h1 className=" text-center " style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px" }}>Before I Go: What I've Learned About Death, Faith, and Protecting My Family</h1>
+<h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Open Sans, Arial, sans-serif", fontStyle: "italic", color: "#08023a", marginTop: "10px" }}>Author: Karen</h2>
 <div className="d-flex justify-content-center">
   
 </div>
@@ -38,25 +38,25 @@ function EstateprepBlogentry() {
     <div>
       <div>
  
-<p className="body" style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
+<p className="body" style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
   
- <h1 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", textAlign: "center", marginBottom: "30px" }}>
+<h1 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", color: "#08023a", textAlign: "center", marginBottom: "30px" }}>
   <strong>What You Need to Do Before You Die!</strong>
 </h1>
 
-<p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
+<p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6", marginBottom: "20px" }}>
   People go through life not even considering their death. I've recently looked back on my life and realized <strong>I believe I will be with Jesus when I die</strong>. That brings me peace, but I also realized I had a couple of important things I needed to do first.
 </p>
 
-<h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>
+<h2 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>
   The Missouri Wake-Up Call
 </h2>
 
-<p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "15px" }}>
+<p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6", marginBottom: "15px" }}>
   Did you know that <strong>Missouri recently increased the Medicaid look-back period to seven years</strong> before you can qualify for nursing home assistance?<sup><a href="#ref1" style={{ color: "#08023a", textDecoration: "none" }}>1</a></sup> Here's what this means for your family.
 </p>
 
-<p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
+<p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6", marginBottom: "20px" }}>
   If your finances aren't protected in a trust at least seven years before you enter a nursing home, <strong>Medicaid can claim your home and property</strong>.<sup><a href="#ref2" style={{ color: "#08023a", textDecoration: "none" }}>2</a></sup> They will sell everything to pay for your care.
 </p>
 

@@ -17,7 +17,7 @@ export const blogData = [
     NewsSection: "Senior Policy Beat",
     image: "./images/medicare.jpg",
     title: "Medicare Home Health Services: What Seniors Need to Know",
-    article: "Medicare home health services can provide essential support for seniors, including skilled nursing care, physical therapy, and home health aide services. This article exlplains the orgins of Home Health and how it has evolved to meet the needs of seniors today and changed to limit the ablility of nurses to provide personal care to seniors.",
+    article: "Medicare home health services can provide essential support for seniors, including skilled nursing care, physical therapy, and home health aide services. This article explains the origins of Home Health and how it has evolved to meet the needs of seniors today and changed to limit the ability of nurses to provide personal care to seniors.",
     date: blogPostingDates.seniorPolicyBeat,
     category: "SeniorPolicyBeat",
     author: "Karen Underwood RN BSN",

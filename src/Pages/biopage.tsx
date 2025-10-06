@@ -3,11 +3,11 @@ import '../css/homepage.css';
 
 function BioPage() {
     return (
-        <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+    <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
             <div className="hero-section" style={{ padding: "2px 10px" }}>
                 <section>
                     <div>
-                        <h1 className="title" style={{ fontSize: "46px", fontFamily: "Open Sans," }}>Who We Are......</h1>
+                        <h1 className="title" style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Who We Are......</h1>
                         <div style={{ borderTop: "5px solid #000000", margin: "20px 0" }}></div>
         {/* Main Container with Responsive Layout */}
         <div className="bio-container">
@@ -60,9 +60,9 @@ function BioPage() {
                                     style={{ width: 64, height: 64, borderRadius: "50%", marginRight: 20, objectFit: "cover", background: "#eee" }}
                                 />
                                 <div>
-                                    <h3 style={{ margin: 0, fontSize: "24px", color: "#000000", fontWeight: "bold" }}>{person.name}</h3>
-                                    <p style={{ color: "#000000", fontSize: 24 }}>{person.title}</p>
-                                    <ul style={{ paddingLeft: 20, margin: "12px 0 0 0", color: "#000000", fontSize: 18 }}>
+                                    <h3 style={{ margin: 0, fontSize: "27px", color: "#000000", fontWeight: "bold", fontFamily: "Open Sans, Arial, sans-serif" }}>{person.name}</h3>
+                                    <p style={{ color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{person.title}</p>
+                                    <ul style={{ paddingLeft: 20, margin: "12px 0 0 0", color: "#000000", fontSize: "21px", fontFamily: "Georgia, serif" }}>
                                         {person.bioPoints.map((point, i) => (
                                             <li key={i}>{point}</li>
                                         ))}
@@ -76,8 +76,8 @@ function BioPage() {
                   
                 </div>
                 <div>
-                    <h2 style={{ color: "#000000", fontSize: "24px" }}>Contact</h2>
-                    <ul style={{ color: "#000000" }}>
+                    <h2 style={{ color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Contact</h2>
+                    <ul style={{ color: "#000000", fontSize: "21px", fontFamily: "Georgia, serif" }}>
                         <li>Email: contact@moonshine.com</li>
                     </ul>
                 </div>
@@ -94,14 +94,14 @@ function BioPage() {
                   fontSize: "18px"
                 }}>
                 
-                  <h1 className="" style={{ margin: 0, color: "#000000" }}>Our Mission</h1>
-                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
+                  <h1 className="" style={{ margin: 0, color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Mission</h1>
+                  <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
                     At Moonshine Consulting, we empower seniors and their families to navigate the complex world of long-term healthcare with confidence and clarity. We believe every senior deserves compassionate care and informed choices about their health and wellbeing.
                   </p>
-                  <h5>Our Expertise</h5>
-                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
-                    Founded by healthcare professionals with over 50 years of combined experience, our team brings deep knowledge from:
-                    <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
+                                    <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Expertise</h5>
+                                    <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
+                                        Founded by healthcare professionals with over 50 years of combined experience, our team brings deep knowledge from:
+                                        <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
                       <li>Home Health services</li>
                       <li>Hospice care</li>
                       <li>Workers Compensation Insurance</li>
@@ -112,10 +112,10 @@ function BioPage() {
                     </ul>
                   </p>
                   
-                  <h5>Our Professional Background</h5>
-                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
-                    Our team's extensive experience includes:
-                    <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
+                                    <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Professional Background</h5>
+                                    <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
+                                        Our team's extensive experience includes:
+                                        <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
                       <li>30+ years in nursing and healthcare management</li>
                       <li>Experienced Home Health Surveyor with regulatory expertise</li>
                       <li>10 years as a Home Health Nurse providing direct patient care</li>
@@ -125,15 +125,15 @@ function BioPage() {
                       <li>Leadership roles in healthcare organizations</li>
                     </ul>
                   </p>
-                  <h5>What We Offer For Seniors and Caregivers:</h5>
-                  <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif" }}>
+                  <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>What We Offer For Seniors and Caregivers:</h5>
+                  <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
                     <li>Guidance on Medicare, Home Health, Hospice and Long Term Care</li>
                     <li>Educational resources about Missouri's healthcare policies and how they impact you</li>
                     <li>Practical solutions for daily healthcare challenges</li>
                     <li>Support during life transitions and care decisions</li>
                   </ul>
-                  <h5>Our Approach:</h5>
-                  <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6" }}>
+                  <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Approach:</h5>
+                  <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
                     We provide warm, compassionate guidance combined with expert knowledge. Our goal is to help you understand your options, advocate for your needs, and make informed decisions about your care journey.
                     <br />
 

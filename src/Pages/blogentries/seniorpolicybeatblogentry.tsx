@@ -27,7 +27,7 @@ function SeniorPolicyBeatBlog()
       <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "22px", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
         <div className="Text" style={{ fontFamily: "Open Sans, sans-serif", minHeight: "100vh", fontSize: "18px", lineHeight: "1.6" }}>
           <header>
-            <h1 className="Titles text-white" style={{ background:"#000000", textAlign: "center", padding: "20px", margin: "50px", borderRadius: "8px", fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>
+            <h1 className="Titles text-white" style={{ background:"#0f033dff", textAlign: "center", padding: "20px", margin: "50px", borderRadius: "8px", fontSize: "28px", fontFamily: "Open Sans, sans-serif" }}>
               <strong>Welcome to the Senior Policy Beat,</strong> where we break down the most important issues affecting older adults and their care. Whether you're navigating Medicare, helping a loved one age at home, or just trying to understand how today's health policies impact real people — you're in the right place.
             </h1>
           </header>

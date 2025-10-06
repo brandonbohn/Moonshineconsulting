@@ -2,7 +2,7 @@ import React from 'react'
 
 const registration = () => {
   return (
-    <div className='container-fluid' style={{ fontFamily: "Open Sans, sans-serif" }}>
+  <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
       <div className="hero-section" style={{ padding: "2px 10px" }}>
         <div style={{
          
@@ -17,17 +17,17 @@ const registration = () => {
               padding: '30px',
               borderRadius: '15px 15px 0 0'
             }}>
-                          <h2 className="text-white" style={{
-                            fontSize: "40px",
-                            fontFamily: "Open Sans, sans-serif",
-                            fontWeight: "700",
-                            marginBottom: "10px"
-                          }}>
+              <h2 className="text-white" style={{
+                fontSize: "27px",
+                fontFamily: "Open Sans, Arial, sans-serif",
+                fontWeight: "700",
+                marginBottom: "10px"
+              }}>
                 Have Questions? Contact Us Today
               </h2>
               <p className="" style={{
-                fontSize: "18px",
-                fontFamily: "Open Sans, sans-serif",
+                fontSize: "21px",
+                fontFamily: "Georgia, serif",
                 margin: "0"
               }}>
                 We're here to help you navigate your healthcare journey
@@ -41,10 +41,10 @@ const registration = () => {
               style={{ backgroundColor: '#fff', padding: '40px', borderRadius: '0 0 15px 15px', boxShadow: '0 6px 25px rgba(0,0,0,0.15)', border: 'none' }}
             >
               <div className="form-group mb-4">
-                <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
+                <label style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
                   First Name *
                 </label>
-                <input type="text" name="firstName" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
+                <input type="text" name="firstName" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '21px', fontFamily: 'Georgia, serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
               </div>
               <div className="form-group mb-4">
                 <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>

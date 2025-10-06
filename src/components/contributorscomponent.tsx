@@ -20,21 +20,21 @@ const ContributorsComponent = ({ id }: ContributorsComponentProps) => {
   }
 
   return (
-  <div style={{ width: typeof window !== 'undefined' && window.innerWidth < 768 ? "calc(100% - 24px)" : "100%", margin: typeof window !== 'undefined' && window.innerWidth < 768 ? "0 12px" : "0" }}>
+    <div style={{ width: "100%" }}>
       {contributors.map((contributor) => (
         <div key={contributor.id} style={{ 
           width: "100%", 
-          margin: typeof window !== 'undefined' && window.innerWidth < 768 ? "8px 0" : "0",  
+          margin: "0",  
           display: "flex", 
           flexDirection: "column", 
           justifyContent: "space-between",
           height: "100%",
-          minHeight: typeof window !== 'undefined' && window.innerWidth < 768 ? "180px" : "280px",
-          padding: typeof window !== 'undefined' && window.innerWidth < 768 ? "6px" : "0"
+          minHeight: "280px",
+          padding: "0"
         }}>
           <div style={{ flex: "0 0 auto" }}>
             <h4 style={{ 
-              fontSize: "21px", 
+              fontSize: "27px", 
               fontWeight: "bold", 
               marginBottom: "10px", 
               lineHeight: "1.3",
@@ -62,7 +62,7 @@ const ContributorsComponent = ({ id }: ContributorsComponentProps) => {
               color: "#08023a", 
               marginBottom: "8px",
               textAlign: "center",
-              fontFamily: "Open Sans, Arial, sans-serif"
+              fontFamily: "Georgia, serif"
             }}>
               {contributor.title}
             </p>

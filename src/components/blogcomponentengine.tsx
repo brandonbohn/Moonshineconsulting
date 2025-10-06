@@ -52,7 +52,7 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 									   // overflow: "hidden"
 								 }}>
 					{/* Title on top */}
-					<p className="Title" style={{ fontSize: "21px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left", fontFamily: "Open Sans, Arial, sans-serif" }}>{entry.title}</p>
+					<p className="Title" style={{ fontSize: "27px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left", fontFamily: "Open Sans, Arial, sans-serif" }}>{entry.title}</p>
 					{/* Row: image left, info right */}
 					<div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", gap: "16px", width: "100%" }}>
 						{/* Image left with date below */}

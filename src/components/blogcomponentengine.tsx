@@ -54,9 +54,9 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 					{/* Title on top */}
 					<p className="Title" style={{ fontSize: "21px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left", fontFamily: "Open Sans, Arial, sans-serif" }}>{entry.title}</p>
 					{/* Row: image left, info right */}
-					<div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "16px", width: "100%" }}>
-						{/* Image left */}
-						<div style={{ flex: "0 0 100px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+					<div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", gap: "16px", width: "100%" }}>
+						{/* Image left with date below */}
+						<div style={{ flex: "0 0 100px", display: "flex", flexDirection: "column", alignItems: "center" }}>
 							<img
 								src={entry.imageUrl}
 								alt={entry.title}
@@ -65,6 +65,7 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 								height={100}
 								style={{ objectFit: "cover", borderRadius: "6px" }}
 							/>
+							<p className="text-left" style={{ fontSize: "21px", color: "#666", margin: "8px 0 0 0", textAlign: "left", fontFamily: "Georgia, serif", width: "100%" }}>{entry.date}</p>
 						</div>
 						{/* Info right */}
 						<div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "center", gap: "6px" }}>
@@ -82,18 +83,16 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 								textAlign: "left",
 								fontFamily: "Georgia, serif"
 							}}>{entry.article}</p>
-							<p className="text-left" style={{ fontSize: "21px", color: "#666", marginBottom: "2px", textAlign: "left", fontFamily: "Georgia, serif" }}>{entry.date}</p>
+							<div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "8px", width: "100%" }}>
+								<a
+									href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
+									className="senior-btn"
+									style={{ textDecoration: "none", display: "inline-block" }}
+								>
+									<span style={{ display: "inline-block", width: "100%", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>Read More</span>
+								</a>
+							</div>
 						</div>
-					</div>
-					{/* Read More button at bottom right */}
-					<div style={{ width: "100%", display: "flex", justifyContent: "flex-end", marginTop: "10px" }}>
-						<a
-							href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
-							className="senior-btn"
-							style={{ textDecoration: "none", display: "inline-block" }}
-						>
-							<span style={{ display: "inline-block", width: "100%", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>Read More</span>
-						</a>
 					</div>
 				</div>
 			))}

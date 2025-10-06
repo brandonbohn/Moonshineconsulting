@@ -1,3 +1,17 @@
+/* Entertainment box (Moonshine's Corner) mobile override */
+@media (max-width: 768px) {
+  .entertainment-box {
+    padding: 10px !important;
+    background-color: #fff9e6 !important;
+    border-radius: 8px !important;
+    border: 2px dashed #08023a !important;
+    min-height: 120px !important;
+    height: auto !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
 /* Ensure only blog cards have white background and readable text on mobile */
 .blog-card, .blog-cards {
   background-color: #fff !important;
@@ -227,6 +241,23 @@ color: #ffff;
     display: inline;
   }
  
-    
+}
 
+.Mainbox {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 32px 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  z-index: 1;
+}
+
+@media (max-width: 1535px) {
+  .mainbox {
+    max-width: 200vw;
+    padding: 8px 2px;
+    margin: 8px auto;
+  }
 }

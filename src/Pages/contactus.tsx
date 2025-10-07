@@ -1,4 +1,24 @@
 import React from 'react'
+// Dropdown options as arrays
+const ageRanges = [
+  "50-59",
+  "60-69",
+  "70-79",
+  "80-89",
+  "90+",
+  "I'm a caregiver/family member"
+].sort();
+
+const healthcareTopics = [
+  "Medicare & Insurance Help",
+  "Getting Home Health Care",
+  "Hospice & End-of-Life Care",
+  "Nursing Homes & Long Term Care",
+  "Senior Living Communities",
+  "Health Tools & Daily Living Aids",
+  "Support for Family Caregivers",
+  "General Health & Wellness"
+].sort();
 
 const registration = () => {
   return (
@@ -70,12 +90,9 @@ const registration = () => {
                 </label>
                 <select name="ageRange" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }}>
                   <option value="">Please select your age range</option>
-                  <option value="50-59">50-59</option>
-                  <option value="60-69">60-69</option>
-                  <option value="70-79">70-79</option>
-                  <option value="80-89">80-89</option>
-                  <option value="90+">90+</option>
-                  <option value="caregiver">I'm a caregiver/family member</option>
+                  {ageRanges.map(option => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
                 </select>
               </div>
               <div className="form-group mb-4">
@@ -84,14 +101,9 @@ const registration = () => {
                 </label>
                 <select name="interest" className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }}>
                   <option value="">Choose a topic (or skip this question)</option>
-                  <option value="medicare">Medicare & Insurance Help</option>
-                  <option value="homehealth">Getting Home Health Care</option>
-                  <option value="hospice">Hospice & End-of-Life Care</option>
-                  <option value="longtermcare">Nursing Homes & Long Term Care</option>
-                  <option value="seniorliving">Senior Living Communities</option>
-                  <option value="healthproducts">Health Tools & Daily Living Aids</option>
-                  <option value="caregiving">Support for Family Caregivers</option>
-                  <option value="general">General Health & Wellness</option>
+                  {healthcareTopics.map(option => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
                 </select>
               </div>
               <div className="form-group mb-4">

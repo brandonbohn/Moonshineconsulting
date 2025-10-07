@@ -162,6 +162,9 @@ function BioPage() {
         flex-direction: column;
         gap: 20px;
         align-items: stretch;
+        box-sizing: border-box;
+        width: 100vw;
+        overflow-x: hidden;
     }
 
     .bio-section {
@@ -174,6 +177,7 @@ function BioPage() {
         margin-bottom: 50px;
         max-height: 800px;
         overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .team-section {
@@ -192,25 +196,32 @@ function BioPage() {
         .bio-container {
             padding: 10px;
             gap: 15px;
+            width: 100vw;
+            overflow-x: hidden;
         }
 
         .bio-section {
             padding: 15px;
+            width: 100vw;
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
 
         .title {
-            font-size: 1.3rem !important;
-            text-align: center;
+                font-size: 1.3rem !important;
+                text-align: left;
         }
 
         /* Make team member cards stack vertically on very small screens */
-        .bio-section div[style*="display: flex"] {
-            flex-direction: column !important;
-            text-align: center;
+            .bio-section div[style*="display: flex"] {
+                flex-direction: column !important;
+                text-align: left;
         }
 
         .bio-section img {
             margin: 0 auto 15px auto !important;
+            max-width: 90vw;
+            height: auto !important;
         }
     }
 
@@ -292,10 +303,14 @@ function BioPage() {
 
         .bio-section p {
             font-size: 14px !important;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .bio-section li {
             font-size: 13px !important;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
     }
 

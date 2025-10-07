@@ -1,3 +1,97 @@
+@media (max-width: 768px) {
+  #contributors {
+    width: 90vw !important;
+    max-width: 90vw !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+}
+  .boxtwo {
+    width: 85vw !important;
+    max-width: vw !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+  }
+
+@media (max-width: 768px) {
+  #breaking-news {
+    width: 90vw !important;
+    max-width: 90vw !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+  }
+
+
+}
+@media (max-width: 768px) {
+  .mainbox {
+    width: 80vw !important;
+    max-width: 80vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+  .container-fluid {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+}
+/* General mobile fixes for main blog layout */
+@media (max-width: 768px) {
+  .container-fluid,
+  .mainbox,
+  .main-sections-grid,
+  .boxtwo,
+  .section-header,
+  .blog-card,
+  .blog-cards {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .main-sections-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+  .boxtwo h1 {
+    font-size: 2rem !important;
+    word-break: break-word;
+  }
+  .mainblog-title, .boxtwo h1, .section-header h3, #contributors h4 {
+    font-size: 1.5rem !important;
+    word-break: break-word;
+  }
+  .mainblog-body, .boxtwo p, .welcome-box, .featured-story, .main-sections-grid {
+    font-size: 1rem !important;
+    word-break: break-word;
+  }
+  .entertainment-box {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+}
 /* Entertainment box (Moonshine's Corner) mobile override */
 @media (max-width: 768px) {
   .entertainment-box {
@@ -254,9 +348,9 @@ color: #ffff;
   z-index: 1;
 }
 
-@media (max-width: 1535px) {
+@media (max-width: 500px) {
   .mainbox {
-    max-width: 200vw;
+    max-width: 50vw;
     padding: 8px 2px;
     margin: 8px auto;
   }

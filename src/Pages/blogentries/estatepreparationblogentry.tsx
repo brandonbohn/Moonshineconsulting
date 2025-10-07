@@ -1,48 +1,53 @@
 import React from 'react';
+
 import BlogNavigation from '../../components/BlogNavigation.tsx';
 import { ProductData } from '../../components/productdata.ts';
+import { Helmet } from 'react-helmet';
 
 function EstateprepBlogentry() {
-  return (
-    <div>
-      {/* Blog Navigation */}
-      <BlogNavigation 
-        categoryName="Senior Living Desk" 
-        categoryLink="/seniorlivingdesk" 
-      />
-      <div style={{ backgroundColor: "#08023a", borderRadius: "10px", padding: "32px 0 24px 0", margin: "50px 0 0 0", width: "100%" }}>
-        <h1 style={{ color: "#fff", textAlign: "center", fontSize: "2.8rem", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px", width: "100%" }}>
-          Before I Go: What I've Learned About Death, Faith, and Protecting My Family
-        </h1>
-        <h2 style={{ color: "#fff", fontSize: "1.3rem", fontStyle: "italic", textAlign: "center", margin: "0 0 8px 0", width: "100%" }}>Author: Karen</h2>
-        <div style={{ color: "#fff", textAlign: "center", fontSize: "1.2rem", marginBottom: "16px", width: "100%" }}>
-          {new Date('2025-09-15').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
-        </div>
-        <img
-          src="/images/death.jpg"
-          alt="End of Life Planning"
-          style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
-        />
-      </div>
-  <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "21px", fontFamily: "Georgia, serif", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
-        <div className="row bg-light p-4 rounded shadow">
-<h1 className=" text-center " style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px" }}>Before I Go: What I've Learned About Death, Faith, and Protecting My Family</h1>
-<h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Open Sans, Arial, sans-serif", fontStyle: "italic", color: "#08023a", marginTop: "10px" }}>Author: Karen</h2>
-<div className="d-flex justify-content-center">
-  
-</div>
-  
 
-  <div className="body">      
-            
-    <div>
+  return (
+
+    <main>
+ <Helmet>
+        <title>Estate Preparation: What to Do Before You Die | Moonshine Consulting</title>
+        <meta name="description" content="Learn essential estate preparation steps before you die. Protect your family, understand Medicaid rules, and plan your legacy with Moonshine Consulting." />
+        <meta name="keywords" content="estate preparation, end of life planning, Medicaid look-back, protect your family, senior care" />
+      </Helmet>
       <div>
- 
-<p className="body" style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
-  
-<h1 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", color: "#08023a", textAlign: "center", marginBottom: "30px" }}>
-  <strong>What You Need to Do Before You Die!</strong>
-</h1>
+        {/* Blog Navigation */}
+        <BlogNavigation 
+          categoryName="Senior Living Desk" 
+          categoryLink="/seniorlivingdesk" 
+        />
+        <div style={{ backgroundColor: "#08023a", borderRadius: "10px", padding: "32px 0 24px 0", margin: "50px 0 0 0", width: "100%" }}>
+          <h1 style={{ color: "#fff", textAlign: "center", fontSize: "2.8rem", fontWeight: "bold", marginBottom: "16px", letterSpacing: "1px", width: "100%" }}>
+            Before I Go: What I've Learned About Death, Faith, and Protecting My Family
+          </h1>
+          <h2 style={{ color: "#fff", fontSize: "1.3rem", fontStyle: "italic", textAlign: "center", margin: "0 0 8px 0", width: "100%" }}>Author: Karen</h2>
+          <div style={{ color: "#fff", textAlign: "center", fontSize: "1.2rem", marginBottom: "16px", width: "100%" }}>
+            {new Date('2025-09-15').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+          </div>
+          <img
+            src="/images/death.jpg"
+            alt="End of Life Planning"
+            style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
+          />
+        </div>
+        <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "21px", fontFamily: "Georgia, serif", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
+          <div className="row bg-light p-4 rounded shadow">
+            {/* Only one <h1> for SEO, keep the main one above. Use <h2> for sections below. */}
+            <h2 style={{ textAlign: "center", fontSize: "20px", fontFamily: "Open Sans, Arial, sans-serif", fontStyle: "italic", color: "#08023a", marginTop: "10px" }}>Author: Karen</h2>
+            <div className="d-flex justify-content-center"></div>
+            <div className="body">      
+              <div>
+                <div>
+                  <p className="body" style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
+                    {/* ...existing content... */}
+                  {/* Replace duplicate <h1> with <h2> for section title */}
+                  <h2 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", color: "#08023a", textAlign: "center", marginBottom: "30px" }}>
+                    <strong>What You Need to Do Before You Die!</strong>
+                  </h2>
 
 <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6", marginBottom: "20px" }}>
   People go through life not even considering their death. I've recently looked back on my life and realized <strong>I believe I will be with Jesus when I die</strong>. That brings me peace, but I also realized I had a couple of important things I needed to do first.
@@ -340,6 +345,10 @@ This is a wake-up call for many families. You must take steps now if you want to
             </div>
       </div>
         
+
+    </main>
+
+     
     
   
   );

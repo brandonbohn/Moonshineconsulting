@@ -79,15 +79,19 @@ function MainBlog() {
               Your Trusted Source for Senior Care and Advocacy
             </p>
             <p className="text-white" style={{ fontSize: "21px", fontFamily: "Georgia, serif", margin: "2px 0" }}>
-              {new Date().toLocaleDateString(undefined, {
-                weekday: "long",
-                year: "numeric",
-                month: "long"
-              })} • Volume 1 • Issue 1
+              {new Date().toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long" })}<br />
+              Volume 1 • Issue 1
             </p>
           </div>
           {/* Main white background box behind all content */}
-          <div className="mainbox">
+          <div className="mainbox" style={{
+            width: isMobile ? '100vw' : '100%',
+            maxWidth: isMobile ? '100vw' : '1400px',
+            boxSizing: 'border-box',
+            overflowX: 'hidden',
+            marginLeft: isMobile ? 0 : 'auto',
+            marginRight: isMobile ? 0 : 'auto',
+          }}>
             {/* Featured Story Section - Policy/Medicare News */}
             <div id="breaking-news" style={{ marginBottom: "15px", marginTop: "0" }}>
               <div style={{ 
@@ -166,7 +170,8 @@ function MainBlog() {
                 <div style={{ 
                   borderBottom: "2px solid #08023a", 
                   marginBottom: "15px",
-                  paddingBottom: "5px"
+                  paddingBottom: "5px",
+                  textAlign: isMobile ? "center" : undefined
                 }}>
                   <h4 style={{ 
                     fontSize: "21px", 

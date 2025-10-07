@@ -31,8 +31,8 @@ export const ProductData = [
         name: "Fireproof Document Safe",
         description: "Protect your important estate planning documents with this fireproof and waterproof safe. Perfect for wills, trusts, and legal papers.",
     photo: "/images/fireproofdocumentsafe.jpg",
-        price: 89.99,
-        link: "https://amzn.to/your-affiliate-link-here",
+        price: 99.99,
+        link: "https://amzn.to/3IywEZ7",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:4,
         category: "estate-planning"
@@ -41,8 +41,8 @@ export const ProductData = [
         name: "Legal Document Organizer",
         description: "Professional expanding file organizer with 21 labeled pockets. Keep your estate planning documents organized and accessible for your family.",
     photo: "/images/legaldocumentorganizer.jpg",
-        price: 24.99,
-        link: "https://amzn.to/your-affiliate-link-here",
+        price: 25.48,
+        link: "https://amzn.to/3WqXLbC",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:5,
         category: "estate-planning"
@@ -52,7 +52,7 @@ export const ProductData = [
         description: "Portable waterproof document bag for emergency preparedness. Keep copies of essential documents safe and accessible.",
     photo: "/images/waterproofdocumentcase.jpg",
         price: 19.99,
-        link: "https://amzn.to/your-affiliate-link-here",
+        link: "https://amzn.to/431vagD",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:6,
         category: "estate-planning"
@@ -63,7 +63,7 @@ export const ProductData = [
         description: "Protective sleeves for Social Security cards, Medicare cards, and other important identification documents.",
     photo: "/images/cardprotectionsleeves.jpg",
         price: 12.99,
-        link: "https://amzn.to/your-affiliate-link-here",
+        link: "https://amzn.to/46I75hu",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:7,
         category: "estate-planning"
@@ -72,8 +72,8 @@ export const ProductData = [
         name: "Red Light Therapy Device",
         description: "A device designed to deliver red light therapy, promoting healing and reducing inflammation.",
         photo: "/images/redlighttherapy.jpg",
-        price: 12.99,
-        link: "https://amzn.to/your-affiliate-link-here",
+        price: 37.99,
+        link: "https://amzn.to/48RMGrv",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:8,
         category: "estate-planning"

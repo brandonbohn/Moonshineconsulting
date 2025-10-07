@@ -68,15 +68,85 @@ export const ProductData = [
         productid:7,
         category: "estate-planning"
     },
-     {
-        name: "Red Light Therapy Device",
-        description: "A device designed to deliver red light therapy, promoting healing and reducing inflammation.",
-        photo: "/images/redlighttherapy.jpg",
-        price: 37.99,
-        link: "https://amzn.to/48RMGrv",
+    {
+        name: "Secure Password Manager",
+        description: "Keep your bank account information and passwords safe and accessible for your family with a secure password manager.",
+        photo: "",
+        price: 9.99,
+        link: "https://amzn.to/48NMmtNP",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
-        productid:8,
+        productid:9,
         category: "estate-planning"
+    },
+    {
+        name: "Bathroom Safety Grab Bars",
+        description: "Essential for preventing falls and maintaining independence. Install in your bathroom for added safety.",
+        photo: "",
+        price: 22.39,
+        link: "https://amzn.to/48NMmtN",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid:11,
+        category: "estate-planning"
+    },
+    {
+        name: "Shower Bench with Back Support",
+        description: "Allows safe bathing as mobility decreases. Provides comfort and stability in the shower.",
+        photo: "",
+        price: 59.99,
+        link: "https://amzn.to/4o91ir4",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid:12,
+        category: "estate-planning"
+    },
+    {
+        name: "Large Display Pill Organizer",
+        description: "Weekly medication management that's easy to see and use.",
+        photo: "",
+        price: 9.99,
+        link: "https://amzn.to/4pSJeTz",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid:14,
+        category: "healthcare-monitoring"
+    },
+    {
+        name: "Automatic Blood Pressure Monitor",
+        description: "Track health trends for medical decision-making.",
+        photo: "",
+        price: 39.99,
+        link: "https://amzn.to/431tiEJ",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid:15,
+        category: "healthcare-monitoring"
+    },
+    {
+        name: "Medical Alert System",
+        description: "Emergency protection when living alone.",
+        photo: "",
+        price: 48.71,
+        link: "https://amzn.to/42qINpI",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid:16,
+        category: "healthcare-monitoring"
+    },
+    {
+        name: "Long Handle Shoe Horn",
+        description: "Maintains independence in daily dressing.",
+        photo: "",
+        price: 11.99,
+        link: "https://amzn.to/48kBsM8",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid: 17,
+        category: "mobility-aids"
+    },
+    {
+        name: "Sock Aid and Dressing Stick",
+        description: "Helpful tools for limited mobility.",
+        photo: "",
+        price: 9.79,
+        link: "https://amzn.to/47aFfdI",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid: 18,
+        category: "mobility-aids"
     },
     
 ];

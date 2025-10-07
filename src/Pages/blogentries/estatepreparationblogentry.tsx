@@ -74,7 +74,7 @@ function EstateprepBlogentry() {
 </p>
 
 <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
-  I keep a <strong>secure filing system with fireproof document storage</strong> to organize all my important papers. Check your local state government laws to confirm this for your area.
+  I keep a <strong>secure filing system with <a href={ProductData.find(p => p.name === "Fireproof Document Safe")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>fireproof document storage</a></strong> to organize all my important papers. Check your local state government laws to confirm this for your area.
 </p>
 
 <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>
@@ -101,7 +101,7 @@ function EstateprepBlogentry() {
 </p>
 
 <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px" }}>
-  This is exactly why proper documentation is crucial. I recommend using a <strong>legal document organizer with tabs</strong> for each type of document, making it easy for family members to find what they need during emergencies.
+  This is exactly why proper documentation is crucial. I recommend using a <strong><a href={ProductData.find(p => p.name === "Legal Document Organizer")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>legal document organizer with tabs</a></strong> for each type of document, making it easy for family members to find what they need during emergencies.
 </p>
 
 <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>
@@ -113,10 +113,10 @@ function EstateprepBlogentry() {
 </p>
 
 <ol style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", paddingLeft: "30px" }}>
-  <li style={{ marginBottom: "10px" }}>Insurance policies in a <strong>waterproof document case</strong></li>
-  <li style={{ marginBottom: "10px" }}>Bank account information and passwords in a <strong>secure password manager</strong></li>
-  <li style={{ marginBottom: "10px" }}>Social Security and Medicare cards in <strong>protective sleeves</strong></li>
-  <li style={{ marginBottom: "10px" }}>Contact information for your attorney, financial advisor, and doctor in an <strong>emergency contact organizer</strong></li>
+  <li style={{ marginBottom: "10px" }}>Insurance policies in a <strong><a href={ProductData.find(p => p.name === "Waterproof Document Case")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>waterproof document case</a></strong></li>
+  <li style={{ marginBottom: "10px" }}>Bank account information and passwords in a <strong><a href={ProductData.find(p => p.name === "Secure Password Manager")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>secure password manager</a></strong></li>
+  <li style={{ marginBottom: "10px" }}>Social Security and Medicare cards in <strong><a href={ProductData.find(p => p.name === "Card Protection Sleeves")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>protective sleeves</a></strong></li>
+  <li style={{ marginBottom: "10px" }}>Contact information for your attorney, financial advisor, and doctor in an <strong><a href={ProductData.find(p => p.name === "Emergency Contact Organizer")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>emergency contact organizer</a></strong></li>
 </ol>
 
 <h2 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>
@@ -152,7 +152,7 @@ function EstateprepBlogentry() {
 </p>
 
 <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center", marginBottom: "30px" }}>
-  {ProductData.filter(product => product.category === "estate-planning" && product.productid !== 8).map((product) => (
+  {ProductData.filter(product => product.category === "estate-planning" && product.productid !== 8 && product.photo).map((product) => (
     <div 
       key={product.productid}
       className="card h-100" 
@@ -246,16 +246,16 @@ function EstateprepBlogentry() {
 
 <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", paddingLeft: "30px" }}>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/fireproof-safe" style={{ color: "#08023a", textDecoration: "underline" }}>SentrySafe Fireproof Document Safe</a></strong> — Protects your will, trust, and insurance papers from fire and water damage
+    <strong><a href={ProductData.find(p => p.name === "Fireproof Document Safe")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>SentrySafe Fireproof Document Safe</a></strong> — Protects your will, trust, and insurance papers from fire and water damage
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/expanding-file" style={{ color: "#08023a", textDecoration: "underline" }}>Expanding File Organizer with 21 Pockets</a></strong> — Keep all legal documents separated and easy to find
+    <strong><a href={ProductData.find(p => p.name === "Legal Document Organizer")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Expanding File Organizer with 21 Pockets</a></strong> — Keep all legal documents separated and easy to find
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/waterproof-bag" style={{ color: "#08023a", textDecoration: "underline" }}>Waterproof Document Bag</a></strong> — Portable protection for important papers during emergencies
+    <strong><a href={ProductData.find(p => p.name === "Waterproof Document Case")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Waterproof Document Bag</a></strong> — Portable protection for important papers during emergencies
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/card-sleeves" style={{ color: "#08023a", textDecoration: "underline" }}>Card Protective Sleeves</a></strong> — Keep Social Security and Medicare cards safe from wear
+    <strong><a href={ProductData.find(p => p.name === "Card Protection Sleeves")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Card Protective Sleeves</a></strong> — Keep Social Security and Medicare cards safe from wear
   </li>
 </ul>
 
@@ -269,16 +269,16 @@ function EstateprepBlogentry() {
 
 <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", paddingLeft: "30px" }}>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/grab-bars" style={{ color: "#08023a", textDecoration: "underline" }}>Bathroom Safety Grab Bars</a></strong> — Essential for preventing falls that could trigger nursing home placement
+  <strong><a href={ProductData.find(p => p.name === "Bathroom Safety Grab Bars")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Bathroom Safety Grab Bars</a></strong> — Essential for preventing falls that could trigger nursing home placement
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/shower-bench" style={{ color: "#08023a", textDecoration: "underline" }}>Shower Bench with Back Support</a></strong> — Allows safe bathing as mobility decreases
+  <strong><a href={ProductData.find(p => p.name === "Shower Bench with Back Support")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Shower Bench with Back Support</a></strong> — Allows safe bathing as mobility decreases
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/shoe-horn" style={{ color: "#08023a", textDecoration: "underline" }}>Long Handle Shoe Horn</a></strong> — Maintains independence in daily dressing
+  <strong><a href={ProductData.find(p => p.name === "Long Handle Shoe Horn")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Long Handle Shoe Horn</a></strong> — Maintains independence in daily dressing
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong><a href="https://amzn.to/sock-aid" style={{ color: "#08023a", textDecoration: "underline" }}>Sock Aid and Dressing Stick</a></strong> — Helpful tools for limited mobility
+    <strong><a href={ProductData.find(p => p.name === "Sock Aid and Dressing Stick")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Sock Aid and Dressing Stick</a></strong> — Helpful tools for limited mobility
   </li>
 </ul>
 
@@ -288,13 +288,13 @@ function EstateprepBlogentry() {
 
 <ul style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", paddingLeft: "30px" }}>
   <li style={{ marginBottom: "10px" }}>
-    <strong style={{ color: "#08023a" }}>Large Display Pill Organizer</strong> — Weekly medication management that's easy to see and use
+    <strong><a href={ProductData.find(p => p.name === "Large Display Pill Organizer")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Large Display Pill Organizer</a></strong> — Weekly medication management that's easy to see and use
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong style={{ color: "#08023a" }}>Automatic Blood Pressure Monitor</strong> — Track health trends for medical decision-making
+    <strong><a href={ProductData.find(p => p.name === "Automatic Blood Pressure Monitor")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Automatic Blood Pressure Monitor</a></strong> — Track health trends for medical decision-making
   </li>
   <li style={{ marginBottom: "10px" }}>
-    <strong style={{ color: "#08023a" }}>Medical Alert System</strong> — Emergency protection when living alone
+    <strong><a href={ProductData.find(p => p.name === "Medical Alert System")?.link} target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", textDecoration: "underline" }}>Medical Alert System</a></strong> — Emergency protection when living alone
   </li>
 </ul>
 

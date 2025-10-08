@@ -12,7 +12,7 @@ export const ProductData = [
         name: "Slip On Shoes",
         description: "Comfortable slip-on shoes for everyday wear.",
         photo: "/images/shoes.jpg",
-        price: 53.58,
+        price: 59.98,
         link: "https://amzn.to/45M7b6V",
         productid:2,
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate."
@@ -30,7 +30,7 @@ export const ProductData = [
     {
         name: "Fireproof Document Safe",
         description: "Protect your important estate planning documents with this fireproof and waterproof safe. Perfect for wills, trusts, and legal papers.",
-    photo: "/images/fireproofdocumentsafe.jpg",
+        photo: "/images/fireproofdocumentsafe.jpg",
         price: 99.99,
         link: "https://amzn.to/3IywEZ7",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -40,7 +40,7 @@ export const ProductData = [
     {
         name: "Legal Document Organizer",
         description: "Professional expanding file organizer with 21 labeled pockets. Keep your estate planning documents organized and accessible for your family.",
-    photo: "/images/legaldocumentorganizer.jpg",
+        photo: "/images/legaldocumentorganizer.jpg",
         price: 25.48,
         link: "https://amzn.to/3WqXLbC",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -50,7 +50,7 @@ export const ProductData = [
     {
         name: "Waterproof Document Case",
         description: "Portable waterproof document bag for emergency preparedness. Keep copies of essential documents safe and accessible.",
-    photo: "/images/waterproofdocumentcase.jpg",
+        photo: "/images/waterproofdocumentcase.jpg",
         price: 19.99,
         link: "https://amzn.to/431vagD",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -61,7 +61,7 @@ export const ProductData = [
      {
         name: "Card Protection Sleeves",
         description: "Protective sleeves for Social Security cards, Medicare cards, and other important identification documents.",
-    photo: "/images/cardprotectionsleeves.jpg",
+        photo: "/images/cardprotectionsleeves.jpg",
         price: 12.99,
         link: "https://amzn.to/46I75hu",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
@@ -102,8 +102,8 @@ export const ProductData = [
         name: "Large Display Pill Organizer",
         description: "Weekly medication management that's easy to see and use.",
         photo: "",
-        price: 9.99,
-        link: "https://amzn.to/4pSJeTz",
+        price: 15.99,
+        link: "https://amzn.to/3QpillOrg",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:14,
         category: "healthcare-monitoring"
@@ -113,7 +113,7 @@ export const ProductData = [
         description: "Track health trends for medical decision-making.",
         photo: "",
         price: 39.99,
-        link: "https://amzn.to/431tiEJ",
+        link: "https://amzn.to/3QbpMonitor",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:15,
         category: "healthcare-monitoring"
@@ -122,8 +122,8 @@ export const ProductData = [
         name: "Medical Alert System",
         description: "Emergency protection when living alone.",
         photo: "",
-        price: 48.71,
-        link: "https://amzn.to/42qINpI",
+        price: 79.99,
+        link: "https://amzn.to/3QmedAlert",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid:16,
         category: "healthcare-monitoring"
@@ -132,8 +132,8 @@ export const ProductData = [
         name: "Long Handle Shoe Horn",
         description: "Maintains independence in daily dressing.",
         photo: "",
-        price: 11.99,
-        link: "https://amzn.to/48kBsM8",
+        price: 12.99,
+        link: "https://amzn.to/long-shoe-horn",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid: 17,
         category: "mobility-aids"
@@ -142,11 +142,30 @@ export const ProductData = [
         name: "Sock Aid and Dressing Stick",
         description: "Helpful tools for limited mobility.",
         photo: "",
-        price: 9.79,
-        link: "https://amzn.to/47aFfdI",
+        price: 14.99,
+        link: "https://amzn.to/sock-aid-dressing-stick",
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid: 18,
         category: "mobility-aids"
     },
+    {
+        name: "Emergency Contact Organizer",
+        description: "Essential organizer for emergency contact information including attorneys, doctors, and financial advisors.",
+        photo: "",
+        price: 8.99,
+        link: "https://amzn.to/emergency-contact-org",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid: 19,
+        category: "estate-planning"
+    }
     
-];
+    {
+        name: "Test Password Manager",
+        description: "Secure password storage device",
+        photo: "/images/password-manager.jpg",
+        price: 29.99,
+        link: "https://amzn.to/test123",
+        affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
+        productid: 20
+    },
+  ];

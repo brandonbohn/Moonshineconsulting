@@ -18,8 +18,22 @@ function MainBlog() {
 
 
     return (
-  <div className='container-fluid Mainbox' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
+  <div className='container-fluid Mainbox' style={{ 
+    fontFamily: "Georgia, serif", 
+    fontSize: "21px",
+    padding: "0 !important",
+    margin: "20px auto !important",
+    maxWidth: "1200px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
+  }}>
     <style>{`
+      /* Override boxtwo padding for desktop masthead */
+      @media (min-width: 769px) {
+        .boxtwo {
+          padding: 8px !important;
+          margin: 0 !important;
+        }
+      }
       .mainblog-title, .boxtwo h1 {
         font-size: 27px !important;
         font-family: 'Open Sans, Arial, sans-serif' !important;
@@ -51,38 +65,7 @@ function MainBlog() {
         }
       }
     `}</style>
-        <div className="hero-section" style={{ padding: "2px 10px" }}>
-          {/* Newspaper Layout: Blue Header above unified white background */}
-          <div className="boxtwo text-center" style={{
-            padding: "8px",
-            backgroundColor: "#08023a",
-            borderRadius: "8px 8px 0 0",
-            width: "100%",
-            height: "auto",
-            marginBottom: "0",
-            marginTop: "0",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
-          }}>
-            <h1 style={{
-              fontSize: "54px",
-              fontFamily: "Open Sans, Arial, sans-serif",
-              fontWeight: "bold",
-              letterSpacing: "2px",
-              margin: "18px 0 0 0",
-              textTransform: "uppercase",
-              textAlign: "center"
-            }} className="text-white">
-              The Care Professional Chronicle
-            </h1>
-            <div style={{ borderTop: "2px solid #08023a", width: "40%", margin: "5px auto" }}></div>
-            <p className="text-white" style={{ fontSize: "21px", fontFamily: "Georgia, serif", fontStyle: "italic", margin: "2px 0" }}>
-              Your Trusted Source for Senior Care and Advocacy
-            </p>
-            <p className="text-white" style={{ fontSize: "21px", fontFamily: "Georgia, serif", margin: "2px 0" }}>
-              {new Date().toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long" })}<br />
-              Volume 1 • Issue 1
-            </p>
-          </div>
+        <div className="hero-section" style={{ padding: "0" }}>
           {/* Main white background box behind all content */}
           <div className="mainbox" style={{
             width: isMobile ? '100vw' : '100%',
@@ -91,7 +74,43 @@ function MainBlog() {
             overflowX: 'hidden',
             marginLeft: isMobile ? 0 : 'auto',
             marginRight: isMobile ? 0 : 'auto',
+            padding: '0',
+            margin: isMobile ? '0' : '0 auto',
+            backgroundColor: 'white'
           }}>
+            {/* Newspaper Layout: Blue Header above unified white background */}
+            <div className="boxtwo text-center" style={{
+              padding: "8px",
+              backgroundColor: "#08023a",
+              borderRadius: "8px 8px 0 0",
+              width: "100%",
+              height: "auto",
+              marginBottom: "0",
+              marginTop: "0",
+              marginLeft: "0",
+              marginRight: "0",
+              boxShadow: "none"
+            }}>
+            <h1 style={{
+              fontSize: "54px",
+              fontFamily: "Open Sans, Arial, sans-serif",
+              fontWeight: "bold",
+              letterSpacing: "2px",
+              margin: "0",
+              textTransform: "uppercase",
+              textAlign: "center"
+            }} className="text-white">
+              The Care Professional Chronicle
+            </h1>
+            <div style={{ borderTop: "2px solid #08023a", width: "40%", margin: "2px auto" }}></div>
+            <p className="text-white" style={{ fontSize: "21px", fontFamily: "Georgia, serif", fontStyle: "italic", margin: "0" }}>
+              Your Trusted Source for Senior Care and Advocacy
+            </p>
+            <p className="text-white" style={{ fontSize: "21px", fontFamily: "Georgia, serif", margin: "0 0 2px 0" }}>
+              {new Date().toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long" })}<br />
+              Volume 1 • Issue 1
+            </p>
+          </div>
             {/* Featured Story Section - Policy/Medicare News */}
             <div id="breaking-news" style={{ marginBottom: "15px", marginTop: "0" }}>
               <div style={{ 

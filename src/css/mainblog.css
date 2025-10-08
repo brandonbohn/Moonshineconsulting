@@ -9,15 +9,18 @@
     padding: 0 !important;
   }
 }
+
+@media (max-width: 768px) {
   .boxtwo {
     width: 85vw !important;
-    max-width: vw !important;
+    max-width: 85vw !important;
     box-sizing: border-box !important;
     overflow-x: auto !important;
     margin-left: auto !important;
     margin-right: auto !important;
     padding: 0 !important;
   }
+}
 
 @media (max-width: 768px) {
   #breaking-news {

@@ -157,7 +157,7 @@ export const ProductData = [
         affilatelinkstatement: "As an Amazon Associate, I earn from qualifying purchases. Please note that images may be for illustrative purposes only and may not be accurate.",
         productid: 19,
         category: "estate-planning"
-    }
+    },
     
     {
         name: "Test Password Manager",

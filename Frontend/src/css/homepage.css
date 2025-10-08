@@ -1,0 +1,182 @@
+
+
+
+.Title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  color: #08023a;
+}
+.outlinebox {
+
+  background-color: #08023a;
+  border-radius: 10px; 
+  color: #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  -webkit-text-fill-color: #000000;
+}
+.logo {
+ 
+  width: 75px;
+  height: 75px;
+}
+
+/* Enhanced logo styling for header */
+
+
+
+.positions{
+height:90vh;
+width: 100vw;
+
+}
+.card {
+z-index: 10;
+}
+
+
+.cardposition {
+position:relative;
+  margin-left: 100px;
+  align-items: flex-start;
+
+;
+}
+.textposition{
+
+  margin-bottom: 1000px;
+}
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Adjust spacing between cards as needed */
+  align-items: flex-start; /* Align cards to the top */
+}
+.content-container {
+  max-width: 300px;
+  margin: auto;
+  padding: 0 17rem; /* default for larger screens */
+}
+
+.body {
+  
+  font-family: Arial, sans-serif;
+  color: #0a0a0a;
+  padding: 20px;
+  font-size:large
+}
+@media (max-width: 768px){
+  .content-container {
+    padding: 0 1rem;
+  }
+}
+
+
+  .nav-container{
+    flex-direction:column;
+    padding: 10px;
+  }
+
+
+/* Mobile responsive media queries */
+@media (max-width: 768px) {
+  .card-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cardposition {
+    margin-left: 0;
+  }
+  .positions {
+    height: auto;
+    width: 100vw;
+  }
+  
+  /* Mobile layout: Stack all content vertically */
+  .main-layout-row {
+    flex-direction: column !important;
+  }
+  
+  /* Reorder content on mobile: Welcome first, then all cards stacked */
+  .welcome-column {
+    order: 1;
+    padding: 10px !important;
+  }
+  
+  .blog-cards-column {
+    padding: 10px !important;
+  }
+  
+  .blog-cards-column:first-of-type {
+    order: 2;
+  }
+  
+  .blog-cards-column:last-of-type {
+    order: 3;
+  }
+  
+  .founder-cards-responsive {
+    order: 4;
+    gap: 20px !important;
+    padding: 20px 0 !important;
+  }
+  
+  /* Make all blog cards full width and stack nicely */
+  .blog-card-responsive {
+    width: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    min-height: auto !important;
+  }
+  
+  /* Ensure proper spacing between cards */
+  .blog-cards-column .d-flex {
+    gap: 20px !important;
+  }
+  
+  .founder-card-responsive {
+    width: 280px !important;
+  }
+  
+  /* Override inline styles for better mobile experience */
+  .blog-card-responsive .w-100 {
+    min-height: auto !important;
+  }
+}
+
+/* Additional responsive adjustments for smaller mobile devices */
+@media (max-width: 576px) {
+  .blog-cards-column {
+    padding: 5px !important;
+  }
+  
+  .welcome-column {
+    padding: 5px !important;
+  }
+  
+  .blog-card-responsive {
+    margin-bottom: 15px !important;
+  }
+  
+  .founder-card-responsive {
+    width: 250px !important;
+  }
+  
+  /* Responsive header styling */
+  .logo-stretched {
+    max-height: 120px !important;
+  }
+  
+  .navbar-nav {
+    padding-left: 10px !important;
+  }
+}
+
+/* Header responsive styles for tablets */
+@media (max-width: 768px) and (min-width: 577px) {
+  .logo-stretched {
+    max-height: 160px;
+  }
+}

@@ -1,0 +1,433 @@
+import React from "react";
+import '../css/homepage.css';
+
+function BioPage() {
+    return (
+    <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
+            <div className="hero-section" style={{ padding: "2px 10px" }}>
+                <section>
+                    <div>
+                        <h1 className="title" style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Who We Are......</h1>
+                        <div style={{ borderTop: "5px solid #000000", margin: "20px 0" }}></div>
+        {/* Main Container with Responsive Layout */}
+        <div className="bio-container">
+            {/* Left Side - Team Photos */}
+            <div className="bio-section team-section">
+                <div style={{ display: "flex", alignItems: "center", marginBottom: 32 }}>
+                    <div />
+                    <div>
+                        <h1 style={{ margin: 0, color: "#000000" }}>Our Team</h1>
+                        {[
+                            {
+                                name: "Karen Underwood RN BSN",
+                                title: "CEO & Founder",
+                                picture: "./images/CEO.jpg",
+                                bioPoints: [
+                                   "30+ years in nursing and healthcare management", 
+                                   "Experienced Home Health Surveyor",
+                                    "Passionate about patient-centered care and quality improvement",
+                                    "Advocate for senior healthcare and continuous learning"
+                                ]
+                            },
+                            {
+                                name: "Christie Stephan RN ODG Certified, Behavioral Health Certified",
+                                title: "Insurance Specialist and Contributor",
+                                picture: "./images/Christie.jpg",
+                                bioPoints: [
+                                    "Chris began her career in 1994 in the hospital",
+                                    "31 years of nursing experience across multiple specialties",
+                                    "24 years' experience in workers compensation and insurance assessments",
+                                    "Team leader at Gallagher since 2020"
+                                ]
+                            },
+                            {
+                                name: "Moonshine",
+                                title: "Lovable Mascot and Contributor",
+                                picture: "./images/moonshine.jpg",
+                                bioPoints: [
+                                    "Brings smiles and comfort to seniors every day",
+                                    "Expert in tail wags and gentle cuddles",
+                                    "Loves visiting care homes and making new friends",
+                                    "Always ready for a treat or a belly rub",
+                                    "Believes everyone deserves a little joy and companionship"
+                                ]
+                            }
+                        ].map((person, idx) => (
+                            <div key={idx} style={{ display: "flex", alignItems: "center", marginBottom: 24 }}>
+                                <img
+                                    src={person.picture}
+                                    alt={person.name}
+                                    style={{ width: 64, height: 64, borderRadius: "50%", marginRight: 20, objectFit: "cover", background: "#eee" }}
+                                />
+                                <div>
+                                    <h3 style={{ margin: 0, fontSize: "27px", color: "#000000", fontWeight: "bold", fontFamily: "Open Sans, Arial, sans-serif" }}>{person.name}</h3>
+                                    <p style={{ color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{person.title}</p>
+                                    <ul style={{ paddingLeft: 20, margin: "12px 0 0 0", color: "#000000", fontSize: "21px", fontFamily: "Georgia, serif" }}>
+                                        {person.bioPoints.map((point, i) => (
+                                            <li key={i}>{point}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div>
+                  
+                </div>
+                <div>
+                    <h2 style={{ color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Contact</h2>
+                    <ul style={{ color: "#000000", fontSize: "21px", fontFamily: "Georgia, serif" }}>
+                        <li>Email: contact@moonshine.com</li>
+                    </ul>
+                </div>
+
+            </div>
+
+           
+            <div className=" info-section">
+                <div style={{
+                  padding: "30px",
+                  background: "#ffffff",
+                  borderRadius: "16px",
+                  boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
+                  fontSize: "18px"
+                }}>
+                
+                  <h1 className="" style={{ margin: 0, color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Mission</h1>
+                  <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
+                    At Moonshine Consulting, we empower seniors and their families to navigate the complex world of long-term healthcare with confidence and clarity. We believe every senior deserves compassionate care and informed choices about their health and wellbeing.
+                  </p>
+                                    <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Expertise</h5>
+                                    <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
+                                        Founded by healthcare professionals with over 50 years of combined experience, our team brings deep knowledge from:
+                                        <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
+                      <li>Home Health services</li>
+                      <li>Hospice care</li>
+                      <li>Workers Compensation Insurance</li>
+                      <li>Long Term Care</li>
+                      <li>Hospital specialties including GU, ENT, GYN, and ICU</li>
+                      <li>Labor and Delivery Nursery care</li>
+                      <li>Insurance assessments for long term care products</li>
+                    </ul>
+                  </p>
+                  
+                                    <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Professional Background</h5>
+                                    <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
+                                        Our team's extensive experience includes:
+                                        <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
+                      <li>30+ years in nursing and healthcare management</li>
+                      <li>Experienced Home Health Surveyor with regulatory expertise</li>
+                      <li>10 years as a Home Health Nurse providing direct patient care</li>
+                      <li>3 years in Long Term Care with hands-on patient advocacy</li>
+                      <li>Staff nursing in hospital settings including prison ward and intensive care</li>
+                      <li>Specialized experience in workers compensation and insurance assessments</li>
+                      <li>Leadership roles in healthcare organizations</li>
+                    </ul>
+                  </p>
+                  <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>What We Offer For Seniors and Caregivers:</h5>
+                  <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
+                    <li>Guidance on Medicare, Home Health, Hospice and Long Term Care</li>
+                    <li>Educational resources about Missouri's healthcare policies and how they impact you</li>
+                    <li>Practical solutions for daily healthcare challenges</li>
+                    <li>Support during life transitions and care decisions</li>
+                  </ul>
+                  <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Our Approach:</h5>
+                  <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>
+                    We provide warm, compassionate guidance combined with expert knowledge. Our goal is to help you understand your options, advocate for your needs, and make informed decisions about your care journey.
+                    <br />
+
+                   
+                    <strong>Making a Difference:</strong> we're committed to showing how meaningful connections, whether through our educational content, community outreach, or even our featured therapy animals—can enhance the lives of seniors and their families.
+                    <br />
+
+                    <strong> Moonshine Consulting - Illuminating your path to better healthcare</strong> 
+                    <br />
+                   
+                  </p>
+                </div>  
+            </div>
+        </div>
+                    </div>
+                </section>
+
+
+<style>{`
+    /* Mobile First - Base styles for mobile devices */
+    .bio-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+        box-sizing: border-box;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .bio-section {
+        width: 100%;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+        box-sizing: border-box;
+        margin-bottom: 50px;
+        max-height: 800px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .team-section {
+        color: #000000;
+        order: 1;
+    }
+
+    .info-section {
+        order: 2;
+        max-height: 800px;
+        overflow-y: auto;
+    }
+
+    /* Small mobile phones - max-width: 480px */
+    @media (max-width: 480px) {
+        .bio-container {
+            padding: 10px;
+            gap: 15px;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .bio-section {
+            padding: 15px;
+            width: 100vw;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        .title {
+                font-size: 1.3rem !important;
+                text-align: left;
+        }
+
+        /* Make team member cards stack vertically on very small screens */
+            .bio-section div[style*="display: flex"] {
+                flex-direction: column !important;
+                text-align: left;
+        }
+
+        .bio-section img {
+            margin: 0 auto 15px auto !important;
+            max-width: 90vw;
+            height: auto !important;
+        }
+    }
+
+    /* Mobile phones - min-width: 481px */
+    @media (min-width: 481px) and (max-width: 767px) {
+        .bio-container {
+            padding: 15px;
+            gap: 18px;
+        }
+
+        .bio-section {
+            padding: 18px;
+        }
+    }
+
+    /* Tablets - min-width: 768px */
+    @media (min-width: 768px) {
+        .bio-container {
+            padding: 20px;
+            gap: 25px;
+        }
+
+        .bio-section {
+            padding: 24px;
+        }
+    }
+
+    /* Small laptops - min-width: 992px */
+    @media (min-width: 992px) {
+        .bio-container {
+            flex-direction: row;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .bio-section {
+            flex: 1;
+            max-width: 650px;
+        }
+
+        .team-section {
+            order: 0;
+        }
+
+        .info-section {
+            order: 0;
+            flex: 1;
+            max-width: 850px;
+        }
+    }
+
+    /* Large desktops - min-width: 1200px */
+    @media (min-width: 1200px) {
+        .bio-container {
+            padding: 20px;
+        }
+    }
+
+    /* Extra large screens - min-width: 1400px */
+    @media (min-width: 1400px) {
+        .bio-container {
+            max-width: 1400px;
+        }
+    }
+
+    /* Responsive text sizing */
+    @media (max-width: 576px) {
+        .bio-section h1 {
+            font-size: 1.5rem !important;
+        }
+
+        .bio-section h2 {
+            font-size: 1.3rem !important;
+        }
+
+        .bio-section h5 {
+            font-size: 1.1rem !important;
+        }
+
+        .bio-section p {
+            font-size: 14px !important;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .bio-section li {
+            font-size: 13px !important;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+    }
+
+    /* Responsive image sizing */
+    @media (max-width: 480px) {
+        .bio-section img {
+            width: 50px !important;
+            height: 50px !important;
+        }
+    }
+    
+    /* Extra Large Screens (1400px and up) - For Multiple Monitor Setups */
+    @media (min-width: 1400px) {
+        .title {
+            font-size: 56px !important;
+        }
+        
+        .bio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .bio-section h1 {
+            font-size: 42px !important;
+        }
+        
+        .bio-section h2 {
+            font-size: 32px !important;
+        }
+        
+        .bio-section h5 {
+            font-size: 24px !important;
+        }
+        
+        .bio-section p, .bio-section li {
+            font-size: 20px !important;
+            line-height: 1.7 !important;
+        }
+        
+        .bio-section img {
+            width: 120px !important;
+            height: 120px !important;
+        }
+    }
+    
+    /* Ultra Wide Screens (1600px and up) - For Ultrawide Monitors */
+    @media (min-width: 1600px) {
+        .title {
+            font-size: 64px !important;
+        }
+        
+        .bio-container {
+            max-width: 1600px;
+            padding: 50px;
+        }
+        
+        .bio-section h1 {
+            font-size: 48px !important;
+        }
+        
+        .bio-section h2 {
+            font-size: 36px !important;
+        }
+        
+        .bio-section h5 {
+            font-size: 26px !important;
+        }
+        
+        .bio-section p, .bio-section li {
+            font-size: 22px !important;
+            line-height: 1.8 !important;
+        }
+        
+        .bio-section img {
+            width: 140px !important;
+            height: 140px !important;
+        }
+    }
+    
+    /* Super Ultra Wide (1920px and up) - For 4K and Multiple Monitor Dev Setups */
+    @media (min-width: 1920px) {
+        .title {
+            font-size: 72px !important;
+        }
+        
+        .bio-container {
+            max-width: 1800px;
+            padding: 60px;
+        }
+        
+        .bio-section h1 {
+            font-size: 56px !important;
+        }
+        
+        .bio-section h2 {
+            font-size: 42px !important;
+        }
+        
+        .bio-section h5 {
+            font-size: 28px !important;
+        }
+        
+        .bio-section p, .bio-section li {
+            font-size: 24px !important;
+            line-height: 1.9 !important;
+        }
+        
+        .bio-section img {
+            width: 160px !important;
+            height: 160px !important;
+        }
+    }
+`}</style>
+            </div>
+        </div>
+    );
+};
+
+export default BioPage;

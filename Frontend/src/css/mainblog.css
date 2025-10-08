@@ -1,0 +1,357 @@
+@media (max-width: 768px) {
+  #contributors {
+    width: 90vw !important;
+    max-width: 90vw !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+}
+  .boxtwo {
+    width: 85vw !important;
+    max-width: vw !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+  }
+
+@media (max-width: 768px) {
+  #breaking-news {
+    width: 90vw !important;
+    max-width: 90vw !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+  }
+
+
+}
+@media (max-width: 768px) {
+  .mainbox {
+    width: 80vw !important;
+    max-width: 80vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+  .container-fluid {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+}
+/* General mobile fixes for main blog layout */
+@media (max-width: 768px) {
+  .container-fluid,
+  .mainbox,
+  .main-sections-grid,
+  .boxtwo,
+  .section-header,
+  .blog-card,
+  .blog-cards {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .main-sections-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+  .boxtwo h1 {
+    font-size: 2rem !important;
+    word-break: break-word;
+  }
+  .mainblog-title, .boxtwo h1, .section-header h3, #contributors h4 {
+    font-size: 1.5rem !important;
+    word-break: break-word;
+  }
+  .mainblog-body, .boxtwo p, .welcome-box, .featured-story, .main-sections-grid {
+    font-size: 1rem !important;
+    word-break: break-word;
+  }
+  .entertainment-box {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+}
+/* Entertainment box (Moonshine's Corner) mobile override */
+@media (max-width: 768px) {
+  .entertainment-box {
+    padding: 10px !important;
+    background-color: #fff9e6 !important;
+    border-radius: 8px !important;
+    border: 2px dashed #08023a !important;
+    min-height: 120px !important;
+    height: auto !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+/* Ensure only blog cards have white background and readable text on mobile */
+.blog-card, .blog-cards {
+  background-color: #fff !important;
+  color: #08023a !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 16px;
+  width: 100%;
+  max-width: 98vw;
+  box-sizing: border-box;
+  margin: 0 auto 16px auto;
+}
+
+/* Product cards keep their original desktop styling on mobile */
+.product-card {
+  background-color: #08023a !important;
+  color: #fff !important;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: 0 auto 16px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.product-card .senior-btn {
+  background-color: #ffd600 !important;
+  color: #08023a !important;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+/* Senior-friendly button style for Read More */
+.senior-btn {
+  background-color: #08023a;
+  color: #fff;
+  border: 2px solid #08023a;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 120px;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.senior-btn:hover {
+  background-color: #0a0a0a;
+  color: #fff;
+}
+.logo {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+.positions{
+height:90vh;
+width: 100vw;
+
+}
+.card {
+z-index: 10;
+}
+
+
+.cardposition {
+position:relative;
+  margin-left: 100px;
+  align-items: flex-start;
+
+;
+}
+.textposition{
+
+  margin-bottom: 1000px;
+}
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Adjust spacing between cards as needed */
+  align-items: flex-start; /* Align cards to the top */
+}
+.content-container {
+  max-width: 300px;
+  margin: auto;
+  padding: 0 17rem; /* default for larger screens */
+}
+
+.body {
+  
+  font-family: Arial, sans-serif;
+  color: #0a0a0a;
+  padding: 20px;
+  font-size:large
+}
+@media (max-width: 768px){
+
+  /* Adjust content container for mobile to fit cards */
+  .content-container {
+    max-width: 100vw;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  /* Ensure only blog cards have white background and readable text on mobile */
+  .blog-card, .blog-cards {
+    background-color: #fff !important;
+    color: #08023a !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 16px;
+    width: 100%;
+    max-width: 98vw;
+    box-sizing: border-box;
+    margin: 0 auto 16px auto;
+  }
+
+  /* Product cards keep their original desktop styling on mobile */
+  .product-card {
+    background-color: #08023a !important;
+    color: #fff !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 0 auto 16px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .product-card .senior-btn {
+    background-color: #ffd600 !important;
+    color: #08023a !important;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 12px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /* Make Read More button full width and readable on mobile */
+  .senior-btn {
+    width: 100%;
+    font-size: 18px;
+    height: auto;
+    padding: 10px 0;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    display: block;
+    text-align: center;
+  }
+  .senior-btn span {
+    font-size: 18px;
+    letter-spacing: 1px;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: initial;
+    display: inline;
+  }
+}
+
+  .cards{
+background-color: #ffffffff;
+color: #ffff;
+  }
+@media (max-width: 768px) {
+  .card-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cardposition {
+    margin-left: 0;
+  }
+  .positions {
+    height: auto;
+    width: 100vw;
+  
+  }
+
+    /* Adjust content container for mobile to fit cards */
+    .content-container {
+      max-width: 100vw;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+    }
+  /* Only blog cards use white background on mobile */
+  /* .blog-card, .blog-cards { ... } already defined above */
+
+  /* Make Read More button full width and readable on mobile */
+  .senior-btn {
+    width: 100%;
+    font-size: 18px;
+    height: auto;
+    padding: 10px 0;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    display: block;
+    text-align: center;
+  }
+  .senior-btn span {
+    font-size: 18px;
+    letter-spacing: 1px;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: initial;
+    display: inline;
+  }
+ 
+}
+
+.Mainbox {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 32px 16px;
+  width: 200%;
+  max-width: 1000px;
+  margin: 32px auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  z-index: 1;
+}
+
+@media (max-width: 500px) {
+  .mainbox {
+    max-width: 50vw;
+    padding: 8px 2px;
+    margin: 8px auto;
+  }
+}

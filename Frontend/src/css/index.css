@@ -1,0 +1,133 @@
+.background
+{
+    background-color: #faf0e6;
+    background-position: calc(50% - 1px) calc(50% - 1px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+   
+ 
+   
+}
+
+.Titles
+{
+    color: #08023a;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    text-align: center;
+}
+.Text
+{
+    color: #2c2c2c;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    text-align: center;
+
+}
+.boxtwo
+{
+    width: 100vw;
+    height: 170px;
+    background-color: #08023a;
+    border-radius: 10px; 
+    color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    -webkit-text-fill-color: #ffffff;
+}
+
+.box
+{
+
+
+background-color: white;
+border-radius: 10px; 
+color: #ffffff;
+/* Removed invalid property 'length: 50vw;' */
+width: 50vw;
+   
+}
+ 
+  
+    .HeaderandFooter {
+      display: inline;
+      justify-content:space-around;
+      background-color: #08023a;
+      font-size: 16px;
+      height: 100%;
+      width: 10px;
+      -webkit-text-fill-color: #ffffff;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+      .textcontent {
+        display: inline;
+        justify-content:center;
+        background-color:rgb(7, 7, 7);
+        font-size: 16px;
+        height: auto;
+        width: 100%;
+        
+        -webkit-text-fill-color: #ece0e1;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+    
+
+     
+
+     
+
+
+     .boxposition2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      margin: 25px;
+      margin-right: 250px;
+      margin-left: 250px;
+   }
+
+     .positions {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+   
+      margin-top: 200px;
+      margin-bottom: 200px;
+  
+      
+    
+     }
+
+     .picture {
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+     }
+
+     .textstyle {
+      padding-top: 50px;
+    padding-left: 150px;
+  
+
+    padding-bottom: 50px;
+     }
+     .missionstatement {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+     }
+     .homepagedefaults {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: auto;
+      margin-top: auto;
+     }
+     

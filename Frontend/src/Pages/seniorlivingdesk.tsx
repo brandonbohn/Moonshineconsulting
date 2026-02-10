@@ -142,7 +142,8 @@ function SeniorLivingDesk() {
         </div>
         <h2 className="featured-title">Featured Articles</h2>
         <ul>
-          <BlogComponent id={4} /> 
+          <BlogComponent id={4} />
+          <BlogComponent id={7} /> 
         </ul>
       </div>
     </section>

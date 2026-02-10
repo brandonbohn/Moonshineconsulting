@@ -32,13 +32,6 @@ function HomePage() {
             margin: "0"
           }}>
             {/* Title */}
-            <h1 className='Titles' style={{
-              fontSize: "27px",
-              fontFamily: 'Open Sans, Arial, sans-serif',
-              color: "#08023a",
-              textAlign: "center",
-              margin: "2px 0 0 0"
-            }}>
             <style>{`
               .Titles {
                 font-size: 27px !important;
@@ -49,8 +42,35 @@ function HomePage() {
                 font-family: 'Georgia, serif' !important;
               }
             `}</style>
-              Welcome to Moonshine Consulting
-            </h1>
+            <div style={{
+              backgroundColor: "#08023a",
+              padding: "30px 20px",
+              borderRadius: "15px",
+              width: "100%",
+              boxSizing: "border-box",
+              textAlign: "center"
+            }}>
+              <h1 className='Titles' style={{
+                fontSize: "48px",
+                fontFamily: 'Open Sans, Arial, sans-serif',
+                color: "#ffffff",
+                textAlign: "center",
+                margin: "0 0 15px 0"
+              }}>
+                Moonshine Consulting
+              </h1>
+              <p style={{
+                fontSize: "20px",
+                fontFamily: 'Georgia, serif',
+                color: "#ffffff",
+                textAlign: "center",
+                margin: "0",
+                fontStyle: "italic",
+                lineHeight: "1.6"
+              }}>
+                Helping People navigate healthcare - not through the bottle, but through compassion, nursing and a dog named Moonshine
+              </p>
+            </div>
             {/* Centered Dog Images */}
             <div className="moonshine-image-row" style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
               <style>{`

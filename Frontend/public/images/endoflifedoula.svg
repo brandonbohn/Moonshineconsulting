@@ -1,0 +1,47 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8d5f2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4a5d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Candle 1 (left) -->
+  <rect x="80" y="180" width="30" height="80" fill="#f5e6d3" rx="5"/>
+  <ellipse cx="95" cy="180" rx="15" ry="8" fill="#f5e6d3"/>
+  <path d="M 90 175 Q 95 155 95 140" stroke="#ff8c42" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="95" cy="140" r="6" fill="#ffd700"/>
+  
+  <!-- Candle 2 (center) -->
+  <rect x="185" y="160" width="30" height="100" fill="#f5e6d3" rx="5"/>
+  <ellipse cx="200" cy="160" rx="15" ry="8" fill="#f5e6d3"/>
+  <path d="M 195 155 Q 200 120 200 100" stroke="#ff8c42" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="200" cy="100" r="6" fill="#ffd700"/>
+  
+  <!-- Candle 3 (right) -->
+  <rect x="290" y="180" width="30" height="80" fill="#f5e6d3" rx="5"/>
+  <ellipse cx="305" cy="180" rx="15" ry="8" fill="#f5e6d3"/>
+  <path d="M 300 175 Q 305 155 305 140" stroke="#ff8c42" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="305" cy="140" r="6" fill="#ffd700"/>
+  
+  <!-- Heart shape (compassion symbol) -->
+  <path d="M 200 70 
+    C 200 60, 190 50, 180 50
+    C 170 50, 165 60, 165 65
+    C 165 80, 200 110, 200 110
+    C 200 110, 235 80, 235 65
+    C 235 60, 230 50, 220 50
+    C 210 50, 200 60, 200 70 Z" 
+    fill="#c07fb0" opacity="0.8"/>
+  
+  <!-- Text -->
+  <text x="200" y="260" font-size="18" font-weight="bold" text-anchor="middle" fill="#4a3a5c" font-family="Arial, sans-serif">
+    End-of-Life Doula
+  </text>
+  <text x="200" y="285" font-size="12" text-anchor="middle" fill="#6b5a7a" font-family="Arial, sans-serif">
+    Compassionate Care
+  </text>
+</svg>

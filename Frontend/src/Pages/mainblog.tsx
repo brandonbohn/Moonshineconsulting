@@ -57,10 +57,12 @@ function MainBlog() {
             padding: "8px",
             backgroundColor: "#08023a",
             borderRadius: "8px 8px 0 0",
-            width: "100%",
+            width: "100vw",
             height: "auto",
             marginBottom: "0",
             marginTop: "0",
+            marginLeft: 0,
+            marginRight: 0,
             boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
           }}>
             <h1 style={{
@@ -85,12 +87,14 @@ function MainBlog() {
           </div>
           {/* Main white background box behind all content */}
           <div className="mainbox" style={{
-            width: isMobile ? '100vw' : '100%',
-            maxWidth: isMobile ? '100vw' : '1400px',
+            width: '100vw',
+            maxWidth: '100vw',
             boxSizing: 'border-box',
             overflowX: 'hidden',
-            marginLeft: isMobile ? 0 : 'auto',
-            marginRight: isMobile ? 0 : 'auto',
+            marginLeft: 0,
+            marginRight: 0,
+            padding: '20px',
+            backgroundColor: '#ffffff',
           }}>
             {/* Featured Story Section - Policy/Medicare News */}
             <div id="breaking-news" style={{ marginBottom: "15px", marginTop: "0" }}>
@@ -112,10 +116,7 @@ function MainBlog() {
                 display: "flex",
                 flexDirection: isMobile ? "column" : "row",
                 gap: "20px",
-                padding: "4px",
-                backgroundColor: "#f8f9fa",
-                borderRadius: "6px",
-                border: "2px solid #08023a"
+                padding: "0",
               }}>
                 <div style={{ flex: isMobile ? "none" : "1", width: "100%" }}>
                   <BlogComponent id={2} />
@@ -163,7 +164,7 @@ function MainBlog() {
                 height: "auto",
                 marginBottom: "16px"
               }}>
-                <BlogComponent id={4} />
+                <BlogComponent id={7} />
               </div>
               {/* Contributors Section */}
               <div id="contributors">
@@ -251,7 +252,7 @@ function MainBlog() {
                   letterSpacing: "0.5px",
                   textAlign: "left"
                 }}>Entertainment</h3>
-                <div style={{ borderTop: "2px solid #08023a", width: "200%", margin: "8px 0 0 0" }}></div>
+                <div style={{ borderTop: "2px solid #08023a", width: "100%", margin: "8px 0 0 0" }}></div>
               </div>
               <div className="entertainment-box" style={{
                 padding: "10px",
@@ -261,7 +262,7 @@ function MainBlog() {
                 minHeight: "120px",
                 height: "auto",
                 marginBottom: "16px",
-                width: "200%"
+                width: "100%"
               }}>
                 <BlogComponent id={1} />
               </div>

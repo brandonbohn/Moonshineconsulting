@@ -22,7 +22,7 @@ function EndOfLifeDoulaBlogEntry() {
     },
     "datePublished": new Date().toISOString(),
     "dateModified": new Date().toISOString(),
-    "image": "https://moonshineconsulting.com/images/endoflifedoula.jpg",
+    "image": "https://moonshineconsulting.com/images/endoflifedoula.svg",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://moonshineconsulting.com/blogentries/endoflifedoulablogentry"
@@ -41,7 +41,7 @@ function EndOfLifeDoulaBlogEntry() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content="What is an End-of-Life Doula? Complete Guide for Families" />
         <meta property="og:description" content="Learn how End-of-Life Doulas provide emotional, spiritual, and practical support to seniors and families navigating end-of-life planning." />
-        <meta property="og:image" content="https://moonshineconsulting.com/images/endoflifedoula.jpg" />
+        <meta property="og:image" content="https://moonshineconsulting.com/images/endoflifedoula.svg" />
         <meta property="article:author" content="Kimberly Dorisio" />
         <meta property="article:published_time" content={new Date().toISOString()} />
         
@@ -49,7 +49,7 @@ function EndOfLifeDoulaBlogEntry() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What is an End-of-Life Doula? Complete Guide for Families" />
         <meta name="twitter:description" content="Learn how End-of-Life Doulas provide emotional, spiritual, and practical support to seniors and families navigating end-of-life planning." />
-        <meta name="twitter:image" content="https://moonshineconsulting.com/images/endoflifedoula.jpg" />
+        <meta name="twitter:image" content="https://moonshineconsulting.com/images/endoflifedoula.svg" />
         
         {/* Schema.org JSON-LD */}
         <script type="application/ld+json">
@@ -71,7 +71,7 @@ function EndOfLifeDoulaBlogEntry() {
           {new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
         <img
-          src="/images/endoflifedoula.jpg"
+          src="/images/endoflifedoula.svg"
           alt="End-of-Life Doula providing compassionate support and guidance to senior patient and family during end-of-life planning conversation"
           style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
         />
@@ -87,6 +87,41 @@ function EndOfLifeDoulaBlogEntry() {
         <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "24px" }}>
           You are left in shock, denial, or disbelief. What does this mean? Some people will call their attorney and draft up a will. Yes that is part of end of life planning, but that is only the tip of the iceberg. There is so much more to end of life planning.
         </p>
+
+        {/* Affiliate Ad #1 - Legal/Estate Planning */}
+        <div style={{ backgroundColor: "#fff9e6", border: "2px solid #ffc107", borderRadius: "10px", padding: "25px", marginBottom: "30px", textAlign: "center" }}>
+          <p style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", color: "#666", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
+            📋 Recommended Resource
+          </p>
+          <h3 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginBottom: "15px", marginTop: "0" }}>
+            Protect Your Healthcare Wishes Today
+          </h3>
+          <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", color: "#2c2c2c" }}>
+            Create your Healthcare Directive, Living Will, and Power of Attorney documents in minutes with trusted legal guidance.
+          </p>
+          <a 
+            href="https://www.legalzoom.com" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            style={{ 
+              display: "inline-block",
+              backgroundColor: "#08023a", 
+              color: "#fff", 
+              padding: "14px 30px", 
+              borderRadius: "8px", 
+              textDecoration: "none", 
+              fontSize: "18px", 
+              fontWeight: "600",
+              fontFamily: "Open Sans, sans-serif",
+              transition: "all 0.3s ease"
+            }}
+          >
+            Start Your Healthcare Directive →
+          </a>
+          <p style={{ fontSize: "14px", color: "#888", marginTop: "15px", marginBottom: "0", fontStyle: "italic" }}>
+            Affiliate disclosure: We may earn a commission at no cost to you.
+          </p>
+        </div>
 
         <h2 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>How an End-of-Life Doula Can Help</h2>
         <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "15px" }}>
@@ -121,6 +156,135 @@ function EndOfLifeDoulaBlogEntry() {
           <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "0" }}>
             Designating someone you trust to make medical decisions on your behalf is crucial for ensuring your wishes are followed.
           </p>
+        </div>
+
+        {/* Affiliate Ad #2 - End-of-Life Doula Directory */}
+        <div style={{ backgroundColor: "#f0f8ff", border: "2px solid #08023a", borderRadius: "10px", padding: "25px", marginBottom: "30px", textAlign: "center" }}>
+          <p style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", color: "#666", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
+            🤝 Find Support Near You
+          </p>
+          <h3 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginBottom: "15px", marginTop: "0" }}>
+            Connect with a Certified End-of-Life Doula
+          </h3>
+          <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", color: "#2c2c2c" }}>
+            Find compassionate, professional end-of-life support in your area. Browse profiles, read reviews, and schedule consultations.
+          </p>
+          <a 
+            href="https://www.caring.com" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            style={{ 
+              display: "inline-block",
+              backgroundColor: "#08023a", 
+              color: "#fff", 
+              padding: "14px 30px", 
+              borderRadius: "8px", 
+              textDecoration: "none", 
+              fontSize: "18px", 
+              fontWeight: "600",
+              fontFamily: "Open Sans, sans-serif",
+              transition: "all 0.3s ease"
+            }}
+          >
+            Search Local Doulas →
+          </a>
+          <p style={{ fontSize: "14px", color: "#888", marginTop: "15px", marginBottom: "0", fontStyle: "italic" }}>
+            Affiliate disclosure: We may earn a commission at no cost to you.
+          </p>
+
+        {/* Affiliate Ad #3 - Medical Alert Systems */}
+        <div style={{ backgroundColor: "#ffe6e6", border: "2px solid #ff6b6b", borderRadius: "10px", padding: "25px", marginTop: "30px", textAlign: "center" }}>
+          <p style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", color: "#666", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
+            🚨 Peace of Mind for Seniors
+          </p>
+          <h3 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginBottom: "15px", marginTop: "0" }}>
+            24/7 Emergency Response Protection
+          </h3>
+          <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.6", marginBottom: "20px", color: "#2c2c2c" }}>
+            Help is just a button press away. Medical alert systems with fall detection, GPS tracking, and professional monitoring.
+          </p>
+          <a 
+            href="https://www.medicalguardian.com" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            style={{ 
+              display: "inline-block",
+              backgroundColor: "#ff6b6b", 
+              color: "#fff", 
+              padding: "14px 30px", 
+              borderRadius: "8px", 
+              textDecoration: "none", 
+              fontSize: "18px", 
+              fontWeight: "600",
+              fontFamily: "Open Sans, sans-serif",
+              transition: "all 0.3s ease"
+            }}
+          >
+            Get Free Quote →
+          </a>
+          <p style={{ fontSize: "14px", color: "#888", marginTop: "15px", marginBottom: "0", fontStyle: "italic" }}>
+            Affiliate disclosure: We may earn a commission at no cost to you.
+          </p>
+        </div>
+
+        {/* Affiliate Ad #4 - Amazon Products */}
+        <div style={{ backgroundColor: "#e8f5e9", border: "2px solid #4caf50", borderRadius: "10px", padding: "25px", marginTop: "30px" }}>
+          <p style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", color: "#666", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600", textAlign: "center" }}>
+            📚 Recommended Reading
+          </p>
+          <h3 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginBottom: "20px", marginTop: "0", textAlign: "center" }}>
+            Essential Resources for End-of-Life Planning
+          </h3>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
+            <div style={{ textAlign: "center" }}>
+              <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", marginBottom: "10px" }}>📖 "Being Mortal"</p>
+              <p style={{ fontSize: "16px", marginBottom: "15px" }}>by Atul Gawande</p>
+              <a 
+                href="https://www.amazon.com/dp/0805095152?tag=youraffid" 
+                target="_blank" 
+                rel="nofollow noopener noreferrer"
+                style={{ 
+                  display: "inline-block",
+                  backgroundColor: "#4caf50", 
+                  color: "#fff", 
+                  padding: "10px 20px", 
+                  borderRadius: "6px", 
+                  textDecoration: "none", 
+                  fontSize: "16px", 
+                  fontWeight: "600",
+                  fontFamily: "Open Sans, sans-serif"
+                }}
+              >
+                View on Amazon
+              </a>
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <p style={{ fontSize: "18px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", marginBottom: "10px" }}>📝 Medical Organizer</p>
+              <p style={{ fontSize: "16px", marginBottom: "15px" }}>for Health Records</p>
+              <a 
+                href="https://www.amazon.com/dp/B07QXXX" 
+                target="_blank" 
+                rel="nofollow noopener noreferrer"
+                style={{ 
+                  display: "inline-block",
+                  backgroundColor: "#4caf50", 
+                  color: "#fff", 
+                  padding: "10px 20px", 
+                  borderRadius: "6px", 
+                  textDecoration: "none", 
+                  fontSize: "16px", 
+                  fontWeight: "600",
+                  fontFamily: "Open Sans, sans-serif"
+                }}
+              >
+                View on Amazon
+              </a>
+            </div>
+          </div>
+          <p style={{ fontSize: "14px", color: "#888", marginTop: "20px", marginBottom: "0", fontStyle: "italic", textAlign: "center" }}>
+            As Amazon Associates, we earn from qualifying purchases.
+          </p>
+        </div>
         </div>
 
         <h2 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>A Helpful Resource: The Conversation Project</h2>

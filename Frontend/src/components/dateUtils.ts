@@ -23,4 +23,5 @@ export const blogPostingDates = {
   estatePreparation: createPostingDate(2), // Posted 2 days ago
   oldSchoolNurse: createPostingDate(1), // Posted 1 day ago
   newEntry6: createPostingDate(0), // Posted today
+  endOfLifeDoula: createPostingDate(0), // Posted today
 };

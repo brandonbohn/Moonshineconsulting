@@ -1,9 +1,62 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import BlogNavigation from '../../components/BlogNavigation.tsx';
 
 function EndOfLifeDoulaBlogEntry() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What is an End-of-Life Doula and What Role Do They Have in End of Life Care?",
+    "description": "Learn how End-of-Life Doulas provide emotional, spiritual, and practical support to seniors and families navigating end-of-life planning. Discover 3 essential questions to start your conversation.",
+    "author": {
+      "@type": "Person",
+      "name": "Kimberly Dorisio"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Moonshine Consulting",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://moonshineconsulting.com/images/logo.PNG"
+      }
+    },
+    "datePublished": new Date().toISOString(),
+    "dateModified": new Date().toISOString(),
+    "image": "https://moonshineconsulting.com/images/endoflifedoula.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://moonshineconsulting.com/blogentries/endoflifedoulablogentry"
+    },
+    "keywords": "end of life doula, death doula, end of life planning, hospice care, palliative care, health care proxy, advance directives, senior care planning"
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>What is an End-of-Life Doula? Complete Guide for Families | Moonshine Consulting</title>
+        <meta name="description" content="Learn how End-of-Life Doulas provide emotional, spiritual, and practical support to seniors and families navigating end-of-life planning. Discover 3 essential questions to start your conversation." />
+        <meta name="keywords" content="end of life doula, death doula, end of life planning, hospice care, palliative care, health care proxy, advance directives, senior care planning" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="What is an End-of-Life Doula? Complete Guide for Families" />
+        <meta property="og:description" content="Learn how End-of-Life Doulas provide emotional, spiritual, and practical support to seniors and families navigating end-of-life planning." />
+        <meta property="og:image" content="https://moonshineconsulting.com/images/endoflifedoula.jpg" />
+        <meta property="article:author" content="Kimberly Dorisio" />
+        <meta property="article:published_time" content={new Date().toISOString()} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What is an End-of-Life Doula? Complete Guide for Families" />
+        <meta name="twitter:description" content="Learn how End-of-Life Doulas provide emotional, spiritual, and practical support to seniors and families navigating end-of-life planning." />
+        <meta name="twitter:image" content="https://moonshineconsulting.com/images/endoflifedoula.jpg" />
+        
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       {/* Blog Navigation */}
       <BlogNavigation 
         categoryName="Voices in Care" 
@@ -19,7 +72,7 @@ function EndOfLifeDoulaBlogEntry() {
         </div>
         <img
           src="/images/endoflifedoula.jpg"
-          alt="End of Life Doula"
+          alt="End-of-Life Doula providing compassionate support and guidance to senior patient and family during end-of-life planning conversation"
           style={{ display: "block", margin: "0 auto 12px auto", maxWidth: "400px", width: "100%", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
         />
       </div>

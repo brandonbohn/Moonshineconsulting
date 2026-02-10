@@ -25,17 +25,19 @@ function EndOfLifeDoulaBlogEntry() {
       </div>
       <div className="content mb-4 box text-dark" style={{ padding: "32px", fontSize: "22px", width: "100%", margin: "30px 0 0 0", background: "#fff", borderRadius: "10px", textAlign: "left", boxSizing: "border-box" }}>
         {/* Story content starts here */}
+        <h2 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "20px", marginBottom: "15px" }}>Planning for Life's Journey</h2>
         <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "24px" }}>
           As we move through life we plan for many life events. We plan for college, marriage, children, retirement, but very few plan for end of life. Why is that you may ask? We as a society are living longer, there are new treatment modalities, new surgical treatments, and new medications. So we no longer openly talk about death and dying, we have swept this under the rug, and avoid the topic, then all of the sudden you are faced with a life threatening illness or a provider may tell you there is nothing more they can do for you and advise you to go home and "get your affairs in order".
         </p>
 
+        <h2 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>Why We Avoid End-of-Life Planning</h2>
         <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "24px" }}>
           You are left in shock, denial, or disbelief. What does this mean? Some people will call their attorney and draft up a will. Yes that is part of end of life planning, but that is only the tip of the iceberg. There is so much more to end of life planning.
         </p>
 
-        <h2 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>What is an End-of-Life Doula?</h2>
+        <h2 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>How an End-of-Life Doula Can Help</h2>
         <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "15px" }}>
-          This is where an End-of-Life Doula can help. They can be a support system for you and your loved ones as you navigate end of life. An End-of-Life Doula is a non-medical professional—yes, many are nurses like myself—we provide emotional, spiritual, and practical support to people and their families who are nearing end of life.
+          This is where an End-of-Life Doula can help. They can be a support system for you and your loved ones as you navigate end of life. An End-of-Life Doula is a non-medical professional—yes, many are nurses like myself—we provide <strong>emotional, spiritual, and practical support</strong> to people and their families who are nearing end of life.
         </p>
         
         <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "24px" }}>
@@ -70,7 +72,7 @@ function EndOfLifeDoulaBlogEntry() {
 
         <h2 style={{ fontSize: "28px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginTop: "30px", marginBottom: "15px" }}>A Helpful Resource: The Conversation Project</h2>
         <p style={{ fontSize: "22px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "15px" }}>
-          I want to leave you with those 3 thoughts and encourage you to use a wonderful resource called <strong>The Conversation Project</strong>. They have a wonderful library of free pamphlets to help you get started with your conversation.
+          I want to leave you with those 3 thoughts and encourage you to use a wonderful resource called <a href="https://theconversationproject.org" target="_blank" rel="noopener noreferrer" style={{ color: "#08023a", fontWeight: "600", textDecoration: "underline" }}><strong>The Conversation Project</strong></a>. They have a wonderful library of free pamphlets to help you get started with your conversation.
         </p>
 
         <div style={{ backgroundColor: "#08023a", padding: "20px", borderRadius: "8px", marginTop: "30px", marginBottom: "30px" }}>
@@ -93,6 +95,14 @@ function EndOfLifeDoulaBlogEntry() {
         <p style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "0", textAlign: "center", color: "#08023a", fontWeight: "bold" }}>
           — Kimberly Dorisio
         </p>
+
+        {/* Author Bio Section */}
+        <div style={{ backgroundColor: "#f8f9fa", padding: "30px", borderRadius: "8px", marginTop: "40px", borderLeft: "4px solid #08023a" }}>
+          <h3 style={{ fontSize: "24px", fontFamily: "Open Sans, sans-serif", color: "#08023a", marginBottom: "15px", marginTop: "0" }}>About the Author</h3>
+          <p style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", lineHeight: "1.7", marginBottom: "0" }}>
+            <strong>Kimberly Dorisio</strong> is a certified End-of-Life Doula with a nursing background, dedicated to helping individuals and families navigate end-of-life planning with compassion and clarity. She provides non-medical support focusing on emotional, spiritual, and practical guidance during life's most profound transition. Through her work, Kimberly empowers families to have meaningful conversations about what matters most, ensuring dignity and peace at the end of life.
+          </p>
+        </div>
       </div>
     </div>
   );

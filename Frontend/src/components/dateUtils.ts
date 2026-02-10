@@ -6,7 +6,6 @@ export const formatBlogDate = (date: Date): string => {
     month: "long",
     day: "numeric",
   });
-  newEntry6: createPostingDate(0), // Posted today
 };
 
 // Function to create posting dates for blog entries
@@ -14,7 +13,6 @@ export const createPostingDate = (daysAgo: number = 0): string => {
   const postDate = new Date();
   postDate.setDate(postDate.getDate() - daysAgo);
   return formatBlogDate(postDate);
-  newEntry6: createPostingDate(0), // Posted today
 };
 
 // Pre-defined posting dates for existing blog entries

@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@axe-core/cli": "^4.10.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react": "^19.1.7",
     "@types/react-dom": "^19.2.3",
     "lighthouse": "^12.8.1"

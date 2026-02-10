@@ -4,12 +4,13 @@ import '../css/homepage.css';
 import '../css/index.css';
 import ProductComponent from '../components/productgenerator.tsx';
 
-function homepage() {
+function HomePage() {
   return (
-  <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
+  
+<div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
       {/* Skip Navigation Link for Screen Readers */}
       <a 
-        href="#blog-navigation" 
+        href="#main-content" 
         className="visually-hidden-focusable"
         aria-label="Skip to main content"
         tabIndex={0}
@@ -17,7 +18,6 @@ function homepage() {
         Skip to main content
       </a>
       <main id="main-content" role="main" aria-label="Welcome and blog navigation">
-        {/* Hero Section with All Content in One White Box */}
         <div className="hero-section" style={{ padding: "10px" }}>
           <div className="welcome-box" style={{
             backgroundColor: "#ffffff",
@@ -87,7 +87,7 @@ function homepage() {
               `}</style>
               {/* First image hidden on mobile */}
               <img 
-                src="../images/Moonshineandresident.jpg" 
+                src="/images/Moonshineandresident.jpg" 
                 className='img-fluid moonshine-img-hide-mobile' 
                 alt="Senior-resident bonding with dog belonging to her nurse caregiver"
                 style={{ 
@@ -113,7 +113,7 @@ function homepage() {
               </div>
               {/* Second image always visible */}
               <img 
-                src="../images/moonshineandresidentupdate.png" 
+                src="/images/moonshineandresidentupdate.png" 
                 className='img-fluid' 
                 alt="Moonshine the dog"
                 style={{ 
@@ -399,21 +399,21 @@ function homepage() {
               {
                 id: 1,
                 name: "Karen Underwood, RN BSN",
-                image: "./images/Nurse.jpg",
+                image: "/images/Nurse.jpg",
                 experience: "30 Years Home Health and Hospice experience, both in the field and management.",
                 title: "Registered Nurse"
               },
               {
                 id: 3,
                 name: "Moonshine",
-                image: "./images/moonshine.jpg",
+                image: "/images/moonshine.jpg",
                 experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
                 title: "Beloved Senior Companion"
               },
               {
                 id: 2,
                 name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
-                image: "./images/Christie.jpg",
+                image: "/images/Christie.jpg",
                 experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
                 title: "Insurance Specialist"
               },
@@ -515,7 +515,7 @@ function homepage() {
               padding: 30px !important;
             }
             .welcome-box h1 {
-              fontSize: 24px !important;
+              font-size: 24px !important;
             }
           }
           
@@ -537,46 +537,46 @@ function homepage() {
                 overflow: hidden !important;
             }
             .welcome-box p {
-              fontSize: 16px !important;
+              font-size: 16px !important;
             }
             .welcome-box img {
-              maxWidth: 250px !important;
+              max-width: 250px !important;
               width: 100% !important;
               height: auto !important;
             }
             .category-card {
               height: auto !important;
-              minHeight: 200px !important;
+              min-height: 200px !important;
             }
             .category-card p {
-              fontSize: 14px !important;
+              font-size: 14px !important;
             }
             .category-card .btn {
-              fontSize: 12px !important;
+              font-size: 12px !important;
               height: 36px !important;
             }
             .founder-cards-responsive {
-              flexDirection: column !important;
+              flex-direction: column !important;
               gap: 20px !important;
             }
             .founder-card-responsive {
               width: 100% !important;
-              maxWidth: 300px !important;
+              max-width: 300px !important;
             }
             .founder-card-responsive img {
               width: 100% !important;
               height: auto !important;
-              maxWidth: 100% !important;
+              max-width: 100% !important;
             }
             .founder-card-responsive .card-body p {
-              fontSize: 14px !important;
+              font-size: 14px !important;
             }
             section > div > div > div > div {
               padding: 20px !important;
               margin: 15px auto !important;
             }
             h2 {
-              fontSize: 22px !important;
+              font-size: 22px !important;
             }
           }
           
@@ -586,39 +586,39 @@ function homepage() {
               padding: 15px !important;
             }
             .welcome-box h1 {
-              fontSize: 18px !important;
+              font-size: 18px !important;
             }
             .welcome-box p {
-              fontSize: 14px !important;
+              font-size: 14px !important;
             }
             .welcome-box img {
-              maxWidth: 200px !important;
+              max-width: 200px !important;
               width: 100% !important;
               height: auto !important;
             }
             .category-card p {
-              fontSize: 13px !important;
+              font-size: 13px !important;
             }
             .founder-card-responsive {
-              maxWidth: 280px !important;
+              max-width: 280px !important;
             }
             .founder-card-responsive img {
               width: 100% !important;
               height: auto !important;
-              maxWidth: 100% !important;
+              max-width: 100% !important;
             }
             .founder-card-responsive .card-body p {
-              fontSize: 13px !important;
+              font-size: 13px !important;
             }
             .btn {
-              fontSize: 12px !important;
+              font-size: 12px !important;
               padding: 8px 16px !important;
             }
             section > div > div > div > div {
               padding: 15px !important;
             }
             h2 {
-              fontSize: 20px !important;
+              font-size: 20px !important;
             }
           }
           
@@ -755,7 +755,10 @@ function homepage() {
         `}
       </style>
     </div>
+
+    
+  
   )
 }
 
-export default homepage
+export default HomePage

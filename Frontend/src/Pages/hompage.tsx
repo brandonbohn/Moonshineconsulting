@@ -34,7 +34,7 @@ function HomePage() {
             {/* Title */}
             <style>{`
               .Titles {
-                font-size: 27px !important;
+                font-size: 40px !important;
                 font-family: 'Open Sans, Arial, sans-serif' !important;
               }
               .homepage-body, .welcome-box, .moonshine-image-row, .intro-paragraph-desktop, .intro-paragraph-mobile {
@@ -51,7 +51,7 @@ function HomePage() {
               textAlign: "center"
             }}>
               <h1 className='Titles' style={{
-                fontSize: "48px",
+                fontSize: "40px",
                 fontFamily: 'Open Sans, Arial, sans-serif',
                 color: "#ffffff",
                 textAlign: "center",

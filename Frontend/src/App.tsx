@@ -19,8 +19,8 @@ import Voicesincare from  './Pages/Voicesincare.tsx';
 import Voicesincareblogentry from './Pages/blogentries/voicesincareblogentries.tsx'
 import EstateprepBlogentry from './Pages/blogentries/estatepreparationblogentry.tsx';
 import NurseJourneyMemoryBlogEntry from './Pages/blogentries/nursejourneymemoryblogentry.tsx';
+import EndOfLifeDoulaBlogEntry from './Pages/blogentries/endoflifedoulablogentry.tsx';
 import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
-
 import { Routes, Route,  } from 'react-router-dom';  
 function App() {
   return (
@@ -45,6 +45,7 @@ function App() {
           <Route path="/voicesincare" element={<Voicesincare/>}/>
           <Route path="/blogentries/estatepreparation" element={<EstateprepBlogentry/>}/>
           <Route path="/blogentries/nursejourneymemoryblogentry" element={<NurseJourneyMemoryBlogEntry/>}/>
+          <Route path="/blogentries/endoflifedoulablogentry" element={<EndOfLifeDoulaBlogEntry/>}/>
 
           
           

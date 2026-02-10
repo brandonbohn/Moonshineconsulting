@@ -191,6 +191,7 @@ function MainBlog() {
                   }}>Meet Our Expert Writers</p>
                 </div>
                 <ContributorsComponent id={1} />
+                <ContributorsComponent id={2} />
               </div>
             </div>
             {/* Voices in Care Section */}

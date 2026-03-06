@@ -131,6 +131,8 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 	const [allEntries, setAllEntries] = useState<BlogEntry[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [loadError, setLoadError] = useState<string>("");
+	const [page, setPage] = useState(1);
+	const pageSize = 5;
 
 	useEffect(() => {
 		let isMounted = true;
@@ -162,30 +164,25 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 		};
 	}, []);
 
-	const entries = useMemo(() => {
+	const filteredEntries = useMemo(() => {
 		if (id !== undefined) {
 			const entry = allEntries.find((blog) => blog.id === id);
 			return entry ? [entry] : [];
 		}
-
-		let filteredEntries = allEntries;
-
+		let filtered = allEntries;
 		if (category !== 'all' && category) {
-			filteredEntries = allEntries.filter((blog) => matchesCategory(blog.category, category));
+			filtered = allEntries.filter((blog) => matchesCategory(blog.category, category));
 		}
-
-		const sortedEntries = [...filteredEntries].sort((first, second) => {
+		const sorted = [...filtered].sort((first, second) => {
 			const firstId = Number.isNaN(first.id) ? 0 : first.id;
 			const secondId = Number.isNaN(second.id) ? 0 : second.id;
 			return sortOrder === 'asc' ? firstId - secondId : secondId - firstId;
 		});
+		return sorted;
+	}, [allEntries, category, id, sortOrder]);
 
-		if (limit && limit > 0) {
-			return sortedEntries.slice(0, limit);
-		}
-
-		return sortedEntries;
-	}, [allEntries, category, id, limit, sortOrder]);
+	const totalPages = Math.ceil(filteredEntries.length / pageSize);
+	const entries = filteredEntries.slice((page - 1) * pageSize, page * pageSize);
 
 	if (isLoading) {
 		return <div>Loading blog entries...</div>;
@@ -196,26 +193,25 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 	}
 
 	if (entries.length === 0) {
-        return <div>No blog entries found.</div>;
-    }
+		return <div>No blog entries found.</div>;
+	}
 
-	 return (
-		 <div style={{ height: "100%", width: "100%" }}>
-			 {entries.map((entry) => (
-								 <div key={entry.id} className="blog-entry blog-content" style={{ 
-									 width: "100%", 
-									 margin: "0 0 12px 0",  
-									 display: "flex", 
-									 flexDirection: "column",
-									 justifyContent: "flex-start",
-									   minHeight: window.innerWidth < 768 ? "320px" : "220px",
-									   height: "auto",
-									 padding: "12px",
-									 backgroundColor: "#f8f9fa",
-									 borderRadius: "6px",
-									 border: "2px solid #08023a",
-									   // overflow: "hidden"
-								 }}>
+	return (
+		<div style={{ height: "100%", width: "100%" }}>
+			{entries.map((entry) => (
+				<div key={entry.id} className="blog-entry blog-content" style={{ 
+					width: "100%", 
+					margin: "0 0 12px 0",  
+					display: "flex", 
+					flexDirection: "column",
+					justifyContent: "flex-start",
+					minHeight: window.innerWidth < 768 ? "320px" : "220px",
+					height: "auto",
+					padding: "12px",
+					backgroundColor: "#f8f9fa",
+					borderRadius: "6px",
+					border: "2px solid #08023a",
+				}}>
 					{/* Title on top */}
 					<p className="Title" style={{ fontSize: "27px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left", fontFamily: "Open Sans, Arial, sans-serif" }}>{entry.title}</p>
 					{/* Row: image left, info right */}
@@ -261,8 +257,16 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 					</div>
 				</div>
 			))}
+			{/* Pagination controls */}
+			{totalPages > 1 && (
+				<div style={{ display: "flex", justifyContent: "center", margin: "16px 0" }}>
+					<button onClick={() => setPage(page - 1)} disabled={page === 1} style={{ marginRight: "8px" }}>Previous</button>
+					<span style={{ fontSize: "18px", fontWeight: "bold" }}>Page {page} of {totalPages}</span>
+					<button onClick={() => setPage(page + 1)} disabled={page === totalPages} style={{ marginLeft: "8px" }}>Next</button>
+				</div>
+			)}
 		</div>
-    );
+	);
 };
 
 export default BlogComponent;

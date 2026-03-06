@@ -1,5 +1,5 @@
+import { useEffect, useMemo, useState } from "react";
 import { BlogEntry } from "./types";
-// Adjust the import to match the actual export from blogdata.ts
 import { blogData } from "./blogdata.ts";
 import '../css/mainblog.css';
 
@@ -7,7 +7,7 @@ import '../css/mainblog.css';
 // Define ProductEntry type based on your ProductData structure
 
 interface BlogComponentProps {
-    category?: 'MoonshinesCorner' | 'Rehabsolutions' | 'SeniorTips' | 'all';
+	category?: string;
     id?: number;
     newSection?: string;
     imageUrl?: string;
@@ -16,21 +16,148 @@ interface BlogComponentProps {
     date?: string;
 }
 
+interface RawBlogEntry {
+	id?: number | string;
+	slug?: string;
+	title?: string;
+	article?: string;
+	content?: string;
+	body?: string;
+	author?: string;
+	date?: string;
+	image?: string;
+	imageUrl?: string;
+	category?: string;
+	link?: string;
+	newsSection?: string;
+	NewsSection?: string;
+}
 
+const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env || {};
+const BLOG_API_BASE_URL = env.REACT_APP_BLOG_API_BASE_URL || "https://moonshineconsultingbackend.onrender.com";
+const BLOG_API_ENDPOINT = env.REACT_APP_BLOG_API_ENDPOINT || "/blogs";
 
-const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let entries: BlogEntry[] = [];
+const getBlogApiUrl = (): string => {
+	if (/^https?:\/\//i.test(BLOG_API_ENDPOINT)) {
+		return BLOG_API_ENDPOINT;
+	}
 
-    if (id !== undefined) {
-        const entry = blogData.find(blog => blog.id === id);
-        if (entry) entries = [{ ...entry, imageUrl: entry.image }];
-    } else if (category === 'all' || !category) {
-        entries = blogData.map(blog => ({ ...blog, imageUrl: blog.image }));
-    } else {
-        entries = blogData
-            .filter(blog => blog.category === category)
-            .map(blog => ({ ...blog, imageUrl: blog.image }));
-    }
-     if (entries.length === 0) {
+	return `${BLOG_API_BASE_URL}${BLOG_API_ENDPOINT}`;
+};
+
+const slugify = (value: string): string => {
+	return value
+		.toLowerCase()
+		.trim()
+		.replace(/[^a-z0-9\s-]/g, "")
+		.replace(/\s+/g, "-")
+		.replace(/-+/g, "-");
+};
+
+const getDynamicPostPath = (entry: BlogEntry): string => {
+	if (entry.slug) {
+		return `/blog/${entry.slug}`;
+	}
+
+	if (entry.id && !Number.isNaN(entry.id)) {
+		return `/blog/${entry.id}`;
+	}
+
+	if (entry.title) {
+		return `/blog/${slugify(entry.title)}`;
+	}
+
+	return entry.link || "/mainblog";
+};
+
+const normalizeBlogEntry = (entry: RawBlogEntry): BlogEntry => ({
+	id: Number(entry.id),
+	slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
+	title: entry.title || "Untitled",
+	article: entry.article || "",
+	content: entry.content || entry.body || entry.article || "",
+	author: entry.author || "",
+	date: entry.date || "",
+	imageUrl: entry.imageUrl || entry.image || "/images/placeholder.jpg",
+	category: entry.category || "",
+	link: entry.link,
+	newsSection: entry.newsSection || entry.NewsSection || "",
+});
+
+const getFallbackEntries = (): BlogEntry[] => {
+	return blogData.map((entry) =>
+		normalizeBlogEntry({
+			id: entry.id,
+			slug: entry.title ? slugify(entry.title) : undefined,
+			title: entry.title,
+			article: entry.article,
+			content: entry.article,
+			author: entry.author,
+			date: entry.date,
+			image: entry.image,
+			category: entry.category,
+			link: entry.link,
+			NewsSection: entry.NewsSection,
+		})
+	);
+};
+
+const fetchBlogs = async (): Promise<BlogEntry[]> => {
+	const targetUrl = getBlogApiUrl();
+	const response = await fetch(targetUrl);
+
+	if (!response.ok) {
+		throw new Error(`Failed to fetch blogs: ${response.status}`);
+	}
+
+	const payload = await response.json();
+	const source = Array.isArray(payload) ? payload : payload?.data;
+
+	if (!Array.isArray(source)) {
+		return [];
+	}
+
+	return source.map((entry: RawBlogEntry) => normalizeBlogEntry(entry));
+};
+
+const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {
+	const [allEntries, setAllEntries] = useState<BlogEntry[]>(getFallbackEntries());
+
+	useEffect(() => {
+		let isMounted = true;
+
+		const loadBlogs = async () => {
+			try {
+				const apiEntries = await fetchBlogs();
+				if (isMounted && apiEntries.length > 0) {
+					setAllEntries(apiEntries);
+				}
+			} catch (error) {
+				console.error('Blog API unavailable, using local fallback.', error);
+			}
+		};
+
+		loadBlogs();
+
+		return () => {
+			isMounted = false;
+		};
+	}, []);
+
+	const entries = useMemo(() => {
+		if (id !== undefined) {
+			const entry = allEntries.find((blog) => blog.id === id);
+			return entry ? [entry] : [];
+		}
+
+		if (category === 'all' || !category) {
+			return allEntries;
+		}
+
+		return allEntries.filter((blog) => blog.category === category);
+	}, [allEntries, category, id]);
+
+	if (entries.length === 0) {
         return <div>No blog entries found.</div>;
     }
 
@@ -85,7 +212,7 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {let ent
 							}}>{entry.article}</p>
 							<div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "8px", width: "100%" }}>
 								<a
-									href={entry.link || `./blogentries/${entry.category.toLowerCase()}blogentry`}
+									href={getDynamicPostPath(entry)}
 									className="senior-btn"
 									style={{ textDecoration: "none", display: "inline-block" }}
 								>

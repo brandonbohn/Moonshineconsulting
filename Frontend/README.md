@@ -2,6 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Blog API Configuration
+
+Blog cards can now load dynamically from your backend API.
+
+Create a `.env` file in `Frontend/` with one of these patterns:
+
+```bash
+# Pattern A: base URL + endpoint path
+REACT_APP_BLOG_API_BASE_URL=https://your-api-domain.com/api
+REACT_APP_BLOG_API_ENDPOINT=/blogs
+
+# Pattern B: full endpoint URL
+REACT_APP_BLOG_API_ENDPOINT=https://your-api-domain.com/api/blogs
+```
+
+If the API is unavailable, the app automatically falls back to local blog data.
+
 ## Available Scripts
 
 In the project directory, you can run:

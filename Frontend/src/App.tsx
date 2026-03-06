@@ -21,6 +21,7 @@ import EstateprepBlogentry from './Pages/blogentries/estatepreparationblogentry.
 import NurseJourneyMemoryBlogEntry from './Pages/blogentries/nursejourneymemoryblogentry.tsx';
 import EndOfLifeDoulaBlogEntry from './Pages/blogentries/endoflifedoulablogentry.tsx';
 import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
+import BlogPost from './Pages/blogpost.tsx';
 import { Routes, Route,  } from 'react-router-dom';  
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
          <Route path="/moonshinescorner" element={<MoonshinesCorner/>}/>
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
+         <Route path="/blog/:slugOrId" element={<BlogPost/>}/>
          <Route path='/blogentries/moonshinescornerblogentry' element={<MoonshinesBlogEntry/>}/>
          <Route path='/blogentries/moonshinesblogentry'element={<MoonshinesBlogEntry/>}/>
          <Route path="/biopage" element={<BioPage/>}/>

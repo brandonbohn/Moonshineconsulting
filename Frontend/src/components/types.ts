@@ -8,4 +8,6 @@ category: string;
 id: number;
 link?: string;
 newsSection?: string;
+slug?: string;
+content?: string;
 }

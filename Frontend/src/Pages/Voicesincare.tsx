@@ -149,10 +149,7 @@ function Voicesincare() {
       
       <main className="voices-main">
         <section>
-          <BlogComponent id={3} />
-          <div className="blog-section">
-            <BlogComponent id={5} />
-          </div>
+          <BlogComponent category="Voices In Care" limit={10} />
         </section>
       </main> 
       

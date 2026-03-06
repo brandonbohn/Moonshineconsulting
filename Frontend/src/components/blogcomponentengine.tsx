@@ -9,6 +9,8 @@ import '../css/mainblog.css';
 interface BlogComponentProps {
 	category?: string;
     id?: number;
+	limit?: number;
+	sortOrder?: 'asc' | 'desc';
     newSection?: string;
     imageUrl?: string;
     title?: string;
@@ -35,7 +37,7 @@ interface RawBlogEntry {
 
 const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env || {};
 const BLOG_API_BASE_URL = env.REACT_APP_BLOG_API_BASE_URL || "https://moonshineconsultingbackend.onrender.com";
-const BLOG_API_ENDPOINT = env.REACT_APP_BLOG_API_ENDPOINT || "/blogs";
+const BLOG_API_ENDPOINT = env.REACT_APP_BLOG_API_ENDPOINT || "/api/blogs";
 
 const getBlogApiUrl = (): string => {
 	if (/^https?:\/\//i.test(BLOG_API_ENDPOINT)) {
@@ -52,6 +54,30 @@ const slugify = (value: string): string => {
 		.replace(/[^a-z0-9\s-]/g, "")
 		.replace(/\s+/g, "-")
 		.replace(/-+/g, "-");
+};
+
+const normalizeCategory = (value: string): string => {
+	return value.toLowerCase().replace(/[^a-z0-9]/g, '');
+};
+
+const categoryAliasMap: Record<string, string[]> = {
+	voicesincare: ['rehabsolutions'],
+};
+
+const matchesCategory = (entryCategory: string, targetCategory: string): boolean => {
+	const normalizedEntryCategory = normalizeCategory(entryCategory || '');
+	const normalizedTargetCategory = normalizeCategory(targetCategory || '');
+
+	if (!normalizedTargetCategory || normalizedTargetCategory === 'all') {
+		return true;
+	}
+
+	if (normalizedEntryCategory === normalizedTargetCategory) {
+		return true;
+	}
+
+	const aliases = categoryAliasMap[normalizedTargetCategory] || [];
+	return aliases.includes(normalizedEntryCategory);
 };
 
 const getDynamicPostPath = (entry: BlogEntry): string => {
@@ -120,7 +146,7 @@ const fetchBlogs = async (): Promise<BlogEntry[]> => {
 	return source.map((entry: RawBlogEntry) => normalizeBlogEntry(entry));
 };
 
-const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {
+const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: BlogComponentProps) => {
 	const [allEntries, setAllEntries] = useState<BlogEntry[]>(getFallbackEntries());
 
 	useEffect(() => {
@@ -150,12 +176,24 @@ const BlogComponent = ({ category = 'all', id }: BlogComponentProps) => {
 			return entry ? [entry] : [];
 		}
 
-		if (category === 'all' || !category) {
-			return allEntries;
+		let filteredEntries = allEntries;
+
+		if (category !== 'all' && category) {
+			filteredEntries = allEntries.filter((blog) => matchesCategory(blog.category, category));
 		}
 
-		return allEntries.filter((blog) => blog.category === category);
-	}, [allEntries, category, id]);
+		const sortedEntries = [...filteredEntries].sort((first, second) => {
+			const firstId = Number.isNaN(first.id) ? 0 : first.id;
+			const secondId = Number.isNaN(second.id) ? 0 : second.id;
+			return sortOrder === 'asc' ? firstId - secondId : secondId - firstId;
+		});
+
+		if (limit && limit > 0) {
+			return sortedEntries.slice(0, limit);
+		}
+
+		return sortedEntries;
+	}, [allEntries, category, id, limit, sortOrder]);
 
 	if (entries.length === 0) {
         return <div>No blog entries found.</div>;

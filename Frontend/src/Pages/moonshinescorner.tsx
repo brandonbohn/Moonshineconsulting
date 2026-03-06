@@ -131,7 +131,7 @@ function MoonshinesCorner() {
                 <section>
                     <h2 className="interviews-title">Latest Interviews</h2>
                     <div className="col 100">
-                        <BlogComponent id={1} />
+                        <BlogComponent category="MoonshinesCorner" limit={10} />
                     </div>
                 </section>
             </main> 

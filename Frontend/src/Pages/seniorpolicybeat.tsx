@@ -78,7 +78,7 @@ function SeniorPolicyBeat() {
       </div>
        <h2 className="text-center" style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Featured Articles</h2>
         <ul>
-          <BlogComponent id={2} /> 
+          <BlogComponent category="SeniorPolicyBeat" limit={10} /> 
         </ul>
       </div>
 

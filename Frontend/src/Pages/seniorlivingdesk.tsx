@@ -142,8 +142,7 @@ function SeniorLivingDesk() {
         </div>
         <h2 className="featured-title">Featured Articles</h2>
         <ul>
-          <BlogComponent id={4} />
-          <BlogComponent id={7} /> 
+          <BlogComponent category="Senior Living Desk" limit={10} />
         </ul>
       </div>
     </section>

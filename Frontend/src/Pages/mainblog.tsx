@@ -119,7 +119,7 @@ function MainBlog() {
                 padding: "0",
               }}>
                 <div style={{ flex: isMobile ? "none" : "1", width: "100%" }}>
-                  <BlogComponent id={2} />
+                  <BlogComponent category="SeniorPolicyBeat" limit={1} />
                 </div>
               </div>
             </div>
@@ -164,7 +164,7 @@ function MainBlog() {
                 height: "auto",
                 marginBottom: "16px"
               }}>
-                <BlogComponent id={7} />
+                <BlogComponent category="Senior Living Desk" limit={1} />
               </div>
               {/* Contributors Section */}
               <div id="contributors">
@@ -222,18 +222,7 @@ function MainBlog() {
                 height: "auto",
                 marginBottom: "16px"
               }}>
-                <BlogComponent id={3} />
-              </div>
-              <div style={{ 
-                padding: "10px", 
-                backgroundColor: "#ffffff",
-                border: "1px solid #ddd",
-                borderRadius: "8px",
-                minHeight: "120px",
-                height: "auto",
-                marginBottom: "16px"
-              }}>
-                <BlogComponent id={5} />
+                <BlogComponent category="Voices In Care" limit={2} />
               </div>
             </div>
             {/* Entertainment Section - Moonshine's Corner */}
@@ -265,7 +254,7 @@ function MainBlog() {
                 marginBottom: "16px",
                 width: "100%"
               }}>
-                <BlogComponent id={1} />
+                <BlogComponent category="MoonshinesCorner" limit={1} />
               </div>
             </div>
           </div> {/* Close mainbox */}

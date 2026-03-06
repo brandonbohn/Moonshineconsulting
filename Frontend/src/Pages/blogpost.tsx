@@ -23,7 +23,7 @@ interface RawBlogEntry {
 
 const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env || {};
 const BLOG_API_BASE_URL = env.REACT_APP_BLOG_API_BASE_URL || 'https://moonshineconsultingbackend.onrender.com';
-const BLOG_API_ENDPOINT = env.REACT_APP_BLOG_API_ENDPOINT || '/blogs';
+const BLOG_API_ENDPOINT = env.REACT_APP_BLOG_API_ENDPOINT || '/api/blogs';
 
 const getBlogApiUrl = (): string => {
   if (/^https?:\/\//i.test(BLOG_API_ENDPOINT)) {

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BlogNavigation from '../components/BlogNavigation.tsx';
-import { blogData } from '../components/blogdata.ts';
 import { BlogEntry } from '../components/types';
 
 interface RawBlogEntry {
@@ -56,24 +55,6 @@ const normalizeBlogEntry = (entry: RawBlogEntry): BlogEntry => ({
   newsSection: entry.newsSection || entry.NewsSection || '',
 });
 
-const getFallbackEntries = (): BlogEntry[] => {
-  return blogData.map((entry) =>
-    normalizeBlogEntry({
-      id: entry.id,
-      slug: entry.title ? slugify(entry.title) : undefined,
-      title: entry.title,
-      article: entry.article,
-      content: entry.article,
-      author: entry.author,
-      date: entry.date,
-      image: entry.image,
-      category: entry.category,
-      link: entry.link,
-      NewsSection: entry.NewsSection,
-    })
-  );
-};
-
 const fetchBlogs = async (): Promise<BlogEntry[]> => {
   const response = await fetch(getBlogApiUrl());
 
@@ -127,8 +108,9 @@ const findBlogPost = (entries: BlogEntry[], slugOrId: string): BlogEntry | undef
 
 function BlogPost() {
   const { slugOrId } = useParams();
-  const [allEntries, setAllEntries] = useState<BlogEntry[]>(getFallbackEntries());
+  const [allEntries, setAllEntries] = useState<BlogEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState('');
 
   useEffect(() => {
     let isMounted = true;
@@ -136,11 +118,16 @@ function BlogPost() {
     const loadBlogs = async () => {
       try {
         const apiEntries = await fetchBlogs();
-        if (isMounted && apiEntries.length > 0) {
+        if (isMounted) {
           setAllEntries(apiEntries);
+          setLoadError('');
         }
       } catch (error) {
-        console.error('Blog API unavailable for post view, using local fallback.', error);
+        if (isMounted) {
+          setAllEntries([]);
+          setLoadError('Unable to load blog post right now.');
+        }
+        console.error('Blog API unavailable for post view.', error);
       } finally {
         if (isMounted) {
           setIsLoading(false);
@@ -175,6 +162,15 @@ function BlogPost() {
 
   if (isLoading) {
     return <div style={{ padding: '40px', fontSize: '21px' }}>Loading blog post...</div>;
+  }
+
+  if (loadError) {
+    return (
+      <div>
+        <BlogNavigation categoryName="Main Blog" categoryLink="/mainblog" />
+        <div style={{ padding: '40px', fontSize: '21px' }}>{loadError}</div>
+      </div>
+    );
   }
 
   if (!entry) {

@@ -58,16 +58,6 @@ export const blogData = [
   },
   {
     NewsSection: "Voices In Care",
-    image: "./images/placeholder.jpg", // UPDATE WITH CORRECT IMAGE
-    title: "Client’s Name",
-    article: "I’d love to help with your project. I’m a Junior Software Developer with experience in React, JavaScript, and Cava/Spring MIC as well as strong troubleshooting and networking fundamentals from my of s...",
-    date: blogPostingDates.newEntry6,
-    category: "Voices In Care",
-    author: "Guest Contributor",
-    id: 6,
-    link: "./blogentries/clients-nameblogentry",
-  },  {
-    NewsSection: "Voices In Care",
     image: "./images/endoflifedoula.svg",
     title: "What is an End-of-Life Doula and What Role Do They Have in End of Life Care?",
     article: "As we move through life we plan for many life events—college, marriage, children, retirement—but very few plan for end of life. An End-of-Life Doula can provide emotional, spiritual, and practical support to people and their families who are nearing end of life.",

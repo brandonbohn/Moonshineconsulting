@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { BlogEntry } from "./types";
-import { blogData } from "./blogdata.ts";
 import '../css/mainblog.css';
 
 
@@ -81,12 +80,12 @@ const matchesCategory = (entryCategory: string, targetCategory: string): boolean
 };
 
 const getDynamicPostPath = (entry: BlogEntry): string => {
-	if (entry.slug) {
-		return `/blog/${entry.slug}`;
-	}
-
 	if (entry.id && !Number.isNaN(entry.id)) {
 		return `/blog/${entry.id}`;
+	}
+
+	if (entry.slug) {
+		return `/blog/${entry.slug}`;
 	}
 
 	if (entry.title) {
@@ -110,24 +109,6 @@ const normalizeBlogEntry = (entry: RawBlogEntry): BlogEntry => ({
 	newsSection: entry.newsSection || entry.NewsSection || "",
 });
 
-const getFallbackEntries = (): BlogEntry[] => {
-	return blogData.map((entry) =>
-		normalizeBlogEntry({
-			id: entry.id,
-			slug: entry.title ? slugify(entry.title) : undefined,
-			title: entry.title,
-			article: entry.article,
-			content: entry.article,
-			author: entry.author,
-			date: entry.date,
-			image: entry.image,
-			category: entry.category,
-			link: entry.link,
-			NewsSection: entry.NewsSection,
-		})
-	);
-};
-
 const fetchBlogs = async (): Promise<BlogEntry[]> => {
 	const targetUrl = getBlogApiUrl();
 	const response = await fetch(targetUrl);
@@ -147,7 +128,9 @@ const fetchBlogs = async (): Promise<BlogEntry[]> => {
 };
 
 const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: BlogComponentProps) => {
-	const [allEntries, setAllEntries] = useState<BlogEntry[]>(getFallbackEntries());
+	const [allEntries, setAllEntries] = useState<BlogEntry[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [loadError, setLoadError] = useState<string>("");
 
 	useEffect(() => {
 		let isMounted = true;
@@ -155,11 +138,20 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 		const loadBlogs = async () => {
 			try {
 				const apiEntries = await fetchBlogs();
-				if (isMounted && apiEntries.length > 0) {
+					if (isMounted) {
 					setAllEntries(apiEntries);
+						setLoadError("");
 				}
 			} catch (error) {
-				console.error('Blog API unavailable, using local fallback.', error);
+					if (isMounted) {
+						setAllEntries([]);
+						setLoadError('Unable to load blog entries right now.');
+					}
+					console.error('Blog API unavailable.', error);
+				} finally {
+					if (isMounted) {
+						setIsLoading(false);
+					}
 			}
 		};
 
@@ -194,6 +186,14 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 
 		return sortedEntries;
 	}, [allEntries, category, id, limit, sortOrder]);
+
+	if (isLoading) {
+		return <div>Loading blog entries...</div>;
+	}
+
+	if (loadError) {
+		return <div>{loadError}</div>;
+	}
 
 	if (entries.length === 0) {
         return <div>No blog entries found.</div>;

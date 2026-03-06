@@ -6,20 +6,12 @@ import Header from './Utilities/header.tsx';
 import MoonshinesCorner from './Pages/moonshinescorner.tsx';
 import PrivacyPolicy from './Pages/privacypolicy.tsx';
 import TermsAndConditions from './Pages/termsandconditions.tsx';
-
-
-import MoonshinesBlogEntry from './Pages/blogentries/moonshinesblogentry.tsx';
 import BioPage from './Pages/biopage.tsx';
 
 import BlogComponent from './components/blogcomponentengine.tsx';
 import ProductComponent from './components/productgenerator.tsx';
-import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
 import SeniorLivingDesk from './Pages/seniorlivingdesk.tsx';
 import Voicesincare from  './Pages/Voicesincare.tsx';
-import Voicesincareblogentry from './Pages/blogentries/voicesincareblogentries.tsx'
-import EstateprepBlogentry from './Pages/blogentries/estatepreparationblogentry.tsx';
-import NurseJourneyMemoryBlogEntry from './Pages/blogentries/nursejourneymemoryblogentry.tsx';
-import EndOfLifeDoulaBlogEntry from './Pages/blogentries/endoflifedoulablogentry.tsx';
 import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
 import BlogPost from './Pages/blogpost.tsx';
 import { Routes, Route,  } from 'react-router-dom';  
@@ -35,19 +27,13 @@ function App() {
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
          <Route path="/blog/:slugOrId" element={<BlogPost/>}/>
-         <Route path='/blogentries/moonshinescornerblogentry' element={<MoonshinesBlogEntry/>}/>
-         <Route path='/blogentries/moonshinesblogentry'element={<MoonshinesBlogEntry/>}/>
+         <Route path="/blogentries/:slugOrId" element={<BlogPost/>}/>
          <Route path="/biopage" element={<BioPage/>}/>
-         <Route path="/blogentries/seniorpolicybeatblogentry" element={<SeniorPolicyBeatBlogEntry/>}/>
-         <Route path="/blogentries/voicesincareblogentries" element={<Voicesincareblogentry/>}/>
          <Route path="/blogcomponent" element={<BlogComponent/>}/>
          <Route path="/productcomponent" element={<ProductComponent/>}/>
          <Route path="/seniorpolicybeat" element={<SeniorPolicyBeat/>}/>
          <Route path="/seniorlivingdesk" element={<SeniorLivingDesk/>}/>
           <Route path="/voicesincare" element={<Voicesincare/>}/>
-          <Route path="/blogentries/estatepreparation" element={<EstateprepBlogentry/>}/>
-          <Route path="/blogentries/nursejourneymemoryblogentry" element={<NurseJourneyMemoryBlogEntry/>}/>
-          <Route path="/blogentries/endoflifedoulablogentry" element={<EndOfLifeDoulaBlogEntry/>}/>
 
           
           

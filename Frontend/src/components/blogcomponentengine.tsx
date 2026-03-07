@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { BlogEntry } from "./types";
 import '../css/mainblog.css';
-import { backupBlogData } from './backupBlogData';
+
 
 
 // Define ProductEntry type based on your ProductData structure
@@ -147,13 +147,8 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 				}
 			} catch (error) {
 				if (isMounted) {
-					// Normalize backupBlogData to BlogEntry[]
-					setAllEntries(backupBlogData.map(entry => ({
-						...entry,
-						imageUrl: entry.image || '/images/placeholder.jpg',
-						newsSection: entry.NewsSection || '',
-					})));
-					setLoadError('Unable to load blog entries from backend. Showing backup stories.');
+					setAllEntries([]);
+					setLoadError('Unable to load blog entries from backend.');
 				}
 				console.error('Blog API unavailable.', error);
 			} finally {

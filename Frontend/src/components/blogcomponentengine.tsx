@@ -244,7 +244,7 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 								maxHeight: "140px",
 								textAlign: "left",
 								fontFamily: "Georgia, serif"
-							}}>{entry.content || entry.article}</p>
+							}}>{typeof entry.content === 'string' ? entry.content : entry.article}</p>
 							<div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "8px", width: "100%" }}>
 								<a
 									href={getDynamicPostPath(entry)}

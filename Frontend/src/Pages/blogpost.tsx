@@ -1,192 +1,43 @@
-import { useEffect, useMemo, useState } from 'react';
+
 import { useParams } from 'react-router-dom';
 import BlogNavigation from '../components/BlogNavigation.tsx';
-import { BlogEntry } from '../components/types';
+// ...existing code...
 
-interface RawBlogEntry {
-  id?: number | string;
-  slug?: string;
-  title?: string;
-  article?: string;
-  content?: string;
-  body?: string;
-  author?: string;
-  date?: string;
-  image?: string;
-  imageUrl?: string;
-  category?: string;
-  link?: string;
-  newsSection?: string;
-  NewsSection?: string;
-}
+// Import blog entry pages
+import MoonshinesBlog from './blogentries/moonshinesblogentry.tsx';
+import EstatePreparationBlogEntry from './blogentries/estatepreparationblogentry.tsx';
+import EndOfLifeDoulaBlogEntry from './blogentries/endoflifedoulablogentry.tsx';
+import NurseJourneyMemoryBlogEntry from './blogentries/nursejourneymemoryblogentry.tsx';
+import SeniorLivingDeskBlogEntry from './blogentries/seniorlivingdeskblogentry.tsx';
+import SeniorPolicyBeatBlogEntry from './blogentries/seniorpolicybeatblogentry.tsx';
+import SharedMiracleBlogEntry from './blogentries/sharedmiracleblogentry.tsx';
+import ThingstoKnowAndDoBlogEntry from './blogentries/thingstoknowanddoblogentry.tsx';
+import VoicesInCareBlogEntries from './blogentries/voicesincareblogentries.tsx';
+import VoicesInCareBlogEntry from './blogentries/voicesincareblogentry.tsx';
+import WhatToDoBeforeYouDieBlogEntry from './blogentries/what-to-do-before-you-die-blogentry.tsx';
+// ...existing code...
 
-const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env || {};
-const BLOG_API_BASE_URL = env.REACT_APP_BLOG_API_BASE_URL || 'https://moonshineconsultingbackend.onrender.com';
-const BLOG_API_ENDPOINT = env.REACT_APP_BLOG_API_ENDPOINT || '/api/blogs';
-
-const getBlogApiUrl = (): string => {
-  if (/^https?:\/\//i.test(BLOG_API_ENDPOINT)) {
-    return BLOG_API_ENDPOINT;
-  }
-
-  return `${BLOG_API_BASE_URL}${BLOG_API_ENDPOINT}`;
-};
-
-const slugify = (value: string): string => {
-  return value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
-};
-
-const normalizeBlogEntry = (entry: RawBlogEntry): BlogEntry => ({
-  id: Number(entry.id),
-  slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
-  title: entry.title || 'Untitled',
-  article: entry.article || '',
-  content: entry.content || entry.body || entry.article || '',
-  author: entry.author || '',
-  date: entry.date || '',
-  imageUrl: entry.imageUrl || entry.image || '/images/placeholder.jpg',
-  category: entry.category || '',
-  link: entry.link,
-  newsSection: entry.newsSection || entry.NewsSection || '',
-});
-
-const fetchBlogs = async (): Promise<BlogEntry[]> => {
-  const response = await fetch(getBlogApiUrl());
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch blogs: ${response.status}`);
-  }
-
-  const payload = await response.json();
-  const source = Array.isArray(payload) ? payload : payload?.data;
-
-  if (!Array.isArray(source)) {
-    return [];
-  }
-
-  return source.map((entry: RawBlogEntry) => normalizeBlogEntry(entry));
-};
-
-const categoryRouteMap: Record<string, { name: string; link: string }> = {
-  MoonshinesCorner: { name: "Moonshine's Corner", link: '/moonshinescorner' },
-  SeniorPolicyBeat: { name: 'Senior Policy Beat', link: '/seniorpolicybeat' },
-  'Senior Living Desk': { name: 'Senior Living Desk', link: '/seniorlivingdesk' },
-  'Voices In Care': { name: 'Voices in Care', link: '/voicesincare' },
-};
-
-const getCategoryNavigation = (entry?: BlogEntry): { name: string; link: string } => {
-  if (!entry) {
-    return { name: 'Main Blog', link: '/mainblog' };
-  }
-
-  return categoryRouteMap[entry.category] ||
-    (entry.newsSection ? { name: entry.newsSection, link: '/mainblog' } : { name: 'Main Blog', link: '/mainblog' });
-};
-
-const findBlogPost = (entries: BlogEntry[], slugOrId: string): BlogEntry | undefined => {
-  const normalizedParam = slugOrId.toLowerCase();
-
-  return entries.find((entry) => {
-    const entryId = String(entry.id);
-    const entrySlug = (entry.slug || '').toLowerCase();
-    const titleSlug = slugify(entry.title || '');
-    const legacyLinkTail = (entry.link || '').split('/').pop()?.toLowerCase() || '';
-
-    return (
-      entryId === normalizedParam ||
-      entrySlug === normalizedParam ||
-      titleSlug === normalizedParam ||
-      legacyLinkTail === normalizedParam
-    );
-  });
+const blogEntryComponentMap: Record<string, React.ComponentType<any>> = {
+  moonshinesblogentry: MoonshinesBlog,
+  estatepreparationblogentry: EstatePreparationBlogEntry,
+  endoflifedoulablogentry: EndOfLifeDoulaBlogEntry,
+  nursejourneymemoryblogentry: NurseJourneyMemoryBlogEntry,
+  seniorlivingdeskblogentry: SeniorLivingDeskBlogEntry,
+  seniorpolicybeatblogentry: SeniorPolicyBeatBlogEntry,
+  sharedmiracleblogentry: SharedMiracleBlogEntry,
+  thingstoknowanddoblogentry: ThingstoKnowAndDoBlogEntry,
+  voicesincareblogentries: VoicesInCareBlogEntries,
+  voicesincareblogentry: VoicesInCareBlogEntry,
+  'what-to-do-before-you-die-blogentry': WhatToDoBeforeYouDieBlogEntry,
 };
 
 function BlogPost() {
   const { slugOrId } = useParams();
-  const [allEntries, setAllEntries] = useState<BlogEntry[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadError, setLoadError] = useState('');
+  // Defensive fallback
+  const key = (slugOrId || '').toLowerCase();
+  const BlogEntryComponent = blogEntryComponentMap[key];
 
-  useEffect(() => {
-    let isMounted = true;
-
-    const loadBlogs = async () => {
-      try {
-        const apiEntries = await fetchBlogs();
-        if (isMounted) {
-          setAllEntries(apiEntries);
-          setLoadError('');
-        }
-      } catch (error) {
-        if (isMounted) {
-          setAllEntries([]);
-          setLoadError('Unable to load blog post right now.');
-        }
-        console.error('Blog API unavailable for post view.', error);
-      } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    loadBlogs();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
-  const entry = useMemo(() => {
-    if (!slugOrId) {
-      return undefined;
-    }
-
-    return findBlogPost(allEntries, slugOrId);
-  }, [allEntries, slugOrId]);
-
-  const articleParagraphs = useMemo(() => {
-    let rawText = entry?.content ?? entry?.article ?? '';
-    // Defensive handling for all types
-    if (rawText && typeof rawText === 'object') {
-      if (Array.isArray(rawText)) {
-        // Defensive: Only join if array elements are strings
-        rawText = (rawText as unknown[]).map((v: unknown) => typeof v === 'string' ? v : '').join('\n');
-      } else {
-        const intro = typeof (rawText as any).intro === 'string' ? (rawText as any).intro : '';
-        const sections = Array.isArray((rawText as any).sections)
-          ? (rawText as any).sections
-              .map((s: any) => Array.isArray(s.paragraphs) ? (s.paragraphs as unknown[]).map((p: unknown) => typeof p === 'string' ? p : '').join('\n') : '')
-              .join('\n\n')
-          : '';
-        rawText = [intro, sections].filter(Boolean).join('\n\n');
-      }
-    }
-    if (typeof rawText !== 'string') rawText = '';
-    return rawText.split(/\n\n+/).map((paragraph) => paragraph.trim()).filter(Boolean);
-  }, [entry]);
-
-  const categoryNavigation = getCategoryNavigation(entry);
-
-  if (isLoading) {
-    return <div style={{ padding: '40px', fontSize: '21px' }}>Loading blog post...</div>;
-  }
-
-  if (loadError) {
-    return (
-      <div>
-        <BlogNavigation categoryName="Main Blog" categoryLink="/mainblog" />
-        <div style={{ padding: '40px', fontSize: '21px' }}>{loadError}</div>
-      </div>
-    );
-  }
-
-  if (!entry) {
+  if (!BlogEntryComponent) {
     return (
       <div>
         <BlogNavigation categoryName="Main Blog" categoryLink="/mainblog" />
@@ -195,44 +46,7 @@ function BlogPost() {
     );
   }
 
-  return (
-    <div>
-      <BlogNavigation categoryName={categoryNavigation.name} categoryLink={categoryNavigation.link} />
-      <div style={{ backgroundColor: '#08023a', borderRadius: '10px', padding: '32px 0 24px 0', margin: '50px 0 0 0', width: '100%' }}>
-        <h1 style={{ color: '#fff', textAlign: 'center', fontSize: '2.8rem', fontWeight: 'bold', marginBottom: '16px', letterSpacing: '1px', width: '100%' }}>
-          {entry.title}
-        </h1>
-        <h2 style={{ color: '#fff', fontSize: '1.3rem', fontStyle: 'italic', textAlign: 'left', margin: '0 0 8px 0', width: '100%' }}>
-          Author: {entry.author || 'Moonshine Consulting'}
-        </h2>
-        <div style={{ color: '#fff', textAlign: 'left', fontSize: '1.2rem', marginBottom: '16px', width: '100%' }}>
-          {entry.date || new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
-        </div>
-        <img
-          src={entry.imageUrl}
-          alt={entry.title}
-          style={{ display: 'block', margin: '0 auto 12px auto', maxWidth: '400px', width: '100%', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
-        />
-      </div>
-
-      <div className="content mb-4 box text-dark" style={{ padding: '32px', fontSize: '22px', width: '100%', margin: '30px 0 0 0', background: '#fff', borderRadius: '10px', textAlign: 'left', boxSizing: 'border-box' }}>
-        {articleParagraphs.length > 0 ? (
-          articleParagraphs.map((paragraph, index) => (
-            <p
-              key={`${entry.id}-${index}`}
-              style={{ fontSize: '22px', fontFamily: 'Open Sans, sans-serif', lineHeight: '1.7', marginBottom: '24px' }}
-            >
-              {paragraph}
-            </p>
-          ))
-        ) : (
-          <p style={{ fontSize: '22px', fontFamily: 'Open Sans, sans-serif', lineHeight: '1.7', marginBottom: '24px' }}>
-            {entry.article}
-          </p>
-        )}
-      </div>
-    </div>
-  );
+  return <BlogEntryComponent />;
 }
 
 export default BlogPost;

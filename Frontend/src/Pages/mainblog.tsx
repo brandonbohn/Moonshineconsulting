@@ -164,7 +164,7 @@ function MainBlog() {
                 height: "auto",
                 marginBottom: "16px"
               }}>
-                <BlogComponent category="Senior Living Desk" limit={1} />
+                <BlogComponent category="SeniorLivingDesk" limit={1} />
               </div>
               {/* Contributors Section */}
               <div id="contributors">
@@ -222,7 +222,7 @@ function MainBlog() {
                 height: "auto",
                 marginBottom: "16px"
               }}>
-                <BlogComponent category="Voices In Care" limit={2} />
+                <BlogComponent category="Voicesincare" limit={2} />
               </div>
             </div>
             {/* Entertainment Section - Moonshine's Corner */}

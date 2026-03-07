@@ -151,11 +151,24 @@ function BlogPost() {
   }, [allEntries, slugOrId]);
 
   const articleParagraphs = useMemo(() => {
-    const rawText = entry?.content || entry?.article || '';
-    return rawText
-      .split(/\n\n+/)
-      .map((paragraph) => paragraph.trim())
-      .filter(Boolean);
+    let rawText = entry?.content ?? entry?.article ?? '';
+    // Defensive handling for all types
+    if (rawText && typeof rawText === 'object') {
+      if (Array.isArray(rawText)) {
+        // Defensive: Only join if array elements are strings
+        rawText = (rawText as unknown[]).map((v: unknown) => typeof v === 'string' ? v : '').join('\n');
+      } else {
+        const intro = typeof (rawText as any).intro === 'string' ? (rawText as any).intro : '';
+        const sections = Array.isArray((rawText as any).sections)
+          ? (rawText as any).sections
+              .map((s: any) => Array.isArray(s.paragraphs) ? (s.paragraphs as unknown[]).map((p: unknown) => typeof p === 'string' ? p : '').join('\n') : '')
+              .join('\n\n')
+          : '';
+        rawText = [intro, sections].filter(Boolean).join('\n\n');
+      }
+    }
+    if (typeof rawText !== 'string') rawText = '';
+    return rawText.split(/\n\n+/).map((paragraph) => paragraph.trim()).filter(Boolean);
   }, [entry]);
 
   const categoryNavigation = getCategoryNavigation(entry);

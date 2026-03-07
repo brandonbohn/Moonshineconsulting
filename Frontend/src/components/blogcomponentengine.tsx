@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { BlogEntry } from "./types";
 import '../css/mainblog.css';
+import { backupBlogData } from './backupBlogData';
 
 
 // Define ProductEntry type based on your ProductData structure
@@ -140,20 +141,25 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 		const loadBlogs = async () => {
 			try {
 				const apiEntries = await fetchBlogs();
-					if (isMounted) {
+				if (isMounted) {
 					setAllEntries(apiEntries);
-						setLoadError("");
+					setLoadError("");
 				}
 			} catch (error) {
-					if (isMounted) {
-						setAllEntries([]);
-						setLoadError('Unable to load blog entries right now.');
-					}
-					console.error('Blog API unavailable.', error);
-				} finally {
-					if (isMounted) {
-						setIsLoading(false);
-					}
+				if (isMounted) {
+					// Normalize backupBlogData to BlogEntry[]
+					setAllEntries(backupBlogData.map(entry => ({
+						...entry,
+						imageUrl: entry.image || '/images/placeholder.jpg',
+						newsSection: entry.NewsSection || '',
+					})));
+					setLoadError('Unable to load blog entries from backend. Showing backup stories.');
+				}
+				console.error('Blog API unavailable.', error);
+			} finally {
+				if (isMounted) {
+					setIsLoading(false);
+				}
 			}
 		};
 

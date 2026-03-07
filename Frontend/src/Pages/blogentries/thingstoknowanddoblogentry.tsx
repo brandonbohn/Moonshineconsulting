@@ -4,7 +4,6 @@ export default function ThingsToKnowAndDoBlogEntry(): React.ReactNode {
   return (
     <div>
       <h1>Things to Know and Do When You Die (Continued)</h1>
-      <img src="/images/placeholder.jpg" alt="Funeral Planning" />
       <div>
         <p>As mentioned previously, do you know when you will die? Most people do not like to think about this, but only God truly knows. None of us knows what tomorrow holds. It could be an automobile accident or a sudden heart attack. Because of this uncertainty, now may be a good time to begin thinking about planning your funeral.</p>
         <h2>Funeral Costs and Planning</h2>

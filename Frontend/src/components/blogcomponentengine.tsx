@@ -64,7 +64,7 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 	const allEntries: BlogEntry[] = useMemo(() => {
 		return (blogEntries as any[]).map(entry => ({
 			...entry,
-			imageUrl: entry.imageUrl || entry.image || '/images/placeholder.jpg',
+			imageUrl: entry.imageUrl || entry.image,
 			newsSection: entry.newsSection || entry.NewsSection || '',
 			slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
 			content: entry.content || entry.article || '',
@@ -113,14 +113,16 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 					<p className="Title" style={{ fontSize: "27px", fontWeight: "bold", marginBottom: "8px", lineHeight: "1.2", marginTop: "0", textAlign: "left", fontFamily: "Open Sans, Arial, sans-serif" }}>{entry.title}</p>
 					<div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", gap: "16px", width: "100%" }}>
 						<div style={{ flex: "0 0 100px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-							<img
-								src={entry.imageUrl}
-								alt={entry.title}
-								className="px-1"
-								width={100}
-								height={100}
-								style={{ objectFit: "cover", borderRadius: "6px" }}
-							/>
+							{entry.imageUrl && (
+								<img
+									src={entry.imageUrl}
+									alt={entry.title}
+									className="px-1"
+									width={100}
+									height={100}
+									style={{ objectFit: "cover", borderRadius: "6px" }}
+								/>
+							)}
 							<p className="text-left" style={{ fontSize: "21px", color: "#666", margin: "8px 0 0 0", textAlign: "left", fontFamily: "Georgia, serif", width: "100%" }}>{entry.date}</p>
 						</div>
 						<div style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "center", gap: "6px" }}>

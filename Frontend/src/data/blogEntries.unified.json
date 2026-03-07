@@ -445,30 +445,6 @@
       ],
       "references": []
     }
-  },
-  {
-    "id": 9,
-    "sourceFile": "moonshinescornerblogentry.tsx",
-    "slug": "moonshines-corner-wisdom-from-experience",
-    "NewsSection": "Moonshine's Corner",
-    "image": "./images/moonshine.jpg",
-    "title": "Moonshine's Corner: Wisdom from Experience",
-    "article": "Legacy placeholder entry file in blogentries folder; this record is included so backend has a slot for editor-authored content.",
-    "date": "2025-07-01",
-    "category": "MoonshinesCorner",
-    "author": "Moonshine",
-    "link": "./blogentries/moonshinescornerblogentry",
-    "content": {
-      "intro": "This source file currently contains a page shell and metadata, but no full story body text in the repository.",
-      "sections": [
-        {
-          "heading": "Draft Placeholder",
-          "paragraphs": [
-            "Keep this entry as an editor-backed draft slot. When a full story is created in backend/editor, replace this section with complete content paragraphs."
-          ]
-        }
-      ],
-      "references": []
-    }
   }
+  
 ]

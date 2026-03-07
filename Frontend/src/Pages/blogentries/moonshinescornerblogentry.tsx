@@ -1,4 +1,5 @@
-import BlogNavigation from "../../components/BlogNavigation.tsx";
+import React from 'react';
+import BlogNavigation from '../../components/BlogNavigation';
 // ...existing imports...
 
 function MoonshinesCornerBlog() {

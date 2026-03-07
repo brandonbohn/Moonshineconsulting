@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BlogNavigation from '../../components/BlogNavigation.tsx';
-import { ProductData } from '../../components/productdata.ts';
+import BlogNavigation from '../../components/BlogNavigation';
+import { ProductData } from '../../components/productdata';
 import { Helmet } from 'react-helmet';
 
 function EstateprepBlogentry() {

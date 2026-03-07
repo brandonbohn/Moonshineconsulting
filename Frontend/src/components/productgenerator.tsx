@@ -1,4 +1,4 @@
-import { ProductData } from "./productdata.ts";
+import { ProductData } from "./productdata";
 
 interface ProductComponentProps {
 	productid?: number;

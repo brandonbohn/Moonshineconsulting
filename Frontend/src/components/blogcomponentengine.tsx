@@ -1,35 +1,8 @@
 import { useMemo } from "react";
 import { BlogEntry } from "./types";
+import { blogntries } from "./blogentriesdata";
 
-// Static blog entries for rendering
-const blogEntries = [
-	{
-		id: 1,
-		title: "How I Herded Hearts Instead of Sheep",
-		author: "Karen",
-		date: "2026-03-07",
-		image: "https://via.placeholder.com/100",
-		imageUrl: "https://via.placeholder.com/100",
-		newsSection: "Moonshine's Corner",
-		article: "This is a sample article about herding hearts.",
-		category: "MoonshinesCorner",
-		slug: "moonshinesblogentry",
-		content: "This is a sample article about herding hearts."
-	},
-	{
-		id: 2,
-		title: "Medicare Home Health: What Seniors Need to Know",
-		author: "Staff",
-		date: "2026-03-07",
-		image: "https://via.placeholder.com/100",
-		imageUrl: "https://via.placeholder.com/100",
-		newsSection: "Senior Policy Beat",
-		article: "Everything seniors need to know about Medicare home health.",
-		category: "SeniorPolicyBeat",
-		slug: "seniorpolicybeatblogentry",
-		content: "Everything seniors need to know about Medicare home health."
-	}
-];
+
 
 const slugify = (value: string): string => {
 	return value
@@ -78,7 +51,7 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 	const pageSize = 5;
 
 	// Map blogEntries to BlogEntry type, filling missing fields
-	const allEntries: BlogEntry[] = useMemo(() => blogEntries.map(entry => ({
+	const allEntries: BlogEntry[] = useMemo(() => blogntries.map(entry => ({
 		...entry,
 		slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
 		content: entry.content || entry.article || '',

@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogNavigation from '../../components/BlogNavigation.tsx';
+import BlogNavigation from '../../components/BlogNavigation';
 
 function EndOfLifeDoulaBlogEntry() {
   return (

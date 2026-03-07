@@ -1,30 +1,29 @@
-import HomePage from './Pages/hompage.tsx';
-import ContactUs from './Pages/contactus.tsx';
-import Blog from './Pages/mainblog.tsx';
-import Footer from './Utilities/Footer.tsx';
-import Header from './Utilities/header.tsx';
-import MoonshinesCorner from './Pages/moonshinescorner.tsx';
-import PrivacyPolicy from './Pages/privacypolicy.tsx';
-import TermsAndConditions from './Pages/termsandconditions.tsx';
-import BioPage from './Pages/biopage.tsx';
-import EndOfLifeDoulaBlogEntry from './Pages/blogentries/endoflifedoulablogentry.tsx';
-import EstatePreparationBlogEntry from './Pages/blogentries/estatepreparationblogentry.tsx';
-import MoonshinesBlog from './Pages/blogentries/moonshinesblogentry.tsx';
-import MoonshinesCornerBlog from './Pages/blogentries/moonshinescornerblogentry.tsx';
-import NurseJourneyMemoryBlogEntry from './Pages/blogentries/nursejourneymemoryblogentry.tsx';
-import SeniorLivingDeskBlogEntry from './Pages/blogentries/seniorlivingdeskblogentry.tsx';
-import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry.tsx';
-import SharedMiracleBlogEntry from './Pages/blogentries/sharedmiracleblogentry.tsx';
-import ThingstoKnowAndDoBlogEntry from './Pages/blogentries/thingstoknowanddoblogentry.tsx';
-import VoicesInCareBlogEntries from './Pages/blogentries/voicesincareblogentries.tsx';
-import VoicesInCareBlogEntry from './Pages/blogentries/voicesincareblogentry.tsx';
-import WhatToDoBeforeYouDieBlogEntry from './Pages/blogentries/what-to-do-before-you-die-blogentry.tsx';
-
-import BlogComponent from './components/blogcomponentengine.tsx';
-import ProductComponent from './components/productgenerator.tsx';
-import SeniorLivingDesk from './Pages/seniorlivingdesk.tsx';
-import Voicesincare from  './Pages/Voicesincare.tsx';
-import SeniorPolicyBeat from './Pages/seniorpolicybeat.tsx';
+import HomePage from './Pages/hompage';
+import ContactUs from './Pages/contactus';
+import Blog from './Pages/mainblog';
+import Footer from './Utilities/Footer';
+import Header from './Utilities/header';
+import MoonshinesCorner from './Pages/moonshinescorner';
+import PrivacyPolicy from './Pages/privacypolicy';
+import TermsAndConditions from './Pages/termsandconditions';
+import BioPage from './Pages/biopage';
+import EndOfLifeDoulaBlogEntry from './Pages/blogentries/endoflifedoulablogentry';
+import EstatePreparationBlogEntry from './Pages/blogentries/estatepreparationblogentry';
+import MoonshinesBlog from './Pages/blogentries/moonshinesblogentry';
+import MoonshinesCornerBlog from './Pages/blogentries/moonshinescornerblogentry';
+import NurseJourneyMemoryBlogEntry from './Pages/blogentries/nursejourneymemoryblogentry';
+import SeniorLivingDeskBlogEntry from './Pages/blogentries/seniorlivingdeskblogentry';
+import SeniorPolicyBeatBlogEntry from './Pages/blogentries/seniorpolicybeatblogentry';
+import SharedMiracleBlogEntry from './Pages/blogentries/sharedmiracleblogentry';
+import ThingstoKnowAndDoBlogEntry from './Pages/blogentries/thingstoknowanddoblogentry';
+import VoicesInCareBlogEntries from './Pages/blogentries/voicesincareblogentries';
+import VoicesInCareBlogEntry from './Pages/blogentries/voicesincareblogentry';
+import WhatToDoBeforeYouDieBlogEntry from './Pages/blogentries/what-to-do-before-you-die-blogentry';
+import BlogComponent from './components/blogcomponentengine';
+import ProductComponent from './components/productgenerator';
+import SeniorLivingDesk from './Pages/seniorlivingdesk';
+import Voicesincare from  './Pages/Voicesincare';
+import SeniorPolicyBeat from './Pages/seniorpolicybeat';
 import { Routes, Route,  } from 'react-router-dom';  
 function App() {
   return (
@@ -57,6 +56,16 @@ function App() {
           <Route path="/blog/what-to-do-before-you-die-blogentry" element={<WhatToDoBeforeYouDieBlogEntry />} />
           <Route path="/blog/1" element={<MoonshinesBlog />} />
           <Route path="/blog/2" element={<SeniorPolicyBeatBlogEntry />} />
+          <Route path="/blog/3" element={<EndOfLifeDoulaBlogEntry />} />
+          <Route path="/blog/4" element={<EstatePreparationBlogEntry />} />
+          <Route path="/blog/5" element={<MoonshinesCornerBlog />} />
+          <Route path="/blog/6" element={<NurseJourneyMemoryBlogEntry />} />
+          <Route path="/blog/7" element={<SeniorLivingDeskBlogEntry />} />
+          <Route path="/blog/8" element={<SharedMiracleBlogEntry />} />
+          <Route path="/blog/9" element={<ThingstoKnowAndDoBlogEntry />} />
+          <Route path="/blog/10" element={<VoicesInCareBlogEntries />} />
+          <Route path="/blog/11" element={<VoicesInCareBlogEntry />} />
+          <Route path="/blog/12" element={<WhatToDoBeforeYouDieBlogEntry />} />
 
           
        </Routes>

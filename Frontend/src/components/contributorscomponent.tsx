@@ -1,5 +1,5 @@
 import React from 'react';
-import { contributorsData, Contributor } from './contributorsdata.ts';
+import { contributorsData, Contributor } from './contributorsdata';
 
 interface ContributorsComponentProps {
   id?: number;

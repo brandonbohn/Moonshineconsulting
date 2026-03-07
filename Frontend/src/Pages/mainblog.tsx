@@ -1,5 +1,5 @@
-import BlogComponent from "../components/blogcomponentengine.tsx";
-import ContributorsComponent from "../components/contributorscomponent.tsx";
+import BlogComponent from "../components/blogcomponentengine";
+import ContributorsComponent from "../components/contributorscomponent";
 import '../css/mainblog.css';
 import '../css/mainblog.css';
 import { useState, useEffect } from "react";

@@ -2,7 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/homepage.css';
 import '../css/index.css';
-import ProductComponent from '../components/productgenerator.tsx';
+import ProductComponent from '../components/productgenerator';
 
 function HomePage() {
   return (

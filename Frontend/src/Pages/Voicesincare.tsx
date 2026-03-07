@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogComponent from '../components/blogcomponentengine.tsx';
+import BlogComponent from '../components/blogcomponentengine';
 
 function Voicesincare() {
   return (

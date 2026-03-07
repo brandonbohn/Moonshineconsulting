@@ -1,6 +1,6 @@
 import React from 'react';
-import BlogNavigation from '../../components/BlogNavigation.tsx';
-import { ProductComponent } from '../../components/productgenerator.tsx';
+import BlogNavigation from '../../components/BlogNavigation';
+import { ProductComponent } from '../../components/productgenerator';
 
 function Voicesincareblogentry() {
   return (

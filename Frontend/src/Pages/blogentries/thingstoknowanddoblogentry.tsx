@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ThingsToKnowAndDoBlogEntry(): React.ReactNode {
+export default function ThingstoKnowAndDoBlogEntry(): React.ReactElement {
   return (
     <div>
       <h1>Things to Know and Do When You Die (Continued)</h1>

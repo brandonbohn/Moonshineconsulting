@@ -3,7 +3,7 @@ export const blogntries = [
   {
     id: 1,
     title: "How I Herded Hearts Instead of Sheep",
-    author: "Karen",
+    author: "Karen Underwood RN BSN",
     date: "2026-03-07",
     image: "/images/moonshine.jpg",
     imageUrl: "/images/moonshine.jpg",
@@ -11,12 +11,12 @@ export const blogntries = [
     article: "Stories about animals doing good work.",
     category: "MoonshinesCorner",
     slug: "moonshinesblogentry",
-    content: "A story from our lovable mascot Moonshine about his adventures in a nursing home and more to come from his lovable friends."
+    content: "A Introduction to our lovable mascots adventures in a nursing home and more adventures to come with his pals."
   },
   {
     id: 2,
     title: "From House Calls to Home Health: The Medicare Story",
-    author: "Karen Underwood",
+    author: "Karen Underwood RN BSN",
     date: "2026-03-07",
     image: "/images/healthcare.jpg",
     imageUrl: "/images/healthcare.jpg",
@@ -24,12 +24,12 @@ export const blogntries = [
     article: "Policy news impacting seniors.",
     category: "SeniorPolicyBeat",
     slug: "seniorpolicybeatblogentry",
-    content: "The history of Medicare from the the begginning and traveling doctors to what medicare is today."
+    content: "Did you know Medicare started with doctors visiting homes? Discover how senior care has evolved—and what it means for you today."
   },
   {
     id: 3,
     title: "End-of-Life Doulas: Compassion in Action",
-    author: "Christine Dorisio",
+    author: "Kimberly Dorisio",
     date: "2026-03-07",
     image: "/images/healthcare.jpg",
     imageUrl: "/images/healthcare.jpg",
@@ -37,11 +37,11 @@ export const blogntries = [
     article: "Caregiver stories and nurse stories.",
     category: "VoicesInCare",
     slug: "endoflifedoulablogentry",
-    content: "Facing the end of life is never easy. Learn how end-of-life doulas bring comfort and guidance when it matters most—discover the stories and support that make a difference."
+    content: "Facing the end of life is never easy. Learn how end-of-life doulas bring comfort and guidance when it matters most."
   },
   {
     id: 4,
-    title: "What To Do Before You Die",
+    title: "What to Know Before You Die",
     author: "Karen Underwood RN BSN",
     date: "2026-03-07",
     image: "/images/healthcare.jpg",
@@ -49,28 +49,38 @@ export const blogntries = [
     newsSection: "Senior Living Desk",
     article: "Policy news impacting seniors.",
     category: "SeniorLivingDesk",
-    slug: "what-to-do-before-you-die-blogentry",
-    content: "Are you prepared for life’s final journey? Here’s what every family should do to protect their loved ones and legacy—don’t wait until it’s too late."
+    slug: "what-to-know-before-you-die-blogentry",
+    content: "Are you prepared for life’s final journey? Here’s what every family should do to protect their loved ones and legacy."
   },
- 
-
-  
   {
-    id: 5,
+    id: 6,
     title: "A Nurse Remembers: Lessons from Memory Lane",
-    author: "Christine Dorisio",
+    author: "Cindy Boushie-Hill LPN",
+    date: "2026-03-07",
+    image: "/images/healthcare.jpg",
+    imageUrl: "/images/healthcare.jpg",
+    newsSection: "Voices in Care",
+    article: "Caregiver stories and nurse stories.",
+    category: "VoicesInCare",
+    slug: "anursesreflectionon40yearsofnursingandcaregivingblogentry",
+    content: "From a reluctant student to a dedicated nurse, this journey is filled with lessons, laughter, and a miracle you won’t believe."
+  },
+  {
+    id: 8,
+    title: "Room 559: Witnessing a Miracle",
+    author: "Christie Stephan RN ODG",
     date: "2026-03-07",
     image: "/images/angel.jpeg",
     imageUrl: "/images/angel.jpeg",
     newsSection: "Voices in Care",
     article: "Caregiver stories and nurse stories.",
     category: "VoicesInCare",
-    slug: "anursesjourneymemorylaneblogentry",
-    content: "From a reluctant student to a dedicated nurse, this journey is filled with lessons, laughter, and a miracle you won’t believe."
+    slug: "amiracleinroom559blogentry",
+    content: "Miracles happen when you least expect them. Read the true story of room 559 and the hope it brought."
   },
   {
-    id: 6,
-    title: "What to Do Before You Die Part 2",
+    id: 9,
+    title: "Planning Your Funeral: What You Need to Know",
     author: "Karen Underwood RN BSN",
     date: "2026-03-07",
     image: "/images/healthcare.jpg",
@@ -78,22 +88,20 @@ export const blogntries = [
     newsSection: "Senior Living Desk",
     article: "Things that impact seniors.",
     category: "SeniorLivingDesk",
-    slug: "what-to-do-before-you-die-part-2-blogentry",
-    content: "Funeral planning isn’t just paperwork—it’s peace of mind. Find out what steps make all the difference for your family."
+    slug: "thingstoknowanddoblogentry",
+    content: "Funeral planning isn’t just paperwork—it’s peace of mind. Find out what steps make all the difference."
   },
   {
-    id: 7,
-    title: "Room 559: Witnessing a Miracle",
-    author:  "Christine Dorisio",
+    id: 10,
+    title: "The Heart of Hospice Nursing: Compassion, Comfort, and Connection",
+    author: "Christie Stephan RN ODG",
     date: "2025-01-07",
-    image: "/images/angel.jpeg",
-    imageUrl: "/images/angel.jpeg",
+    image: "/images/healthcare.jpg",
+    imageUrl: "/images/healthcare.jpg",
     newsSection: "Voices in Care",
     article: "Caregiver stories and nurse stories.",
     category: "VoicesInCare",
-    slug: "voicesincareblogentries",
-    content: "Miracles happen when you least expect them. Read the true story of room 559 and the hope it brought to everyone involved."
+    slug: "the-heart-of-hospice-nursing-blogentry",
+    content: "A reflection of one nurse about hospice care and the profound impact it has on patients and their families."
   },
- 
-
 ];

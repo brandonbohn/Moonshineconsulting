@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { BlogEntry } from "./types";
 import blogEntries from '../data/blogEntries.unified.json';
 import '../css/mainblog.css';
@@ -58,7 +58,6 @@ const getDynamicPostPath = (entry: BlogEntry): string => {
 };
 
 const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: BlogComponentProps) => {
-	const [page, setPage] = useState(1);
 	const pageSize = 5;
 
 	// Map blogEntries to BlogEntry type, filling missing fields
@@ -89,8 +88,7 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 		return sorted;
 	}, [allEntries, category, id, sortOrder]);
 
-	const totalPages = Math.ceil(filteredEntries.length / pageSize);
-	const entries = filteredEntries.slice((page - 1) * pageSize, page * pageSize);
+	const entries = filteredEntries.slice(0, pageSize);
 
 	if (entries.length === 0) {
 		return <div>No blog entries found.</div>;

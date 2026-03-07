@@ -1,14 +1,35 @@
 import { useMemo } from "react";
 import { BlogEntry } from "./types";
-import blogEntries from '../data/blogEntries.unified.json';
-import '../css/mainblog.css';
 
-interface BlogComponentProps {
-	category?: string;
-	id?: number;
-	limit?: number;
-	sortOrder?: 'asc' | 'desc';
-}
+// Static blog entries for rendering
+const blogEntries = [
+	{
+		id: 1,
+		title: "How I Herded Hearts Instead of Sheep",
+		author: "Karen",
+		date: "2026-03-07",
+		image: "https://via.placeholder.com/100",
+		imageUrl: "https://via.placeholder.com/100",
+		newsSection: "Moonshine's Corner",
+		article: "This is a sample article about herding hearts.",
+		category: "MoonshinesCorner",
+		slug: "moonshinesblogentry",
+		content: "This is a sample article about herding hearts."
+	},
+	{
+		id: 2,
+		title: "Medicare Home Health: What Seniors Need to Know",
+		author: "Staff",
+		date: "2026-03-07",
+		image: "https://via.placeholder.com/100",
+		imageUrl: "https://via.placeholder.com/100",
+		newsSection: "Senior Policy Beat",
+		article: "Everything seniors need to know about Medicare home health.",
+		category: "SeniorPolicyBeat",
+		slug: "seniorpolicybeatblogentry",
+		content: "Everything seniors need to know about Medicare home health."
+	}
+];
 
 const slugify = (value: string): string => {
 	return value
@@ -44,32 +65,24 @@ const matchesCategory = (entryCategory: string, targetCategory: string): boolean
 	return aliases.includes(normalizedEntryCategory);
 };
 
-const getDynamicPostPath = (entry: BlogEntry): string => {
-	if (entry.id && !Number.isNaN(entry.id)) {
-		return `/blog/${entry.id}`;
-	}
-	if (entry.slug) {
-		return `/blog/${entry.slug}`;
-	}
-	if (entry.title) {
-		return `/blog/${slugify(entry.title)}`;
-	}
-	return entry.link || "/mainblog";
+const getSimplePostPath = (entry: BlogEntry): string => `/blog/${entry.id}`;
+
+type BlogComponentProps = {
+	category?: string;
+	id?: number;
+	limit?: number;
+	sortOrder?: 'asc' | 'desc';
 };
 
 const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: BlogComponentProps) => {
 	const pageSize = 5;
 
 	// Map blogEntries to BlogEntry type, filling missing fields
-	const allEntries: BlogEntry[] = useMemo(() => {
-		return (blogEntries as any[]).map(entry => ({
-			...entry,
-			imageUrl: entry.imageUrl || entry.image,
-			newsSection: entry.newsSection || entry.NewsSection || '',
-			slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
-			content: entry.content || entry.article || '',
-		}));
-	}, []);
+	const allEntries: BlogEntry[] = useMemo(() => blogEntries.map(entry => ({
+		...entry,
+		slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
+		content: entry.content || entry.article || '',
+	})), []);
 
 	const filteredEntries = useMemo(() => {
 		if (id !== undefined) {
@@ -142,7 +155,7 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 							}}>{typeof entry.content === 'string' ? entry.content : entry.article}</p>
 							<div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "8px", width: "100%" }}>
 								<a
-									href={getDynamicPostPath(entry)}
+									href={getSimplePostPath(entry)}
 									className="senior-btn"
 									style={{ textDecoration: "none", display: "inline-block" }}
 								>

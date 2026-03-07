@@ -68,7 +68,7 @@ function HomePage() {
                 fontStyle: "italic",
                 lineHeight: "1.6"
               }}>
-                Helping People navigate healthcare - <strong>NOT</strong>through the bottle, but through compassion, nursing and a dog named Moonshine
+                Helping People navigate healthcare - <strong>NOT</strong> through the bottle, but through compassion, nursing and a dog named Moonshine
               </p>
             </div>
             {/* Centered Dog Images */}

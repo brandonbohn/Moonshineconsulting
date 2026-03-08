@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BlogEntry } from "./types";
 import { blogntries } from "./blogentriesdata";
 
@@ -38,7 +38,78 @@ const matchesCategory = (entryCategory: string, targetCategory: string): boolean
 	return aliases.includes(normalizedEntryCategory);
 };
 
-const getSimplePostPath = (entry: BlogEntry): string => `/blog/${entry.id}`;
+const getSimplePostPath = (entry: BlogEntry): string => {
+	if (entry.link) {
+		const normalized = entry.link.replace(/\\/g, '/').replace(/^\.?\/?/, '/');
+		if (normalized.startsWith('/blog/')) {
+			return normalized;
+		}
+		if (normalized.startsWith('/blogentries/')) {
+			return normalized.replace('/blogentries/', '/blog/');
+		}
+	}
+
+	if (entry.slug) {
+		return `/blog/${entry.slug}`;
+	}
+
+	return `/blog/${entry.id}`;
+};
+
+const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0']);
+const isLocalDevHost = localHosts.has(window.location.hostname);
+const API_ORIGIN = isLocalDevHost
+	? 'http://localhost:8080'
+	: 'https://moonshineconsultingbackend.onrender.com';
+
+const BLOGS_API_URL = `${API_ORIGIN}/api/blogs`;
+
+type ApiBlogEntry = {
+	id: number;
+	title?: string;
+	author?: string;
+	date?: string;
+	image?: string;
+	category?: string;
+	article?: string | string[];
+	link?: string;
+	NewsSection?: string;
+	newsSection?: string;
+	slug?: string;
+	content?: unknown;
+};
+
+const mapApiBlogToUiBlog = (entry: ApiBlogEntry): BlogEntry => {
+	const articleText = Array.isArray(entry.article) ? entry.article.join(' ') : (entry.article || '');
+	const contentText = typeof entry.content === 'string' ? entry.content : articleText;
+	const imagePath = entry.image || '';
+	const normalizedImagePath = imagePath
+		.replace(/^\.\/Images\//i, '/images/')
+		.replace(/^\.\/images\//, '/images/');
+	const normalizedImageUrl = normalizedImagePath.startsWith('/images/')
+		? `${API_ORIGIN}${normalizedImagePath}`
+		: (normalizedImagePath || `${API_ORIGIN}/images/logo.PNG`);
+
+	return {
+		id: entry.id,
+		title: entry.title || 'Untitled',
+		author: entry.author || '',
+		date: entry.date || '',
+		imageUrl: normalizedImageUrl,
+		category: entry.category || '',
+		article: articleText,
+		link: entry.link,
+		newsSection: entry.newsSection || entry.NewsSection || '',
+		slug: entry.slug,
+		content: contentText,
+	};
+};
+
+const normalizeLocalEntry = (entry: BlogEntry): BlogEntry => ({
+	...entry,
+	slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
+	content: entry.content || entry.article || '',
+});
 
 type BlogComponentProps = {
 	category?: string;
@@ -48,14 +119,46 @@ type BlogComponentProps = {
 };
 
 const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: BlogComponentProps) => {
-	const pageSize = 5;
+	const [liveEntries, setLiveEntries] = useState<BlogEntry[] | null>(null);
+	const pageSize = limit ?? 5;
 
-	// Map blogEntries to BlogEntry type, filling missing fields
-	const allEntries: BlogEntry[] = useMemo(() => blogntries.map(entry => ({
-		...entry,
-		slug: entry.slug || (entry.title ? slugify(entry.title) : undefined),
-		content: entry.content || entry.article || '',
-	})), []);
+	useEffect(() => {
+		let isMounted = true;
+
+		const loadBlogs = async () => {
+			try {
+				const response = await fetch(BLOGS_API_URL);
+				if (!response.ok) {
+					return;
+				}
+
+				const payload = (await response.json()) as ApiBlogEntry[];
+				if (!Array.isArray(payload)) {
+					return;
+				}
+
+				if (isMounted) {
+					setLiveEntries(payload.map(mapApiBlogToUiBlog));
+				}
+			} catch {
+				// Keep local fallback data silently.
+			}
+		};
+
+		loadBlogs();
+
+		return () => {
+			isMounted = false;
+		};
+	}, []);
+
+	const allEntries: BlogEntry[] = useMemo(() => {
+		if (liveEntries && liveEntries.length > 0) {
+			return liveEntries.map(normalizeLocalEntry);
+		}
+
+		return blogntries.map(normalizeLocalEntry);
+	}, [liveEntries]);
 
 	const filteredEntries = useMemo(() => {
 		if (id !== undefined) {
@@ -80,6 +183,8 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 		return <div>No blog entries found.</div>;
 	}
 
+	const isMobileView = typeof window !== 'undefined' && window.innerWidth < 768;
+
 	 return (
 		 <div style={{ height: "100%", width: "100%" }}>
 			{entries.map((entry) => (
@@ -89,7 +194,7 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "flex-start",
-					minHeight: window.innerWidth < 768 ? "320px" : "220px",
+					minHeight: isMobileView ? "320px" : "220px",
 					height: "auto",
 					padding: "12px",
 					backgroundColor: "#f8f9fa",

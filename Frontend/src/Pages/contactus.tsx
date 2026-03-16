@@ -1,7 +1,7 @@
 import React from 'react'
 import { useWebsiteContent } from '../data/websiteContent';
 
-const registration = () => {
+const Registration = () => {
   const websiteContent = useWebsiteContent();
   const content = websiteContent.pages.contact;
   const ageRanges = [...content.ageRanges].sort();
@@ -277,4 +277,4 @@ const registration = () => {
   );
 }
 
-export default registration;
+export default Registration;

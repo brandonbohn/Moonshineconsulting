@@ -3,8 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/homepage.css';
 import '../css/index.css';
 import ProductComponent from '../components/productgenerator';
+import { useWebsiteContent } from '../data/websiteContent';
 
 function HomePage() {
+  const websiteContent = useWebsiteContent();
+  const homeContent = websiteContent.pages.home;
+
   return (
   
 <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
@@ -57,7 +61,7 @@ function HomePage() {
                 textAlign: "center",
                 margin: "0 0 15px 0"
               }}>
-                Moonshine Consulting
+                {homeContent.hero.title}
               </h1>
               <p style={{
                 fontSize: "20px",
@@ -68,7 +72,7 @@ function HomePage() {
                 fontStyle: "italic",
                 lineHeight: "1.6"
               }}>
-                Helping People navigate healthcare - <strong>NOT</strong> through the bottle, but through compassion, nursing and a dog named Moonshine
+                {homeContent.hero.subtitle}
               </p>
             </div>
             {/* Centered Dog Images */}
@@ -128,7 +132,7 @@ function HomePage() {
                   margin: "0 20px",
                   alignSelf: "center"
                 }}>
-                  Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
+                  {homeContent.introParagraph}
                 </p>
               </div>
               {/* Second image always visible */}
@@ -146,7 +150,7 @@ function HomePage() {
             {/* Explore Blog Button */}
             <a 
               id="blog-navigation"
-              href="./mainblog" 
+              href={homeContent.cta.link}
               className="btn btn-warning btn-lg" 
               style={{ 
                 fontSize: "18px", 
@@ -155,7 +159,7 @@ function HomePage() {
                 fontWeight: "600"
               }}
             >
-              Explore the Blog
+              {homeContent.cta.text}
             </a>
             {/* Description Text for mobile */}
             <div className="intro-paragraph-mobile">
@@ -168,7 +172,7 @@ function HomePage() {
                 maxWidth: "800px",
                 margin: "0"
               }}>
-                Moonshine Consulting is a platform powered by over 60 years of experience of healthcare experience-plus the charm of a lovable Sheltie-offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters
+                {homeContent.introParagraph}
               </p>
             </div>
           </div>
@@ -197,215 +201,78 @@ function HomePage() {
                       }
                     `}</style>
                     <div className="row g-4" style={{ display: "flex", justifyContent: "space-between" }}>
-                      {/* Senior Living Desk */}
-                      <div className="category-col">
-                        <div className="category-card" style={{ 
-                          backgroundColor: "#08023a", 
-                          padding: "20px", 
-                          borderRadius: "12px", 
-                          minHeight: "280px", 
-                          display: "flex", 
-                          flexDirection: "column",
-                          transition: "transform 0.3s ease"
-                        }}>
-                          <a href="./seniorlivingdesk" className="btn btn-warning btn-sm" style={{ 
-                            width: "100%", 
-                            marginBottom: "15px", 
-                            height: "40px", 
-                            display: "flex", 
-                            alignItems: "center", 
-                            justifyContent: "center", 
-                            fontSize: "14px", 
-                            fontWeight: "600" 
+                      {homeContent.categories.map((category) => (
+                        <div className="category-col" key={category.id}>
+                          <div className="category-card" style={{
+                            backgroundColor: "#08023a",
+                            padding: "20px",
+                            borderRadius: "12px",
+                            minHeight: "280px",
+                            display: "flex",
+                            flexDirection: "column",
+                            transition: "transform 0.3s ease"
                           }}>
-                            Senior Living Desk
-                          </a>
-                          <p style={{ 
-                            fontSize: "16px", 
-                            color: "#000", 
-                            backgroundColor: "#ffffff", 
-                            padding: "12px", 
-                            borderRadius: "6px", 
-                            margin: "0", 
-                            flex: "1 1 auto",
-                            alignSelf: "stretch",
-                            lineHeight: "1.4",
-                            overflow: "hidden"
-                          }}>
-                            A resource hub for seniors and their families, providing information on senior living options, care services, and community resources.
-                          </p>
+                            {category.actionType === "scroll" ? (
+                              <button
+                                onClick={() => {
+                                  const element = document.getElementById(category.actionTarget);
+                                  if (element) {
+                                    const elementPosition = element.offsetTop;
+                                    const offsetPosition = elementPosition + 89;
+                                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                                  }
+                                }}
+                                className="btn btn-warning btn-sm"
+                                style={{
+                                  width: "100%",
+                                  marginBottom: "15px",
+                                  height: "40px",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  fontSize: "14px",
+                                  fontWeight: "600",
+                                  border: "none",
+                                  cursor: "pointer"
+                                }}
+                              >
+                                {category.title}
+                              </button>
+                            ) : (
+                              <a
+                                href={category.actionTarget}
+                                className="btn btn-warning btn-sm"
+                                style={{
+                                  width: "100%",
+                                  marginBottom: "15px",
+                                  height: "40px",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  fontSize: "14px",
+                                  fontWeight: "600"
+                                }}
+                              >
+                                {category.title}
+                              </a>
+                            )}
+                            <p style={{
+                              fontSize: "16px",
+                              color: "#000",
+                              backgroundColor: "#ffffff",
+                              padding: "12px",
+                              borderRadius: "6px",
+                              margin: "0",
+                              flex: "1 1 auto",
+                              alignSelf: "stretch",
+                              lineHeight: "1.4",
+                              overflow: "hidden"
+                            }}>
+                              {category.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      {/* Senior Policy Beat */}
-                      <div className="category-col">
-                        <div className="category-card" style={{ 
-                          backgroundColor: "#08023a", 
-                          padding: "20px", 
-                          borderRadius: "12px", 
-                          minHeight: "280px", 
-                          display: "flex", 
-                          flexDirection: "column",
-                          transition: "transform 0.3s ease"
-                        }}>
-                          <a href="./seniorpolicybeat" className="btn btn-warning btn-sm" style={{ 
-                            width: "100%", 
-                            marginBottom: "15px", 
-                            height: "40px", 
-                            display: "flex", 
-                            alignItems: "center", 
-                            justifyContent: "center", 
-                            fontSize: "14px", 
-                            fontWeight: "600" 
-                          }}>
-                            Senior Policy Beat
-                          </a>
-                          <p style={{ 
-                            fontSize: "16px", 
-                            color: "#000", 
-                            backgroundColor: "#ffffff", 
-                            padding: "12px", 
-                            borderRadius: "6px", 
-                            margin: "0", 
-                            flex: "1 1 auto",
-                            alignSelf: "stretch",
-                            lineHeight: "1.4",
-                            overflow: "hidden"
-                          }}>
-                            Comprehensive guides and resources for navigating Medicare, insurance, and healthcare decisions for seniors and their families.
-                          </p>
-                        </div>
-                      </div>
-                      {/* Tools We Love - Skip Button */}
-                      <div className="category-col">
-                        <div className="category-card" style={{ 
-                          backgroundColor: "#08023a", 
-                          padding: "20px", 
-                          borderRadius: "12px", 
-                          minHeight: "280px", 
-                          display: "flex", 
-                          flexDirection: "column",
-                          transition: "transform 0.3s ease"
-                        }}>
-                          <button 
-                            onClick={() => {
-                              const element = document.getElementById('tools-we-love');
-                              if (element) {
-                                const elementPosition = element.offsetTop;
-                                const offsetPosition = elementPosition + 89; // Scroll 89px lower to show title and Amazon buttons
-                                window.scrollTo({
-                                  top: offsetPosition,
-                                  behavior: 'smooth'
-                                });
-                              }
-                            }}
-                            className="btn btn-warning btn-sm" 
-                            style={{ 
-                              width: "100%", 
-                              marginBottom: "15px", 
-                              height: "40px", 
-                              display: "flex", 
-                              alignItems: "center", 
-                              justifyContent: "center", 
-                              fontSize: "14px", 
-                              fontWeight: "600",
-                              border: "none",
-                              cursor: "pointer"
-                            }}
-                          >
-                            Tools We Love
-                          </button>
-                          <p style={{ 
-                            fontSize: "16px", 
-                            color: "#000", 
-                            backgroundColor: "#ffffff", 
-                            padding: "12px", 
-                            borderRadius: "6px", 
-                            margin: "0", 
-                            flex: "1 1 auto",
-                            alignSelf: "stretch",
-                            lineHeight: "1.4",
-                            overflow: "hidden"
-                          }}>
-                            Discover our carefully selected products and tools that make caregiving easier and safer for seniors and their families.
-                          </p>
-                        </div>
-                      </div>
-                      {/* Voices in Care */}
-                      <div className="category-col">
-                        <div className="category-card" style={{ 
-                          backgroundColor: "#08023a", 
-                          padding: "20px", 
-                          borderRadius: "12px", 
-                          minHeight: "280px", 
-                          display: "flex", 
-                          flexDirection: "column",
-                          transition: "transform 0.3s ease"
-                        }}>
-                          <a href="./voicesincare" className="btn btn-warning btn-sm" style={{ 
-                            width: "100%", 
-                            marginBottom: "15px", 
-                            height: "40px", 
-                            display: "flex", 
-                            alignItems: "center", 
-                            justifyContent: "center", 
-                            fontSize: "14px", 
-                            fontWeight: "600" 
-                          }}>
-                            Voices in Care
-                          </a>
-                          <p style={{ 
-                            fontSize: "16px", 
-                            color: "#000", 
-                            backgroundColor: "#ffffff", 
-                            padding: "12px", 
-                            borderRadius: "6px", 
-                            margin: "0", 
-                            flexGrow: "1", 
-                            lineHeight: "1.4" 
-                          }}>
-                            A place where caregivers and professionals can share their insights, stories, and struggles from the field.
-                          </p>
-                        </div>
-                      </div>
-                      {/* Moonshine's Corner */}
-                      <div className="category-col">
-                        <div className="category-card" style={{ 
-                          backgroundColor: "#08023a", 
-                          padding: "20px", 
-                          borderRadius: "12px", 
-                          minHeight: "280px", 
-                          display: "flex", 
-                          flexDirection: "column",
-                          transition: "transform 0.3s ease"
-                        }}>
-                          <a href="./moonshinescorner" className="btn btn-warning btn-sm" style={{ 
-                            width: "100%", 
-                            marginBottom: "15px", 
-                            height: "40px", 
-                            display: "flex", 
-                            alignItems: "center", 
-                            justifyContent: "center", 
-                            fontSize: "14px", 
-                            fontWeight: "600" 
-                          }}>
-                            Moonshine's Corner
-                          </a>
-                          <p style={{ 
-                            fontSize: "16px", 
-                            color: "#000", 
-                            backgroundColor: "#ffffff", 
-                            padding: "12px", 
-                            borderRadius: "6px", 
-                            margin: "0", 
-                            flex: "1 1 auto",
-                            alignSelf: "stretch",
-                            lineHeight: "1.4",
-                            overflow: "hidden"
-                          }}>
-                            A blog where Moonshine the dog interviews therapy dogs about their amazing work!
-                          </p>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
   </main>
@@ -415,29 +282,7 @@ function HomePage() {
       <div className="d-flex flex-wrap justify-content-center founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
         <div className="container">
           <div className="row justify-content-center">
-            {[
-              {
-                id: 1,
-                name: "Karen Underwood, RN BSN",
-                image: "/images/Nurse.jpg",
-                experience: "30 Years Home Health and Hospice experience, both in the field and management.",
-                title: "Registered Nurse"
-              },
-              {
-                id: 3,
-                name: "Moonshine",
-                image: "/images/moonshine.jpg",
-                experience: "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
-                title: "Beloved Senior Companion"
-              },
-              {
-                id: 2,
-                name: "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
-                image: "/images/Christie.jpg",
-                experience: "31 Years Multistate Registered Nurse that specializes in insurance assessment for long term care, Home Healthcare, and Hospice who also has experience in the hospital in many positions.",
-                title: "Insurance Specialist"
-              },
-            ].map(member => (
+            {homeContent.teamMembers.map(member => (
               <div key={member.id} className="col-12 col-md-4 d-flex justify-content-center mb-4">
                 <div className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "100%" }}>
                   <img
@@ -479,7 +324,7 @@ function HomePage() {
                   color: "#08023a",
                   marginBottom: "20px"
                 }}>
-                  Nurse's Picks
+                  {homeContent.nursePicks.title}
                 </h2>
                 <p className="text-center mb-4" style={{ 
                   fontSize: "18px", 
@@ -487,7 +332,7 @@ function HomePage() {
                   marginBottom: "30px",
                   fontStyle: "italic"
                 }}>
-                  Products recommended by our experienced nursing team based on years of hands-on caregiving
+                  {homeContent.nursePicks.subtitle}
                 </p>
                 <div className="d-flex flex-wrap justify-content-center align-items-stretch" style={{ 
                   gap: "25px",

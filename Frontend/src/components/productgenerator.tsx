@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import { ProductData } from "./productdata";
 
 interface ProductComponentProps {
@@ -16,11 +17,121 @@ type ProductEntry = {
 	productAdvisory:string;
 };
 
+const API_ORIGIN = "https://moonshineconsultingbackend.onrender.com";
+const PRODUCTS_API_URL = `${API_ORIGIN}/api/products`;
+const DEFAULT_PRODUCT_IMAGE_URL = `${API_ORIGIN}/images/logo.PNG`;
+
+let cachedProducts: ProductEntry[] | null = null;
+let inFlightProductsRequest: Promise<ProductEntry[] | null> | null = null;
+
+const normalizeProductImageUrl = (photoPath: string): string => {
+	const normalizedPhotoPath = (photoPath || "")
+		.replace(/^\.\//, "/")
+		.replace(/^images\//i, "/images/")
+		.replace(/^Images\//, "/images/");
+
+	if (!normalizedPhotoPath) {
+		return DEFAULT_PRODUCT_IMAGE_URL;
+	}
+
+	if (/^https?:\/\//i.test(normalizedPhotoPath)) {
+		return normalizedPhotoPath;
+	}
+
+	if (normalizedPhotoPath.startsWith("/images/")) {
+		return `${API_ORIGIN}${normalizedPhotoPath}`;
+	}
+
+	if (normalizedPhotoPath.startsWith("/")) {
+		return `${API_ORIGIN}${normalizedPhotoPath}`;
+	}
+
+	return `${API_ORIGIN}/images/${normalizedPhotoPath}`;
+};
+
+const normalizeProductEntry = (product: Partial<ProductEntry>): ProductEntry => {
+	const photo = product.photo || "";
+	return {
+		productid: Number(product.productid) || 0,
+		name: product.name || "",
+		description: product.description || "",
+		price: typeof product.price === "number" ? product.price : 0,
+		photo,
+		link: product.link || "",
+		affilatelinkstatement: product.affilatelinkstatement || "",
+		productAdvisory: product.productAdvisory || "",
+		imageUrl: normalizeProductImageUrl(photo),
+	};
+};
+
+const fetchProductsFromApi = async (): Promise<ProductEntry[] | null> => {
+	if (cachedProducts) {
+		return cachedProducts;
+	}
+
+	if (inFlightProductsRequest) {
+		return inFlightProductsRequest;
+	}
+
+	inFlightProductsRequest = (async () => {
+		try {
+			const response = await fetch(PRODUCTS_API_URL);
+			if (!response.ok) {
+				return null;
+			}
+
+			const payload = (await response.json()) as Partial<ProductEntry>[];
+			if (!Array.isArray(payload)) {
+				return null;
+			}
+
+			const normalizedProducts = payload.map(normalizeProductEntry);
+			cachedProducts = normalizedProducts;
+			return normalizedProducts;
+		} catch {
+			return null;
+		} finally {
+			inFlightProductsRequest = null;
+		}
+	})();
+
+	return inFlightProductsRequest;
+};
+
 export const ProductComponent = ({ productid }: ProductComponentProps) => {
-	let entries: ProductEntry[] = (ProductData || []).map(product => ({ ...product, productAdvisory: product.productAdvisory || "" }));
+	const [liveProducts, setLiveProducts] = useState<ProductEntry[] | null>(cachedProducts);
+
+	useEffect(() => {
+		let isMounted = true;
+
+		const loadProducts = async () => {
+			const products = await fetchProductsFromApi();
+			if (!isMounted || !products) {
+				return;
+			}
+
+			setLiveProducts(products);
+		};
+
+		loadProducts();
+
+		return () => {
+			isMounted = false;
+		};
+	}, []);
+
+	const baseProducts = useMemo(() => {
+		if (liveProducts !== null) {
+			return liveProducts;
+		}
+
+		return (ProductData || []).map((product) => normalizeProductEntry(product));
+	}, [liveProducts]);
+
+	let entries: ProductEntry[] = baseProducts;
 	if (productid !== undefined) {
-		const entry = ProductData.find(product => product.productid === productid);
-		if (entry) entries = [{ ...entry, imageUrl: entry.photo, productAdvisory: entry.productAdvisory || "" }];
+		const entry = baseProducts.find((product) => product.productid === productid);
+		entries = entry ? [entry] : [];
 	}
 	if (entries.length === 0) {
 		return <div>No product entries found.</div>;

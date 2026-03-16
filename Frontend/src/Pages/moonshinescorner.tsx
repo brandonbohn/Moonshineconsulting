@@ -1,7 +1,11 @@
 import React from "react";
 import BlogComponent from "../components/blogcomponentengine";
+import { useWebsiteContent } from "../data/websiteContent";
 
 function MoonshinesCorner() {
+    const websiteContent = useWebsiteContent();
+    const content = websiteContent.pages.moonshinesCorner;
+
     return (
     <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
             <div className="hero-section" style={{ padding: "2px 10px" }}>
@@ -121,15 +125,15 @@ function MoonshinesCorner() {
             `}</style>
             
             <header className="moonshines-header">
-                <h1 className="moonshines-title">Moonshine's Corner</h1>
+                <h1 className="moonshines-title">{content.title}</h1>
                 <p className="moonshines-subtitle">
-                    A blog where Moonshine the dog interviews therapy dogs about their amazing work!
+                    {content.subtitle}
                 </p>
             </header>
             
             <main className="moonshines-main">
                 <section>
-                    <h2 className="interviews-title">Latest Interviews</h2>
+                    <h2 className="interviews-title">{content.latestInterviewsTitle}</h2>
                     <div className="col 100">
                         <BlogComponent category="MoonshinesCorner" limit={10} />
                     </div>

@@ -1,9 +1,13 @@
 import React from 'react';
 import BlogComponent from '../components/blogcomponentengine';
+import { useWebsiteContent } from '../data/websiteContent';
 
 
 
 function SeniorLivingDesk() {
+  const websiteContent = useWebsiteContent();
+  const content = websiteContent.pages.seniorLivingDesk;
+
   return (
     <section className="senior-living-desk">
       <style>{`
@@ -136,11 +140,11 @@ function SeniorLivingDesk() {
       <div className="text-white featured-section">
         <div className="welcome-section">
           <h1 className="welcome-title" style={{ padding: "20px" }}>
-            <strong>Welcome to the Senior Living Desk,</strong>
+            <strong>{content.title},</strong>
           </h1>
-          <h2 className="welcome-subtitle">where we provide resources and support for seniors and their families.</h2>
+          <h2 className="welcome-subtitle">{content.subtitle}</h2>
         </div>
-        <h2 className="featured-title">Featured Articles</h2>
+        <h2 className="featured-title">{content.featuredTitle}</h2>
         <ul>
           <BlogComponent category="Senior Living Desk" limit={10} />
         </ul>

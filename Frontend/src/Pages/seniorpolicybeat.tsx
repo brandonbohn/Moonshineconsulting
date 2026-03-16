@@ -1,7 +1,11 @@
 import React from "react";
 import BlogComponent from "../components/blogcomponentengine";
+import { useWebsiteContent } from "../data/websiteContent";
 
 function SeniorPolicyBeat() {
+  const websiteContent = useWebsiteContent();
+  const content = websiteContent.pages.seniorPolicyBeat;
+
   return (
   <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
       <div className="hero-section" style={{ padding: "2px 10px" }}>
@@ -73,10 +77,10 @@ function SeniorPolicyBeat() {
        <div className=" text-white" style={{  width: "100vw", backgroundColor: "#08023a", borderRadius: "10px", height: "50vh",  }}>
      
         <h1 className=" text-center" style={{ padding: "20px", color: "#ffffff", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>
-          <strong>Welcome to the Senior Policy Beat,</strong> </h1>
-          <h2 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>where we break down the most important issues affecting older adults and their care. Whether you’re navigating Medicare, helping a loved one age at home, or just trying to understand how today’s health policies impact real people you’re in the right place.</h2>
+          <strong>{content.title},</strong> </h1>
+          <h2 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{content.subtitle}</h2>
       </div>
-       <h2 className="text-center" style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>Featured Articles</h2>
+       <h2 className="text-center" style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{content.featuredTitle}</h2>
         <ul>
           <BlogComponent category="SeniorPolicyBeat" limit={10} /> 
         </ul>

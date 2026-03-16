@@ -1,7 +1,11 @@
 import React from 'react';
 import BlogComponent from '../components/blogcomponentengine';
+import { useWebsiteContent } from '../data/websiteContent';
 
 function Voicesincare() {
+  const websiteContent = useWebsiteContent();
+  const content = websiteContent.pages.voicesInCare;
+
   return (
     <div className="voices-in-care" style={{ fontFamily: "sans-serif", background: "#ffffff", minHeight: "100vh" }}>
       <style>{`
@@ -141,9 +145,9 @@ function Voicesincare() {
       `}</style>
       
       <header className="voices-header">
-        <h1 className="voices-title">Voices In Care</h1>
+        <h1 className="voices-title">{content.title}</h1>
         <p className="voices-subtitle">
-          A place where caregivers and professionals can share their insights, stories, and struggles from the field.
+          {content.subtitle}
         </p>
       </header>
       
@@ -154,7 +158,7 @@ function Voicesincare() {
       </main> 
       
       <footer className="voices-footer">
-        © {new Date().getFullYear()} Voices In Care. All rights reserved.
+        © {new Date().getFullYear()} {content.footer}
       </footer>
     </div>
   );

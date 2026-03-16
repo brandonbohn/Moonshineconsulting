@@ -1,18 +1,122 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { contributorsData, Contributor } from './contributorsdata';
 
 interface ContributorsComponentProps {
   id?: number;
 }
 
+const API_ORIGIN = 'https://moonshineconsultingbackend.onrender.com';
+const CONTRIBUTORS_API_URL = `${API_ORIGIN}/api/contributors`;
+const DEFAULT_CONTRIBUTOR_IMAGE_URL = `${API_ORIGIN}/images/logo.PNG`;
+
+let cachedContributors: Contributor[] | null = null;
+let inFlightContributorsRequest: Promise<Contributor[] | null> | null = null;
+
+const normalizeContributorImageUrl = (imagePath: string): string => {
+  const normalizedImagePath = (imagePath || '')
+    .replace(/^\.\//, '/')
+    .replace(/^images\//i, '/images/')
+    .replace(/^Images\//, '/images/');
+
+  if (!normalizedImagePath) {
+    return DEFAULT_CONTRIBUTOR_IMAGE_URL;
+  }
+
+  if (/^https?:\/\//i.test(normalizedImagePath)) {
+    return normalizedImagePath;
+  }
+
+  if (normalizedImagePath.startsWith('/images/')) {
+    return `${API_ORIGIN}${normalizedImagePath}`;
+  }
+
+  if (normalizedImagePath.startsWith('/')) {
+    return `${API_ORIGIN}${normalizedImagePath}`;
+  }
+
+  return `${API_ORIGIN}/images/${normalizedImagePath}`;
+};
+
+const normalizeContributor = (contributor: Partial<Contributor>): Contributor => ({
+  id: Number(contributor.id) || 0,
+  name: contributor.name || '',
+  title: contributor.title || '',
+  image: normalizeContributorImageUrl(contributor.image || ''),
+  bio: contributor.bio || '',
+  credentials: contributor.credentials,
+});
+
+const fetchContributorsFromApi = async (): Promise<Contributor[] | null> => {
+  if (cachedContributors) {
+    return cachedContributors;
+  }
+
+  if (inFlightContributorsRequest) {
+    return inFlightContributorsRequest;
+  }
+
+  inFlightContributorsRequest = (async () => {
+    try {
+      const response = await fetch(CONTRIBUTORS_API_URL);
+      if (!response.ok) {
+        return null;
+      }
+
+      const payload = (await response.json()) as Partial<Contributor>[];
+      if (!Array.isArray(payload)) {
+        return null;
+      }
+
+      const normalizedContributors = payload.map(normalizeContributor);
+      cachedContributors = normalizedContributors;
+      return normalizedContributors;
+    } catch {
+      return null;
+    } finally {
+      inFlightContributorsRequest = null;
+    }
+  })();
+
+  return inFlightContributorsRequest;
+};
+
 const ContributorsComponent = ({ id }: ContributorsComponentProps) => {
+  const [liveContributors, setLiveContributors] = useState<Contributor[] | null>(cachedContributors);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadContributors = async () => {
+      const contributors = await fetchContributorsFromApi();
+      if (!isMounted || !contributors) {
+        return;
+      }
+
+      setLiveContributors(contributors);
+    };
+
+    loadContributors();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const baseContributors = useMemo(() => {
+    if (liveContributors !== null) {
+      return liveContributors;
+    }
+
+    return contributorsData.map(normalizeContributor);
+  }, [liveContributors]);
+
   let contributors: Contributor[] = [];
 
   if (id !== undefined) {
-    const contributor = contributorsData.find(contrib => contrib.id === id);
+    const contributor = baseContributors.find((contrib) => contrib.id === id);
     if (contributor) contributors = [contributor];
   } else {
-    contributors = contributorsData;
+    contributors = baseContributors;
   }
 
   if (contributors.length === 0) {

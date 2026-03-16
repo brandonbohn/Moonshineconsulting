@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { BlogEntry } from "./types";
-import { blogntries } from "./blogentriesdata";
 
 
 
@@ -19,6 +18,31 @@ const normalizeCategory = (value: string): string => {
 
 const categoryAliasMap: Record<string, string[]> = {
 	voicesincare: ['rehabsolutions'],
+};
+
+const staticBlogRouteBySlug: Record<string, string> = {
+	moonshinesblogentry: '/blog/moonshinesblogentry',
+	moonshinescornerblogentry: '/blog/moonshinescornerblogentry',
+	seniorpolicybeatblogentry: '/blog/seniorpolicybeatblogentry',
+	'senior-policy-beat-2026': '/blog/seniorpolicybeatblogentry',
+	endoflifedoulablogentry: '/blog/endoflifedoulablogentry',
+	'what-is-an-end-of-life-doula-and-what-role-do-they-have-in-end-of-life-care': '/blog/endoflifedoulablogentry',
+	'what-to-know-before-you-die-blogentry': '/blog/what-to-do-before-you-die-blogentry',
+	'what-to-do-before-you-die-part-1-estate-preparation': '/blog/what-to-do-before-you-die-blogentry',
+	thingstoknowanddoblogentry: '/blog/thingstoknowanddoblogentry',
+	'senior-living-desk-funeral-planning-2026': '/blog/thingstoknowanddoblogentry',
+	nursesjourneyblogentry: '/blog/nursejourneymemoryblogentry',
+	nursejourneymemoryblogentry: '/blog/nursejourneymemoryblogentry',
+	anursesreflectionon40yearsofnursingandcaregivingblogentry: '/blog/nursejourneymemoryblogentry',
+	'a-nurses-journey-memory-lane': '/blog/nursejourneymemoryblogentry',
+	sharedmiracleblogentry: '/blog/sharedmiracleblogentry',
+	amiracleinroom559blogentry: '/blog/sharedmiracleblogentry',
+	'miracle-in-room-559': '/blog/sharedmiracleblogentry',
+	'the-heart-of-hospice-nursing-blogentry': '/blog/voicesincareblogentries',
+	'the-heart-of-hospice-nursing-compassion-comfort-and-connection': '/blog/voicesincareblogentries',
+	voicesincareblogentries: '/blog/voicesincareblogentries',
+	voicesincareblogentry: '/blog/voicesincareblogentry',
+	estatepreparationblogentry: '/blog/estatepreparationblogentry',
 };
 
 const matchesCategory = (entryCategory: string, targetCategory: string): boolean => {
@@ -49,20 +73,28 @@ const getSimplePostPath = (entry: BlogEntry): string => {
 		}
 	}
 
+	const normalizedSlug = slugify(entry.slug || '');
+	if (normalizedSlug && staticBlogRouteBySlug[normalizedSlug]) {
+		return staticBlogRouteBySlug[normalizedSlug];
+	}
+
 	if (entry.slug) {
 		return `/blog/${entry.slug}`;
+	}
+
+	const normalizedTitle = slugify(entry.title || '');
+	if (normalizedTitle && staticBlogRouteBySlug[normalizedTitle]) {
+		return staticBlogRouteBySlug[normalizedTitle];
 	}
 
 	return `/blog/${entry.id}`;
 };
 
-const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0']);
-const isLocalDevHost = localHosts.has(window.location.hostname);
-const API_ORIGIN = isLocalDevHost
-	? 'http://localhost:8080'
-	: 'https://moonshineconsultingbackend.onrender.com';
-
+const API_ORIGIN = 'https://moonshineconsultingbackend.onrender.com';
 const BLOGS_API_URL = `${API_ORIGIN}/api/blogs`;
+
+let cachedApiEntries: BlogEntry[] | null = null;
+let inFlightApiEntriesRequest: Promise<BlogEntry[] | null> | null = null;
 
 type ApiBlogEntry = {
 	id: number;
@@ -111,6 +143,44 @@ const normalizeLocalEntry = (entry: BlogEntry): BlogEntry => ({
 	content: entry.content || entry.article || '',
 });
 
+const fetchBlogsFromApi = async (): Promise<BlogEntry[] | null> => {
+	if (cachedApiEntries) {
+		return cachedApiEntries;
+	}
+
+	if (inFlightApiEntriesRequest) {
+		return inFlightApiEntriesRequest;
+	}
+
+	inFlightApiEntriesRequest = (async () => {
+		try {
+			const response = await fetch(BLOGS_API_URL);
+			if (!response.ok) {
+				console.warn(`[Blog] API returned ${response.status}: ${BLOGS_API_URL}`);
+				return null;
+			}
+
+			const payload = (await response.json()) as ApiBlogEntry[];
+			if (!Array.isArray(payload)) {
+				console.warn('[Blog] API response is not an array');
+				return null;
+			}
+
+			const mappedEntries = payload.map(mapApiBlogToUiBlog);
+			cachedApiEntries = mappedEntries;
+			console.log(`[Blog] Loaded ${mappedEntries.length} blogs from backend API`);
+			return mappedEntries;
+		} catch (error) {
+			console.error('[Blog] Failed to load from API:', error);
+			return null;
+		} finally {
+			inFlightApiEntriesRequest = null;
+		}
+	})();
+
+	return inFlightApiEntriesRequest;
+};
+
 type BlogComponentProps = {
 	category?: string;
 	id?: number;
@@ -119,30 +189,24 @@ type BlogComponentProps = {
 };
 
 const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: BlogComponentProps) => {
-	const [liveEntries, setLiveEntries] = useState<BlogEntry[] | null>(null);
+	const [liveEntries, setLiveEntries] = useState<BlogEntry[] | null>(cachedApiEntries);
+	const [isLoading, setIsLoading] = useState(cachedApiEntries === null);
 	const pageSize = limit ?? 5;
 
 	useEffect(() => {
 		let isMounted = true;
 
 		const loadBlogs = async () => {
-			try {
-				const response = await fetch(BLOGS_API_URL);
-				if (!response.ok) {
-					return;
-				}
-
-				const payload = (await response.json()) as ApiBlogEntry[];
-				if (!Array.isArray(payload)) {
-					return;
-				}
-
-				if (isMounted) {
-					setLiveEntries(payload.map(mapApiBlogToUiBlog));
-				}
-			} catch {
-				// Keep local fallback data silently.
+			const entries = await fetchBlogsFromApi();
+			if (!isMounted) {
+				return;
 			}
+
+			if (entries) {
+				setLiveEntries(entries);
+			}
+
+			setIsLoading(false);
 		};
 
 		loadBlogs();
@@ -153,11 +217,11 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 	}, []);
 
 	const allEntries: BlogEntry[] = useMemo(() => {
-		if (liveEntries && liveEntries.length > 0) {
+		if (liveEntries !== null) {
 			return liveEntries.map(normalizeLocalEntry);
 		}
 
-		return blogntries.map(normalizeLocalEntry);
+		return [];
 	}, [liveEntries]);
 
 	const filteredEntries = useMemo(() => {
@@ -178,6 +242,10 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 	}, [allEntries, category, id, sortOrder]);
 
 	const entries = filteredEntries.slice(0, pageSize);
+
+	if (isLoading) {
+		return null;
+	}
 
 	if (entries.length === 0) {
 		return <div>No blog entries found.</div>;

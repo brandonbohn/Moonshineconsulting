@@ -1,0 +1,360 @@
+{
+  "siteTitle": "Moonshine Consulting",
+  "tagline": "Compassionate care guidance for seniors and families",
+  "navigation": {
+    "logoAlt": "Moonshine Consulting Logo",
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Blog", "href": "/mainblog" },
+      { "label": "Contact", "href": "/registration" },
+      { "label": "Who We Are", "href": "/biopage" }
+    ]
+  },
+  "footer": {
+    "location": "Fredricktown, Missouri",
+    "rightsText": "All Rights Reserved.|Content Reviewed by licensed healthcare professional with 30+ years home health experience",
+    "developerCredit": "Designed and developed by BareBohnz Dev & Consulting",
+    "privacyLabel": "Privacy Policy",
+    "termsLabel": "Terms and Conditions"
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Moonshine Consulting",
+        "subtitle": "Helping People navigate healthcare - NOT through the bottle, but through compassion, nursing and a dog named Moonshine"
+      },
+      "introParagraph": "Moonshine Consulting is a platform powered by over 60 years of healthcare experience plus the charm of a lovable Sheltie, offering trusted guidance, honest product insights, senior education, and advocacy for seniors and caregivers navigating life's later chapters.",
+      "cta": {
+        "text": "Explore the Blog",
+        "link": "./mainblog"
+      },
+      "categories": [
+        {
+          "id": "senior-living",
+          "title": "Senior Living Desk",
+          "actionType": "link",
+          "actionTarget": "./seniorlivingdesk",
+          "description": "A resource hub for seniors and their families, providing information on senior living options, care services, and community resources."
+        },
+        {
+          "id": "senior-policy",
+          "title": "Senior Policy Beat",
+          "actionType": "link",
+          "actionTarget": "./seniorpolicybeat",
+          "description": "Comprehensive guides and resources for navigating Medicare, insurance, and healthcare decisions for seniors and their families."
+        },
+        {
+          "id": "tools-we-love",
+          "title": "Tools We Love",
+          "actionType": "scroll",
+          "actionTarget": "tools-we-love",
+          "description": "Discover our carefully selected products and tools that make caregiving easier and safer for seniors and their families."
+        },
+        {
+          "id": "voices-in-care",
+          "title": "Voices in Care",
+          "actionType": "link",
+          "actionTarget": "./voicesincare",
+          "description": "A place where caregivers and professionals can share their insights, stories, and struggles from the field."
+        },
+        {
+          "id": "moonshines-corner",
+          "title": "Moonshine's Corner",
+          "actionType": "link",
+          "actionTarget": "./moonshinescorner",
+          "description": "A blog where Moonshine the dog interviews therapy dogs about their amazing work!"
+        }
+      ],
+      "teamMembers": [
+        {
+          "id": 1,
+          "name": "Karen Underwood, RN BSN",
+          "image": "/images/Nurse.jpg",
+          "experience": "30 years home health and hospice experience, both in the field and management.",
+          "title": "Registered Nurse"
+        },
+        {
+          "id": 3,
+          "name": "Moonshine",
+          "image": "/images/moonshine.jpg",
+          "experience": "Our beloved mascot, Moonshine. While not an official therapy dog, he loves brightening the days of our senior patients with his visits and unconditional love.",
+          "title": "Beloved Senior Companion"
+        },
+        {
+          "id": 2,
+          "name": "Christie Stephan, RN ODG Certified, Behavioral Health Certified",
+          "image": "/images/Christie.jpg",
+          "experience": "31 years as a multistate registered nurse specializing in insurance assessment for long-term care, home healthcare, and hospice with broad hospital experience.",
+          "title": "Insurance Specialist"
+        }
+      ],
+      "nursePicks": {
+        "title": "Nurse's Picks",
+        "subtitle": "Products recommended by our experienced nursing team based on years of hands-on caregiving"
+      }
+    },
+    "about": {
+      "title": "Who We Are......",
+      "teamTitle": "Our Team",
+      "contactTitle": "Contact",
+      "contactItems": ["Email: contact@moonshine.com"],
+      "team": [
+        {
+          "name": "Karen Underwood RN BSN",
+          "title": "CEO & Founder",
+          "picture": "./images/CEO.jpg",
+          "bioPoints": [
+            "30+ years in nursing and healthcare management",
+            "Experienced Home Health Surveyor",
+            "Passionate about patient-centered care and quality improvement",
+            "Advocate for senior healthcare and continuous learning"
+          ]
+        },
+        {
+          "name": "Christie Stephan RN ODG Certified, Behavioral Health Certified",
+          "title": "Insurance Specialist and Contributor",
+          "picture": "./images/Christie.jpg",
+          "bioPoints": [
+            "Chris began her career in 1994 in the hospital",
+            "31 years of nursing experience across multiple specialties",
+            "24 years' experience in workers compensation and insurance assessments",
+            "Team leader at Gallagher since 2020"
+          ]
+        },
+        {
+          "name": "Moonshine",
+          "title": "Lovable Mascot and Contributor",
+          "picture": "./images/moonshine.jpg",
+          "bioPoints": [
+            "Brings smiles and comfort to seniors every day",
+            "Expert in tail wags and gentle cuddles",
+            "Loves visiting care homes and making new friends",
+            "Always ready for a treat or a belly rub",
+            "Believes everyone deserves a little joy and companionship"
+          ]
+        }
+      ],
+      "mission": {
+        "title": "Our Mission",
+        "paragraph": "At Moonshine Consulting, we empower seniors and their families to navigate the complex world of long-term healthcare with confidence and clarity. We believe every senior deserves compassionate care and informed choices about their health and wellbeing."
+      },
+      "expertise": {
+        "title": "Our Expertise",
+        "intro": "Founded by healthcare professionals with over 50 years of combined experience, our team brings deep knowledge from:",
+        "items": [
+          "Home Health services",
+          "Hospice care",
+          "Workers Compensation Insurance",
+          "Long Term Care",
+          "Hospital specialties including GU, ENT, GYN, and ICU",
+          "Labor and Delivery Nursery care",
+          "Insurance assessments for long term care products"
+        ]
+      },
+      "professionalBackground": {
+        "title": "Our Professional Background",
+        "intro": "Our team's extensive experience includes:",
+        "items": [
+          "30+ years in nursing and healthcare management",
+          "Experienced Home Health Surveyor with regulatory expertise",
+          "10 years as a Home Health Nurse providing direct patient care",
+          "3 years in Long Term Care with hands-on patient advocacy",
+          "Staff nursing in hospital settings including prison ward and intensive care",
+          "Specialized experience in workers compensation and insurance assessments",
+          "Leadership roles in healthcare organizations"
+        ]
+      },
+      "offerings": {
+        "title": "What We Offer for Seniors and Caregivers",
+        "items": [
+          "Guidance on Medicare, Home Health, Hospice, Long-Term Care, and Health Tools",
+          "Educational resources about Missouri's healthcare policies and how they impact you",
+          "Practical solutions for daily healthcare challenges",
+          "Support during life transitions and care decisions"
+        ]
+      },
+      "approach": {
+        "title": "Our Approach",
+        "paragraph": "We provide warm, compassionate guidance combined with expert knowledge. Our goal is to help you understand your options, advocate for your needs, and make informed decisions about your care journey.",
+        "differenceLabel": "Making a Difference:",
+        "differenceText": "we're committed to showing how meaningful connections, whether through our educational content, community outreach, or even our featured therapy animals, can enhance the lives of seniors and their families.",
+        "closing": "Moonshine Consulting - Illuminating your path to better healthcare"
+      }
+    },
+    "contact": {
+      "title": "Have Questions? Contact Us Today",
+      "subtitle": "We're here to help you navigate your healthcare journey",
+      "formAction": "https://formspree.io/f/mkgvpeqk",
+      "labels": {
+        "firstName": "First Name *",
+        "lastName": "Last Name *",
+        "email": "Your Email *",
+        "phone": "Phone Number (Optional)",
+        "ageRange": "Age Range *",
+        "topic": "What healthcare topic interests you most? (Optional)",
+        "message": "Your Message *",
+        "privacy": "I have read and agree to the Privacy Policy and Terms of Service. *"
+      },
+      "placeholders": {
+        "phone": "We'll only call if you prefer phone contact",
+        "ageRange": "Please select your age range",
+        "topic": "Choose a topic (or skip this question)",
+        "message": "How can we help you with your healthcare needs? Please share any specific questions or concerns you have."
+      },
+      "submitText": "Send Message",
+      "ageRanges": [
+        "50-59",
+        "60-69",
+        "70-79",
+        "80-89",
+        "90+",
+        "I'm a caregiver/family member"
+      ],
+      "healthcareTopics": [
+        "Medicare & Insurance Help",
+        "Getting Home Health Care",
+        "Hospice & End-of-Life Care",
+        "Nursing Homes & Long Term Care",
+        "Senior Living Communities",
+        "Health Tools & Daily Living Aids",
+        "Support for Family Caregivers",
+        "General Health & Wellness"
+      ]
+    },
+    "mainBlog": {
+      "newspaperTitle": "The Care Professional Chronicle",
+      "newspaperTagline": "Your Trusted Source for Senior Care and Advocacy",
+      "breakingNewsTitle": "Breaking: Medicare & Policy News",
+      "seniorLivingTitle": "Senior Living Desk",
+      "guestContributorsTitle": "Guest Contributors",
+      "guestContributorsSubtitle": "Meet Our Expert Writers",
+      "voicesInCareTitle": "Voices in Care",
+      "entertainmentTitle": "Entertainment"
+    },
+    "seniorLivingDesk": {
+      "title": "Welcome to the Senior Living Desk",
+      "subtitle": "where we provide resources and support for seniors and their families.",
+      "featuredTitle": "Featured Articles"
+    },
+    "seniorPolicyBeat": {
+      "title": "Welcome to the Senior Policy Beat",
+      "subtitle": "where we break down the most important issues affecting older adults and their care. Whether you're navigating Medicare, helping a loved one age at home, or just trying to understand how today's health policies impact real people, you're in the right place.",
+      "featuredTitle": "Featured Articles"
+    },
+    "voicesInCare": {
+      "title": "Voices In Care",
+      "subtitle": "A place where caregivers and professionals can share their insights, stories, and struggles from the field.",
+      "footer": "Voices In Care. All rights reserved."
+    },
+    "moonshinesCorner": {
+      "title": "Moonshine's Corner",
+      "subtitle": "A blog where Moonshine the dog interviews therapy dogs about their amazing work!",
+      "latestInterviewsTitle": "Latest Interviews"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "effectiveDate": "June 2024",
+      "intro": "Moonshine Consulting (\"we\", \"us\", or \"our\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and interact with our healthcare affiliate marketing services.",
+      "sections": [
+        {
+          "title": "Information We Collect",
+          "bullets": [
+            "Personal Information: Such as your name, email address, phone number, and other contact details when you fill out forms or contact us.",
+            "Usage Data: Information about how you use our website, including IP address, browser type, pages visited, and referring URLs.",
+            "Cookies & Tracking: We use cookies and similar technologies to enhance your experience and analyze website traffic."
+          ]
+        },
+        {
+          "title": "How We Use Your Information",
+          "bullets": [
+            "To provide and improve our services.",
+            "To communicate with you about our offerings and updates.",
+            "To analyze website usage and optimize user experience.",
+            "To comply with legal obligations and protect our rights."
+          ]
+        },
+        {
+          "title": "Disclosure of Your Information",
+          "paragraphs": [
+            "We may share your information with trusted third-party partners, such as healthcare affiliates, service providers, or as required by law. We do not sell your personal information."
+          ]
+        },
+        {
+          "title": "Affiliate Links",
+          "paragraphs": [
+            "Our website may contain links to healthcare products or services. If you click on an affiliate link, we may earn a commission. We are not responsible for the privacy practices of third-party sites."
+          ]
+        },
+        {
+          "title": "Data Security",
+          "paragraphs": [
+            "We implement reasonable security measures to protect your information. However, no method of transmission over the Internet is 100% secure."
+          ]
+        },
+        {
+          "title": "Your Choices",
+          "bullets": [
+            "You may opt out of marketing communications at any time.",
+            "You can disable cookies in your browser settings."
+          ]
+        },
+        {
+          "title": "Children's Privacy",
+          "paragraphs": [
+            "Our services are not intended for children under 18. We do not knowingly collect personal information from children."
+          ]
+        },
+        {
+          "title": "Changes to This Policy",
+          "paragraphs": [
+            "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date."
+          ]
+        }
+      ],
+      "contactTitle": "Contact Us",
+      "contactEmail": "privacy@moonshineconsulting.com"
+    },
+    "termsAndConditions": {
+      "title": "Terms and Conditions",
+      "sections": [
+        {
+          "title": "General Disclaimer",
+          "body": "This website is contributed to by a registered nurse with 30 years of experience. However, all information provided is for general informational purposes only and should not be considered a substitute for professional advice from a qualified healthcare provider. The content on this website is provided for informational purposes only and does not constitute legal, financial, or professional advice. While we strive to ensure the accuracy and timeliness of the information presented, we make no guarantees regarding its completeness or reliability. Use of this website and reliance on any information is solely at your own risk."
+        },
+        {
+          "title": "Earnings Disclaimer",
+          "body": "As an affiliate website, we may receive compensation from the companies whose products we review or promote. However, compensation does not influence our opinions or recommendations. We aim to provide honest and unbiased reviews to help you make informed decisions."
+        },
+        {
+          "title": "No Doctor-Patient Relationship",
+          "body": "Use of this website does not establish a doctor-patient relationship between you and any healthcare professional associated with this site. For medical emergencies, call your local emergency number or seek immediate care from a qualified provider."
+        },
+        {
+          "title": "Limitation of Liability",
+          "body": "We are not liable for any damages or losses arising from your use of this website or reliance on any information provided herein. This includes, but is not limited to, direct, indirect, incidental, consequential, or punitive damages."
+        },
+        {
+          "title": "External Links",
+          "body": "This website may contain links to third-party websites. We are not responsible for the content, privacy practices, or accuracy of information on external sites. Visiting external links is at your own risk."
+        },
+        {
+          "title": "Intellectual Property",
+          "body": "All content, including text, graphics, logos, and images, is the property of this website or its content suppliers and is protected by applicable copyright and intellectual property laws. Unauthorized use or reproduction is prohibited."
+        },
+        {
+          "title": "Changes to Terms",
+          "body": "We reserve the right to update or modify these terms and conditions at any time without prior notice. Continued use of the website constitutes acceptance of the revised terms."
+        },
+        {
+          "title": "Medical Disclaimer",
+          "body": "The information provided on this website is for educational purposes only and is not intended as a substitute for professional medical advice, diagnosis, or treatment. Always consult your physician or other qualified healthcare provider with any questions about a medical condition."
+        },
+        {
+          "title": "FTC Disclosure",
+          "body": "This website contains affiliate links. We may earn a commission when you purchase products through our links, at no additional cost to you. All recommendations are based on our professional experience and testing."
+        }
+      ]
+    }
+  },
+  "updatedAt": "2026-03-16T00:00:00.000Z"
+}

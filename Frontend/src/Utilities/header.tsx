@@ -1,8 +1,12 @@
 import React from 'react';
 import '../css/homepage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useWebsiteContent } from '../data/websiteContent';
 
 function Header(){
+  const websiteContent = useWebsiteContent();
+  const navigation = websiteContent.navigation;
+
     return(
 
 <section>
@@ -88,7 +92,7 @@ function Header(){
       <img
         src="/images/logo.PNG"
         className="logo-stretched"
-        alt="Moonshine Consulting Logo"
+        alt={navigation.logoAlt}
         style={{
           height: "100px",
           width: "auto",
@@ -99,18 +103,11 @@ function Header(){
     </div>
     {/* Navbar items aligned right with padding */}
     <ul className="navbar-nav ms-auto" style={{ paddingRight: "15px", margin: "0" }}>
-      <li className="nav-item">
-        <a className="nav-link active" href="/">Home</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="/mainblog">Blog</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="/registration">Contact</a>
-      </li>
-        <li className="nav-item">
-        <a className="nav-link" href="/biopage">Who We Are</a>
-      </li>
+      {navigation.links.map((link, index) => (
+        <li className="nav-item" key={link.href}>
+          <a className={`nav-link${index === 0 ? ' active' : ''}`} href={link.href}>{link.label}</a>
+        </li>
+      ))}
     </ul>
   </div>
 </nav>

@@ -1,24 +1,31 @@
 import React from 'react';
+import { useWebsiteContent } from '../data/websiteContent';
 
-const BusinessHeader = () => (
+const BusinessHeader = () => {
+  const websiteContent = useWebsiteContent();
+  const footer = websiteContent.footer;
+
+  return (
   <div className=" py-3 px-2 text-center" style={{ fontSize: "1rem", backgroundColor: "#08023a", color: "#fff" }}>
     <div>
-      <strong>Location:</strong> Fredricktown, Missouri
+      <strong>Location:</strong> {footer.location}
     </div>
     <div>
-      <strong>All Rights Reserved.|Content Reviewed by licensed healthcare professional with 30+ years home health experience</strong> &copy; {new Date().getFullYear()}Moonshine Consulting LLC </div>
-    <p>Designed and developed  by BareBohnz Dev & Consulting</p>
+      <strong>{footer.rightsText}</strong> &copy; {new Date().getFullYear()} Moonshine Consulting LLC
+    </div>
+    <p>{footer.developerCredit}</p>
     <div>
       <a href="./privacypolicy" className="text-warning" style={{ textDecoration: "none" }}>
-  Privacy Policy
+        {footer.privacyLabel}
       </a>
 
 <a href="./termsandconditions" className="text-warning" style={{ textDecoration: "none", marginLeft: "10px" }}>
-  Terms and Conditions
+  {footer.termsLabel}
 </a>
      
     </div>
   </div>
 );
+};
 
 export default BusinessHeader;

@@ -1,26 +1,12 @@
 import React from 'react'
-// Dropdown options as arrays
-const ageRanges = [
-  "50-59",
-  "60-69",
-  "70-79",
-  "80-89",
-  "90+",
-  "I'm a caregiver/family member"
-].sort();
-
-const healthcareTopics = [
-  "Medicare & Insurance Help",
-  "Getting Home Health Care",
-  "Hospice & End-of-Life Care",
-  "Nursing Homes & Long Term Care",
-  "Senior Living Communities",
-  "Health Tools & Daily Living Aids",
-  "Support for Family Caregivers",
-  "General Health & Wellness"
-].sort();
+import { useWebsiteContent } from '../data/websiteContent';
 
 const registration = () => {
+  const websiteContent = useWebsiteContent();
+  const content = websiteContent.pages.contact;
+  const ageRanges = [...content.ageRanges].sort();
+  const healthcareTopics = [...content.healthcareTopics].sort();
+
   return (
   <div className='container-fluid' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
       <div className="hero-section" style={{ padding: "2px 10px" }}>
@@ -43,53 +29,53 @@ const registration = () => {
                 fontWeight: "700",
                 marginBottom: "10px"
               }}>
-                Have Questions? Contact Us Today
+                {content.title}
               </h2>
               <p className="" style={{
                 fontSize: "21px",
                 fontFamily: "Georgia, serif",
                 margin: "0"
               }}>
-                We're here to help you navigate your healthcare journey
+                {content.subtitle}
               </p>
             </div>
 
             {/* Formspree Form Section */}
             <form
-              action="https://formspree.io/f/mkgvpeqk"
+              action={content.formAction}
               method="POST"
               style={{ backgroundColor: '#fff', padding: '40px', borderRadius: '0 0 15px 15px', boxShadow: '0 6px 25px rgba(0,0,0,0.15)', border: 'none' }}
             >
               <div className="form-group mb-4">
                 <label style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
-                  First Name *
+                  {content.labels.firstName}
                 </label>
                 <input type="text" name="firstName" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '21px', fontFamily: 'Georgia, serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
               </div>
               <div className="form-group mb-4">
                 <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
-                  Last Name *
+                  {content.labels.lastName}
                 </label>
                 <input type="text" name="lastName" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
               </div>
               <div className="form-group mb-4">
                 <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
-                  Your Email *
+                  {content.labels.email}
                 </label>
                 <input type="email" name="email" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
               </div>
               <div className="form-group mb-4">
                 <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
-                  Phone Number (Optional)
+                  {content.labels.phone}
                 </label>
-                <input type="tel" name="phone" className="form-control" placeholder="We'll only call if you prefer phone contact" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
+                <input type="tel" name="phone" className="form-control" placeholder={content.placeholders.phone} style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }} />
               </div>
               <div className="form-group mb-4">
                 <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
-                  Age Range *
+                  {content.labels.ageRange}
                 </label>
                 <select name="ageRange" required className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }}>
-                  <option value="">Please select your age range</option>
+                  <option value="">{content.placeholders.ageRange}</option>
                   {ageRanges.map(option => (
                     <option key={option} value={option}>{option}</option>
                   ))}
@@ -97,10 +83,10 @@ const registration = () => {
               </div>
               <div className="form-group mb-4">
                 <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
-                  What healthcare topic interests you most? (Optional)
+                  {content.labels.topic}
                 </label>
                 <select name="interest" className="form-control" style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', minHeight: '44px', width: '100%', backgroundColor: '#fff', color: '#000' }}>
-                  <option value="">Choose a topic (or skip this question)</option>
+                  <option value="">{content.placeholders.topic}</option>
                   {healthcareTopics.map(option => (
                     <option key={option} value={option}>{option}</option>
                   ))}
@@ -108,9 +94,9 @@ const registration = () => {
               </div>
               <div className="form-group mb-4">
                 <label style={{ fontSize: "20px", fontFamily: "Open Sans, sans-serif", fontWeight: "600", color: "#000", marginBottom: "8px", display: "block" }}>
-                  Your Message *
+                  {content.labels.message}
                 </label>
-                <textarea name="message" required className="form-control" rows={6} placeholder="How can we help you with your healthcare needs? Please share any specific questions or concerns you have." style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', width: '100%', resize: 'vertical', backgroundColor: '#fff', color: '#000' }}></textarea>
+                <textarea name="message" required className="form-control" rows={6} placeholder={content.placeholders.message} style={{ border: '1px solid #cccccc', borderRadius: '8px', padding: '12px 15px', fontSize: '18px', fontFamily: 'Open Sans, sans-serif', width: '100%', resize: 'vertical', backgroundColor: '#fff', color: '#000' }}></textarea>
               </div>
               
               {/* Privacy Policy Consent */}
@@ -118,13 +104,13 @@ const registration = () => {
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                   <input type="checkbox" name="privacyPolicy" required id="privacyPolicy" style={{ marginTop: '4px' }} />
                   <label htmlFor="privacyPolicy" style={{ fontSize: "16px", fontFamily: "Open Sans, sans-serif", color: "#000", lineHeight: "1.4" }}>
-                    I have read and agree to the Privacy Policy and Terms of Service. *
+                    {content.labels.privacy}
                   </label>
                 </div>
               </div>
               <div className="text-center">
                 <button type="submit" className="btn btn-warning btn-lg" style={{ backgroundColor: '#ffc107', borderColor: '#ffc107', color: '#08023a', fontSize: '20px', fontFamily: 'Open Sans, sans-serif', fontWeight: '600', padding: '12px 40px', borderRadius: '8px', border: 'none', minHeight: '44px', minWidth: '200px', transition: 'all 0.3s ease' }}>
-                  Send Message
+                  {content.submitText}
                 </button>
               </div>
             </form>          </div>

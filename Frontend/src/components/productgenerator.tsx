@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { ProductData } from "./productdata";
 
 interface ProductComponentProps {
 	productid?: number;
@@ -121,11 +120,7 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 	}, []);
 
 	const baseProducts = useMemo(() => {
-		if (liveProducts !== null) {
-			return liveProducts;
-		}
-
-		return (ProductData || []).map((product) => normalizeProductEntry(product));
+		return liveProducts ?? [];
 	}, [liveProducts]);
 
 	let entries: ProductEntry[] = baseProducts;

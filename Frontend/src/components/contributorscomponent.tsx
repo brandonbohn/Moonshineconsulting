@@ -1,5 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { contributorsData, Contributor } from './contributorsdata';
+
+export interface Contributor {
+  id: number;
+  name: string;
+  title: string;
+  image: string;
+  bio: string;
+  credentials?: string;
+}
 
 interface ContributorsComponentProps {
   id?: number;
@@ -103,11 +111,7 @@ const ContributorsComponent = ({ id }: ContributorsComponentProps) => {
   }, []);
 
   const baseContributors = useMemo(() => {
-    if (liveContributors !== null) {
-      return liveContributors;
-    }
-
-    return contributorsData.map(normalizeContributor);
+    return liveContributors ?? [];
   }, [liveContributors]);
 
   let contributors: Contributor[] = [];

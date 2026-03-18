@@ -3,6 +3,9 @@ import { useWebsiteContent } from "../data/websiteContent";
 
 function PrivacyPolicy() {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const content = websiteContent.pages.privacyPolicy;
 
   return (
@@ -16,15 +19,15 @@ function PrivacyPolicy() {
             </p>
             <p>{content.intro}</p>
 
-            {content.sections.map((section) => (
+            {content.sections.map((section: { title: string; paragraphs?: string[]; bullets?: string[] }) => (
               <div key={section.title}>
                 <h2 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{section.title}</h2>
-                {section.paragraphs?.map((paragraph) => (
+                {section.paragraphs?.map((paragraph: string) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
                 {section.bullets && (
                   <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
-                    {section.bullets.map((bullet) => (
+                    {section.bullets.map((bullet: string) => (
                       <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>

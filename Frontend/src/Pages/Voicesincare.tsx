@@ -4,6 +4,9 @@ import { useWebsiteContent } from '../data/websiteContent';
 
 function Voicesincare() {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const content = websiteContent.pages.voicesInCare;
 
   return (

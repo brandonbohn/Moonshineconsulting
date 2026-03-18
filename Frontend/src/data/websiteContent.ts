@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
-import rawWebsiteContent from "./websitecontent.json";
 
-export type WebsiteContent = typeof rawWebsiteContent;
+export type WebsiteContent = Record<string, any>;
 
 const API_ORIGIN = "https://moonshineconsultingbackend.onrender.com";
 const WEBSITE_CONTENT_API_URL = `${API_ORIGIN}/api/website-content`;
 
 let cachedWebsiteContent: WebsiteContent | null = null;
 let inFlightWebsiteContentRequest: Promise<WebsiteContent | null> | null = null;
-
-export const websiteContent = rawWebsiteContent;
 
 const fetchWebsiteContentFromApi = async (): Promise<WebsiteContent | null> => {
 	if (cachedWebsiteContent) {
@@ -44,15 +41,15 @@ const fetchWebsiteContentFromApi = async (): Promise<WebsiteContent | null> => {
 	return inFlightWebsiteContentRequest;
 };
 
-export const useWebsiteContent = (): WebsiteContent => {
-	const [content, setContent] = useState<WebsiteContent>(cachedWebsiteContent || rawWebsiteContent);
+export const useWebsiteContent = (): WebsiteContent | null => {
+	const [content, setContent] = useState<WebsiteContent | null>(cachedWebsiteContent);
 
 	useEffect(() => {
 		let isMounted = true;
 
 		const loadWebsiteContent = async () => {
 			const liveContent = await fetchWebsiteContentFromApi();
-			if (!isMounted || !liveContent) {
+			if (!isMounted) {
 				return;
 			}
 

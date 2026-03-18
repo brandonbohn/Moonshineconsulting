@@ -4,6 +4,9 @@ import { useWebsiteContent } from "../data/websiteContent";
 
 function SeniorPolicyBeat() {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const content = websiteContent.pages.seniorPolicyBeat;
 
   return (

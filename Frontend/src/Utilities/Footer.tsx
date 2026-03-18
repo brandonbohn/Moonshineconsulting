@@ -3,6 +3,9 @@ import { useWebsiteContent } from '../data/websiteContent';
 
 const BusinessHeader = () => {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const footer = websiteContent.footer;
 
   return (

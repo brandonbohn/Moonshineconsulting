@@ -4,6 +4,9 @@ import { useWebsiteContent } from "../data/websiteContent";
 
 function BioPage() {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const content = websiteContent.pages.about;
 
   return (
@@ -22,7 +25,7 @@ function BioPage() {
                   <div></div>
                   <div>
                     <h1 style={{ margin: 0, color: "#000000" }}>{content.teamTitle}</h1>
-                    {content.team.map((person) => (
+                    {content.team.map((person: { name: string; picture: string; title: string; bioPoints: string[] }) => (
                       <div key={person.name} style={{ display: "flex", alignItems: "center", marginBottom: 24 }}>
                         <img
                           src={person.picture}
@@ -35,7 +38,7 @@ function BioPage() {
                           </h3>
                           <p style={{ color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{person.title}</p>
                           <ul style={{ paddingLeft: 20, margin: "12px 0 0 0", color: "#000000", fontSize: "21px", fontFamily: "Georgia, serif" }}>
-                            {person.bioPoints.map((point) => (
+                            {person.bioPoints.map((point: string) => (
                               <li key={point}>{point}</li>
                             ))}
                           </ul>
@@ -48,7 +51,7 @@ function BioPage() {
                 <div>
                   <h2 style={{ color: "#000000", fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{content.contactTitle}</h2>
                   <ul style={{ color: "#000000", fontSize: "21px", fontFamily: "Georgia, serif" }}>
-                    {content.contactItems.map((item) => (
+                    {content.contactItems.map((item: string) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
@@ -71,7 +74,7 @@ function BioPage() {
                   <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{content.expertise.title}</h5>
                   <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>{content.expertise.intro}</p>
                   <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
-                    {content.expertise.items.map((item) => (
+                    {content.expertise.items.map((item: string) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
@@ -79,14 +82,14 @@ function BioPage() {
                   <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{content.professionalBackground.title}</h5>
                   <p style={{ fontSize: "21px", fontFamily: "Georgia, serif", lineHeight: "1.6" }}>{content.professionalBackground.intro}</p>
                   <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
-                    {content.professionalBackground.items.map((item) => (
+                    {content.professionalBackground.items.map((item: string) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
 
                   <h5 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{content.offerings.title}:</h5>
                   <ul style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>
-                    {content.offerings.items.map((item) => (
+                    {content.offerings.items.map((item: string) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>

@@ -3,6 +3,9 @@ import { useWebsiteContent } from "../data/websiteContent";
 
 const TermsAndConditions = () => {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const content = websiteContent.pages.termsAndConditions;
 
   return (
@@ -14,7 +17,7 @@ const TermsAndConditions = () => {
               {content.title}
             </h2>
 
-            {content.sections.map((section) => (
+            {content.sections.map((section: { title: string; body: string }) => (
               <div key={section.title}>
                 <h4 style={{ fontSize: "27px", fontFamily: "Open Sans, Arial, sans-serif" }}>{section.title}</h4>
                 <p style={{ fontSize: "21px", fontFamily: "Georgia, serif" }}>{section.body}</p>

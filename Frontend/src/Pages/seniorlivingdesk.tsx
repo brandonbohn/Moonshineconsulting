@@ -6,6 +6,9 @@ import { useWebsiteContent } from '../data/websiteContent';
 
 function SeniorLivingDesk() {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const content = websiteContent.pages.seniorLivingDesk;
 
   return (

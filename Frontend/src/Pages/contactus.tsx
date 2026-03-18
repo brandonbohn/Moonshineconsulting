@@ -3,6 +3,9 @@ import { useWebsiteContent } from '../data/websiteContent';
 
 const Registration = () => {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const content = websiteContent.pages.contact;
   const ageRanges = [...content.ageRanges].sort();
   const healthcareTopics = [...content.healthcareTopics].sort();

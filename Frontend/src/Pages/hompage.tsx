@@ -7,6 +7,9 @@ import { useWebsiteContent } from '../data/websiteContent';
 
 function HomePage() {
   const websiteContent = useWebsiteContent();
+  if (!websiteContent) {
+    return null;
+  }
   const homeContent = websiteContent.pages.home;
 
   return (
@@ -201,7 +204,7 @@ function HomePage() {
                       }
                     `}</style>
                     <div className="row g-4" style={{ display: "flex", justifyContent: "space-between" }}>
-                      {homeContent.categories.map((category) => (
+                      {homeContent.categories.map((category: { id: string; actionType: string; actionTarget: string; title: string; description: string }) => (
                         <div className="category-col" key={category.id}>
                           <div className="category-card" style={{
                             backgroundColor: "#08023a",
@@ -282,7 +285,7 @@ function HomePage() {
       <div className="d-flex flex-wrap justify-content-center founder-cards-responsive" style={{ gap: "30px", padding: "30px 0", margin: "30px auto" }}>
         <div className="container">
           <div className="row justify-content-center">
-            {homeContent.teamMembers.map(member => (
+            {homeContent.teamMembers.map((member: { id: number; image: string; name: string; experience: string; title: string }) => (
               <div key={member.id} className="col-12 col-md-4 d-flex justify-content-center mb-4">
                 <div className="card founder-card-responsive bg-light-transparent border-0" style={{ width: "300px", height: "100%" }}>
                   <img

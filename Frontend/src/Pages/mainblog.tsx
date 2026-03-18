@@ -6,9 +6,9 @@ import { useState, useEffect } from "react";
 import { useWebsiteContent } from "../data/websiteContent";
 
 function MainBlog() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const websiteContent = useWebsiteContent();
-  const content = websiteContent.pages.mainBlog;
+  const content = websiteContent?.pages.mainBlog;
 
     useEffect(() => {
       const handleResize = () => {
@@ -17,6 +17,10 @@ function MainBlog() {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+  if (!content) {
+    return null;
+  }
 
 
 

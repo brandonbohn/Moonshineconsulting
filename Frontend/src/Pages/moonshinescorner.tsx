@@ -4,6 +4,9 @@ import { useWebsiteContent } from "../data/websiteContent";
 
 function MoonshinesCorner() {
     const websiteContent = useWebsiteContent();
+    if (!websiteContent) {
+        return null;
+    }
     const content = websiteContent.pages.moonshinesCorner;
 
     return (

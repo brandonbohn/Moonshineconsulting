@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import BlogNavigation from './BlogNavigation';
+import AdvertisingCard from './AdvertisingCard';
 
 const API_ORIGIN = 'https://moonshineconsultingbackend.onrender.com';
 const BLOGS_API_URL = `${API_ORIGIN}/api/blogs`;
@@ -32,6 +33,18 @@ type ApiBlogContent = {
   references?: ApiBlogReference[];
 };
 
+type BlogAdEntry = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  buttonText: string;
+  buttonLink: string;
+  price?: string;
+  discount?: string;
+  category?: string;
+};
+
 type ApiBlogEntry = {
   id: number;
   sourceFile?: string;
@@ -46,6 +59,7 @@ type ApiBlogEntry = {
   author?: string;
   link?: string;
   content?: ApiBlogContent | string;
+  ads?: BlogAdEntry[];
 };
 
 type ReusableBlogEntryProps = {
@@ -259,6 +273,10 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
   const sections = extractSections(entry);
   const blocks = extractBlocks(entry);
   const references = extractReferences(entry);
+  const ads = (entry.ads || []).slice(0, 6);
+
+  // Distribute ads after every 2 sections; remaining ads go after the last section
+  const adsPerSection = 2;
 
   return (
     <div>
@@ -291,18 +309,89 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
         )}
 
         {sections.map((section, sectionIndex) => (
-          <section key={`${section.heading || 'section'}-${sectionIndex}`}>
-            {section.heading && (
-              <h2 style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
-                {section.heading}
-              </h2>
-            )}
-            {(section.paragraphs || []).map((paragraph, paragraphIndex) => (
-              <p key={`${sectionIndex}-${paragraphIndex}`} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
-                {paragraph}
-              </p>
-            ))}
-          </section>
+          <div key={`section-group-${sectionIndex}`}>
+            <section>
+              {section.heading && (
+                <h2 style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
+                  {section.heading}
+                </h2>
+              )}
+              {(section.paragraphs || []).map((paragraph, paragraphIndex) => (
+                <p key={`${sectionIndex}-${paragraphIndex}`} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
+                  {paragraph}
+                </p>
+              ))}
+            </section>
+
+            {/* Insert an ad after every 2nd section */}
+            {ads.length > 0 && (sectionIndex + 1) % adsPerSection === 0 && (() => {
+              const adIndex = Math.floor(sectionIndex / adsPerSection);
+              const ad = ads[adIndex];
+              if (!ad) return null;
+              return (
+                <div
+                  key={`ad-${adIndex}`}
+                  style={{
+                    margin: '28px 0',
+                    padding: '16px',
+                    backgroundColor: '#f8f9fa',
+                    borderRadius: '10px',
+                    border: '1px dashed #08023a',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                  }}
+                >
+                  <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 10px 0' }}>
+                    Sponsored
+                  </p>
+                  <AdvertisingCard
+                    title={ad.title}
+                    description={ad.description}
+                    imageUrl={ad.imageUrl}
+                    imageAlt={ad.imageAlt}
+                    buttonText={ad.buttonText}
+                    buttonLink={ad.buttonLink}
+                    price={ad.price}
+                    discount={ad.discount}
+                    category={ad.category}
+                  />
+                </div>
+              );
+            })()}
+          </div>
+        ))}
+
+        {/* Render any remaining ads that didn't fit between sections */}
+        {ads.slice(Math.ceil(sections.length / adsPerSection)).map((ad, extraAdIndex) => (
+          <div
+            key={`ad-extra-${extraAdIndex}`}
+            style={{
+              margin: '28px 0',
+              padding: '16px',
+              backgroundColor: '#f8f9fa',
+              borderRadius: '10px',
+              border: '1px dashed #08023a',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 10px 0' }}>
+              Sponsored
+            </p>
+            <AdvertisingCard
+              title={ad.title}
+              description={ad.description}
+              imageUrl={ad.imageUrl}
+              imageAlt={ad.imageAlt}
+              buttonText={ad.buttonText}
+              buttonLink={ad.buttonLink}
+              price={ad.price}
+              discount={ad.discount}
+              category={ad.category}
+            />
+          </div>
         ))}
 
         {blocks.map((block, blockIndex) => {

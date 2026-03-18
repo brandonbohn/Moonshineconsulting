@@ -8,7 +8,6 @@ import PrivacyPolicy from './Pages/privacypolicy';
 import TermsAndConditions from './Pages/termsandconditions';
 
 import BlogComponent from './components/blogcomponentengine';
-import ProductComponent from './components/productgenerator';
 import ReusableBlogEntry from './components/ReusableBlogEntry';
 import SeniorLivingDesk from './Pages/seniorlivingdesk';
 import Voicesincare from  './Pages/Voicesincare';
@@ -26,7 +25,6 @@ function App() {
          <Route path="/termsandconditions" element={<TermsAndConditions/>}/>
          <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
          <Route path="/blogcomponent" element={<BlogComponent/>}/>
-         <Route path="/productcomponent" element={<ProductComponent/>}/>
          <Route path="/seniorpolicybeat" element={<SeniorPolicyBeat/>}/>
          <Route path="/seniorlivingdesk" element={<SeniorLivingDesk/>}/>
           <Route path="/voicesincare" element={<Voicesincare/>}/>

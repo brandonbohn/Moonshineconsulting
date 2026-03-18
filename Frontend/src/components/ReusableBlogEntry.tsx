@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import BlogNavigation from './BlogNavigation';
-import AdvertisingCard from './AdvertisingCard';
+import ProductComponent from './productgenerator';
 
 const API_ORIGIN = 'https://moonshineconsultingbackend.onrender.com';
 const BLOGS_API_URL = `${API_ORIGIN}/api/blogs`;
@@ -33,18 +33,6 @@ type ApiBlogContent = {
   references?: ApiBlogReference[];
 };
 
-type BlogAdEntry = {
-  title: string;
-  description: string;
-  imageUrl: string;
-  imageAlt: string;
-  buttonText: string;
-  buttonLink: string;
-  price?: string;
-  discount?: string;
-  category?: string;
-};
-
 type ApiBlogEntry = {
   id: number;
   sourceFile?: string;
@@ -59,7 +47,7 @@ type ApiBlogEntry = {
   author?: string;
   link?: string;
   content?: ApiBlogContent | string;
-  ads?: BlogAdEntry[];
+  ads?: number[];
 };
 
 type ReusableBlogEntryProps = {
@@ -326,17 +314,13 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
             {/* Insert an ad after every 2nd section */}
             {ads.length > 0 && (sectionIndex + 1) % adsPerSection === 0 && (() => {
               const adIndex = Math.floor(sectionIndex / adsPerSection);
-              const ad = ads[adIndex];
-              if (!ad) return null;
+              const productId = ads[adIndex];
+              if (!productId) return null;
               return (
                 <div
                   key={`ad-${adIndex}`}
                   style={{
                     margin: '28px 0',
-                    padding: '16px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '10px',
-                    border: '1px dashed #08023a',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -345,17 +329,7 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
                   <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 10px 0' }}>
                     Sponsored
                   </p>
-                  <AdvertisingCard
-                    title={ad.title}
-                    description={ad.description}
-                    imageUrl={ad.imageUrl}
-                    imageAlt={ad.imageAlt}
-                    buttonText={ad.buttonText}
-                    buttonLink={ad.buttonLink}
-                    price={ad.price}
-                    discount={ad.discount}
-                    category={ad.category}
-                  />
+                  <ProductComponent productid={productId} />
                 </div>
               );
             })()}
@@ -363,15 +337,11 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
         ))}
 
         {/* Render any remaining ads that didn't fit between sections */}
-        {ads.slice(Math.ceil(sections.length / adsPerSection)).map((ad, extraAdIndex) => (
+        {ads.slice(Math.ceil(sections.length / adsPerSection)).map((productId, extraAdIndex) => (
           <div
             key={`ad-extra-${extraAdIndex}`}
             style={{
               margin: '28px 0',
-              padding: '16px',
-              backgroundColor: '#f8f9fa',
-              borderRadius: '10px',
-              border: '1px dashed #08023a',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -380,17 +350,7 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
             <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 10px 0' }}>
               Sponsored
             </p>
-            <AdvertisingCard
-              title={ad.title}
-              description={ad.description}
-              imageUrl={ad.imageUrl}
-              imageAlt={ad.imageAlt}
-              buttonText={ad.buttonText}
-              buttonLink={ad.buttonLink}
-              price={ad.price}
-              discount={ad.discount}
-              category={ad.category}
-            />
+            <ProductComponent productid={productId} />
           </div>
         ))}
 

@@ -6,6 +6,7 @@
     "links": [
       { "label": "Home", "href": "/" },
       { "label": "Blog", "href": "/mainblog" },
+      { "label": "Affiliate Market", "href": "/#tools-we-love" },
       { "label": "Contact", "href": "/registration" },
       { "label": "Who We Are", "href": "/biopage" }
     ]

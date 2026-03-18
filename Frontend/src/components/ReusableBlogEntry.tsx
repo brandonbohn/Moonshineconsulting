@@ -54,6 +54,11 @@ type ReusableBlogEntryProps = {
   entryKeys: string[];
 };
 
+type ContentItem =
+  | { type: 'heading'; text: string; key: string }
+  | { type: 'paragraph'; text: string; key: string }
+  | { type: 'adrow'; products: number[]; key: string };
+
 let cachedBlogs: ApiBlogEntry[] | null = null;
 let inFlightBlogsRequest: Promise<ApiBlogEntry[] | null> | null = null;
 
@@ -262,9 +267,33 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
   const blocks = extractBlocks(entry);
   const references = extractReferences(entry);
   const ads = (entry.ads || []).slice(0, 6);
+  const ADS_PER_ROW = 3;
+  const PARAGRAPHS_BEFORE_AD = 3;
 
-  // Distribute ads after every 2 sections; remaining ads go after the last section
-  const adsPerSection = 2;
+  // Group ads into rows of 3
+  const adRows: number[][] = [];
+  for (let i = 0; i < ads.length; i += ADS_PER_ROW) {
+    adRows.push(ads.slice(i, i + ADS_PER_ROW));
+  }
+
+  // Pre-build flat content items so ad rows inject between paragraphs while reading
+  const contentItems: ContentItem[] = [];
+  let paragraphCount = 0;
+  let adRowIndex = 0;
+
+  sections.forEach((section, sectionIndex) => {
+    if (section.heading) {
+      contentItems.push({ type: 'heading', text: section.heading, key: `heading-${sectionIndex}` });
+    }
+    (section.paragraphs || []).forEach((paragraph, pIndex) => {
+      contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
+      paragraphCount++;
+      if (ads.length > 0 && paragraphCount % PARAGRAPHS_BEFORE_AD === 0 && adRowIndex < adRows.length) {
+        contentItems.push({ type: 'adrow', products: adRows[adRowIndex], key: `adrow-${adRowIndex}` });
+        adRowIndex++;
+      }
+    });
+  });
 
   return (
     <div>
@@ -296,63 +325,37 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
           </p>
         )}
 
-        {sections.map((section, sectionIndex) => (
-          <div key={`section-group-${sectionIndex}`}>
-            <section>
-              {section.heading && (
-                <h2 style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
-                  {section.heading}
-                </h2>
-              )}
-              {(section.paragraphs || []).map((paragraph, paragraphIndex) => (
-                <p key={`${sectionIndex}-${paragraphIndex}`} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
-                  {paragraph}
+  {contentItems.map((item) => {
+          if (item.type === 'heading') {
+            return (
+              <h2 key={item.key} style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
+                {item.text}
+              </h2>
+            );
+          }
+          if (item.type === 'paragraph') {
+            return (
+              <p key={item.key} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
+                {item.text}
+              </p>
+            );
+          }
+          if (item.type === 'adrow') {
+            return (
+              <div key={item.key} style={{ margin: '32px 0', padding: '20px 0', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
+                <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#aaa', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 16px 0', textAlign: 'center' }}>
+                  Sponsored
                 </p>
-              ))}
-            </section>
-
-            {/* Insert an ad after every 2nd section */}
-            {ads.length > 0 && (sectionIndex + 1) % adsPerSection === 0 && (() => {
-              const adIndex = Math.floor(sectionIndex / adsPerSection);
-              const productId = ads[adIndex];
-              if (!productId) return null;
-              return (
-                <div
-                  key={`ad-${adIndex}`}
-                  style={{
-                    margin: '28px 0',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                  }}
-                >
-                  <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 10px 0' }}>
-                    Sponsored
-                  </p>
-                  <ProductComponent productid={productId} />
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center', alignItems: 'stretch' }}>
+                  {item.products.map((pid) => (
+                    <ProductComponent key={pid} productid={pid} />
+                  ))}
                 </div>
-              );
-            })()}
-          </div>
-        ))}
-
-        {/* Render any remaining ads that didn't fit between sections */}
-        {ads.slice(Math.ceil(sections.length / adsPerSection)).map((productId, extraAdIndex) => (
-          <div
-            key={`ad-extra-${extraAdIndex}`}
-            style={{
-              margin: '28px 0',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 10px 0' }}>
-              Sponsored
-            </p>
-            <ProductComponent productid={productId} />
-          </div>
-        ))}
+              </div>
+            );
+          }
+          return null;
+        })}
 
         {blocks.map((block, blockIndex) => {
           const tone = blockToneStyleByType[block.tone || 'primary'] || blockToneStyleByType.primary;
@@ -449,5 +452,4 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
     </div>
   );
 }
-
 export default ReusableBlogEntry;

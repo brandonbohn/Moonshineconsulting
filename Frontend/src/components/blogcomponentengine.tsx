@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { BlogEntry } from "./types";
+import { Link } from "react-router-dom";
 
 
 
@@ -300,13 +301,13 @@ const BlogComponent = ({ category = 'all', id, limit, sortOrder = 'desc' }: Blog
 								fontFamily: "Georgia, serif"
 							}}>{typeof entry.content === 'string' ? entry.content : entry.article}</p>
 							<div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "8px", width: "100%" }}>
-								<a
-									href={getSimplePostPath(entry)}
+								<Link
+									to={getSimplePostPath(entry)}
 									className="senior-btn"
 									style={{ textDecoration: "none", display: "inline-block" }}
 								>
 									<span style={{ display: "inline-block", width: "100%", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>Read More</span>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>

@@ -6,6 +6,9 @@ import { useWebsiteContent } from '../data/websiteContent';
 function Header(){
   const websiteContent = useWebsiteContent();
   const navigation = websiteContent.navigation;
+  const filteredNavLinks = navigation.links.filter(
+    (link) => link.label.trim().toLowerCase() !== 'affiliate market'
+  );
 
     return(
 
@@ -103,7 +106,7 @@ function Header(){
     </div>
     {/* Navbar items aligned right with padding */}
     <ul className="navbar-nav ms-auto" style={{ paddingRight: "15px", margin: "0" }}>
-      {navigation.links.map((link, index) => (
+      {filteredNavLinks.map((link, index) => (
         <li className="nav-item" key={link.href}>
           <a className={`nav-link${index === 0 ? ' active' : ''}`} href={link.href}>{link.label}</a>
         </li>

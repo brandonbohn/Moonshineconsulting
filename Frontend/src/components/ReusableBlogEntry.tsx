@@ -70,10 +70,6 @@ type ReusableBlogEntryProps = {
   entryKeys: string[];
 };
 
-type ContentItem =
-  | { type: 'heading'; text: string; key: string }
-  | { type: 'paragraph'; text: string; key: string }
-  | { type: 'adrow'; products: number[]; key: string };
 
 let cachedBlogs: ApiBlogEntry[] | null = null;
 let inFlightBlogsRequest: Promise<ApiBlogEntry[] | null> | null = null;
@@ -296,7 +292,6 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
   const references = extractReferences(entry);
   const ads = (entry.ads || []).slice(0, 6);
   const ADS_PER_ROW = 3;
-  const PARAGRAPHS_BEFORE_AD = 3;
 
   // Group ads into rows of 3
   const adRows: number[][] = [];

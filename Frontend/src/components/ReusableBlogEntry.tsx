@@ -310,14 +310,12 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
     (section.paragraphs || []).forEach((paragraph, pIndex) => {
       contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
       paragraphCount++;
-      // Filter products for this blog and paragraph
-      const targetedProducts = products.filter(
-        (p) =>
-          p.blogEntryId === String(entry.id) &&
-          p.paragraphNumber === String(paragraphCount)
-      );
-      if (targetedProducts.length > 0) {
-        contentItems.push({ type: 'adrow', products: targetedProducts, key: `adrow-${sectionIndex}-${pIndex}` });
+      // Show up to 6 products (ads) per blog, filtered by blogEntryId
+      const matchingProducts = products.filter(
+        (p) => p.blogEntryId === String(entry.id)
+      ).slice(0, 6);
+      if (matchingProducts.length > 0) {
+        contentItems.push({ type: 'adrow', products: matchingProducts, key: `adrow-${sectionIndex}-${pIndex}` });
       }
     });
   });

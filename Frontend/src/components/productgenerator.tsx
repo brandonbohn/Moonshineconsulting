@@ -136,44 +136,38 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 		return (
 		<div className="product-card">
 			{entries.map((entry) => {
-				// Responsive font size for description
-				let descFontSize = 16;
-				if (entry.description && entry.description.length > 180) {
-					descFontSize = 14;
-				}
-				if (entry.description && entry.description.length > 300) {
-					descFontSize = 12;
-				}
-				return (
-					<div key={entry.productid}>
-						<div className="position-relative" style={{ height: 180, overflow: 'hidden' }}>
-							<img
-								src={entry.imageUrl}
-								alt={entry.name}
-								className="logo card-img-top"
-								style={{ width: '100%', height: 180, objectFit: 'cover' }}
-							/>
-						</div>
-						<div className="card-body d-flex flex-column">
-							<h3 className="Title card-title" style={{ color: '#fff' }}>{entry.name}</h3>
-							<p className="Text card-text" style={{ color: '#fff', fontSize: descFontSize }}>{entry.description}</p>
-							<p className="text-center" style={{ color: '#ffd600', marginBottom: 12, fontStyle: 'italic', fontSize: 14 }}>{entry.affilatelinkstatement}</p>
-							{entry.productAdvisory && (
-								<p className="text-center" style={{ color: '#ff4d4f', marginBottom: 10, fontStyle: 'italic', fontSize: 13 }}>{entry.productAdvisory}</p>
-							)}
-							<div className="price-section mb-3 text-center">
-								<span style={{ fontWeight: 700, color: '#ffd600' }}>${entry.price}</span>
-							</div>
-							<a
-								href={entry.link}
-								className="btn senior-btn btn-sm mt-auto"
-								style={{ width: '100%', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, borderRadius: 8, border: 'none', textDecoration: 'none', transition: 'all 0.3s ease' }}
-							>
-								View on Amazon
-							</a>
-						</div>
-					</div>
-				);
+				   // Larger, consistent font size for description, prevent overflow
+				   const descFontSize = 18;
+				   return (
+					   <div key={entry.productid}>
+						   <div className="position-relative" style={{ height: 180, overflow: 'hidden' }}>
+							   <img
+								   src={entry.imageUrl}
+								   alt={entry.name}
+								   className="logo card-img-top"
+								   style={{ width: '100%', height: 180, objectFit: 'cover' }}
+							   />
+						   </div>
+						   <div className="card-body d-flex flex-column">
+							   <h3 className="Title card-title" style={{ color: '#fff', fontWeight: 'bold' }}>{entry.name}</h3>
+							   <p className="Text card-text" style={{ color: '#fff', fontSize: descFontSize, fontWeight: 400, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 5, WebkitBoxOrient: 'vertical' }}>{entry.description}</p>
+							   <p className="text-center" style={{ color: '#ffd600', marginBottom: 12, fontStyle: 'italic', fontWeight: 400, fontSize: 14 }}>{entry.affilatelinkstatement}</p>
+							   {entry.productAdvisory && (
+								   <p className="text-center" style={{ color: '#ff4d4f', marginBottom: 10, fontStyle: 'italic', fontWeight: 400, fontSize: 13 }}>{entry.productAdvisory}</p>
+							   )}
+							   <div className="price-section mb-3 text-center">
+								   <span style={{ fontWeight: 700, color: '#ffd600' }}>${entry.price}</span>
+							   </div>
+							   <a
+								   href={entry.link}
+								   className="btn senior-btn btn-sm mt-auto"
+								   style={{ width: '100%', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, borderRadius: 8, border: 'none', textDecoration: 'none', transition: 'all 0.3s ease' }}
+							   >
+								   View on Amazon
+							   </a>
+						   </div>
+					   </div>
+				   );
 			})}
 		</div>
 	);

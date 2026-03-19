@@ -301,7 +301,6 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
 
   // Build content items and insert targeted ads after the correct paragraph
   const contentItems: Array<{ type: 'heading' | 'paragraph' | 'adrow'; text?: string; key: string; products?: ProductEntry[] }> = [];
-  let paragraphCount = 0;
 
   sections.forEach((section, sectionIndex) => {
     if (section.heading) {
@@ -309,7 +308,6 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
     }
     (section.paragraphs || []).forEach((paragraph, pIndex) => {
       contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
-      paragraphCount++;
       // Show up to 6 products (ads) per blog, filtered by blogEntryId
       const matchingProducts = products.filter(
         (p) => p.blogEntryId === String(entry.id)

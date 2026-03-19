@@ -2,6 +2,22 @@ import { useEffect, useMemo, useState } from 'react';
 import BlogNavigation from './BlogNavigation';
 import ProductComponent from './productgenerator';
 
+const PRODUCTS_API_URL = 'https://moonshineconsultingbackend.onrender.com/api/products';
+
+type ProductEntry = {
+  productid: number;
+  name: string;
+  description: string;
+  price: number;
+  photo: string;
+  link: string;
+  affilatelinkstatement: string;
+  imageUrl?: string;
+  productAdvisory?: string;
+  blogEntryId?: string;
+  paragraphNumber?: string;
+};
+
 const API_ORIGIN = 'https://moonshineconsultingbackend.onrender.com';
 const BLOGS_API_URL = `${API_ORIGIN}/api/blogs`;
 
@@ -220,19 +236,31 @@ const matchesAnyKey = (entry: ApiBlogEntry, keys: string[]): boolean => {
 
 function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
   const [entries, setEntries] = useState<ApiBlogEntry[] | null>(cachedBlogs);
+  const [products, setProducts] = useState<ProductEntry[]>([]);
 
   useEffect(() => {
     let isMounted = true;
 
     const loadEntries = async () => {
       const payload = await fetchBlogs();
-      if (!isMounted || !payload) {
-        return;
+      if (isMounted && payload) {
+        setEntries(payload);
       }
-      setEntries(payload);
+    };
+
+    const loadProducts = async () => {
+      try {
+        const res = await fetch(PRODUCTS_API_URL);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (isMounted && Array.isArray(data)) {
+          setProducts(data);
+        }
+      } catch {}
     };
 
     loadEntries();
+    loadProducts();
 
     return () => {
       isMounted = false;
@@ -276,10 +304,9 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
     adRows.push(ads.slice(i, i + ADS_PER_ROW));
   }
 
-  // Pre-build flat content items so ad rows inject between paragraphs while reading
-  const contentItems: ContentItem[] = [];
+  // Build content items and insert targeted ads after the correct paragraph
+  const contentItems: Array<{ type: 'heading' | 'paragraph' | 'adrow'; text?: string; key: string; products?: ProductEntry[] }> = [];
   let paragraphCount = 0;
-  let adRowIndex = 0;
 
   sections.forEach((section, sectionIndex) => {
     if (section.heading) {
@@ -288,9 +315,14 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
     (section.paragraphs || []).forEach((paragraph, pIndex) => {
       contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
       paragraphCount++;
-      if (ads.length > 0 && paragraphCount % PARAGRAPHS_BEFORE_AD === 0 && adRowIndex < adRows.length) {
-        contentItems.push({ type: 'adrow', products: adRows[adRowIndex], key: `adrow-${adRowIndex}` });
-        adRowIndex++;
+      // Filter products for this blog and paragraph
+      const targetedProducts = products.filter(
+        (p) =>
+          p.blogEntryId === String(entry.id) &&
+          p.paragraphNumber === String(paragraphCount)
+      );
+      if (targetedProducts.length > 0) {
+        contentItems.push({ type: 'adrow', products: targetedProducts, key: `adrow-${sectionIndex}-${pIndex}` });
       }
     });
   });
@@ -326,36 +358,36 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
         )}
 
   {contentItems.map((item) => {
-          if (item.type === 'heading') {
-            return (
-              <h2 key={item.key} style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
-                {item.text}
-              </h2>
-            );
-          }
-          if (item.type === 'paragraph') {
-            return (
-              <p key={item.key} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
-                {item.text}
-              </p>
-            );
-          }
-          if (item.type === 'adrow') {
-            return (
-              <div key={item.key} style={{ margin: '32px 0', padding: '20px 0', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
-                <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#aaa', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 16px 0', textAlign: 'center' }}>
-                  Sponsored
-                </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center', alignItems: 'stretch' }}>
-                  {item.products.map((pid) => (
-                    <ProductComponent key={pid} productid={pid} />
-                  ))}
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })}
+    if (item.type === 'heading') {
+      return (
+        <h2 key={item.key} style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
+          {item.text}
+        </h2>
+      );
+    }
+    if (item.type === 'paragraph') {
+      return (
+        <p key={item.key} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
+          {item.text}
+        </p>
+      );
+    }
+    if (item.type === 'adrow' && item.products) {
+      return (
+        <div key={item.key} style={{ margin: '32px 0', padding: '20px 0', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
+          <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#aaa', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 16px 0', textAlign: 'center' }}>
+            Sponsored
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center', alignItems: 'stretch' }}>
+            {item.products.map((product) => (
+              <ProductComponent key={product.productid} productid={product.productid} />
+            ))}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  })}
 
         {blocks.map((block, blockIndex) => {
           const tone = blockToneStyleByType[block.tone || 'primary'] || blockToneStyleByType.primary;

@@ -306,14 +306,13 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
     if (section.heading) {
       contentItems.push({ type: 'heading', text: section.heading, key: `heading-${sectionIndex}` });
     }
+    // Pick 3 random ads for this blog (same set for all paragraphs in this blog)
+    const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
+    const randomAds = shuffledProducts.slice(0, 3);
     (section.paragraphs || []).forEach((paragraph, pIndex) => {
       contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
-      // Show up to 6 products (ads) per blog, filtered by blogEntryId
-      const matchingProducts = products.filter(
-        (p) => p.blogEntryId === String(entry.id)
-      ).slice(0, 6);
-      if (matchingProducts.length > 0) {
-        contentItems.push({ type: 'adrow', products: matchingProducts, key: `adrow-${sectionIndex}-${pIndex}` });
+      if (randomAds.length > 0) {
+        contentItems.push({ type: 'adrow', products: randomAds, key: `adrow-${sectionIndex}-${pIndex}` });
       }
     });
   });

@@ -296,26 +296,44 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
   const adPlacements = Array.isArray((entry as any).adPlacements) ? (entry as any).adPlacements.slice(0, 6) : [];
 
   // Build content items and insert products after the correct paragraph
-  const contentItems: Array<{ type: 'heading' | 'paragraph' | 'product'; text?: string; key: string; product?: ProductEntry }> = [];
+  let contentItems: Array<{ type: 'heading' | 'paragraph' | 'product'; text?: string; key: string; product?: ProductEntry }> = [];
 
-  sections.forEach((section, sectionIndex) => {
-    if (section.heading) {
-      contentItems.push({ type: 'heading', text: section.heading, key: `heading-${sectionIndex}` });
-    }
-    (section.paragraphs || []).forEach((paragraph, pIndex) => {
-      contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
-      // Check if a product should be injected after this paragraph
-      const placement = adPlacements.find(
-        (ap: { adProductId: number; afterParagraph: number }) => Number(ap.afterParagraph) === pIndex + 1 // paragraphs are 1-indexed in adPlacements
-      );
-      if (placement) {
-        const product = products.find((prod) => prod.productid === placement.adProductId);
-        if (product) {
-          contentItems.push({ type: 'product', product, key: `product-${sectionIndex}-${pIndex}` });
-        }
+  if (adPlacements.length > 0) {
+    sections.forEach((section, sectionIndex) => {
+      if (section.heading) {
+        contentItems.push({ type: 'heading', text: section.heading, key: `heading-${sectionIndex}` });
       }
+      (section.paragraphs || []).forEach((paragraph, pIndex) => {
+        contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
+        // Check if a product should be injected after this paragraph
+        const placement = adPlacements.find(
+          (ap: { adProductId: number; afterParagraph: number }) => Number(ap.afterParagraph) === pIndex + 1 // paragraphs are 1-indexed in adPlacements
+        );
+        if (placement) {
+          const product = products.find((prod) => prod.productid === placement.adProductId);
+          if (product) {
+            contentItems.push({ type: 'product', product, key: `product-${sectionIndex}-${pIndex}` });
+          }
+        }
+      });
     });
-  });
+  } else {
+    // Fallback: show first six products, three per row
+    const fallbackProducts = products.slice(0, 6);
+    contentItems = [];
+    sections.forEach((section, sectionIndex) => {
+      if (section.heading) {
+        contentItems.push({ type: 'heading', text: section.heading, key: `heading-${sectionIndex}` });
+      }
+      (section.paragraphs || []).forEach((paragraph, pIndex) => {
+        contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
+      });
+    });
+    // Insert six products after intro/first section
+    fallbackProducts.forEach((product, idx) => {
+      contentItems.push({ type: 'product', product, key: `fallback-product-${idx}` });
+    });
+  }
 
   return (
     <div>

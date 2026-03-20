@@ -288,31 +288,31 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
   const imageUrl = normalizeImageUrl(entry.image);
   const intro = extractIntro(entry);
   const sections = extractSections(entry);
+
   const blocks = extractBlocks(entry);
   const references = extractReferences(entry);
-  const ads = (entry.ads || []).slice(0, 6);
-  const ADS_PER_ROW = 3;
 
-  // Group ads into rows of 3
-  const adRows: number[][] = [];
-  for (let i = 0; i < ads.length; i += ADS_PER_ROW) {
-    adRows.push(ads.slice(i, i + ADS_PER_ROW));
-  }
+  // Use adPlacements from the blog entry (CMS-driven)
+  const adPlacements = Array.isArray((entry as any).adPlacements) ? (entry as any).adPlacements.slice(0, 6) : [];
 
-  // Build content items and insert targeted ads after the correct paragraph
-  const contentItems: Array<{ type: 'heading' | 'paragraph' | 'adrow'; text?: string; key: string; products?: ProductEntry[] }> = [];
+  // Build content items and insert products after the correct paragraph
+  const contentItems: Array<{ type: 'heading' | 'paragraph' | 'product'; text?: string; key: string; product?: ProductEntry }> = [];
 
   sections.forEach((section, sectionIndex) => {
     if (section.heading) {
       contentItems.push({ type: 'heading', text: section.heading, key: `heading-${sectionIndex}` });
     }
-    // Pick 3 random ads for this blog (same set for all paragraphs in this blog)
-    const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
-    const randomAds = shuffledProducts.slice(0, 3);
     (section.paragraphs || []).forEach((paragraph, pIndex) => {
       contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
-      if (randomAds.length > 0) {
-        contentItems.push({ type: 'adrow', products: randomAds, key: `adrow-${sectionIndex}-${pIndex}` });
+      // Check if a product should be injected after this paragraph
+      const placement = adPlacements.find(
+        (ap: { adProductId: number; afterParagraph: number }) => Number(ap.afterParagraph) === pIndex + 1 // paragraphs are 1-indexed in adPlacements
+      );
+      if (placement) {
+        const product = products.find((prod) => prod.productid === placement.adProductId);
+        if (product) {
+          contentItems.push({ type: 'product', product, key: `product-${sectionIndex}-${pIndex}` });
+        }
       }
     });
   });
@@ -347,37 +347,72 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
           </p>
         )}
 
-  {contentItems.map((item) => {
-    if (item.type === 'heading') {
-      return (
-        <h2 key={item.key} style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
-          {item.text}
-        </h2>
-      );
+  {/* Render content items, grouping products into rows of up to 3 */}
+  {(() => {
+    const rows = [];
+    let buffer: typeof contentItems = [];
+    for (let i = 0; i < contentItems.length; i++) {
+      const item = contentItems[i];
+      if (item.type === 'product') {
+        buffer.push(item);
+        // If buffer has 3 products or next item is not a product, flush the row
+        const next = contentItems[i + 1];
+        if (buffer.length === 3 || !next || next.type !== 'product') {
+          rows.push(
+            <div key={item.key + '-row'} style={{ display: 'flex', gap: '24px', justifyContent: 'center', margin: '32px 0', padding: '20px 0', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
+              {buffer.map((prodItem) => (
+                <div key={prodItem.key} style={{ flex: 1, minWidth: 0 }}>
+                  <ProductComponent productid={prodItem.product!.productid} />
+                </div>
+              ))}
+            </div>
+          );
+          buffer = [];
+        }
+      } else {
+        // Flush any buffered products before rendering non-product content
+        if (buffer.length > 0) {
+          rows.push(
+            <div key={item.key + '-row'} style={{ display: 'flex', gap: '24px', justifyContent: 'center', margin: '32px 0', padding: '20px 0', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
+              {buffer.map((prodItem) => (
+                <div key={prodItem.key} style={{ flex: 1, minWidth: 0 }}>
+                  <ProductComponent productid={prodItem.product!.productid} />
+                </div>
+              ))}
+            </div>
+          );
+          buffer = [];
+        }
+        // Render non-product content
+        if (item.type === 'heading') {
+          rows.push(
+            <h2 key={item.key} style={{ fontSize: '27px', fontFamily: 'Open Sans, Arial, sans-serif', color: '#08023a', marginTop: '20px', marginBottom: '12px' }}>
+              {item.text}
+            </h2>
+          );
+        } else if (item.type === 'paragraph') {
+          rows.push(
+            <p key={item.key} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
+              {item.text}
+            </p>
+          );
+        }
+      }
     }
-    if (item.type === 'paragraph') {
-      return (
-        <p key={item.key} style={{ fontSize: '21px', fontFamily: 'Georgia, serif', lineHeight: '1.6', marginBottom: '14px' }}>
-          {item.text}
-        </p>
-      );
-    }
-    if (item.type === 'adrow' && item.products) {
-      return (
-        <div key={item.key} style={{ margin: '32px 0', padding: '20px 0', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
-          <p style={{ fontSize: '12px', fontFamily: 'Open Sans, sans-serif', color: '#aaa', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 16px 0', textAlign: 'center' }}>
-            Sponsored
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center', alignItems: 'stretch' }}>
-            {item.products.map((product) => (
-              <ProductComponent key={product.productid} productid={product.productid} />
-            ))}
-          </div>
+    // Flush any remaining products
+    if (buffer.length > 0) {
+      rows.push(
+        <div key={'final-product-row'} style={{ display: 'flex', gap: '24px', justifyContent: 'center', margin: '32px 0', padding: '20px 0', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0' }}>
+          {buffer.map((prodItem) => (
+            <div key={prodItem.key} style={{ flex: 1, minWidth: 0 }}>
+              <ProductComponent productid={prodItem.product!.productid} />
+            </div>
+          ))}
         </div>
       );
     }
-    return null;
-  })}
+    return rows;
+  })()}
 
         {blocks.map((block, blockIndex) => {
           const tone = blockToneStyleByType[block.tone || 'primary'] || blockToneStyleByType.primary;

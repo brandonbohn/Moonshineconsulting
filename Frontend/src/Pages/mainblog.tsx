@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useWebsiteContent } from "../data/websiteContent";
 
 
+
 function MainBlog() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const websiteContent = useWebsiteContent();
@@ -19,6 +20,7 @@ function MainBlog() {
   }, []);
 
   const content = websiteContent?.pages?.mainBlog;
+  // Early return after all hooks
   if (!content) {
     return null; // or <div>Loading...</div> if you want a loading state
   }

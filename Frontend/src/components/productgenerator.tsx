@@ -98,7 +98,14 @@ const fetchProductsFromApi = async (): Promise<ProductEntry[] | null> => {
 };
 
 export const ProductComponent = ({ productid }: ProductComponentProps) => {
-  const [liveProducts, setLiveProducts] = useState<ProductEntry[] | null>(cachedProducts);
+	const [liveProducts, setLiveProducts] = useState<ProductEntry[] | null>(cachedProducts);
+
+	// Debug logging
+	useEffect(() => {
+		if (productid !== undefined) {
+			console.log('[ProductComponent] Requested productid:', productid);
+		}
+	}, [productid]);
 
 	useEffect(() => {
 		let isMounted = true;
@@ -110,6 +117,8 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 			}
 
 			setLiveProducts(products);
+			// Debug log loaded products
+			console.log('[ProductComponent] Loaded products:', products);
 		};
 
 		loadProducts();
@@ -126,10 +135,13 @@ export const ProductComponent = ({ productid }: ProductComponentProps) => {
 	let entries: ProductEntry[] = baseProducts;
 	if (productid !== undefined) {
 		const entry = baseProducts.find((product) => product.productid === productid);
+		if (!entry) {
+			console.warn('[ProductComponent] No product found for productid:', productid, 'Available IDs:', baseProducts.map(p => p.productid));
+		}
 		entries = entry ? [entry] : [];
 	}
 	if (entries.length === 0) {
-		return <div>No product entries found.</div>;
+		return <div>No product entries found for productid: {productid}</div>;
 	}
 
 		// Use product-card class for correct color styling

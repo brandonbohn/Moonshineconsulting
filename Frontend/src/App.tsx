@@ -12,12 +12,14 @@ import ReusableBlogEntry from './components/ReusableBlogEntry';
 import SeniorLivingDesk from './Pages/seniorlivingdesk';
 import Voicesincare from  './Pages/Voicesincare';
 import SeniorPolicyBeat from './Pages/seniorpolicybeat';
+import BlogPostPage from './Pages/BlogPostPage';
 import { Routes, Route,  } from 'react-router-dom';  
 function App() {
   return (
     <div className='background'>
       <Header />
          <Routes>
+           <Route path="/blogs/:slug" element={<BlogPostPage />} />
         <Route path="/" element={<HomePage/>}/> 
          <Route path="/registration" element={<ContactUs/>}/>
          <Route path="/mainblog" element={<Blog/>}/>

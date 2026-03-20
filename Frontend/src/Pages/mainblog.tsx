@@ -5,18 +5,23 @@ import '../css/mainblog.css';
 import { useState, useEffect } from "react";
 import { useWebsiteContent } from "../data/websiteContent";
 
-function MainBlog() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const websiteContent = useWebsiteContent();
-  const content = websiteContent.pages.mainBlog;
 
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+function MainBlog() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const websiteContent = useWebsiteContent();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const content = websiteContent?.pages?.mainBlog;
+  if (!content) {
+    return null; // or <div>Loading...</div> if you want a loading state
+  }
 
 
 

@@ -5,12 +5,10 @@ import '../css/mainblog.css';
 import { useState, useEffect } from "react";
 import { useWebsiteContent } from "../data/websiteContent";
 
-
 function MainBlog() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const websiteContent = useWebsiteContent();
-  // Default to 10 if not set in CMS
-  const blogLimit = websiteContent?.mainBlogLimit ?? 10;
+  const content = websiteContent.pages.mainBlog;
 
     useEffect(() => {
       const handleResize = () => {
@@ -79,11 +77,11 @@ function MainBlog() {
               textTransform: "uppercase",
               textAlign: "center"
             }} className="text-white">
-              The Care Professional Chronicle
+              {content.newspaperTitle}
             </h1>
             <div style={{ borderTop: "2px solid #08023a", width: "40%", margin: "5px auto" }}></div>
             <p className="text-white" style={{ fontSize: "21px", fontFamily: "Georgia, serif", fontStyle: "italic", margin: "2px 0" }}>
-              Your Trusted Source for Senior Care and Advocacy
+              {content.newspaperTagline}
             </p>
             <p className="text-white" style={{ fontSize: "21px", fontFamily: "Georgia, serif", margin: "2px 0" }}>
               {new Date().toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long" })}<br />
@@ -115,7 +113,7 @@ function MainBlog() {
                   margin: "0",
                   textTransform: "uppercase",
                   letterSpacing: "0.5px"
-                }}>Breaking: Medicare & Policy News</h2>
+                }}>{content.breakingNewsTitle}</h2>
               </div>
               <div style={{
                 display: "flex",
@@ -124,7 +122,7 @@ function MainBlog() {
                 padding: "0",
               }}>
                 <div style={{ flex: isMobile ? "none" : "1", width: "100%" }}>
-                  <BlogComponent id={2} limit={blogLimit} />
+                  <BlogComponent category="SeniorPolicyBeat" limit={10} />
                 </div>
               </div>
             </div>
@@ -158,7 +156,7 @@ function MainBlog() {
                   borderRadius: "0",
                   boxShadow: "none",
                   textAlign: "left"
-                }}>Senior Living Desk</h3>
+                }}>{content.seniorLivingTitle}</h3>
               </div>
               <div style={{ 
                 padding: "10px", 
@@ -169,7 +167,7 @@ function MainBlog() {
                 height: "auto",
                 marginBottom: "16px"
               }}>
-                <BlogComponent id={7} limit={blogLimit} />
+                <BlogComponent category="SeniorLivingDesk" limit={10} />
               </div>
               {/* Contributors Section */}
               <div id="contributors">
@@ -186,14 +184,14 @@ function MainBlog() {
                     margin: "0",
                     textTransform: "uppercase",
                     letterSpacing: "0.5px"
-                  }}>Guest Contributors</h4>
+                  }}>{content.guestContributorsTitle}</h4>
                   <p style={{ 
                     fontSize: "21px", 
                     fontFamily: "Georgia, serif", 
                     color: "#666",
                     margin: "3px 0 0 0",
                     fontStyle: "italic"
-                  }}>Meet Our Expert Writers</p>
+                  }}>{content.guestContributorsSubtitle}</p>
                 </div>
                 <ContributorsComponent id={1} />
                 <ContributorsComponent id={2} />
@@ -216,7 +214,7 @@ function MainBlog() {
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                   textAlign: "left"
-                }}>Voices in Care</h3>
+                }}>{content.voicesInCareTitle}</h3>
               </div>
               <div style={{ 
                 padding: "10px", 
@@ -227,18 +225,7 @@ function MainBlog() {
                 height: "auto",
                 marginBottom: "16px"
               }}>
-                <BlogComponent id={3} limit={blogLimit} />
-              </div>
-              <div style={{ 
-                padding: "10px", 
-                backgroundColor: "#ffffff",
-                border: "1px solid #ddd",
-                borderRadius: "8px",
-                minHeight: "120px",
-                height: "auto",
-                marginBottom: "16px"
-              }}>
-                <BlogComponent id={5} limit={blogLimit} />
+                <BlogComponent category="Voicesincare" limit={10} />
               </div>
             </div>
             {/* Entertainment Section - Moonshine's Corner */}
@@ -257,7 +244,7 @@ function MainBlog() {
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                   textAlign: "left"
-                }}>Entertainment</h3>
+                }}>{content.entertainmentTitle}</h3>
                 <div style={{ borderTop: "2px solid #08023a", width: "100%", margin: "8px 0 0 0" }}></div>
               </div>
               <div className="entertainment-box" style={{
@@ -270,7 +257,7 @@ function MainBlog() {
                 marginBottom: "16px",
                 width: "100%"
               }}>
-                <BlogComponent id={1} limit={blogLimit} />
+                <BlogComponent category="MoonshinesCorner" limit={10} />
               </div>
             </div>
           </div> {/* Close mainbox */}

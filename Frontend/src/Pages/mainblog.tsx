@@ -28,7 +28,7 @@ function MainBlog() {
 
 
     return (
-  <div className='container-fluid Mainbox' style={{ fontFamily: "Georgia, serif", fontSize: "21px" }}>
+  <div className='container-fluid Mainbox' style={{ fontFamily: "Georgia, serif", fontSize: "21px", padding: 0, margin: 0, maxWidth: "100vw", overflowX: "hidden" }}>
     <style>{`
       .mainblog-title, .boxtwo h1 {
         font-size: 27px !important;
@@ -61,19 +61,22 @@ function MainBlog() {
         }
       }
     `}</style>
-        <div className="hero-section" style={{ padding: "2px 10px" }}>
+        <div className="hero-section" style={{ padding: 0, margin: 0 }}>
           {/* Newspaper Layout: Blue Header above unified white background */}
           <div className="boxtwo text-center" style={{
-            padding: "8px",
+            padding: 0,
             backgroundColor: "#08023a",
-            borderRadius: "8px 8px 0 0",
+            borderRadius: 0,
             width: "100vw",
+            minWidth: "100vw",
+            maxWidth: "100vw",
             height: "auto",
-            marginBottom: "0",
-            marginTop: "0",
-            marginLeft: 0,
-            marginRight: 0,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+            margin: 0,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+            position: "relative",
+            left: "50%",
+            right: "50%",
+            transform: "translateX(-50%)"
           }}>
             <h1 style={{
               fontSize: "54px",

@@ -62,8 +62,12 @@ export default function BlogPostPage() {
   if (loading) return <div>Loading...</div>;
   if (!blog) return <div>Blog not found.</div>;
 
-  // Prepare adPlacements (up to 6)
-  const adPlacements = Array.isArray(blog.adPlacements) ? blog.adPlacements.slice(0, 6) : [];
+  // Prepare adPlacements (up to 6), parse if string
+  let adPlacements: any = blog.adPlacements;
+  if (typeof adPlacements === 'string') {
+    try { adPlacements = JSON.parse(adPlacements); } catch { adPlacements = []; }
+  }
+  adPlacements = Array.isArray(adPlacements) ? adPlacements.slice(0, 6) : [];
   // Prepare sections/paragraphs
   const sections = Array.isArray(blog.content?.sections)
     ? blog.content.sections

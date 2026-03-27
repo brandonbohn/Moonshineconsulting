@@ -1,6 +1,31 @@
+
 import { useEffect, useMemo, useState } from 'react';
 import BlogNavigation from './BlogNavigation';
 import ProductComponent from './productgenerator';
+
+// Utility: Extracts a key from a source file path
+const extractKeyFromSourceFile = (sourceFile?: string): string => {
+  if (!sourceFile) return '';
+  return sourceFile.replace(/\.tsx$/i, '').trim().toLowerCase();
+};
+
+// Utility: Extracts a key from a link
+const extractKeyFromLink = (link?: string): string => {
+  if (!link) return '';
+  const normalized = link.replace(/\\/g, '/');
+  const parts = normalized.split('/').filter(Boolean);
+  return (parts[parts.length - 1] || '').toLowerCase();
+};
+
+// Utility: Slugifies a string
+const slugify = (value: string): string => {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+};
 
 const PRODUCTS_API_URL = 'https://moonshineconsultingbackend.onrender.com/api/products';
 
@@ -64,6 +89,8 @@ type ApiBlogEntry = {
   link?: string;
   content?: ApiBlogContent | string;
   ads?: number[];
+  adPlacements?: { adProductId: number; afterParagraph: number }[];
+  fallbackProductIds?: number[];
 };
 
 type ReusableBlogEntryProps = {
@@ -94,7 +121,6 @@ const fetchBlogs = async (): Promise<ApiBlogEntry[] | null> => {
       if (!Array.isArray(payload)) {
         return null;
       }
-
       cachedBlogs = payload;
       return payload;
     } catch {
@@ -105,30 +131,6 @@ const fetchBlogs = async (): Promise<ApiBlogEntry[] | null> => {
   })();
 
   return inFlightBlogsRequest;
-};
-
-const slugify = (value: string): string =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
-
-const extractKeyFromSourceFile = (sourceFile?: string): string => {
-  if (!sourceFile) {
-    return '';
-  }
-  return sourceFile.replace(/\.tsx$/i, '').trim().toLowerCase();
-};
-
-const extractKeyFromLink = (link?: string): string => {
-  if (!link) {
-    return '';
-  }
-  const normalized = link.replace(/\\/g, '/');
-  const parts = normalized.split('/').filter(Boolean);
-  return (parts[parts.length - 1] || '').toLowerCase();
 };
 
 const normalizeImageUrl = (imagePath?: string): string => {
@@ -292,8 +294,18 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
   const blocks = extractBlocks(entry);
   const references = extractReferences(entry);
 
-  // Use adPlacements from the blog entry (CMS-driven)
-  const adPlacements = Array.isArray((entry as any).adPlacements) ? (entry as any).adPlacements.slice(0, 6) : [];
+  // Use adPlacements and fallbackProductIds from the blog entry (CMS-driven), parsing if needed
+  let adPlacements: any = (entry as any).adPlacements;
+  if (typeof adPlacements === 'string') {
+    try { adPlacements = JSON.parse(adPlacements); } catch { adPlacements = []; }
+  }
+  adPlacements = Array.isArray(adPlacements) ? adPlacements.slice(0, 6) : [];
+
+  let fallbackProductIds: any = (entry as any).fallbackProductIds;
+  if (typeof fallbackProductIds === 'string') {
+    try { fallbackProductIds = JSON.parse(fallbackProductIds); } catch { fallbackProductIds = []; }
+  }
+  fallbackProductIds = Array.isArray(fallbackProductIds) ? fallbackProductIds.slice(0, 6) : [];
 
   // Build content items and insert products after the correct paragraph
   let contentItems: Array<{ type: 'heading' | 'paragraph' | 'product'; text?: string; key: string; product?: ProductEntry }> = [];
@@ -317,9 +329,17 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
         }
       });
     });
-  } else {
-    // Fallback: show first six products, three per row
-    const fallbackProducts = products.slice(0, 6);
+  } else if (fallbackProductIds.length > 0) {
+    // Fallback: use specified fallbackProductIds (unique, in order)
+    const seen = new Set<number>();
+    const fallbackProducts = fallbackProductIds
+      .map((id: number) => {
+        if (seen.has(id)) return null;
+        seen.add(id);
+        return products.find((p) => p.productid === id);
+      })
+      .filter(Boolean)
+      .slice(0, 6);
     contentItems = [];
     sections.forEach((section, sectionIndex) => {
       if (section.heading) {
@@ -329,11 +349,35 @@ function ReusableBlogEntry({ entryKeys }: ReusableBlogEntryProps) {
         contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
       });
     });
-    // Insert six products after intro/first section
-    fallbackProducts.forEach((product, idx) => {
+    fallbackProducts.forEach((product: ProductEntry, idx: number) => {
+      contentItems.push({ type: 'product', product, key: `fallback-product-${idx}` });
+    });
+  } else {
+    // Fallback: randomly scatter up to six unique products per page
+    const uniqueProducts = shuffle(products).filter((p, idx, arr) => arr.findIndex(q => q.productid === p.productid) === idx).slice(0, 6);
+    contentItems = [];
+    sections.forEach((section, sectionIndex) => {
+      if (section.heading) {
+        contentItems.push({ type: 'heading', text: section.heading, key: `heading-${sectionIndex}` });
+      }
+      (section.paragraphs || []).forEach((paragraph, pIndex) => {
+        contentItems.push({ type: 'paragraph', text: paragraph, key: `${sectionIndex}-${pIndex}` });
+      });
+    });
+    uniqueProducts.forEach((product: ProductEntry, idx: number) => {
       contentItems.push({ type: 'product', product, key: `fallback-product-${idx}` });
     });
   }
+
+// Shuffle utility moved outside block for ES5+ compatibility
+function shuffle<T>(array: T[]): T[] {
+  const arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
   return (
     <div>
